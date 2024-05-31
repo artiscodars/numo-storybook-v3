@@ -1,0 +1,23 @@
+.vs/
+.idea/
+##
+## Visual Studio Code
+##
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# Windows thumbnail cache files
+Thumbs.db
+ehthumbs.db
+ehthumbs_vista.db
+# Folder config file
+[Dd]esktop.ini
+
+# ReSharper generated files
+*.DotSettings.user
+
+[Bb]in/
+[Oo]bj/
