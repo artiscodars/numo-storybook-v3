@@ -1,0 +1,17 @@
+{
+    "preset": "jest-preset-angular",
+    "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
+    "globalSetup": "jest-preset-angular/global-setup",
+    "clearMocks": true,
+    "collectCoverage": true,
+    "coverageReporters": ["html", "lcov"],
+    "coverageDirectory": "coverage",
+    "coverageThreshold": {
+        "global": {
+            "branches": 80,
+            "functions": 80,
+            "lines": 80,
+            "statements": 80
+        }
+    }
+}
