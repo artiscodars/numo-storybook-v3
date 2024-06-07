@@ -1,18 +1,14 @@
+# IDEs and editors
 .vs/
 .idea/
-##
-## Visual Studio Code
-##
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+.vscode/
+.history/*
 
 # Windows thumbnail cache files
 Thumbs.db
 ehthumbs.db
 ehthumbs_vista.db
+.DS_Store
 # Folder config file
 [Dd]esktop.ini
 
