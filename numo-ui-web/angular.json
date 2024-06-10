@@ -30,6 +30,36 @@
                         "tsConfig": "projects/ngx-numo-ui-web/tsconfig.spec.json",
                         "polyfills": ["zone.js", "zone.js/testing"]
                     }
+                },
+                "storybook": {
+                    "builder": "@storybook/angular:start-storybook",
+                    "options": {
+                        "configDir": "projects/ngx-numo-ui-web/.storybook",
+                        "browserTarget": "ngx-numo-ui-web:build",
+                        "compodoc": true,
+                        "compodocArgs": [
+                            "-e",
+                            "json",
+                            "-d",
+                            "projects/ngx-numo-ui-web"
+                        ],
+                        "port": 6006
+                    }
+                },
+                "build-storybook": {
+                    "builder": "@storybook/angular:build-storybook",
+                    "options": {
+                        "configDir": "projects/ngx-numo-ui-web/.storybook",
+                        "browserTarget": "ngx-numo-ui-web:build",
+                        "compodoc": true,
+                        "compodocArgs": [
+                            "-e",
+                            "json",
+                            "-d",
+                            "projects/ngx-numo-ui-web"
+                        ],
+                        "outputDir": "storybook-static"
+                    }
                 }
             }
         }
