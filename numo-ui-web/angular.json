@@ -43,7 +43,10 @@
                             "-d",
                             "projects/ngx-numo-ui-web"
                         ],
-                        "port": 6006
+                        "port": 6006,
+                        "styles": [
+                            "projects/ngx-numo-ui-web/src/theme/tailwind.css"
+                        ]
                     }
                 },
                 "build-storybook": {

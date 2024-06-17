@@ -1,23 +1,42 @@
 # NumoUiWeb
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+This project contains:
 
-## Development server
+-   Numo UI Web component library
+-   Numo UI Web storybook
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
+
+## Numo UI Web component library
+
+The library contains [Angular](https://angular.dev/overview) components intended for use in Numo services, on desktop clients.
+
+To build the library, use `npm run build`. The build artifacts will be stored in the `dist/` directory.
+
+All library contents are located under `projects/ngx-numo-ui-web/src/lib/`.
+
+## Numo UI Web storybook
+
+This projects contains a [Storybook](https://storybook.js.org) demonstrating the components of the Numo UI Web library.
+
+To build the storybook, use `npm run build-storybook`.
+
+To run the storybook instance locally, use `npm run storybook`. The storybook will be available at http://localhost:6006/. While running, you can edit both the library components and stories and storybook will update on the fly.
+
+The storybook configuration is located under `projects/ngx-numo-ui-web/.storybook/`.
+
+The storybook stories are located under `projects/ngx-numo-ui-web/src/stories/`.
 
 ## Code scaffolding
 
 Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
 
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
 
 ## Running unit tests
 
 Run `npm run test` to execute unit tests via [Jest](https://jestjs.io).
 
-## Further help
+## Tailwind CSS
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+This project uses [Tailwind CSS](https://tailwindcss.com) for styling. Theming imports and adjustments are located in `projects/ngx-numo-ui-web/src/theme/`. Tailwind configuration for the storybook is located in `tailwind.config.js`.
