@@ -3,7 +3,10 @@
     "compilerOptions": {
         "types": ["node"],
         "allowSyntheticDefaultImports": true,
-        "resolveJsonModule": true
+        "resolveJsonModule": true,
+        "paths": {
+            "ngx-numo-ui-web": ["../src/public-api.ts"]
+        }
     },
     "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
     "include": ["../src/**/*.stories.*", "./preview.ts"],
