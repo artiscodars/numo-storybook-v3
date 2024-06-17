@@ -4,8 +4,7 @@
     "scripts": {
         "ng": "ng",
         "start": "npm run storybook",
-        "build": "ng build",
-        "watch": "ng build --watch --configuration development",
+        "build": "ng build ngx-numo-ui-web",
         "test": "jest",
         "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
         "storybook": "ng run ngx-numo-ui-web:storybook",

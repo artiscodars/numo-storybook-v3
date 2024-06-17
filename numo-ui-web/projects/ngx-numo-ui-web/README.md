@@ -2,6 +2,10 @@
 
 This library was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
 
+## Styling
+
+This library uses Tailwind CSS for styling. See [Tailwind documentation](https://tailwindcss.com/docs/) for more info on how to make use of its classes and/or customization.
+
 ## Code scaffolding
 
 Run `ng generate component component-name --project ngx-numo-ui-web` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module --project ngx-numo-ui-web`.
