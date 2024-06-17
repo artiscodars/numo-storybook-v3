@@ -1,16 +1,16 @@
 import { ComponentFixture, TestBed } from "@angular/core/testing";
-import { NgxNumoUiWebComponent } from "./ngx-numo-ui-web.component";
+import { NumoTesterComponent } from "./tester.component";
 
-describe("NgxNumoUiWebComponent", () => {
-    let component: NgxNumoUiWebComponent;
-    let fixture: ComponentFixture<NgxNumoUiWebComponent>;
+describe("NumoTesterComponent", () => {
+    let component: NumoTesterComponent;
+    let fixture: ComponentFixture<NumoTesterComponent>;
 
     beforeEach(async () => {
         await TestBed.configureTestingModule({
-            imports: [NgxNumoUiWebComponent],
+            imports: [NumoTesterComponent],
         }).compileComponents();
 
-        fixture = TestBed.createComponent(NgxNumoUiWebComponent);
+        fixture = TestBed.createComponent(NumoTesterComponent);
         component = fixture.componentInstance;
         fixture.detectChanges();
     });

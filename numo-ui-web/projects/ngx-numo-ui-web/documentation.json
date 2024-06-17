@@ -91,6 +91,16 @@
                 "defaultValue": "{\n    title: \"Example/Page\",\n    component: PageComponent,\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n        layout: \"fullscreen\",\n    },\n}"
             },
             {
+                "name": "meta",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Meta<NumoTesterComponent>",
+                "defaultValue": "{\r\n    title: \"Numo library storybook tester\",\r\n    component: NumoTesterComponent,\r\n}"
+            },
+            {
                 "name": "preview",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -109,6 +119,16 @@
                 "deprecationMessage": "",
                 "type": "Story",
                 "defaultValue": "{\n    args: {\n        primary: true,\n        label: \"Button\",\n    },\n}"
+            },
+            {
+                "name": "Primary",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "Story",
+                "defaultValue": "{\r\n    args: {\r\n        label: \"Whatnot\",\r\n    },\r\n}"
             },
             {
                 "name": "Secondary",
@@ -161,6 +181,17 @@
                 "subtype": "typealias",
                 "rawtype": "StoryObj<PageComponent>",
                 "file": "projects/ngx-numo-ui-web/src/stories/page.stories.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "description": "",
+                "kind": 183
+            },
+            {
+                "name": "Story",
+                "ctype": "miscellaneous",
+                "subtype": "typealias",
+                "rawtype": "StoryObj<NumoTesterComponent>",
+                "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "description": "",
@@ -285,6 +316,28 @@
                     "defaultValue": "{\n    title: \"Example/Page\",\n    component: PageComponent,\n    parameters: {\n        // More on how to position stories at: https://storybook.js.org/docs/configure/story-layout\n        layout: \"fullscreen\",\n    },\n}"
                 }
             ],
+            "projects/ngx-numo-ui-web/src/stories/tester.stories.ts": [
+                {
+                    "name": "meta",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Meta<NumoTesterComponent>",
+                    "defaultValue": "{\r\n    title: \"Numo library storybook tester\",\r\n    component: NumoTesterComponent,\r\n}"
+                },
+                {
+                    "name": "Primary",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "Story",
+                    "defaultValue": "{\r\n    args: {\r\n        label: \"Whatnot\",\r\n    },\r\n}"
+                }
+            ],
             "projects/ngx-numo-ui-web/.storybook/preview.ts": [
                 {
                     "name": "preview",
@@ -334,6 +387,19 @@
                     "subtype": "typealias",
                     "rawtype": "StoryObj<PageComponent>",
                     "file": "projects/ngx-numo-ui-web/src/stories/page.stories.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "description": "",
+                    "kind": 183
+                }
+            ],
+            "projects/ngx-numo-ui-web/src/stories/tester.stories.ts": [
+                {
+                    "name": "Story",
+                    "ctype": "miscellaneous",
+                    "subtype": "typealias",
+                    "rawtype": "StoryObj<NumoTesterComponent>",
+                    "file": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "description": "",
@@ -463,6 +529,26 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "meta",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-numo-ui-web/src/stories/tester.stories.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "Primary",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"

@@ -3,4 +3,4 @@
  */
 
 export * from "./lib/ngx-numo-ui-web.service";
-export * from "./lib/ngx-numo-ui-web.component";
+export * from "./lib/tester.component";
