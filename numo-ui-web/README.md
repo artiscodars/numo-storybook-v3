@@ -13,7 +13,7 @@ The library contains [Angular](https://angular.dev/overview) components intended
 
 To build the library, use `npm run build`. The build artifacts will be stored in the `dist/` directory.
 
-All library contents are located under `projects/ngx-numo-ui-web/src/lib/`.
+All library contents are located under `projects/ngx-ui-web/src/lib/`.
 
 ## Numo UI Web storybook
 
@@ -23,9 +23,9 @@ To build the storybook, use `npm run build-storybook`.
 
 To run the storybook instance locally, use `npm run storybook`. The storybook will be available at http://localhost:6006/. While running, you can edit both the library components and stories and storybook will update on the fly.
 
-The storybook configuration is located under `projects/ngx-numo-ui-web/.storybook/`.
+The storybook configuration is located under `projects/ngx-ui-web/.storybook/`.
 
-The storybook stories are located under `projects/ngx-numo-ui-web/src/stories/`.
+The storybook stories are located under `projects/ngx-ui-web/src/stories/`.
 
 ## Code scaffolding
 
@@ -39,4 +39,4 @@ Run `npm run test` to execute unit tests via [Jest](https://jestjs.io).
 
 ## Tailwind CSS
 
-This project uses [Tailwind CSS](https://tailwindcss.com) for styling. Theming imports and adjustments are located in `projects/ngx-numo-ui-web/src/theme/`. Tailwind configuration for the storybook is located in `tailwind.config.js`.
+This project uses [Tailwind CSS](https://tailwindcss.com) for styling. Theming imports and adjustments are located in `projects/ngx-ui-web/src/theme/`. Tailwind configuration for the storybook is located in `tailwind.config.js`.

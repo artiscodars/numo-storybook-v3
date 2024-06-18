@@ -11,7 +11,7 @@
         "noFallthroughCasesInSwitch": true,
         "skipLibCheck": true,
         "paths": {
-            "ngx-numo-ui-web": ["./dist/ngx-numo-ui-web"]
+            "ngx-ui-web": ["./dist/ngx-ui-web"]
         },
         "esModuleInterop": true,
         "sourceMap": true,

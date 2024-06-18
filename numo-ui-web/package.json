@@ -4,11 +4,11 @@
     "scripts": {
         "ng": "ng",
         "start": "npm run storybook",
-        "build": "ng build ngx-numo-ui-web",
+        "build": "ng build ngx-ui-web",
         "test": "jest",
         "test:debug": "node --inspect-brk node_modules/jest/bin/jest.js --runInBand",
-        "storybook": "ng run ngx-numo-ui-web:storybook",
-        "build-storybook": "ng build & ng run ngx-numo-ui-web:build-storybook"
+        "storybook": "ng run ngx-ui-web:storybook",
+        "build-storybook": "ng build & ng run ngx-ui-web:build-storybook"
     },
     "private": true,
     "dependencies": {

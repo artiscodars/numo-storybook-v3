@@ -3,23 +3,23 @@
     "version": 1,
     "newProjectRoot": "projects",
     "projects": {
-        "ngx-numo-ui-web": {
+        "ngx-ui-web": {
             "projectType": "library",
-            "root": "projects/ngx-numo-ui-web",
-            "sourceRoot": "projects/ngx-numo-ui-web/src",
+            "root": "projects/ngx-ui-web",
+            "sourceRoot": "projects/ngx-ui-web/src",
             "prefix": "numo",
             "architect": {
                 "build": {
                     "builder": "@angular-devkit/build-angular:ng-packagr",
                     "options": {
-                        "project": "projects/ngx-numo-ui-web/ng-package.json"
+                        "project": "projects/ngx-ui-web/ng-package.json"
                     },
                     "configurations": {
                         "production": {
-                            "tsConfig": "projects/ngx-numo-ui-web/tsconfig.lib.prod.json"
+                            "tsConfig": "projects/ngx-ui-web/tsconfig.lib.prod.json"
                         },
                         "development": {
-                            "tsConfig": "projects/ngx-numo-ui-web/tsconfig.lib.json"
+                            "tsConfig": "projects/ngx-ui-web/tsconfig.lib.json"
                         }
                     },
                     "defaultConfiguration": "production"
@@ -27,39 +27,39 @@
                 "test": {
                     "builder": "@angular-devkit/build-angular:karma",
                     "options": {
-                        "tsConfig": "projects/ngx-numo-ui-web/tsconfig.spec.json",
+                        "tsConfig": "projects/ngx-ui-web/tsconfig.spec.json",
                         "polyfills": ["zone.js", "zone.js/testing"]
                     }
                 },
                 "storybook": {
                     "builder": "@storybook/angular:start-storybook",
                     "options": {
-                        "configDir": "projects/ngx-numo-ui-web/.storybook",
-                        "browserTarget": "ngx-numo-ui-web:build",
+                        "configDir": "projects/ngx-ui-web/.storybook",
+                        "browserTarget": "ngx-ui-web:build",
                         "compodoc": true,
                         "compodocArgs": [
                             "-e",
                             "json",
                             "-d",
-                            "projects/ngx-numo-ui-web"
+                            "projects/ngx-ui-web"
                         ],
                         "port": 6006,
                         "styles": [
-                            "projects/ngx-numo-ui-web/src/theme/tailwind.css"
+                            "projects/ngx-ui-web/src/theme/tailwind.css"
                         ]
                     }
                 },
                 "build-storybook": {
                     "builder": "@storybook/angular:build-storybook",
                     "options": {
-                        "configDir": "projects/ngx-numo-ui-web/.storybook",
-                        "browserTarget": "ngx-numo-ui-web:build",
+                        "configDir": "projects/ngx-ui-web/.storybook",
+                        "browserTarget": "ngx-ui-web:build",
                         "compodoc": true,
                         "compodocArgs": [
                             "-e",
                             "json",
                             "-d",
-                            "projects/ngx-numo-ui-web"
+                            "projects/ngx-ui-web"
                         ],
                         "outputDir": "storybook-static"
                     }

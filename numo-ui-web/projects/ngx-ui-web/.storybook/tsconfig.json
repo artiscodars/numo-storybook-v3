@@ -5,7 +5,7 @@
         "allowSyntheticDefaultImports": true,
         "resolveJsonModule": true,
         "paths": {
-            "ngx-numo-ui-web": ["../src/public-api.ts"]
+            "ngx-ui-web": ["../src/public-api.ts"]
         }
     },
     "exclude": ["../src/test.ts", "../src/**/*.spec.ts"],
