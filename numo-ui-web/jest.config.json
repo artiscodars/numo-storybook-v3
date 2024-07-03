@@ -1,7 +1,8 @@
 {
     "preset": "jest-preset-angular",
     "setupFilesAfterEnv": ["<rootDir>/jest.setup.ts"],
-    "globalSetup": "jest-preset-angular/global-setup",
+    "testPathIgnorePatterns": ["<rootDir>/node_modules/", "<rootDir>/dist/"],
+    "modulePaths": ["<rootDir>/projects/ngx-ui-web/src/"],
     "clearMocks": true,
     "collectCoverage": true,
     "coverageReporters": ["html", "lcov"],
