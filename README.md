@@ -36,7 +36,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 ## Running unit tests
 
 Run `npm run test` to execute unit tests via [Jest](https://jestjs.io).
-
-## Tailwind CSS
-
-This project uses [Tailwind CSS](https://tailwindcss.com) for styling. Theming imports and adjustments are located in `projects/ngx-ui-web/src/theme/`. Tailwind configuration for the storybook is located in `tailwind.config.js`.

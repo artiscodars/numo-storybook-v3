@@ -5,11 +5,26 @@ setCompodocJson(docJson);
 
 const preview: Preview = {
     parameters: {
+        options: {
+            storySort: {
+                method: "alphabetical",
+                // order: ['Introduction', 'Styleguide', 'Atoms', ['Readme', '*'], 'Molecules', ['Readme', '*'], 'Organisms', ['Readme', '*']],
+                //  locales: 'en-US',
+            },
+        },
         controls: {
             matchers: {
                 color: /(background|color)$/i,
                 date: /Date$/i,
             },
+        },
+        backgrounds: {
+            default: "light",
+            values: [
+                { name: "light", value: "#EFEFEF" },
+                { name: "dark", value: "#000000" },
+                // Add more backgrounds as needed
+            ],
         },
     },
 };

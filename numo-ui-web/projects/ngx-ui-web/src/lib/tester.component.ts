@@ -5,7 +5,7 @@ import { Component, Input } from "@angular/core";
     standalone: true,
     template: `
         <div class="text-red-600 bg-black object-fill">
-            Numo test component with Tailwind is working just fine, and it's
+            Numo test component is working just fine, and it's
             {{ lilText }}!
         </div>
     `,
