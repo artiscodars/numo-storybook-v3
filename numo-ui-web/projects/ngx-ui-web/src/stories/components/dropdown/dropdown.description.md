@@ -1,4 +1,3 @@
-
 The `p-dropdown` component from PrimeNG provides a dropdown menu that allows users to select a value from a list of options. It is highly customizable, supporting various features such as grouping, editable input, and more.
 
 ## Parameters
@@ -17,9 +16,9 @@ The `p-dropdown` component from PrimeNG provides a dropdown menu that allows use
 The `p-dropdown` component can be customized using various parameters. Below are examples of how to use these parameters in the HTML template:
 
 ```html
-<p-dropdown 
-  [options]="cities"  
-  [(ngModel)]="selectedCity" 
-  optionLabel="name" 
-  placeholder="{{label}}" />
+<p-dropdown
+    [options]="cities"
+    [(ngModel)]="selectedCity"
+    optionLabel="name"
+    placeholder="{{label}}" />
 ```

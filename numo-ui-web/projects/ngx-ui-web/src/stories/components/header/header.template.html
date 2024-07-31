@@ -2,10 +2,10 @@
   <div class="logo flex items-center font-bold text-2xl h-10">
     <div>
       <iconify-icon
-        (click)="toggleMenu($event)"
-        class="icon text-gray-800 cursor-pointer"
-        icon="cil:hamburger-menu"
-        #menuButton
+          (click)="toggleMenu($event)"
+          class="icon text-gray-800 cursor-pointer"
+          icon="cil:hamburger-menu"
+          #menuButton
       ></iconify-icon>
       <p-overlayPanel #menu>
         <div class="flex flex-column gap-3">
@@ -23,28 +23,28 @@
   <div class="flex justify-center mx-5 relative">
     <div class="flex justify-center w-full max-w-[500px] relative">
       <iconify-icon
-        class="icon text-gray-800 absolute top-[15px] left-[12px]"
-        style="top: 8px; left: 12px"
-        icon="il:search"
+          class="icon text-gray-800 absolute top-[15px] left-[12px]"
+          style="top: 8px; left: 12px"
+          icon="il:search"
       ></iconify-icon>
       <input
-        type="text"
-        style="text-indent: 35px"
-        class="text-gray-800 p-0 pl-10"
-        pInputText
+          type="text"
+          style="text-indent: 35px"
+          class="text-gray-800 p-0 pl-10"
+          pInputText
       />
     </div>
   </div>
   <div>
     <div class="relative inline-block">
       <span
-        class="flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between"
-        (click)="userMenu.toggle($event)"
-        ><iconify-icon
+          class="flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between"
+          (click)="userMenu.toggle($event)"
+      ><iconify-icon
           class="bell-icon text-gray-800"
           icon="il:bell"
-        ></iconify-icon
-        >Username</span
+      ></iconify-icon
+      >Username</span
       >
     </div>
     <p-menu #userMenu [model]="userMenuItems" [popup]="true" />

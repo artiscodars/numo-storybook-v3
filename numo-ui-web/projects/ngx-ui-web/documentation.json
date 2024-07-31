@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-d4821beac0e4a852e513391b7470981c4353fdd95a18628bb68136c8695b489ee15b926e2e5031bc26cf30e1508e0a362c3ee13a06734702b4d15af140e485d5",
+            "id": "interface-User-5d353b8c1d225e09f14cb588106aea8057b34b050c75354fa9039782cec86bb235c040a5681e1ccc2d9cd6b27bf3ff534657d9fb26f88fec737b061184ac3489",
             "file": "projects/ngx-ui-web/src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\n  name: string;\n}\n",
+            "sourceCode": "export interface User {\n    name: string;\n}\n",
             "properties": [
                 {
                     "name": "name",
@@ -60,7 +60,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-cb7ab3180bbb5ae3cbff006646fc0a8aa760322ffa613b66aa53e7791ae5543b105774fb976c5c91ddf30afa80d4c0312f376a1ae32e1012a0f4202b4d7499bf",
+            "id": "component-AppComponent-57d8189c3be571e4e5a09c82598a3cc19975ed193d6a0b0c123845bb5189dccca43a923ae364febb1e6333ca5b9125147ee3c3783043c59ae3f288db2f5e3959",
             "file": "projects/ngx-ui-web/src/stories/layouts/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -70,7 +70,7 @@
             "selector": "numo-home",
             "styleUrls": [],
             "styles": [
-                "\n      .container {\n        display: flex;\n        grid-gap: 20px;\n        margin-top: 20px;\n      }\n      .menu {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        flex: 1;\n        max-width: 230px;\n        @media (max-width: var(--breakpoint)) {\n          display: none;\n        }\n      }\n      .dashboard {\n        flex: 1;\n      }\n      :host ::ng-deep .p-card .p-card-content {\n        padding: 5px;\n      } \n    "
+                "\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        "
             ],
             "templateUrl": [
                 "./home.template.html"
@@ -88,17 +88,17 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 51
+                    "line": 54
                 },
                 {
                     "name": "items",
-                    "defaultValue": "[{ label: \"UZDEVUMI\", menu: [...Menu] }]",
+                    "defaultValue": "[ { label: \"UZDEVUMI\", menu: [ ...Menu ] } ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 53
+                    "line": 56
                 },
                 {
                     "name": "title",
@@ -108,7 +108,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 55
                 }
             ],
             "methodsClass": [
@@ -125,7 +125,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 54,
+                    "line": 58,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -174,16 +174,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/menu/menu.model\"; \nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\n\n@Component({\n  selector: \"numo-home\",\n  standalone: true,\n  imports: [\n    RouterOutlet,\n    HeaderComponent,\n    DashboardComponent, \n    CardModule,\n    CommonModule,\n    LeftMenuComponent,\n  ],\n  templateUrl: \"./home.template.html\",\n  styles: [\n    `\n      .container {\n        display: flex;\n        grid-gap: 20px;\n        margin-top: 20px;\n      }\n      .menu {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        flex: 1;\n        max-width: 230px;\n        @media (max-width: var(--breakpoint)) {\n          display: none;\n        }\n      }\n      .dashboard {\n        flex: 1;\n      }\n      :host ::ng-deep .p-card .p-card-content {\n        padding: 5px;\n      } \n    `,\n  ],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n  isMenuVisible = false;\n  title = \"angular-latest\";\n  items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n  toggleMenu(isMenuVisible: boolean) {\n    this.isMenuVisible = isMenuVisible;\n  }\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\n\n@Component({\n    selector: \"numo-home\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./home.template.html\",\n    styles: [\n        `\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        `,\n    ],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    items = [ { label: \"UZDEVUMI\", menu: [ ...Menu ] } ];\n\n    toggleMenu(isMenuVisible: boolean) {\n        this.isMenuVisible = isMenuVisible;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      .container {\n        display: flex;\n        grid-gap: 20px;\n        margin-top: 20px;\n      }\n      .menu {\n        display: flex;\n        flex-direction: column;\n        justify-content: center;\n        align-items: center;\n        flex: 1;\n        max-width: 230px;\n        @media (max-width: var(--breakpoint)) {\n          display: none;\n        }\n      }\n      .dashboard {\n        flex: 1;\n      }\n      :host ::ng-deep .p-card .p-card-content {\n        padding: 5px;\n      } \n    \n",
+            "stylesData": "\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        \n",
             "extends": [],
-            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\n\n<div class=\"container\">\n  @if(isMenuVisible){\n  <div class=\"menu\">\n    @for(item of items; track $index){\n    <div class=\"flex flex-column gap-3 w-full\">\n      <p-card class=\"border-round-lg w-full\">\n        <p class=\"m-0\">\n          <span class=\"pi pi-check-circle\"></span> {{item.label}}\n        </p>\n      </p-card>\n      <numo-left-menu [items]=\"item.menu\"></numo-left-menu>\n    </div>\n    }\n  </div>\n  }\n  <div class=\"dashboard\">\n    <!-- <rotuer-outlet></router-outlet -->\n    <numo-dashboard ></numo-dashboard>\n  </div>\n</div>\n"
+            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\n\n<div class=\"container\">\n  @if (isMenuVisible) {\n      <div class=\"menu\">\n    @for (item of items; track $index) {\n        <div class=\"flex flex-column gap-3 w-full\">\n      <p-card class=\"border-round-lg w-full\">\n        <p class=\"m-0\">\n          <span class=\"pi pi-check-circle\"></span> {{ item.label }}\n        </p>\n      </p-card>\n      <numo-left-menu [items]=\"item.menu\"></numo-left-menu>\n    </div>\n    }\n  </div>\n  }\n    <div class=\"dashboard\">\n    <!-- <rotuer-outlet></router-outlet -->\n    <numo-dashboard></numo-dashboard>\n  </div>\n</div>\n"
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-782ee2b5b627961f96d029a84b9fd4293f63339a6c747ad7b87231a63adf19885af13c9982914b7caff55af58dc10a421bb0089314ed15742f865e980ecfae6a",
+            "id": "component-DashboardComponent-b3597fc77b4128b4d805a1375d9c857e91f6c54cde72f1d5a838a44b5868d5461bf52ab328c8e71c920e281638e9c0e5f867f07fa19a9672df2714a85426b642",
             "file": "projects/ngx-ui-web/src/stories/layouts/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -193,7 +193,7 @@
             "selector": "numo-dashboard",
             "styleUrls": [],
             "styles": [
-                "\n      .card {\n        background: #f4f4f4; \n        border-radius: 5px;\n        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); \n      }\n    "
+                "\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        "
             ],
             "templateUrl": [
                 "./dashboard.template.html"
@@ -228,16 +228,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\n\n@Component({\n  selector: \"numo-dashboard\",\n  standalone: true,\n  imports: [RouterOutlet],\n  templateUrl: \"./dashboard.template.html\",\n  styles: [\n    `\n      .card {\n        background: #f4f4f4; \n        border-radius: 5px;\n        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); \n      }\n    `,\n  ],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class DashboardComponent {\n  title = \"angular-latest\";\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\n\n@Component({\n    selector: \"numo-dashboard\",\n    standalone: true,\n    imports: [ RouterOutlet ],\n    templateUrl: \"./dashboard.template.html\",\n    styles: [\n        `\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        `,\n    ],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class DashboardComponent {\n    title = \"angular-latest\";\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n      .card {\n        background: #f4f4f4; \n        border-radius: 5px;\n        box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1); \n      }\n    \n",
+            "stylesData": "\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        \n",
             "extends": [],
-            "templateData": " <!-- create a html div class card that has dynamic width width -->\n<div   class=\"card flex bg-white p-4 justify-content-center border-round-lg\" >\n    Dashboard\n</div>"
+            "templateData": "<!-- create a html div class card that has dynamic width width -->\n<div class=\"card flex bg-white p-4 justify-content-center border-round-lg\">\n    Dashboard\n</div>\n"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-ffad7006f1610d5a5da4254f2d1b3f6421855e4b8f1d7e5cc3e2a691b893b96a59c2a8432d226444249db73ad48e1ead66cd7a167929103660893e302cd4120f",
+            "id": "component-HeaderComponent-dbc53bc9febb05dcb466a3d40195d7fa8e851f40fb0475ecc36ff9e842240c99bf99ed4d01f607647c553f97659d241d2b37af4fe1f70826bd1fd578d9a1dc7a",
             "file": "projects/ngx-ui-web/src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -296,7 +296,7 @@
                 },
                 {
                     "name": "items",
-                    "defaultValue": "[...Menu]",
+                    "defaultValue": "[ ...Menu ]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -425,16 +425,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n  Component,\n  CUSTOM_ELEMENTS_SCHEMA,\n  EventEmitter,\n  Input,\n  Output,\n  ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu, UserMenuItems } from \"../menu/menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\n\n@Component({\n  selector: \"numo-header\",\n  standalone: true,\n  imports: [\n    FormsModule,\n    CommonModule,\n    InputTextModule,\n    MenuModule,\n    OverlayPanelModule,\n    LeftMenuComponent,\n  ],\n  templateUrl: \"./header.template.html\",\n  styles: [],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class HeaderComponent {\n  isMenuVisible = false;\n  @Input() isStoryBook = false;\n  @ViewChild(\"menu\") menu: any;\n  @ViewChild(\"storyMenu\") storyMenu: any;\n  @Output() menuClicked = new EventEmitter(false);\n  items = [...Menu];\n  userMenuItems = UserMenuItems;\n  BreakPoint = 1024;\n\n  toggleMenu(event: Event) {\n    this.isMenuVisible = !this.isMenuVisible;\n    if (this.isStoryBook) {\n      this.storyMenu.toggle(event);\n      return;\n    }\n    if (window.innerWidth < this.BreakPoint) {\n      this.menu.toggle(event);\n      this.isMenuVisible = false;\n    }\n    this.menuClicked.emit(this.isMenuVisible);\n  }\n\n  closeMenu() {\n    this.isMenuVisible = false;\n  }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu, UserMenuItems } from \"../menu/menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @Output() menuClicked = new EventEmitter(false);\n    items = [ ...Menu ];\n    userMenuItems = UserMenuItems;\n    BreakPoint = 1024;\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"header flex justify-content-between items-center p-2 text-white\">\n  <div class=\"logo flex items-center font-bold text-2xl h-10\">\n    <div>\n      <iconify-icon\n        (click)=\"toggleMenu($event)\"\n        class=\"icon text-gray-800 cursor-pointer\"\n        icon=\"cil:hamburger-menu\"\n        #menuButton\n      ></iconify-icon>\n      <p-overlayPanel #menu>\n        <div class=\"flex flex-column gap-3\">\n          <numo-left-menu [items]=\"items\"></numo-left-menu>\n        </div>\n      </p-overlayPanel>\n      <p-overlayPanel #storyMenu>\n        <div class=\"flex flex-column gap-3\">\n          <numo-left-menu [items]=\"items\"></numo-left-menu>\n        </div>\n      </p-overlayPanel>\n    </div>\n    <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n  </div>\n  <div class=\"flex justify-center mx-5 relative\">\n    <div class=\"flex justify-center w-full max-w-[500px] relative\">\n      <iconify-icon\n        class=\"icon text-gray-800 absolute top-[15px] left-[12px]\"\n        style=\"top: 8px; left: 12px\"\n        icon=\"il:search\"\n      ></iconify-icon>\n      <input\n        type=\"text\"\n        style=\"text-indent: 35px\"\n        class=\"text-gray-800 p-0 pl-10\"\n        pInputText\n      />\n    </div>\n  </div>\n  <div>\n    <div class=\"relative inline-block\">\n      <span\n        class=\"flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between\"\n        (click)=\"userMenu.toggle($event)\"\n        ><iconify-icon\n          class=\"bell-icon text-gray-800\"\n          icon=\"il:bell\"\n        ></iconify-icon\n        >Username</span\n      >\n    </div>\n    <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\" />\n  </div>\n</div>\n"
+            "templateData": "<div class=\"header flex justify-content-between items-center p-2 text-white\">\n  <div class=\"logo flex items-center font-bold text-2xl h-10\">\n    <div>\n      <iconify-icon\n          (click)=\"toggleMenu($event)\"\n          class=\"icon text-gray-800 cursor-pointer\"\n          icon=\"cil:hamburger-menu\"\n          #menuButton\n      ></iconify-icon>\n      <p-overlayPanel #menu>\n        <div class=\"flex flex-column gap-3\">\n          <numo-left-menu [items]=\"items\"></numo-left-menu>\n        </div>\n      </p-overlayPanel>\n      <p-overlayPanel #storyMenu>\n        <div class=\"flex flex-column gap-3\">\n          <numo-left-menu [items]=\"items\"></numo-left-menu>\n        </div>\n      </p-overlayPanel>\n    </div>\n    <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n  </div>\n  <div class=\"flex justify-center mx-5 relative\">\n    <div class=\"flex justify-center w-full max-w-[500px] relative\">\n      <iconify-icon\n          class=\"icon text-gray-800 absolute top-[15px] left-[12px]\"\n          style=\"top: 8px; left: 12px\"\n          icon=\"il:search\"\n      ></iconify-icon>\n      <input\n          type=\"text\"\n          style=\"text-indent: 35px\"\n          class=\"text-gray-800 p-0 pl-10\"\n          pInputText\n      />\n    </div>\n  </div>\n  <div>\n    <div class=\"relative inline-block\">\n      <span\n          class=\"flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between\"\n          (click)=\"userMenu.toggle($event)\"\n      ><iconify-icon\n          class=\"bell-icon text-gray-800\"\n          icon=\"il:bell\"\n      ></iconify-icon\n      >Username</span\n      >\n    </div>\n    <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\" />\n  </div>\n</div>\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-7282b3afdab7765c6937c8d2abbf875ee5525988c8d7dd8b200b1b5ec237fe861073d82af4dc4e150b3b8640f3e59db0945c9e0c20c9921740c2195120800065",
+            "id": "component-IconComponent-693bfb596a7c04d516431afd9956c851e48e45762cfb72d8bc55b6e22dbfb66cde528f87826ebf78eb4ece285aa73fd780985edd3d6f0087a9f990d7014d49a6",
             "file": "projects/ngx-ui-web/src/stories/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -469,7 +469,7 @@
                 },
                 {
                     "name": "type",
-                    "defaultValue": "'primeng'",
+                    "defaultValue": "\"primeng\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 13,
@@ -489,16 +489,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\n\n@Component({\n  selector: \"numo-icon\",\n  templateUrl: \"./icon.template.html\",\n  standalone: true,\n  imports: [],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class IconComponent {\n  @Input() icon!: string;\n  @Input() type: 'iconify' | 'primeng' = 'primeng'\n  @Input() class: string = \"text-gray-800\";\n}\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\n\n@Component({\n    selector: \"numo-icon\",\n    templateUrl: \"./icon.template.html\",\n    standalone: true,\n    imports: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class IconComponent {\n    @Input() icon!: string;\n    @Input() type: \"iconify\" | \"primeng\" = \"primeng\";\n    @Input() class: string = \"text-gray-800\";\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if(type === 'iconify'){\n<iconify-icon icon=\"{{ icon }}\" [ngClass]=\"class\"></iconify-icon>\n}"
+            "templateData": "@if (type === 'iconify') {\n    <iconify-icon icon=\"{{ icon }}\" [ngClass]=\"class\"></iconify-icon>\n}\n"
         },
         {
             "name": "LeftMenuComponent",
-            "id": "component-LeftMenuComponent-1454e7ef8a5abf14fa4765e3524d036caa9f8cf92b00fed110685805bfcc15ef2f494bd2727d045cf4a778e5e700d677b342665573ad57253748ff3cb932ada7",
+            "id": "component-LeftMenuComponent-b3fe50f69f0778a5a1b293086eab93dbf432a50387040df2d20d087a11cc5ee7683ca7c29468b4443e6d426ae4f0bd0e6ce85fb00d450737a0654571c97c1b5f",
             "file": "projects/ngx-ui-web/src/stories/components/left-menu/left-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -558,12 +558,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\"; \nimport { PanelMenuModule } from \"primeng/panelmenu\";\n\n@Component({\n  selector: \"numo-left-menu\",\n  standalone: true,\n  imports: [FormsModule, CommonModule, PanelMenuModule],\n  templateUrl: \"./left-menu.component.html\",\n  styles: [],\n  schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class LeftMenuComponent {\n  @Input() items = [];\n  @Input() className = \"\";\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\n\n@Component({\n    selector: \"numo-left-menu\",\n    standalone: true,\n    imports: [ FormsModule, CommonModule, PanelMenuModule ],\n    templateUrl: \"./left-menu.component.html\",\n    styles: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class LeftMenuComponent {\n    @Input() items = [];\n    @Input() className = \"\";\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-panelMenu [model]=\"items\"  [styleClass]=\"className\">\n  <ng-template pTemplate=\"item\" let-item>\n    <a pRipple class=\"flex align-items-center px-3 py-2 cursor-pointer\">\n      <i [class]=\"item.icon\"></i>\n      <span class=\"ml-2\">\n        {{ item.label }}\n      </span>\n      <span\n        *ngIf=\"item.shortcut\"\n        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n      >\n        {{ item.shortcut }}\n      </span>\n    </a>\n  </ng-template>\n</p-panelMenu>\n"
+            "templateData": "<p-panelMenu [model]=\"items\" [styleClass]=\"className\">\n  <ng-template pTemplate=\"item\" let-item>\n    <a pRipple class=\"flex align-items-center px-3 py-2 cursor-pointer\">\n      <i [class]=\"item.icon\"></i>\n      <span class=\"ml-2\">\n        {{ item.label }}\n      </span>\n      <span\n          *ngIf=\"item.shortcut\"\n          class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n      >\n        {{ item.shortcut }}\n      </span>\n    </a>\n  </ng-template>\n</p-panelMenu>\n"
         },
         {
             "name": "NumoTesterComponent",
@@ -612,7 +612,7 @@
         },
         {
             "name": "ToastComponent",
-            "id": "component-ToastComponent-e1b00d8f85d7b89ae5ea2b36fa3186b17ff603328bb187c7c7ebadb3e077c1a61e322f45bad86afdde826b7c20cf2e463fafb95d9bf272ed4734e18eb4f180e5",
+            "id": "component-ToastComponent-f7f465715b303da3b5464745f75d7d0236b0ba31c9d2ab995d1e5dc2fad67cbeb67bac3e4f0ae2e9ac8e0431e0bfb58e4e1585f03bcaf23e050a3b3a94decc65",
             "file": "projects/ngx-ui-web/src/stories/components/toast/toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -641,7 +641,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 20,
+                    "line": 21,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -676,7 +676,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from '@angular/core';\nimport { FormsModule, ReactiveFormsModule } from '@angular/forms';\nimport { BrowserAnimationsModule } from '@angular/platform-browser/animations';\nimport { MessageService } from 'primeng/api';\nimport { ButtonModule } from 'primeng/button';\nimport { ToastModule } from 'primeng/toast';\n\n@Component({\n    selector: 'p-toast-wrapper',\n    imports: [ToastModule, FormsModule, ReactiveFormsModule, ButtonModule, BrowserAnimationsModule],\n    template: `\n    <p-toast></p-toast>\n    <p-button (onClick)=\"show()\" label=\"Show\"></p-button>\n  `,\n    providers: [MessageService]\n})\nexport class ToastComponent {\n    constructor(private messageService: MessageService) { }\n\n    show() {\n        this.messageService.add({ severity: 'success', summary: 'Success', detail: 'Message Content' });\n    }\n}",
+            "sourceCode": "import { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-toast-wrapper\",\n    imports: [ ToastModule, FormsModule, ReactiveFormsModule, ButtonModule, BrowserAnimationsModule ],\n    template: `\n    <p-toast></p-toast>\n    <p-button (onClick)=\"show()\" label=\"Show\"></p-button>\n  `,\n    providers: [ MessageService ]\n})\nexport class ToastComponent {\n    constructor(private messageService: MessageService) {\n    }\n\n    show() {\n        this.messageService.add({ severity: \"success\", summary: \"Success\", detail: \"Message Content\" });\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -720,7 +720,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  {\n    label: \"Mans Numo\",\n    expanded: false,\n    items: [],\n  }, \n  {\n    label: \"Vadība\",\n    expanded: false,\n    items: [\n      {\n        label: \"Darbvirsma\",\n        items: [],\n        icon: \"pi pi-objects-column\",\n        route: \"\",\n      },\n      {\n        label: \"Virsgrāmata\",\n        items: [],\n        icon: \"pi pi-book\",\n        route: \"\",\n      },\n    ],\n  },\n  {\n    label: \" Pro Numo\",\n    expanded: true,\n    items: [\n      {\n        label: \"Darbvirsma\",\n        items: [],\n        icon: \"pi pi-objects-column\",\n        route: \"\",\n      },\n      {\n        label: \"Virsgrāmata\",\n        items: [],\n        icon: \"pi pi-book\",\n        route: \"\",\n      },\n      {\n        label: \"Kase\",\n        items: [],\n        icon: \"pi pi-money-bill\",\n        route: \"\",\n      },\n      {\n        label: \"Banka\",\n        items: [],\n        icon: \"pi pi-building-columns\",\n        route: \"\",\n      },\n      {\n        label: \"Noliktava\",\n        icon: \"pi pi-warehouse\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"LoĢistika\",\n        icon: \"pi pi-directions\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Kases sistēmas\",\n        icon: \"pi pi-briefcase\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Realizācija\",\n        icon: \"pi pi-cloud-upload\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Debitoru novērtēšana\",\n        icon: \"pi pi-wallet\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Pamatlīdzekļi\",\n        icon: \"pi pi-ticket\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"PL un inventāra inventarizācija\",\n        icon: \"pi pi-warehouse\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Algas\",\n        icon: \"pi pi-credit-card\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Darba laika plānošana\",\n        icon: \"pi pi-calendar\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Avansa norēkini\",\n        icon: \"pi pi-receipt\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Komandējumi\",\n        icon: \"pi pi-directions-alt\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Nākamo periodu ieņēmumi/izdevumi\",\n        icon: \"pi pi-money-bill\",\n        items: [],\n      },\n      {\n        label: \"Vadības grāmatvedība\",\n        icon: \"pi pi-briefcase\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Līgumi\",\n        icon: \"pi pi-chart-bar\",\n        items: [],\n        route: \"\",\n      },\n    ],\n  },\n]"
+                "defaultValue": "[\n    {\n        label: \"Mans Numo\",\n        expanded: false,\n        items: [],\n    },\n    {\n        label: \"Vadība\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \" Pro Numo\",\n        expanded: true,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n            {\n                label: \"Kase\",\n                items: [],\n                icon: \"pi pi-money-bill\",\n                route: \"\",\n            },\n            {\n                label: \"Banka\",\n                items: [],\n                icon: \"pi pi-building-columns\",\n                route: \"\",\n            },\n            {\n                label: \"Noliktava\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"LoĢistika\",\n                icon: \"pi pi-directions\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Kases sistēmas\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Realizācija\",\n                icon: \"pi pi-cloud-upload\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Debitoru novērtēšana\",\n                icon: \"pi pi-wallet\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Pamatlīdzekļi\",\n                icon: \"pi pi-ticket\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"PL un inventāra inventarizācija\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Algas\",\n                icon: \"pi pi-credit-card\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Darba laika plānošana\",\n                icon: \"pi pi-calendar\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Avansa norēkini\",\n                icon: \"pi pi-receipt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Komandējumi\",\n                icon: \"pi pi-directions-alt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\n                icon: \"pi pi-money-bill\",\n                items: [],\n            },\n            {\n                label: \"Vadības grāmatvedība\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Līgumi\",\n                icon: \"pi pi-chart-bar\",\n                items: [],\n                route: \"\",\n            },\n        ],\n    },\n]"
             },
             {
                 "name": "UserMenuItems",
@@ -730,7 +730,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n  {\n    label: \"Profile\",\n    route: \"\",\n  },\n  {\n    label: \"Settings\",\n    route: \"\",\n  },\n  {\n    label: \"Logout\",\n    route: \"\",\n  },\n]"
+                "defaultValue": "[\n    {\n        label: \"Profile\",\n        route: \"\",\n    },\n    {\n        label: \"Settings\",\n        route: \"\",\n    },\n    {\n        label: \"Logout\",\n        route: \"\",\n    },\n]"
             }
         ],
         "functions": [],
@@ -746,7 +746,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  {\n    label: \"Mans Numo\",\n    expanded: false,\n    items: [],\n  }, \n  {\n    label: \"Vadība\",\n    expanded: false,\n    items: [\n      {\n        label: \"Darbvirsma\",\n        items: [],\n        icon: \"pi pi-objects-column\",\n        route: \"\",\n      },\n      {\n        label: \"Virsgrāmata\",\n        items: [],\n        icon: \"pi pi-book\",\n        route: \"\",\n      },\n    ],\n  },\n  {\n    label: \" Pro Numo\",\n    expanded: true,\n    items: [\n      {\n        label: \"Darbvirsma\",\n        items: [],\n        icon: \"pi pi-objects-column\",\n        route: \"\",\n      },\n      {\n        label: \"Virsgrāmata\",\n        items: [],\n        icon: \"pi pi-book\",\n        route: \"\",\n      },\n      {\n        label: \"Kase\",\n        items: [],\n        icon: \"pi pi-money-bill\",\n        route: \"\",\n      },\n      {\n        label: \"Banka\",\n        items: [],\n        icon: \"pi pi-building-columns\",\n        route: \"\",\n      },\n      {\n        label: \"Noliktava\",\n        icon: \"pi pi-warehouse\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"LoĢistika\",\n        icon: \"pi pi-directions\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Kases sistēmas\",\n        icon: \"pi pi-briefcase\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Realizācija\",\n        icon: \"pi pi-cloud-upload\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Debitoru novērtēšana\",\n        icon: \"pi pi-wallet\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Pamatlīdzekļi\",\n        icon: \"pi pi-ticket\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"PL un inventāra inventarizācija\",\n        icon: \"pi pi-warehouse\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Algas\",\n        icon: \"pi pi-credit-card\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Darba laika plānošana\",\n        icon: \"pi pi-calendar\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Avansa norēkini\",\n        icon: \"pi pi-receipt\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Komandējumi\",\n        icon: \"pi pi-directions-alt\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Nākamo periodu ieņēmumi/izdevumi\",\n        icon: \"pi pi-money-bill\",\n        items: [],\n      },\n      {\n        label: \"Vadības grāmatvedība\",\n        icon: \"pi pi-briefcase\",\n        items: [],\n        route: \"\",\n      },\n      {\n        label: \"Līgumi\",\n        icon: \"pi pi-chart-bar\",\n        items: [],\n        route: \"\",\n      },\n    ],\n  },\n]"
+                    "defaultValue": "[\n    {\n        label: \"Mans Numo\",\n        expanded: false,\n        items: [],\n    },\n    {\n        label: \"Vadība\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \" Pro Numo\",\n        expanded: true,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n            {\n                label: \"Kase\",\n                items: [],\n                icon: \"pi pi-money-bill\",\n                route: \"\",\n            },\n            {\n                label: \"Banka\",\n                items: [],\n                icon: \"pi pi-building-columns\",\n                route: \"\",\n            },\n            {\n                label: \"Noliktava\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"LoĢistika\",\n                icon: \"pi pi-directions\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Kases sistēmas\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Realizācija\",\n                icon: \"pi pi-cloud-upload\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Debitoru novērtēšana\",\n                icon: \"pi pi-wallet\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Pamatlīdzekļi\",\n                icon: \"pi pi-ticket\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"PL un inventāra inventarizācija\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Algas\",\n                icon: \"pi pi-credit-card\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Darba laika plānošana\",\n                icon: \"pi pi-calendar\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Avansa norēkini\",\n                icon: \"pi pi-receipt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Komandējumi\",\n                icon: \"pi pi-directions-alt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\n                icon: \"pi pi-money-bill\",\n                items: [],\n            },\n            {\n                label: \"Vadības grāmatvedība\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Līgumi\",\n                icon: \"pi pi-chart-bar\",\n                items: [],\n                route: \"\",\n            },\n        ],\n    },\n]"
                 },
                 {
                     "name": "UserMenuItems",
@@ -756,7 +756,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n  {\n    label: \"Profile\",\n    route: \"\",\n  },\n  {\n    label: \"Settings\",\n    route: \"\",\n  },\n  {\n    label: \"Logout\",\n    route: \"\",\n  },\n]"
+                    "defaultValue": "[\n    {\n        label: \"Profile\",\n        route: \"\",\n    },\n    {\n        label: \"Settings\",\n        route: \"\",\n    },\n    {\n        label: \"Logout\",\n        route: \"\",\n    },\n]"
                 }
             ]
         },

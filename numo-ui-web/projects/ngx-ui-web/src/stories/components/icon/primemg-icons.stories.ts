@@ -1,11 +1,12 @@
 import { argsToTemplate, Meta, StoryObj } from "@storybook/angular";
 import { IconComponent } from "./icon.component";
 import description from "./primeng-icon.description.md";
+
 export default {
     title: "Components/Icons/Primeng",
     component: IconComponent,
     excludeStories: /.*Data$/,
-    tags: ["autodocs"],
+    tags: [ "autodocs" ],
     render: (args) => ({
         props: {
             ...args,
@@ -20,7 +21,6 @@ export default {
         },
     },
 } as Meta<IconComponent>;
-
 
 type Story = StoryObj<IconComponent>;
 export const CheckIcon: Story = {
