@@ -64,7 +64,10 @@
                             "-d",
                             "projects/ngx-ui-web"
                         ],
-                        "outputDir": "storybook-static"
+                        "outputDir": "storybook-static",
+                        "styles": [
+                            "projects/ngx-ui-web/src/styles.scss"
+                        ]
                     }
                 }
             }
