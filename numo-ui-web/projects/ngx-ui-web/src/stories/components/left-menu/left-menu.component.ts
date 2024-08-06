@@ -12,6 +12,6 @@ import { PanelMenuModule } from "primeng/panelmenu";
     schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
 })
 export class LeftMenuComponent {
-    @Input() items = [];
+    @Input() items:any = [];
     @Input() className = "";
 }
