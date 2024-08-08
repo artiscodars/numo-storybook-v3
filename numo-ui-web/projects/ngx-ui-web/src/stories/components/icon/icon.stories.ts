@@ -1,18 +1,11 @@
-import { argsToTemplate, Meta, StoryObj } from "@storybook/angular";
+import { Meta, StoryObj } from "@storybook/angular";
 import { IconComponent } from "./icon.component";
 import description from "./icon.description.md";
 
 export default {
-    title: "Components/Icons/Iconify",
+    title: "Components/Icons",
     component: IconComponent,
-    excludeStories: /.*Data$/,
-    tags: [ "autodocs" ],
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<numo-icon ${argsToTemplate(args)}></numo-icon>`,
-    }),
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -24,28 +17,72 @@ export default {
 
 type Story = StoryObj<IconComponent>;
 
-export const Default: Story = {
+export const IconifyBank: Story = {
     args: {
         type: "iconify",
         icon: "cil:bank",
         class: "text-gray-800 text-2xl",
     },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<numo-icon [icon]="icon" [type]="type" [class]="class"></numo-icon>`,
+    }),
 };
 
-export const SearchIcon: Story = {
+export const IconifySearch: Story = {
     args: {
         type: "iconify",
-        icon: "il:search",
+        icon: "cil:search",
         class: "text-gray-800 text-2xl",
     },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<numo-icon [icon]="icon" [type]="type" [class]="class"></numo-icon>`,
+    }),
 };
 
-export const BellIcon: Story = {
+export const IconifyBell: Story = {
     args: {
         type: "iconify",
-        icon: "il:bell",
+        icon: "cil:bell",
         class: "text-gray-800 text-2xl",
     },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<numo-icon [icon]="icon" [type]="type" [class]="class"></numo-icon>`,
+    }),
 };
 
+export const PrimeNGCheck: Story = {
+    args: {
+        type: "primeng",
+        icon: "pi pi-check",
+        class: "text-gray-800 text-2xl",
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<numo-icon [icon]="icon" [type]="type" [class]="class"></numo-icon>`,
+    }),
+};
 
+export const PrimeNGSearch: Story = {
+    args: {
+        type: "primeng",
+        icon: "pi pi-search",
+        class: "text-gray-800 text-2xl",
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<numo-icon [icon]="icon" [type]="type" [class]="class"></numo-icon>`,
+    }),
+};

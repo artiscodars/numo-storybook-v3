@@ -1,12 +1,11 @@
 import { Component, Input } from "@angular/core";
-import { CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
+import { CommonModule } from "@angular/common";
 
 @Component({
     selector: "numo-icon",
     templateUrl: "./icon.template.html",
     standalone: true,
-    imports: [],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    imports: [CommonModule],
 })
 export class IconComponent {
     @Input() icon!: string;

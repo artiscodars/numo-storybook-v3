@@ -1,5 +1,5 @@
 import { Meta, StoryObj, moduleMetadata } from "@storybook/angular";
-import { Menu } from "./menu.model";
+// import { Menu } from "./menu.model";
 import { CommonModule } from "@angular/common";
 import { FormsModule } from "@angular/forms";
 import description from "./menu.description.md";
@@ -12,6 +12,7 @@ import { AvatarModule } from "primeng/avatar";
 import { ToastModule } from "primeng/toast";
 import { RouterTestingModule } from "@angular/router/testing";
 import { MessageService } from "primeng/api";
+import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
     title: "Components/Menu",
@@ -27,13 +28,14 @@ const meta: Meta = {
                 RippleModule,
                 AvatarModule,
                 ToastModule,
-                RouterTestingModule
+                RouterTestingModule,
+                IconComponent,
             ],
-            providers: [ MessageService ],
+            providers: [MessageService],
         }),
     ],
     excludeStories: /.*Data$/,
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -49,16 +51,16 @@ type Story = StoryObj;
 export const Basic: Story = {
     args: {
         items: [
-            { label: "New", icon: "pi pi-plus" },
-            { label: "Search", icon: "pi pi-search" }
+            { label: "New", type: "primeng", icon: "pi pi-plus" },
+            { label: "Search", type: "primeng", icon: "pi pi-search" },
         ],
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-menu [model]="items" />`
-    })
+        template: `<p-menu [model]="items" />`,
+    }),
 };
 export const Group: Story = {
     args: {
@@ -68,35 +70,39 @@ export const Group: Story = {
                 items: [
                     {
                         label: "New",
-                        icon: "pi pi-plus"
+                        type: "iconify",
+                        icon: "cil:plus",
                     },
                     {
                         label: "Search",
-                        icon: "pi pi-search"
-                    }
-                ]
+                        type: "iconify",
+                        icon: "cil:search",
+                    },
+                ],
             },
             {
                 label: "Profile",
                 items: [
                     {
                         label: "Settings",
-                        icon: "pi pi-cog"
+                        type: "primeng",
+                        icon: "pi pi-cog",
                     },
                     {
                         label: "Logout",
-                        icon: "pi pi-sign-out"
-                    }
-                ]
-            }
-        ]
+                        type: "primeng",
+                        icon: "pi pi-sign-out",
+                    },
+                ],
+            },
+        ],
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-menu [model]="items" />`
-    })
+        template: `<p-menu [model]="items" />`,
+    }),
 };
 export const Router: Story = {
     args: {
@@ -106,17 +112,19 @@ export const Router: Story = {
                 items: [
                     {
                         label: "Router Link",
+                        type: "primeng",
                         icon: "pi pi-palette",
-                        route: "/"
+                        route: "/",
                     },
                     {
                         label: "External",
+                        type: "primeng",
                         icon: "pi pi-home",
-                        url: "https://angular.io//"
-                    }
-                ]
-            }
-        ]
+                        url: "https://angular.io//",
+                    },
+                ],
+            },
+        ],
     },
     render: (args) => ({
         props: {
@@ -126,19 +134,19 @@ export const Router: Story = {
     <ng-template pTemplate="item" let-item>
         <ng-container *ngIf="item.route; else elseBlock">
             <a [routerLink]="item.route" class="p-menuitem-link">
-                <span [class]="item.icon"></span>
+                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
                 <span class="ml-2">{{ item.label }}</span>
             </a>
         </ng-container>
         <ng-template #elseBlock>
             <a [href]="item.url" class="p-menuitem-link">
-                <span [class]="item.icon"></span>
+                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
                 <span class="ml-2">{{ item.label }}</span>
             </a>
         </ng-template>
     </ng-template>
-</p-menu>`
-    })
+</p-menu>`,
+    }),
 };
 
 export const Popup: Story = {
@@ -149,15 +157,15 @@ export const Popup: Story = {
                 items: [
                     {
                         label: "Refresh",
-                        icon: "pi pi-refresh"
+                        icon: "pi pi-refresh",
                     },
                     {
                         label: "Export",
-                        icon: "pi pi-upload"
-                    }
-                ]
-            }
-        ]
+                        icon: "pi pi-upload",
+                    },
+                ],
+            },
+        ],
     },
     render: (args) => ({
         props: {
@@ -165,14 +173,14 @@ export const Popup: Story = {
         },
         template: `<p-toast />
 <p-menu #menu [model]="items" [popup]="true" />
-<p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v"/>`
-    })
+<p-button (onClick)="menu.toggle($event)" icon="pi pi-ellipsis-v"/>`,
+    }),
 };
 export const Template: Story = {
     args: {
         items: [
             {
-                separator: true
+                separator: true,
             },
             {
                 label: "Documents",
@@ -180,14 +188,14 @@ export const Template: Story = {
                     {
                         label: "New",
                         icon: "pi pi-plus",
-                        shortcut: "⌘+N"
+                        shortcut: "⌘+N",
                     },
                     {
                         label: "Search",
                         icon: "pi pi-search",
-                        shortcut: "⌘+S"
-                    }
-                ]
+                        shortcut: "⌘+S",
+                    },
+                ],
             },
             {
                 label: "Profile",
@@ -195,24 +203,24 @@ export const Template: Story = {
                     {
                         label: "Settings",
                         icon: "pi pi-cog",
-                        shortcut: "⌘+O"
+                        shortcut: "⌘+O",
                     },
                     {
                         label: "Messages",
                         icon: "pi pi-inbox",
-                        badge: "2"
+                        badge: "2",
                     },
                     {
                         label: "Logout",
                         icon: "pi pi-sign-out",
-                        shortcut: "⌘+Q"
-                    }
-                ]
+                        shortcut: "⌘+Q",
+                    },
+                ],
             },
             {
-                separator: true
-            }
-        ]
+                separator: true,
+            },
+        ],
     },
     render: (args) => ({
         props: {
@@ -277,6 +285,6 @@ export const Template: Story = {
             </span>
         </button>
     </ng-template>
-</p-menu>`
-    })
+</p-menu>`,
+    }),
 };

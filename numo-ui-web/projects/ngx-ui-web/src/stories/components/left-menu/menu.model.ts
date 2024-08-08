@@ -2,7 +2,15 @@ export const Menu = [
     {
         label: "Mans Numo",
         expanded: false,
-        items: [],
+        items: [
+            {
+                label: "Darbvirsma",
+                items: [],
+                type: "iconify",
+                icon: "ic:round-dashboard",
+                route: "",
+            },
+        ],
     },
     {
         label: "Vadība",
@@ -11,7 +19,8 @@ export const Menu = [
             {
                 label: "Darbvirsma",
                 items: [],
-                icon: "pi pi-objects-column",
+                type: "iconify",
+                icon: "ic:round-dashboard",
                 route: "",
             },
             {
@@ -29,7 +38,8 @@ export const Menu = [
             {
                 label: "Darbvirsma",
                 items: [],
-                icon: "pi pi-objects-column",
+                type: "iconify",
+                icon: "ic:round-dashboard",
                 route: "",
             },
             {

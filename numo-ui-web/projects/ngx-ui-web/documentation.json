@@ -434,7 +434,7 @@
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-693bfb596a7c04d516431afd9956c851e48e45762cfb72d8bc55b6e22dbfb66cde528f87826ebf78eb4ece285aa73fd780985edd3d6f0087a9f990d7014d49a6",
+            "id": "component-IconComponent-c46df9c4f169f0f31f2e93fc1ddae66c74567bbd2e56792d54b639f09dc750d15aab8c1ea80b73a15dbbeb450dd8d16b4cadf1843c27273261a068a410a372bc",
             "file": "projects/ngx-ui-web/src/stories/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -455,7 +455,7 @@
                     "defaultValue": "\"text-gray-800\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 14,
+                    "line": 13,
                     "type": "string",
                     "decorators": []
                 },
@@ -463,7 +463,7 @@
                     "name": "icon",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 12,
+                    "line": 11,
                     "type": "string",
                     "decorators": []
                 },
@@ -472,7 +472,7 @@
                     "defaultValue": "\"primeng\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 13,
+                    "line": 12,
                     "type": "\"iconify\" | \"primeng\"",
                     "decorators": []
                 }
@@ -485,16 +485,21 @@
             "hostBindings": [],
             "hostListeners": [],
             "standalone": true,
-            "imports": [],
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\n\n@Component({\n    selector: \"numo-icon\",\n    templateUrl: \"./icon.template.html\",\n    standalone: true,\n    imports: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class IconComponent {\n    @Input() icon!: string;\n    @Input() type: \"iconify\" | \"primeng\" = \"primeng\";\n    @Input() class: string = \"text-gray-800\";\n}\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\n@Component({\n    selector: \"numo-icon\",\n    templateUrl: \"./icon.template.html\",\n    standalone: true,\n    imports: [CommonModule],\n})\nexport class IconComponent {\n    @Input() icon!: string;\n    @Input() type: \"iconify\" | \"primeng\" = \"primeng\";\n    @Input() class: string = \"text-gray-800\";\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "@if (type === 'iconify') {\n    <iconify-icon icon=\"{{ icon }}\" [ngClass]=\"class\"></iconify-icon>\n}\n"
+            "templateData": "<span\n    *ngIf=\"type === 'primeng'\"\n    class=\"pi\"\n    [ngClass]=\"icon\"\n    [class]=\"class\"\n></span>\n<span\n    *ngIf=\"type === 'iconify'\"\n    class=\"iconify\"\n    [attr.data-icon]=\"icon\"\n    [class]=\"class\"\n></span>\n"
         },
         {
             "name": "LeftMenuComponent",

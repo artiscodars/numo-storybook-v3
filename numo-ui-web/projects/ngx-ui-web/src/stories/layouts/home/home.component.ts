@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "../../components/header/header.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
-import { Menu } from "../../components/menu/menu.model";
+import { Menu } from "../../components/left-menu/menu.model";
 import { CardModule } from "primeng/card";
 import { CommonModule } from "@angular/common";
 import { LeftMenuComponent } from "../../components/left-menu/left-menu.component";
@@ -48,12 +48,12 @@ import { LeftMenuComponent } from "../../components/left-menu/left-menu.componen
             }
         `,
     ],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class AppComponent {
     isMenuVisible = false;
     title = "angular-latest";
-    items = [ { label: "UZDEVUMI", menu: [ ...Menu ] } ];
+    items = [{ label: "UZDEVUMI", menu: [...Menu] }];
 
     toggleMenu(isMenuVisible: boolean) {
         this.isMenuVisible = isMenuVisible;

@@ -10,7 +10,7 @@ import {
 import { FormsModule } from "@angular/forms";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
-import { Menu, UserMenuItems } from "../menu/menu.model";
+import { Menu, UserMenuItems } from "../left-menu/menu.model";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { LeftMenuComponent } from "../left-menu/left-menu.component";
 
@@ -27,7 +27,7 @@ import { LeftMenuComponent } from "../left-menu/left-menu.component";
     ],
     templateUrl: "./header.template.html",
     styles: [],
-    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class HeaderComponent {
     isMenuVisible = false;
@@ -35,7 +35,7 @@ export class HeaderComponent {
     @ViewChild("menu") menu: any;
     @ViewChild("storyMenu") storyMenu: any;
     @Output() menuClicked = new EventEmitter(false);
-    items = [ ...Menu ];
+    items = [...Menu];
     userMenuItems = UserMenuItems;
     BreakPoint = 1024;
 

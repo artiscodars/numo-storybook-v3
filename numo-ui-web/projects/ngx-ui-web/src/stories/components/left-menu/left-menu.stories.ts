@@ -1,18 +1,23 @@
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import description from "./left-menu.description.md";
 import { LeftMenuComponent } from "./left-menu.component";
-import { Menu } from "../menu/menu.model";
+import { Menu } from "./menu.model";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
     title: "Components/LeftMenu",
     decorators: [
         moduleMetadata({
-            imports: [ LeftMenuComponent, BrowserAnimationsModule ],
+            imports: [
+                LeftMenuComponent,
+                BrowserAnimationsModule,
+                IconComponent,
+            ],
         }),
     ],
     excludeStories: /.*Data$/,
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -27,9 +32,7 @@ type Story = StoryObj;
 
 export const Basic: Story = {
     args: {
-        items: [
-            ...Menu
-        ],
+        items: [...Menu],
         className: "w-25rem",
     },
     render: (args) => ({

@@ -29,4 +29,10 @@ const preview: Preview = {
     },
 };
 
+// Dynamically load the Iconify script
+const script = document.createElement("script");
+script.src = "https://code.iconify.design/2/2.0.3/iconify.min.js";
+script.async = true;
+document.head.appendChild(script);
+
 export default preview;
