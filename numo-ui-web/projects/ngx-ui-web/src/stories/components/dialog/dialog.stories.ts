@@ -1,6 +1,5 @@
 import type { Meta, StoryObj } from "@storybook/angular";
 import { moduleMetadata } from "@storybook/angular";
-import { AccordionModule } from "primeng/accordion";
 import description from "./dialog.description.md"; // Import the markdown file
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
