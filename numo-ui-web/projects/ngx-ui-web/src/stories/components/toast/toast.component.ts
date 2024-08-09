@@ -7,18 +7,28 @@ import { ToastModule } from "primeng/toast";
 
 @Component({
     selector: "p-toast-wrapper",
-    imports: [ ToastModule, FormsModule, ReactiveFormsModule, ButtonModule, BrowserAnimationsModule ],
+    imports: [
+        ToastModule,
+        FormsModule,
+        ReactiveFormsModule,
+        ButtonModule,
+        BrowserAnimationsModule,
+    ],
     template: `
-    <p-toast></p-toast>
-    <p-button (onClick)="show()" label="Show"></p-button>
-  `,
-    providers: [ MessageService ]
+        <p-toast></p-toast>
+        <p-button (onClick)="show()" label="Show"></p-button>
+    `,
+    providers: [MessageService],
+    standalone: true,
 })
 export class ToastComponent {
-    constructor(private messageService: MessageService) {
-    }
+    constructor(private messageService: MessageService) {}
 
     show() {
-        this.messageService.add({ severity: "success", summary: "Success", detail: "Message Content" });
+        this.messageService.add({
+            severity: "success",
+            summary: "Success",
+            detail: "Message Content",
+        });
     }
 }
