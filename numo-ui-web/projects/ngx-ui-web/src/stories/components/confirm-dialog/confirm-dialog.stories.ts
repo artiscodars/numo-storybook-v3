@@ -3,7 +3,8 @@ import { moduleMetadata } from "@storybook/angular";
 import description from "./confirm-dialog.description.md"; // Import the markdown file
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
-import { ButtonModule } from "primeng/button"; 
+import { ButtonModule } from "primeng/button";
+import { InputTextModule } from "primeng/inputtext";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
 import { ToastModule } from "primeng/toast";
 import { ConfirmationService, MessageService } from "primeng/api";
@@ -15,7 +16,8 @@ const meta: Meta = {
     decorators: [
         moduleMetadata({
             imports: [
-                ConfirmDialogModule, 
+                ConfirmDialogModule,
+                InputTextModule,
                 BrowserAnimationsModule,
                 FormsModule,
                 ReactiveFormsModule,
