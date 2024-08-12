@@ -3,12 +3,12 @@
     "interfaces": [
         {
             "name": "User",
-            "id": "interface-User-5d353b8c1d225e09f14cb588106aea8057b34b050c75354fa9039782cec86bb235c040a5681e1ccc2d9cd6b27bf3ff534657d9fb26f88fec737b061184ac3489",
+            "id": "interface-User-5427a033b24845d07012a0d838d85e252a3a7e2b169c291a45d028727297701717b9278aba6c5dc23a055ccaa221a6459f361865c69c6cb6b5d7c4ebfa62c303",
             "file": "projects/ngx-ui-web/src/stories/user.ts",
             "deprecated": false,
             "deprecationMessage": "",
             "type": "interface",
-            "sourceCode": "export interface User {\n    name: string;\n}\n",
+            "sourceCode": "export interface User {\r\n    name: string;\r\n}\r\n",
             "properties": [
                 {
                     "name": "name",
@@ -29,7 +29,7 @@
     "injectables": [
         {
             "name": "TesterService",
-            "id": "injectable-TesterService-c6253e433e6a3dd228e0902725bdf7363983c63e5501d209779b83aab2caee6041f4288201cd10797213295e5e688c56ef2131b4c50e4d808f9a7b439d715ce5",
+            "id": "injectable-TesterService-1659bf4331862e3b1b9f9be14abd94913c8033bc64efadc8d54ca32d2e29cfa0637bca9ce2ad70aebae15582048cb3b5976658cb492b27d530e1906f9aceaab3",
             "file": "projects/ngx-ui-web/src/lib/tester.service.ts",
             "properties": [],
             "methods": [
@@ -48,7 +48,7 @@
             "deprecationMessage": "",
             "description": "",
             "rawdescription": "\n",
-            "sourceCode": "import { Injectable } from \"@angular/core\";\n\n@Injectable({\n    providedIn: \"root\",\n})\nexport class TesterService {\n    tellMeSomething(): string {\n        return \"Something\";\n    }\n}\n",
+            "sourceCode": "import { Injectable } from \"@angular/core\";\r\n\r\n@Injectable({\r\n    providedIn: \"root\",\r\n})\r\nexport class TesterService {\r\n    tellMeSomething(): string {\r\n        return \"Something\";\r\n    }\r\n}\r\n",
             "extends": [],
             "type": "injectable"
         }
@@ -60,7 +60,7 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-57d8189c3be571e4e5a09c82598a3cc19975ed193d6a0b0c123845bb5189dccca43a923ae364febb1e6333ca5b9125147ee3c3783043c59ae3f288db2f5e3959",
+            "id": "component-AppComponent-9bff61f732245d1519ea8ddd04137347814db13d285e9fe2304794d4f96f56aba9b77c4569965ad4ce8f2c121d0076ca4b98d946971830cc3f8caf142c7cef2d",
             "file": "projects/ngx-ui-web/src/stories/layouts/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -92,7 +92,7 @@
                 },
                 {
                     "name": "items",
-                    "defaultValue": "[ { label: \"UZDEVUMI\", menu: [ ...Menu ] } ]",
+                    "defaultValue": "[{ label: \"UZDEVUMI\", menu: [...Menu] }]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -174,16 +174,174 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\n\n@Component({\n    selector: \"numo-home\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./home.template.html\",\n    styles: [\n        `\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        `,\n    ],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    items = [ { label: \"UZDEVUMI\", menu: [ ...Menu ] } ];\n\n    toggleMenu(isMenuVisible: boolean) {\n        this.isMenuVisible = isMenuVisible;\n    }\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\r\nimport { RouterOutlet } from \"@angular/router\";\r\nimport { HeaderComponent } from \"../../components/header/header.component\";\r\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\r\nimport { Menu } from \"../../components/left-menu/menu.model\";\r\nimport { CardModule } from \"primeng/card\";\r\nimport { CommonModule } from \"@angular/common\";\r\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\r\n\r\n@Component({\r\n    selector: \"numo-home\",\r\n    standalone: true,\r\n    imports: [\r\n        RouterOutlet,\r\n        HeaderComponent,\r\n        DashboardComponent,\r\n        CardModule,\r\n        CommonModule,\r\n        LeftMenuComponent,\r\n    ],\r\n    templateUrl: \"./home.template.html\",\r\n    styles: [\r\n        `\r\n            .container {\r\n                display: flex;\r\n                grid-gap: 20px;\r\n                margin-top: 20px;\r\n            }\r\n\r\n            .menu {\r\n                display: flex;\r\n                flex-direction: column;\r\n                justify-content: center;\r\n                align-items: center;\r\n                flex: 1;\r\n                max-width: 230px;\r\n                @media (max-width: var(--breakpoint)) {\r\n                    display: none;\r\n                }\r\n            }\r\n\r\n            .dashboard {\r\n                flex: 1;\r\n            }\r\n\r\n            :host ::ng-deep .p-card .p-card-content {\r\n                padding: 5px;\r\n            }\r\n        `,\r\n    ],\r\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\r\n})\r\nexport class AppComponent {\r\n    isMenuVisible = false;\r\n    title = \"angular-latest\";\r\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\r\n\r\n    toggleMenu(isMenuVisible: boolean) {\r\n        this.isMenuVisible = isMenuVisible;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        \n",
             "extends": [],
-            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\n\n<div class=\"container\">\n  @if (isMenuVisible) {\n      <div class=\"menu\">\n    @for (item of items; track $index) {\n        <div class=\"flex flex-column gap-3 w-full\">\n      <p-card class=\"border-round-lg w-full\">\n        <p class=\"m-0\">\n          <span class=\"pi pi-check-circle\"></span> {{ item.label }}\n        </p>\n      </p-card>\n      <numo-left-menu [items]=\"item.menu\"></numo-left-menu>\n    </div>\n    }\n  </div>\n  }\n    <div class=\"dashboard\">\n    <!-- <rotuer-outlet></router-outlet -->\n    <numo-dashboard></numo-dashboard>\n  </div>\n</div>\n"
+            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\r\n\r\n<div class=\"container\">\r\n  @if (isMenuVisible) {\r\n      <div class=\"menu\">\r\n    @for (item of items; track $index) {\r\n        <div class=\"flex flex-column gap-3 w-full\">\r\n      <p-card class=\"border-round-lg w-full\">\r\n        <p class=\"m-0\">\r\n          <span class=\"pi pi-check-circle\"></span> {{ item.label }}\r\n        </p>\r\n      </p-card>\r\n      <numo-left-menu [items]=\"item.menu\"></numo-left-menu>\r\n    </div>\r\n    }\r\n  </div>\r\n  }\r\n    <div class=\"dashboard\">\r\n    <!-- <rotuer-outlet></router-outlet -->\r\n    <numo-dashboard></numo-dashboard>\r\n  </div>\r\n</div>\r\n"
+        },
+        {
+            "name": "ConfirmDialogComponent",
+            "id": "component-ConfirmDialogComponent-1e606f6c6f1e7f3d37d179cc144b30e241eab55729dd5e793e783e358e0833cccd1b529be0528f5f3f71714d1314f53ad008d8d45c0c97f0cd039666218cd30b",
+            "file": "projects/ngx-ui-web/src/stories/components/confirm-dialog/confirm-dialog.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-confirm-dialog-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "template": "<p-toast />\n<p-confirmDialog />\n<p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\n<p-button\n    (onClick)=\"confirm2($event)\"\n    label=\"Delete\"\n    severity=\"danger\"\n    [outlined]=\"true\"\n/>\n",
+            "templateUrl": [],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [
+                {
+                    "name": "confirm1",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 38,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "confirm2",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 64,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ToastModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ReactiveFormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ConfirmDialogModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component } from \"@angular/core\";\r\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\"; \r\nimport { ConfirmationService, MessageService } from \"primeng/api\";\r\nimport { ButtonModule } from \"primeng/button\";\r\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\r\nimport { ToastModule } from \"primeng/toast\";\r\n\r\n@Component({\r\n    selector: \"p-confirm-dialog-wrapper\",\r\n    imports: [\r\n        CommonModule,\r\n        ToastModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        ButtonModule, \r\n        ConfirmDialogModule,\r\n    ],\r\n    template: `\r\n        <p-toast />\r\n        <p-confirmDialog />\r\n        <p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\r\n        <p-button\r\n            (onClick)=\"confirm2($event)\"\r\n            label=\"Delete\"\r\n            severity=\"danger\"\r\n            [outlined]=\"true\"\r\n        />\r\n    `,\r\n    standalone: true,\r\n})\r\nexport class ConfirmDialogComponent {\r\n    constructor(\r\n        private messageService: MessageService,\r\n        private confirmService: ConfirmationService,\r\n    ) {}\r\n\r\n    confirm1(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Are you sure that you want to proceed?\",\r\n            header: \"Confirmation\",\r\n            icon: \"pi pi-exclamation-triangle\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n            rejectButtonStyleClass: \"p-button-text\",\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"You have accepted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                    life: 3000,\r\n                });\r\n            },\r\n        });\r\n    }\r\n    confirm2(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Do you want to delete this record?\",\r\n            header: \"Delete Confirmation\",\r\n            icon: \"pi pi-info-circle\",\r\n            acceptButtonStyleClass: \"p-button-danger p-button-text\",\r\n            rejectButtonStyleClass: \"p-button-text p-button-text\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"Record deleted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                });\r\n            },\r\n        });\r\n    }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "confirmService",
+                        "type": "ConfirmationService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 32,
+                "jsdoctags": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "confirmService",
+                        "type": "ConfirmationService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": []
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-b3597fc77b4128b4d805a1375d9c857e91f6c54cde72f1d5a838a44b5868d5461bf52ab328c8e71c920e281638e9c0e5f867f07fa19a9672df2714a85426b642",
+            "id": "component-DashboardComponent-df69b887b8a88571c99d3c1a28c98912c48dc45506c0ff6b07e0325cf5b861df49965385e373ebabda50fbd42d487db1c9abc9f17f8831322bea6a05bc7a4438",
             "file": "projects/ngx-ui-web/src/stories/layouts/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -228,16 +386,393 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\n\n@Component({\n    selector: \"numo-dashboard\",\n    standalone: true,\n    imports: [ RouterOutlet ],\n    templateUrl: \"./dashboard.template.html\",\n    styles: [\n        `\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        `,\n    ],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class DashboardComponent {\n    title = \"angular-latest\";\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\r\nimport { RouterOutlet } from \"@angular/router\";\r\n\r\n@Component({\r\n    selector: \"numo-dashboard\",\r\n    standalone: true,\r\n    imports: [ RouterOutlet ],\r\n    templateUrl: \"./dashboard.template.html\",\r\n    styles: [\r\n        `\r\n            .card {\r\n                background: #f4f4f4;\r\n                border-radius: 5px;\r\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\r\n            }\r\n        `,\r\n    ],\r\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\r\n})\r\nexport class DashboardComponent {\r\n    title = \"angular-latest\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        \n",
             "extends": [],
-            "templateData": "<!-- create a html div class card that has dynamic width width -->\n<div class=\"card flex bg-white p-4 justify-content-center border-round-lg\">\n    Dashboard\n</div>\n"
+            "templateData": "<!-- create a html div class card that has dynamic width width -->\r\n<div class=\"card flex bg-white p-4 justify-content-center border-round-lg\">\r\n    Dashboard\r\n</div>\r\n"
+        },
+        {
+            "name": "FileUploadComponent",
+            "id": "component-FileUploadComponent-dfbcb882a2fc48459e28b1fc14f1fe2ffee31ebacf650b85c39394b6c276bb92138dc206d35b0669bbeff7c33a4ad352a643d1539d9f3169ab4ad67b57ffaaa2",
+            "file": "projects/ngx-ui-web/src/stories/components/file-upload/file-upload.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "p-file-upload",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./file-upload.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "files",
+                    "defaultValue": "[]",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 31
+                },
+                {
+                    "name": "totalSize",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 33
+                },
+                {
+                    "name": "totalSizePercent",
+                    "defaultValue": "0",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": false,
+                    "description": "",
+                    "line": 35
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "choose",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "callback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "callback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "formatSize",
+                    "args": [
+                        {
+                            "name": "bytes",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "string",
+                    "typeParameters": [],
+                    "line": 84,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "bytes",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onClearTemplatingUpload",
+                    "args": [
+                        {
+                            "name": "clear",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "clear",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onRemoveTemplatingFile",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "file",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "removeFileCallback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "index",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 46,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "file",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "removeFileCallback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "index",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onSelectedFiles",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 72,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onTemplatedUpload",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 63,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "uploadEvent",
+                    "args": [
+                        {
+                            "name": "callback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 80,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "callback",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ToastModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ReactiveFormsModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ButtonModule",
+                    "type": "module"
+                },
+                {
+                    "name": "FileUploadModule",
+                    "type": "module"
+                },
+                {
+                    "name": "BadgeModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component } from \"@angular/core\";\r\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\r\nimport {\r\n    ConfirmationService,\r\n    MessageService,\r\n    PrimeNGConfig,\r\n} from \"primeng/api\";\r\nimport { BadgeModule } from \"primeng/badge\";\r\nimport { ButtonModule } from \"primeng/button\";\r\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\r\nimport { FileUploadModule } from \"primeng/fileupload\";\r\nimport { ToastModule } from \"primeng/toast\";\r\n\r\n@Component({\r\n    selector: \"p-file-upload\",\r\n    imports: [\r\n        CommonModule,\r\n        ToastModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        ButtonModule,\r\n        FileUploadModule,\r\n        BadgeModule\r\n\r\n    ],\r\n    templateUrl: \"./file-upload.component.html\",\r\n    standalone: true,\r\n})\r\nexport class FileUploadComponent {\r\n    files = [];\r\n\r\n    totalSize: number = 0;\r\n\r\n    totalSizePercent: number = 0;\r\n\r\n    constructor(\r\n        private config: PrimeNGConfig,\r\n        private messageService: MessageService,\r\n    ) {}\r\n\r\n    choose(event: any, callback: any) {\r\n        callback();\r\n    }\r\n\r\n    onRemoveTemplatingFile(\r\n        event: any,\r\n        file: any,\r\n        removeFileCallback: any,\r\n        index: any,\r\n    ) {\r\n        removeFileCallback(event, index);\r\n        this.totalSize -= parseInt(this.formatSize(file.size));\r\n        this.totalSizePercent = this.totalSize / 10;\r\n    }\r\n\r\n    onClearTemplatingUpload(clear: any) {\r\n        clear();\r\n        this.totalSize = 0;\r\n        this.totalSizePercent = 0;\r\n    }\r\n\r\n    onTemplatedUpload() {\r\n        this.messageService.add({\r\n            severity: \"info\",\r\n            summary: \"Success\",\r\n            detail: \"File Uploaded\",\r\n            life: 3000,\r\n        });\r\n    }\r\n\r\n    onSelectedFiles(event: any) {\r\n        this.files = event.currentFiles;\r\n        this.files.forEach((file: any) => {\r\n            this.totalSize += parseInt(this.formatSize(file.size));\r\n        });\r\n        this.totalSizePercent = this.totalSize / 10;\r\n    }\r\n\r\n    uploadEvent(callback: any) {\r\n        callback();\r\n    }\r\n\r\n    formatSize(bytes: any) {\r\n        const k = 1024;\r\n        const dm = 3;\r\n        const sizes = this.config.translation.fileSizeTypes as any;\r\n        if (bytes === 0) {\r\n            return `0 ${sizes[0]}`;\r\n        }\r\n\r\n        const i = Math.floor(Math.log(bytes) / Math.log(k));\r\n        const formattedSize = parseFloat((bytes / Math.pow(k, i)).toFixed(dm));\r\n\r\n        return `${formattedSize} ${sizes[i]}`;\r\n    }\r\n}\r\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "config",
+                        "type": "PrimeNGConfig",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 35,
+                "jsdoctags": [
+                    {
+                        "name": "config",
+                        "type": "PrimeNGConfig",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "<p-toast />\r\n<p-fileUpload name=\"myfile[]\" url=\"https://www.primefaces.org/cdn/api/upload.php\" [multiple]=\"true\" accept=\"image/*\" maxFileSize=\"1000000\" (onUpload)=\"onTemplatedUpload()\" (onSelect)=\"onSelectedFiles($event)\">\r\n    <ng-template pTemplate=\"header\" let-files let-chooseCallback=\"chooseCallback\" let-clearCallback=\"clearCallback\" let-uploadCallback=\"uploadCallback\">\r\n        <div class=\"flex flex-wrap justify-content-between align-items-center flex-1 gap-2\">\r\n            <div class=\"flex gap-2\">\r\n                <p-button (onClick)=\"choose($event, chooseCallback)\" icon=\"pi pi-images\" [rounded]=\"true\" [outlined]=\"true\" />\r\n                <p-button (onClick)=\"uploadEvent(uploadCallback)\" icon=\"pi pi-cloud-upload\" [rounded]=\"true\" [outlined]=\"true\" severity=\"success\" [disabled]=\"!files || files.length === 0\" />\r\n                <p-button (onClick)=\"clearCallback()\" icon=\"pi pi-times\" [rounded]=\"true\" [outlined]=\"true\" severity=\"danger\" [disabled]=\"!files || files.length === 0\" />\r\n            </div>\r\n            <p-progressBar [value]=\"totalSizePercent\" [showValue]=\"false\" styleClass=\"md:w-20rem h-1rem w-full md:ml-auto\" [ngClass]=\"{ 'exceeded-progress-bar': totalSizePercent > 100 }\">\r\n                <span class=\"white-space-nowrap\">{{ totalSize }}B / 1Mb</span>\r\n            </p-progressBar>\r\n        </div>\r\n    </ng-template>\r\n    <ng-template pTemplate=\"content\" let-files let-uploadedFiles=\"uploadedFiles\" let-removeFileCallback=\"removeFileCallback\" let-removeUploadedFileCallback=\"removeUploadedFileCallback\">\r\n        <div *ngIf=\"files?.length > 0\">\r\n            <h5>Pending</h5>\r\n            <div class=\"flex flex-wrap p-0 sm:p-5 gap-5\">\r\n                @for(file of files;track file; let index = $index){\r\n                    <div class=\"card m-0 px-6 flex flex-column border-1 surface-border align-items-center gap-3\">\r\n                        <div>\r\n                            <img role=\"presentation\" [alt]=\"file.name\" [src]=\"file.objectURL\" width=\"100\" height=\"50\" />\r\n                        </div>\r\n                        <span class=\"font-semibold\">{{ file.name }}</span>\r\n                        <div>{{ formatSize(file.size) }}</div>\r\n                        <p-badge value=\"Pending\" severity=\"warning\" />\r\n                        <p-button icon=\"pi pi-times\" (onClick)=\"onRemoveTemplatingFile($event, file, removeFileCallback, index)\" [outlined]=\"true\" [rounded]=\"true\" severity=\"danger\" />\r\n                    </div>\r\n                }\r\n            </div>\r\n        </div>\r\n        <div *ngIf=\"uploadedFiles?.length > 0\">\r\n            <h5>Completed</h5>\r\n            <div class=\"flex flex-wrap p-0 sm:p-5 gap-5\">\r\n                @for(file of uploadedFiles; track file;let index = $index){\r\n                    <div class=\"card m-0 px-6 flex flex-column border-1 surface-border align-items-center gap-3\">\r\n                        <div>\r\n                            <img role=\"presentation\" [alt]=\"file.name\" [src]=\"file.objectURL\" width=\"100\" height=\"50\" />\r\n                        </div>\r\n                        <span class=\"font-semibold\">{{ file.name }}</span>\r\n                        <div>{{ formatSize(file.size) }}</div>\r\n                        <p-badge value=\"Completed\" class=\"mt-3\" severity=\"success\" />\r\n                        <p-button icon=\"pi pi-times\" (onClick)=\"removeUploadedFileCallback(index)\" [outlined]=\"true\" [rounded]=\"true\" severity=\"danger\" />\r\n                    </div>\r\n                }\r\n            </div>\r\n        </div>\r\n    </ng-template>\r\n    <ng-template pTemplate=\"file\"> </ng-template>\r\n    <ng-template pTemplate=\"empty\">\r\n        <div class=\"flex align-items-center justify-content-center flex-column\">\r\n            <i class=\"pi pi-cloud-upload border-2 border-circle p-5 text-8xl text-400 border-400\"></i>\r\n            <p class=\"mt-4 mb-0\">Drag and drop files here to upload.</p>\r\n        </div>\r\n    </ng-template>\r\n</p-fileUpload>"
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-dbc53bc9febb05dcb466a3d40195d7fa8e851f40fb0475ecc36ff9e842240c99bf99ed4d01f607647c553f97659d241d2b37af4fe1f70826bd1fd578d9a1dc7a",
+            "id": "component-HeaderComponent-cde12d75cd21261343b52ebe8ce4c912790cec650cdc516883098ac3494b7669f0211666a6a3f36d4f2d43a6941e2f737dd7e10f3b5f8fbb4425894cc13d3f80",
             "file": "projects/ngx-ui-web/src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -296,7 +831,7 @@
                 },
                 {
                     "name": "items",
-                    "defaultValue": "[ ...Menu ]",
+                    "defaultValue": "[...Menu]",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
@@ -425,16 +960,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu, UserMenuItems } from \"../menu/menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @Output() menuClicked = new EventEmitter(false);\n    items = [ ...Menu ];\n    userMenuItems = UserMenuItems;\n    BreakPoint = 1024;\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport {\r\n    Component,\r\n    CUSTOM_ELEMENTS_SCHEMA,\r\n    EventEmitter,\r\n    Input,\r\n    Output,\r\n    ViewChild,\r\n} from \"@angular/core\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { InputTextModule } from \"primeng/inputtext\";\r\nimport { MenuModule } from \"primeng/menu\";\r\nimport { Menu, UserMenuItems } from \"../left-menu/menu.model\";\r\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\r\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\r\n\r\n@Component({\r\n    selector: \"numo-header\",\r\n    standalone: true,\r\n    imports: [\r\n        FormsModule,\r\n        CommonModule,\r\n        InputTextModule,\r\n        MenuModule,\r\n        OverlayPanelModule,\r\n        LeftMenuComponent,\r\n    ],\r\n    templateUrl: \"./header.template.html\",\r\n    styles: [],\r\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\r\n})\r\nexport class HeaderComponent {\r\n    isMenuVisible = false;\r\n    @Input() isStoryBook = false;\r\n    @ViewChild(\"menu\") menu: any;\r\n    @ViewChild(\"storyMenu\") storyMenu: any;\r\n    @Output() menuClicked = new EventEmitter(false);\r\n    items = [...Menu];\r\n    userMenuItems = UserMenuItems;\r\n    BreakPoint = 1024;\r\n\r\n    toggleMenu(event: Event) {\r\n        this.isMenuVisible = !this.isMenuVisible;\r\n        if (this.isStoryBook) {\r\n            this.storyMenu.toggle(event);\r\n            return;\r\n        }\r\n        if (window.innerWidth < this.BreakPoint) {\r\n            this.menu.toggle(event);\r\n            this.isMenuVisible = false;\r\n        }\r\n        this.menuClicked.emit(this.isMenuVisible);\r\n    }\r\n\r\n    closeMenu() {\r\n        this.isMenuVisible = false;\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"header flex justify-content-between items-center p-2 text-white\">\n    <div class=\"logo flex items-center font-bold text-2xl h-10\">\n        <div>\n            <span\n                #menuButton\n                (click)=\"toggleMenu($event)\"\n                class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\n            ></span>\n\n            <p-overlayPanel #menu>\n                <div class=\"flex flex-column gap-3\">\n                    <numo-left-menu [items]=\"items\"></numo-left-menu>\n                </div>\n            </p-overlayPanel>\n            <p-overlayPanel #storyMenu>\n                <div class=\"flex flex-column gap-3\">\n                    <numo-left-menu [items]=\"items\"></numo-left-menu>\n                </div>\n            </p-overlayPanel>\n        </div>\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center mx-5 relative\">\n        <div class=\"flex justify-center w-full max-w-[500px] relative\">\n            <span\n                style=\"top: 8px; left: 12px\"\n                class=\"pi pi-search icon text-gray-800 absolute top-[15px] left-[12px]\"\n            ></span>\n\n            <input\n                type=\"text\"\n                style=\"text-indent: 35px\"\n                class=\"text-gray-800 p-0 pl-10\"\n                pInputText\n            />\n        </div>\n    </div>\n    <div>\n        <div class=\" inline-block\">\n            <span\n                class=\"flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between\"\n                (click)=\"userMenu.toggle($event)\"\n            >\n                <i class=\"text-gray-800 pi pi-bell\"></i>\n\n                Username</span\n            >\n        </div>\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\" />\n    </div>\n</div>\n"
+            "templateData": "<div class=\"header flex justify-content-between items-center p-2 text-white\">\r\n    <div class=\"logo flex items-center font-bold text-2xl h-10\">\r\n        <div>\r\n            <span\r\n                #menuButton\r\n                (click)=\"toggleMenu($event)\"\r\n                class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\r\n            ></span>\r\n\r\n            <p-overlayPanel #menu>\r\n                <div class=\"flex flex-column gap-3\">\r\n                    <numo-left-menu [items]=\"items\"></numo-left-menu>\r\n                </div>\r\n            </p-overlayPanel>\r\n            <p-overlayPanel #storyMenu>\r\n                <div class=\"flex flex-column gap-3\">\r\n                    <numo-left-menu [items]=\"items\"></numo-left-menu>\r\n                </div>\r\n            </p-overlayPanel>\r\n        </div>\r\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\r\n    </div>\r\n    <div class=\"flex justify-center mx-5 relative\">\r\n        <div class=\"flex justify-center w-full max-w-[500px] relative\">\r\n            <span\r\n                style=\"top: 8px; left: 12px\"\r\n                class=\"pi pi-search icon text-gray-800 absolute top-[15px] left-[12px]\"\r\n            ></span>\r\n\r\n            <input\r\n                type=\"text\"\r\n                style=\"text-indent: 35px\"\r\n                class=\"text-gray-800 p-0 pl-10\"\r\n                pInputText\r\n            />\r\n        </div>\r\n    </div>\r\n    <div>\r\n        <div class=\" inline-block\">\r\n            <span\r\n                class=\"flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between\"\r\n                (click)=\"userMenu.toggle($event)\"\r\n            >\r\n                <i class=\"text-gray-800 pi pi-bell\"></i>\r\n\r\n                Username</span\r\n            >\r\n        </div>\r\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\" />\r\n    </div>\r\n</div>\r\n"
         },
         {
             "name": "IconComponent",
-            "id": "component-IconComponent-c46df9c4f169f0f31f2e93fc1ddae66c74567bbd2e56792d54b639f09dc750d15aab8c1ea80b73a15dbbeb450dd8d16b4cadf1843c27273261a068a410a372bc",
+            "id": "component-IconComponent-c0abb44e62536de0b170b62ee29eeef265a0001968b91fe96c47522f2a235148da9e53bd8ca33e59e26be99519e748be94415b670225df2ea3be7ad017aca8e6",
             "file": "projects/ngx-ui-web/src/stories/components/icon/icon.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -494,16 +1029,16 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\n@Component({\n    selector: \"numo-icon\",\n    templateUrl: \"./icon.template.html\",\n    standalone: true,\n    imports: [CommonModule],\n})\nexport class IconComponent {\n    @Input() icon!: string;\n    @Input() type: \"iconify\" | \"primeng\" = \"primeng\";\n    @Input() class: string = \"text-gray-800\";\n}\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\r\nimport { CommonModule } from \"@angular/common\";\r\n\r\n@Component({\r\n    selector: \"numo-icon\",\r\n    templateUrl: \"./icon.template.html\",\r\n    standalone: true,\r\n    imports: [CommonModule],\r\n})\r\nexport class IconComponent {\r\n    @Input() icon!: string;\r\n    @Input() type: \"iconify\" | \"primeng\" = \"primeng\";\r\n    @Input() class: string = \"text-gray-800\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<span\n    *ngIf=\"type === 'primeng'\"\n    class=\"pi\"\n    [ngClass]=\"icon\"\n    [class]=\"class\"\n></span>\n<span\n    *ngIf=\"type === 'iconify'\"\n    class=\"iconify\"\n    [attr.data-icon]=\"icon\"\n    [class]=\"class\"\n></span>\n"
+            "templateData": "<span\r\n    *ngIf=\"type === 'primeng'\"\r\n    class=\"pi\"\r\n    [ngClass]=\"icon\"\r\n    [class]=\"class\"\r\n></span>\r\n<span\r\n    *ngIf=\"type === 'iconify'\"\r\n    class=\"iconify\"\r\n    [attr.data-icon]=\"icon\"\r\n    [class]=\"class\"\r\n></span>\r\n"
         },
         {
             "name": "LeftMenuComponent",
-            "id": "component-LeftMenuComponent-002e545280578e0620b1d1566c0a6e6a55558a6cd6edee57f7a7dc78c0890d8080bb5fa012f43e2eb72ce2bc57b3e609554a7f3cb9dc5a8342835ef82e6ca8bf",
+            "id": "component-LeftMenuComponent-4d4a6f2875966a394c41468ba25b4d24727365587d8e860b7f44768c148dc23c0c5985dca7d164d81f6f1c5d4b281a670e21e27791ad0ec09c9614b5700da8fa",
             "file": "projects/ngx-ui-web/src/stories/components/left-menu/left-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -524,7 +1059,7 @@
                     "defaultValue": "\"\"",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 16,
+                    "line": 17,
                     "type": "string",
                     "decorators": []
                 },
@@ -533,7 +1068,7 @@
                     "defaultValue": "[]",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 15,
+                    "line": 16,
                     "type": "any",
                     "decorators": []
                 }
@@ -558,21 +1093,25 @@
                 {
                     "name": "PanelMenuModule",
                     "type": "module"
+                },
+                {
+                    "name": "IconComponent",
+                    "type": "component"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\n\n@Component({\n    selector: \"numo-left-menu\",\n    standalone: true,\n    imports: [ FormsModule, CommonModule, PanelMenuModule ],\n    templateUrl: \"./left-menu.component.html\",\n    styles: [],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class LeftMenuComponent {\n    @Input() items:any = [];\n    @Input() className = \"\";\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\r\nimport { FormsModule } from \"@angular/forms\";\r\nimport { PanelMenuModule } from \"primeng/panelmenu\";\r\nimport { IconComponent } from \"../icon/icon.component\";\r\n\r\n@Component({\r\n    selector: \"numo-left-menu\",\r\n    standalone: true,\r\n    imports: [FormsModule, CommonModule, PanelMenuModule, IconComponent],\r\n    templateUrl: \"./left-menu.component.html\",\r\n    styles: [],\r\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\r\n})\r\nexport class LeftMenuComponent {\r\n    @Input() items: any = [];\r\n    @Input() className = \"\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<p-panelMenu [model]=\"items\" [styleClass]=\"className\">\n  <ng-template pTemplate=\"item\" let-item>\n    <a pRipple class=\"flex align-items-center px-3 py-2 cursor-pointer\">\n      <i [class]=\"item.icon\"></i>\n      <span class=\"ml-2\">\n        {{ item.label }}\n      </span>\n      <span\n          *ngIf=\"item.shortcut\"\n          class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n      >\n        {{ item.shortcut }}\n      </span>\n    </a>\n  </ng-template>\n</p-panelMenu>\n"
+            "templateData": "<p-panelMenu [model]=\"items\" [styleClass]=\"className\">\r\n    <ng-template pTemplate=\"item\" let-item>\r\n        <a pRipple class=\"flex align-items-center px-3 py-2 cursor-pointer\">\r\n            <numo-icon\r\n                [icon]=\"item.icon\"\r\n                [type]=\"item.type\"\r\n                class=\"text-2xl flex align-items-center\"\r\n            ></numo-icon>\r\n            <span class=\"ml-2\">\r\n                {{ item.label }}\r\n            </span>\r\n            <span\r\n                *ngIf=\"item.shortcut\"\r\n                class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\r\n            >\r\n                {{ item.shortcut }}\r\n            </span>\r\n        </a>\r\n    </ng-template>\r\n</p-panelMenu>\r\n"
         },
         {
             "name": "NumoTesterComponent",
-            "id": "component-NumoTesterComponent-9e784ea9eea4dc1290bd70975197204dc02d178817aa88bd295ece6e19ec9829fdd50e437750bb874d4241cbd76055b1a589f931a4902a8fcbe2cf10753afa9a",
+            "id": "component-NumoTesterComponent-8d6ceb647b67ec09016a4a6ddf6cf64f497f59d6efa40bf68a4624f5c9bbb6ebacbe8c3b881863a81b7208ac99a123abeaeee54149c3435ec9d7e5f202fbb305",
             "file": "projects/ngx-ui-web/src/lib/tester.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -609,7 +1148,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, Input } from \"@angular/core\";\n\n@Component({\n    selector: \"numo-tester\",\n    standalone: true,\n    template: `\n        <div class=\"text-red-600 bg-black object-fill\">\n            Numo test component is working just fine, and it's\n            {{ lilText }}!\n        </div>\n    `,\n})\nexport class NumoTesterComponent {\n    @Input() lilText: string = \"\";\n}\n",
+            "sourceCode": "import { Component, Input } from \"@angular/core\";\r\n\r\n@Component({\r\n    selector: \"numo-tester\",\r\n    standalone: true,\r\n    template: `\r\n        <div class=\"text-red-600 bg-black object-fill\">\r\n            Numo test component is working just fine, and it's\r\n            {{ lilText }}!\r\n        </div>\r\n    `,\r\n})\r\nexport class NumoTesterComponent {\r\n    @Input() lilText: string = \"\";\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -617,7 +1156,7 @@
         },
         {
             "name": "ToastComponent",
-            "id": "component-ToastComponent-f7f465715b303da3b5464745f75d7d0236b0ba31c9d2ab995d1e5dc2fad67cbeb67bac3e4f0ae2e9ac8e0431e0bfb58e4e1585f03bcaf23e050a3b3a94decc65",
+            "id": "component-ToastComponent-e0e228ac0facf27929cc4f516d435d8469654fd1d55948d21ab7107e5e08596256186e907f055cc1bb1d972797e74ca21890b0bdb561ebff75978e7104d2d8df",
             "file": "projects/ngx-ui-web/src/stories/components/toast/toast.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -646,7 +1185,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 21,
+                    "line": 27,
                     "deprecated": false,
                     "deprecationMessage": ""
                 }
@@ -655,7 +1194,7 @@
             "deprecationMessage": "",
             "hostBindings": [],
             "hostListeners": [],
-            "standalone": false,
+            "standalone": true,
             "imports": [
                 {
                     "name": "ToastModule",
@@ -681,7 +1220,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\nimport { MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-toast-wrapper\",\n    imports: [ ToastModule, FormsModule, ReactiveFormsModule, ButtonModule, BrowserAnimationsModule ],\n    template: `\n    <p-toast></p-toast>\n    <p-button (onClick)=\"show()\" label=\"Show\"></p-button>\n  `,\n    providers: [ MessageService ]\n})\nexport class ToastComponent {\n    constructor(private messageService: MessageService) {\n    }\n\n    show() {\n        this.messageService.add({ severity: \"success\", summary: \"Success\", detail: \"Message Content\" });\n    }\n}\n",
+            "sourceCode": "import { Component } from \"@angular/core\";\r\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\r\nimport { BrowserAnimationsModule } from \"@angular/platform-browser/animations\";\r\nimport { MessageService } from \"primeng/api\";\r\nimport { ButtonModule } from \"primeng/button\";\r\nimport { ToastModule } from \"primeng/toast\";\r\n\r\n@Component({\r\n    selector: \"p-toast-wrapper\",\r\n    imports: [\r\n        ToastModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        ButtonModule,\r\n        BrowserAnimationsModule,\r\n    ],\r\n    template: `\r\n        <p-toast></p-toast>\r\n        <p-button (onClick)=\"show()\" label=\"Show\"></p-button>\r\n    `,\r\n    providers: [MessageService],\r\n    standalone: true,\r\n})\r\nexport class ToastComponent {\r\n    constructor(private messageService: MessageService) {}\r\n\r\n    show() {\r\n        this.messageService.add({\r\n            severity: \"success\",\r\n            summary: \"Success\",\r\n            detail: \"Message Content\",\r\n        });\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -698,7 +1237,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 17,
+                "line": 24,
                 "jsdoctags": [
                     {
                         "name": "messageService",
@@ -721,47 +1260,47 @@
                 "name": "Menu",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    {\n        label: \"Mans Numo\",\n        expanded: false,\n        items: [],\n    },\n    {\n        label: \"Vadība\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \" Pro Numo\",\n        expanded: true,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n            {\n                label: \"Kase\",\n                items: [],\n                icon: \"pi pi-money-bill\",\n                route: \"\",\n            },\n            {\n                label: \"Banka\",\n                items: [],\n                icon: \"pi pi-building-columns\",\n                route: \"\",\n            },\n            {\n                label: \"Noliktava\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"LoĢistika\",\n                icon: \"pi pi-directions\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Kases sistēmas\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Realizācija\",\n                icon: \"pi pi-cloud-upload\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Debitoru novērtēšana\",\n                icon: \"pi pi-wallet\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Pamatlīdzekļi\",\n                icon: \"pi pi-ticket\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"PL un inventāra inventarizācija\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Algas\",\n                icon: \"pi pi-credit-card\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Darba laika plānošana\",\n                icon: \"pi pi-calendar\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Avansa norēkini\",\n                icon: \"pi pi-receipt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Komandējumi\",\n                icon: \"pi pi-directions-alt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\n                icon: \"pi pi-money-bill\",\n                items: [],\n            },\n            {\n                label: \"Vadības grāmatvedība\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Līgumi\",\n                icon: \"pi pi-chart-bar\",\n                items: [],\n                route: \"\",\n            },\n        ],\n    },\n]"
+                "defaultValue": "[\r\n    {\r\n        label: \"Mans Numo\",\r\n        expanded: false,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        label: \"Vadība\",\r\n        expanded: false,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Virsgrāmata\",\r\n                items: [],\r\n                icon: \"pi pi-book\",\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        label: \" Pro Numo\",\r\n        expanded: true,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Virsgrāmata\",\r\n                items: [],\r\n                icon: \"pi pi-book\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Kase\",\r\n                items: [],\r\n                icon: \"pi pi-money-bill\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Banka\",\r\n                items: [],\r\n                icon: \"pi pi-building-columns\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Noliktava\",\r\n                icon: \"pi pi-warehouse\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"LoĢistika\",\r\n                icon: \"pi pi-directions\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Kases sistēmas\",\r\n                icon: \"pi pi-briefcase\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Realizācija\",\r\n                icon: \"pi pi-cloud-upload\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Debitoru novērtēšana\",\r\n                icon: \"pi pi-wallet\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Pamatlīdzekļi\",\r\n                icon: \"pi pi-ticket\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"PL un inventāra inventarizācija\",\r\n                icon: \"pi pi-warehouse\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Algas\",\r\n                icon: \"pi pi-credit-card\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Darba laika plānošana\",\r\n                icon: \"pi pi-calendar\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Avansa norēkini\",\r\n                icon: \"pi pi-receipt\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Komandējumi\",\r\n                icon: \"pi pi-directions-alt\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\r\n                icon: \"pi pi-money-bill\",\r\n                items: [],\r\n            },\r\n            {\r\n                label: \"Vadības grāmatvedība\",\r\n                icon: \"pi pi-briefcase\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Līgumi\",\r\n                icon: \"pi pi-chart-bar\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n]"
             },
             {
                 "name": "UserMenuItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    {\n        label: \"Profile\",\n        route: \"\",\n    },\n    {\n        label: \"Settings\",\n        route: \"\",\n    },\n    {\n        label: \"Logout\",\n        route: \"\",\n    },\n]"
+                "defaultValue": "[\r\n    {\r\n        label: \"Profile\",\r\n        route: \"\",\r\n    },\r\n    {\r\n        label: \"Settings\",\r\n        route: \"\",\r\n    },\r\n    {\r\n        label: \"Logout\",\r\n        route: \"\",\r\n    },\r\n]"
             }
         ],
         "functions": [],
         "typealiases": [],
         "enumerations": [],
         "groupedVariables": {
-            "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts": [
+            "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts": [
                 {
                     "name": "Menu",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                    "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n    {\n        label: \"Mans Numo\",\n        expanded: false,\n        items: [],\n    },\n    {\n        label: \"Vadība\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \" Pro Numo\",\n        expanded: true,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                icon: \"pi pi-objects-column\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n            {\n                label: \"Kase\",\n                items: [],\n                icon: \"pi pi-money-bill\",\n                route: \"\",\n            },\n            {\n                label: \"Banka\",\n                items: [],\n                icon: \"pi pi-building-columns\",\n                route: \"\",\n            },\n            {\n                label: \"Noliktava\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"LoĢistika\",\n                icon: \"pi pi-directions\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Kases sistēmas\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Realizācija\",\n                icon: \"pi pi-cloud-upload\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Debitoru novērtēšana\",\n                icon: \"pi pi-wallet\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Pamatlīdzekļi\",\n                icon: \"pi pi-ticket\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"PL un inventāra inventarizācija\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Algas\",\n                icon: \"pi pi-credit-card\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Darba laika plānošana\",\n                icon: \"pi pi-calendar\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Avansa norēkini\",\n                icon: \"pi pi-receipt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Komandējumi\",\n                icon: \"pi pi-directions-alt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\n                icon: \"pi pi-money-bill\",\n                items: [],\n            },\n            {\n                label: \"Vadības grāmatvedība\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Līgumi\",\n                icon: \"pi pi-chart-bar\",\n                items: [],\n                route: \"\",\n            },\n        ],\n    },\n]"
+                    "defaultValue": "[\r\n    {\r\n        label: \"Mans Numo\",\r\n        expanded: false,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        label: \"Vadība\",\r\n        expanded: false,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Virsgrāmata\",\r\n                items: [],\r\n                icon: \"pi pi-book\",\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        label: \" Pro Numo\",\r\n        expanded: true,\r\n        items: [\r\n            {\r\n                label: \"Darbvirsma\",\r\n                items: [],\r\n                type: \"iconify\",\r\n                icon: \"ic:round-dashboard\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Virsgrāmata\",\r\n                items: [],\r\n                icon: \"pi pi-book\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Kase\",\r\n                items: [],\r\n                icon: \"pi pi-money-bill\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Banka\",\r\n                items: [],\r\n                icon: \"pi pi-building-columns\",\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Noliktava\",\r\n                icon: \"pi pi-warehouse\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"LoĢistika\",\r\n                icon: \"pi pi-directions\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Kases sistēmas\",\r\n                icon: \"pi pi-briefcase\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Realizācija\",\r\n                icon: \"pi pi-cloud-upload\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Debitoru novērtēšana\",\r\n                icon: \"pi pi-wallet\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Pamatlīdzekļi\",\r\n                icon: \"pi pi-ticket\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"PL un inventāra inventarizācija\",\r\n                icon: \"pi pi-warehouse\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Algas\",\r\n                icon: \"pi pi-credit-card\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Darba laika plānošana\",\r\n                icon: \"pi pi-calendar\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Avansa norēkini\",\r\n                icon: \"pi pi-receipt\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Komandējumi\",\r\n                icon: \"pi pi-directions-alt\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\r\n                icon: \"pi pi-money-bill\",\r\n                items: [],\r\n            },\r\n            {\r\n                label: \"Vadības grāmatvedība\",\r\n                icon: \"pi pi-briefcase\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n            {\r\n                label: \"Līgumi\",\r\n                icon: \"pi pi-chart-bar\",\r\n                items: [],\r\n                route: \"\",\r\n            },\r\n        ],\r\n    },\r\n]"
                 },
                 {
                     "name": "UserMenuItems",
                     "ctype": "miscellaneous",
                     "subtype": "variable",
-                    "file": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                    "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n    {\n        label: \"Profile\",\n        route: \"\",\n    },\n    {\n        label: \"Settings\",\n        route: \"\",\n    },\n    {\n        label: \"Logout\",\n        route: \"\",\n    },\n]"
+                    "defaultValue": "[\r\n    {\r\n        label: \"Profile\",\r\n        route: \"\",\r\n    },\r\n    {\r\n        label: \"Settings\",\r\n        route: \"\",\r\n    },\r\n    {\r\n        label: \"Logout\",\r\n        route: \"\",\r\n    },\r\n]"
                 }
             ]
         },
@@ -793,6 +1332,24 @@
                 "status": "low"
             },
             {
+                "filePath": "projects/ngx-ui-web/src/stories/components/confirm-dialog/confirm-dialog.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "ConfirmDialogComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/file-upload/file-upload.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "FileUploadComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/12",
+                "status": "low"
+            },
+            {
                 "filePath": "projects/ngx-ui-web/src/stories/components/header/header.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -820,7 +1377,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                "filePath": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
@@ -830,7 +1387,7 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-ui-web/src/stories/components/menu/menu.model.ts",
+                "filePath": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
                 "type": "variable",
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
