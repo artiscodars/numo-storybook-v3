@@ -11,8 +11,7 @@ import { ToastModule } from "primeng/toast";
         ToastModule,
         FormsModule,
         ReactiveFormsModule,
-        ButtonModule,
-        BrowserAnimationsModule,
+        ButtonModule, 
     ],
     template: `
         <p-toast></p-toast>

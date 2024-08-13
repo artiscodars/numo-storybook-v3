@@ -1251,6 +1251,417 @@
                 ]
             },
             "extends": []
+        },
+        {
+            "name": "TreeComponent",
+            "id": "component-TreeComponent-69fb0eb3a30f33ba8b59e78c27375fb785e52e4d0860aaa2284fd5b6a003d0efe23740198c00ba451412941e0167205e7532d482c0617ab1b1249d0b40531030",
+            "file": "projects/ngx-ui-web/src/stories/components/tree/tree.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [
+                {
+                    "name": "MessageService",
+                    "type": "injectable"
+                }
+            ],
+            "selector": "p-tree-wrapper",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./tree.component.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "events",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "files",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "TreeNode[]",
+                    "decorators": []
+                },
+                {
+                    "name": "lazyLoading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 18,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "selectedFile",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 16,
+                    "type": "TreeNode",
+                    "decorators": []
+                },
+                {
+                    "name": "virtualScroll",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "boolean",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [
+                {
+                    "name": "loading",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "boolean",
+                    "optional": false,
+                    "description": "",
+                    "line": 23
+                },
+                {
+                    "name": "nodes",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeNode[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 25
+                },
+                {
+                    "name": "nodes2",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "TreeNode[]",
+                    "optional": false,
+                    "description": "",
+                    "line": 27
+                }
+            ],
+            "methodsClass": [
+                {
+                    "name": "duplicateData",
+                    "args": [
+                        {
+                            "name": "data",
+                            "type": "TreeNode[]",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        },
+                        {
+                            "name": "count",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "TreeNode[]",
+                    "typeParameters": [],
+                    "line": 42,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "data",
+                            "type": "TreeNode[]",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        },
+                        {
+                            "name": "count",
+                            "type": "number",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "initiateNodes",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "TreeNode[]",
+                    "typeParameters": [],
+                    "line": 80,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "initiateNodes2",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "TreeNode[]",
+                    "typeParameters": [],
+                    "line": 100,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "ngOnInit",
+                    "args": [],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 28,
+                    "deprecated": false,
+                    "deprecationMessage": ""
+                },
+                {
+                    "name": "nodeCollapse",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 57,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nodeExpand",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 49,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nodeSelect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 65,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "nodeUnselect",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 73,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onNodeExpand",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 123,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "onNodeExpand2",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 146,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "any",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                }
+            ],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "TreeModule",
+                    "type": "module"
+                },
+                {
+                    "name": "ToastModule",
+                    "type": "module"
+                },
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { ChangeDetectorRef, Component, Input } from \"@angular/core\";\r\nimport { MessageService, TreeNode } from \"primeng/api\";\r\nimport { ToastModule } from \"primeng/toast\";\r\nimport { TreeModule } from \"primeng/tree\";\r\n\r\n@Component({\r\n    selector: \"p-tree-wrapper\",\r\n    templateUrl: \"./tree.component.html\",\r\n    standalone: true,\r\n    imports: [TreeModule, ToastModule,CommonModule],\r\n    providers: [MessageService],\r\n})\r\nexport class TreeComponent {\r\n    @Input() files!: TreeNode[];\r\n    @Input() selectedFile!: TreeNode;\r\n    @Input() events: boolean = false;\r\n    @Input() lazyLoading: boolean = false;\r\n    @Input() virtualScroll: boolean = false;\r\n\r\n    constructor(private messageService: MessageService,private cd: ChangeDetectorRef) {}\r\n\r\n    loading: boolean = false;\r\n\r\n    nodes!: TreeNode[];\r\n\r\n    nodes2!: TreeNode[]; \r\n    ngOnInit() {\r\n        this.loading = true;\r\n        this.nodes2 = this.initiateNodes2();\r\n\r\n        setTimeout(() => {\r\n            this.nodes = this.initiateNodes();\r\n            this.loading = false;\r\n            this.nodes2.map((node) => (node.loading = false));\r\n            this.cd.markForCheck();\r\n        }, 2000);\r\n        this.files = this.duplicateData(this.files, 50);\r\n        this.cd.markForCheck();\r\n    }\r\n    \r\n    duplicateData(data: TreeNode[], count: number): TreeNode[] {\r\n        let duplicatedData: TreeNode[] = [];\r\n        for (let i = 0; i < count; i++) {\r\n            duplicatedData = [...duplicatedData, ...data.map((item) => ({ ...item }))];\r\n        }\r\n        return duplicatedData;\r\n    }\r\n    nodeExpand(event: any) {\r\n        this.messageService.add({\r\n            severity: \"success\",\r\n            summary: \"Node Expanded\",\r\n            detail: event.node.label,\r\n        });\r\n    }\r\n\r\n    nodeCollapse(event: any) {\r\n        this.messageService.add({\r\n            severity: \"warn\",\r\n            summary: \"Node Collapsed\",\r\n            detail: event.node.label,\r\n        });\r\n    }\r\n\r\n    nodeSelect(event: any) {\r\n        this.messageService.add({\r\n            severity: \"info\",\r\n            summary: \"Node Selected\",\r\n            detail: event.node.label,\r\n        });\r\n    }\r\n\r\n    nodeUnselect(event: any) {\r\n        this.messageService.add({\r\n            severity: \"info\",\r\n            summary: \"Node Unselected\",\r\n            detail: event.node.label,\r\n        });\r\n    }\r\n    initiateNodes(): TreeNode[] {\r\n        return [\r\n            {\r\n                key: '0',\r\n                label: 'Node 0',\r\n                leaf: false\r\n            },\r\n            {\r\n                key: '1',\r\n                label: 'Node 1',\r\n                leaf: false\r\n            },\r\n            {\r\n                key: '2',\r\n                label: 'Node 2',\r\n                leaf: false\r\n            }\r\n        ];\r\n    }\r\n\r\n    initiateNodes2(): TreeNode[] {\r\n        return [\r\n            {\r\n                key: '0',\r\n                label: 'Node 0',\r\n                leaf: false,\r\n                loading: true\r\n            },\r\n            {\r\n                key: '1',\r\n                label: 'Node 1',\r\n                leaf: false,\r\n                loading: true\r\n            },\r\n            {\r\n                key: '2',\r\n                label: 'Node 2',\r\n                leaf: false,\r\n                loading: true\r\n            }\r\n        ];\r\n    }\r\n\r\n    onNodeExpand(event: any) {\r\n        if (!event.node.children) {\r\n            this.loading = true;\r\n\r\n            setTimeout(() => {\r\n                let _node = { ...event.node };\r\n                _node.children = [];\r\n\r\n                for (let i = 0; i < 3; i++) {\r\n                    _node.children.push({\r\n                        key: event.node.key + '-' + i,\r\n                        label: 'Lazy ' + event.node.label + '-' + i\r\n                    });\r\n                }\r\n\r\n                this.nodes[parseInt(event.node.key, 10)] = _node;\r\n\r\n                this.loading = false;\r\n                this.cd.markForCheck();\r\n            }, 500);\r\n        }\r\n    }\r\n\r\n    onNodeExpand2(event: any) {\r\n        if (!event.node.children) {\r\n            event.node.loading = true;\r\n\r\n            setTimeout(() => {\r\n                let _node = { ...event.node };\r\n                _node.children = [];\r\n\r\n                for (let i = 0; i < 3; i++) {\r\n                    _node.children.push({\r\n                        key: event.node.key + '-' + i,\r\n                        label: 'Lazy ' + event.node.label + '-' + i\r\n                    });\r\n                }\r\n\r\n                const key = parseInt(_node.key, 10);\r\n                this.nodes2[key] = { ..._node, loading: false };\r\n                this.cd.markForCheck();\r\n            }, 500);\r\n        }\r\n    }\r\n}\r\n\r\n ",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "constructorObj": {
+                "name": "constructor",
+                "description": "",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "args": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    },
+                    {
+                        "name": "cd",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": ""
+                    }
+                ],
+                "line": 19,
+                "jsdoctags": [
+                    {
+                        "name": "messageService",
+                        "type": "MessageService",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    },
+                    {
+                        "name": "cd",
+                        "type": "ChangeDetectorRef",
+                        "deprecated": false,
+                        "deprecationMessage": "",
+                        "tagName": {
+                            "text": "param"
+                        }
+                    }
+                ]
+            },
+            "extends": [],
+            "templateData": "@if (events) {\r\n    <div class=\"card flex justify-content-center\">\r\n        <p-toast />\r\n        <p-tree\r\n            [value]=\"files\"\r\n            class=\"w-full md:w-30rem\"\r\n            selectionMode=\"single\"\r\n            [(selection)]=\"selectedFile\"\r\n            (onNodeExpand)=\"nodeExpand($event)\"\r\n            (onNodeCollapse)=\"nodeCollapse($event)\"\r\n            (onNodeSelect)=\"nodeSelect($event)\"\r\n            (onNodeUnselect)=\"nodeUnselect($event)\"\r\n        />\r\n    </div>\r\n}\r\n\r\n@if(lazyLoading){\r\n    <div class=\"card flex flex-wrap p-fluid gap-3\">\r\n        <div class=\"flex-auto md:flex md:justify-content-start md:align-items-center flex-column\">\r\n            <label for=\"mask\" class=\"font-bold block mb-2\">Mask Mode</label>\r\n            <p-tree \r\n                class=\"w-full md:w-30rem\" \r\n                [value]=\"nodes\" \r\n                (onNodeExpand)=\"onNodeExpand($event)\" \r\n                [loading]=\"loading\" />\r\n        </div>\r\n        <div class=\"flex-auto md:flex md:justify-content-start md:align-items-center flex-column\">\r\n            <label for=\"icon\" class=\"font-bold block mb-2\">Icon Mode</label>\r\n            <p-tree \r\n                class=\"w-full md:w-30rem\" \r\n                [value]=\"nodes2\" \r\n                loadingMode=\"icon\" \r\n                (onNodeExpand)=\"onNodeExpand2($event)\" />\r\n        </div>\r\n    </div>\r\n}\r\n\r\n@if(virtualScroll){\r\n    <p-tree \r\n    class=\"w-full md:w-30rem\" \r\n    scrollHeight=\"250px\" \r\n    [virtualScroll]=\"true\" \r\n    [virtualScrollItemSize]=\"46\" \r\n    [value]=\"files\" />\r\n}"
         }
     ],
     "modules": [],
@@ -1403,6 +1814,15 @@
                 "name": "ToastComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/3",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/tree/tree.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TreeComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/20",
                 "status": "low"
             },
             {
