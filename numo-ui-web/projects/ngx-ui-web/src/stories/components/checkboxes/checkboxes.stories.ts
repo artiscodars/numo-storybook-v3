@@ -8,10 +8,10 @@ const meta: Meta = {
     title: "Components/Checkboxes",
     decorators: [
         moduleMetadata({
-            imports: [ CheckboxModule, FormsModule, ReactiveFormsModule ],
+            imports: [CheckboxModule, FormsModule, ReactiveFormsModule],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -51,20 +51,7 @@ export const basic: Story = {
 />`,
     }),
 };
-export const ReactiveForms: Story = {
-    args: {
-        label: "New York",
-        formControlName: "city",
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-checkbox
-    [formControlName]="formControlName"
-     value="New York" [label]="label" />`,
-    }),
-};
+
 export const Invalid: Story = {
     args: {
         label: "New York",
@@ -81,45 +68,7 @@ export const Invalid: Story = {
      value="New York"  [binary]="binary"  [class]="classes"  />  `,
     }),
 };
-export const Dynamic: Story = {
-    args: {
-        label: "New York",
-        formControlName: "city",
-        categories: [
-            { name: "New York", value: "NY" },
-            { name: "Los Angeles", value: "LA" },
-            { name: "Chicago", value: "CH" },
-        ],
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<div *ngFor="let category of categories" class="field-checkbox">
-    <p-checkbox
-        [(ngModel)]="selectedCategories"
-        [label]="category.name"
-        name="group"
-        [value]="category" />
-</div>`,
-    }),
-};
 
-export const Filled: Story = {
-    args: {
-        label: "New York",
-        formControlName: "city",
-        binary: true,
-        classes: "ng-invalid ng-dirty",
-        variant: "filled",
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-checkbox [(ngModel)]="checked" [binary]="true" [variant]="variant" /> `,
-    }),
-};
 export const Disabled: Story = {
     args: {
         label: "New York",
@@ -134,5 +83,46 @@ export const Disabled: Story = {
             ...args,
         },
         template: `<p-checkbox [(ngModel)]="checked" [binary]="true" [variant]="variant"  [disabled]="disabled"/> `,
+    }),
+};
+export const Grouped: Story = {
+    args: {
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `
+        <div class="card flex justify-content-center gap-3">
+    <div class="flex align-items-center">
+        <p-checkbox
+            [(ngModel)]="pizza"
+            label="Cheese"
+            name="pizza"
+            value="Cheese" />
+    </div>
+    <div class="flex align-items-center">
+        <p-checkbox
+            [(ngModel)]="pizza"
+            label="Mushroom"
+            name="pizza"
+            value="Mushroom" />
+    </div>
+    <div class="flex align-items-center">
+        <p-checkbox
+            [(ngModel)]="pizza"
+            label="Pepper"
+            name="pizza"
+            value="Pepper" />
+    </div>
+    <div class="flex align-items-center">
+        <p-checkbox
+            [(ngModel)]="pizza"
+            label="Onion"
+            name="pizza"
+            value="Onion" />
+    </div>
+</div>
+ `,
     }),
 };
