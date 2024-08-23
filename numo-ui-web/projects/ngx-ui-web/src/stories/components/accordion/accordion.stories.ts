@@ -12,10 +12,18 @@ const meta: Meta = {
     title: "Components/Accordion",
     decorators: [
         moduleMetadata({
-            imports: [ AccordionModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, ButtonModule, AvatarModule, BadgeModule ],
+            imports: [
+                AccordionModule,
+                BrowserAnimationsModule,
+                FormsModule,
+                ReactiveFormsModule,
+                ButtonModule,
+                AvatarModule,
+                BadgeModule,
+            ],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -29,7 +37,10 @@ export default meta;
 type Story = StoryObj;
 
 export const basic: Story = {
-    args: {},
+    args: {
+        multiple: false,
+        disabled: false,
+    },
     render: (args) => ({
         props: {
             ...args,
@@ -59,8 +70,8 @@ export const Dynamic: Story = {
         tabs: [
             { title: "Title 1", content: "Content 1" },
             { title: "Title 2", content: "Content 2" },
-            { title: "Title 3", content: "Content 3" }
-        ]
+            { title: "Title 3", content: "Content 3" },
+        ],
     },
     render: (args) => ({
         props: {
@@ -103,7 +114,7 @@ export const Multiple: Story = {
 
 export const Disabled: Story = {
     args: {
-        disabled: true
+        disabled: true,
     },
     render: (args) => ({
         props: {
@@ -131,7 +142,7 @@ export const Disabled: Story = {
 };
 export const Controlled: Story = {
     args: {
-        disabled: true
+        disabled: true,
     },
     render: (args) => ({
         props: {
@@ -178,7 +189,7 @@ export const Controlled: Story = {
 };
 export const Template: Story = {
     args: {
-        disabled: true
+        disabled: true,
     },
     render: (args) => ({
         props: {
