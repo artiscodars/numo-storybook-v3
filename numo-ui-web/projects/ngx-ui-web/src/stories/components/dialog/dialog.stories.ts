@@ -67,7 +67,7 @@ export const basic: Story = {
         <label for="email" class="font-semibold w-6rem">Email</label>
         <input pInputText id="email" class="flex-auto" autocomplete="off" />
     </div>
-    <div class="flex justify-content-end gap-2">
+    <div class="flex justify-content-start gap-2">
         <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
         <p-button label="Save" (onClick)="visible = false" />
     </div>
