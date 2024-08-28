@@ -64,63 +64,6 @@ export const basic: Story = {
     }),
 };
 
-export const controlled: Story = {
-    args: {
-        files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-            expandAll() {
-                args["files"].forEach((node: any) => {
-                    expandRecursive(node, true);
-                });
-            },
-            collapseAll() {
-                args["files"].forEach((node: any) => {
-                    expandRecursive(node, false);
-                });
-            },
-        },
-        template: `
-            <div class="mb-3">
-                <p-button icon="pi pi-plus" label="Expand all" (onClick)="expandAll()" class="mr-2" />
-                <p-button icon="pi pi-minus" label="Collapse all" (onClick)="collapseAll()" />
-            </div>
-            <p-tree [value]="files" class="w-full md:w-30rem" />
-        `,
-    }),
-};
-
-export const selection: Story = {
-    args: {
-        files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
-        selectedFile: null,
-    },
-    render: (args) => ({
-        props: { ...args },
-        template: `<p-tree [value]="files" class="w-full md:w-30rem" selectionMode="single" [(selection)]="selectedFile" />`,
-    }),
-};
-
-export const multiple: Story = {
-    args: {
-        files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
-        selectedFiles: null,
-        metaKeySelection: true,
-    },
-    render: (args) => ({
-        props: { ...args },
-        template: `
-            <div class="flex align-items-center mb-4 gap-2">
-                <p-inputSwitch inputId="input-metakey" [(ngModel)]="metaKeySelection" />
-                <label for="input-metakey">MetaKey</label>
-            </div>
-            <p-tree [metaKeySelection]="metaKeySelection" [value]="files" class="w-full md:w-30rem" selectionMode="multiple" [(selection)]="selectedFiles" />
-        `,
-    }),
-};
-
 export const checkbox: Story = {
     args: {
         files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
@@ -129,42 +72,5 @@ export const checkbox: Story = {
     render: (args) => ({
         props: { ...args },
         template: `<p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem" [(selection)]="selectedFiles" />`,
-    }),
-};
-
-export const dragDrop: Story = {
-    args: {
-        files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
-    },
-    render: (args) => ({
-        props: { ...args },
-        template: `
-            <div class="card flex justify-content-center">
-                <p-tree class="w-full md:w-30rem" [value]="files" [draggableNodes]="true" [droppableNodes]="true" draggableScope="self" droppableScope="self" />
-            </div>
-        `,
-    }),
-};
-
-export const template: Story = {
-    args: {
-        nodes: JSON.parse(JSON.stringify(templateNodes)), // Deep clone to avoid circular references
-    },
-    render: (args) => ({
-        props: { ...args },
-        template: `
-            <div class="card flex justify-content-center">
-                <p-tree [value]="nodes" class="w-full md:w-30rem">
-                    <ng-template let-node pTemplate="url">
-                        <a [href]="node.data" target="_blank" rel="noopener noreferrer" class="text-700 hover:text-primary">
-                            {{ node.label }}
-                        </a>
-                    </ng-template>
-                    <ng-template let-node pTemplate="default">
-                        <b>{{ node.label }}</b>
-                    </ng-template>
-                </p-tree>
-            </div>
-        `,
     }),
 };

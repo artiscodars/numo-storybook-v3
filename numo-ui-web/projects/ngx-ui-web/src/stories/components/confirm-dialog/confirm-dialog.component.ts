@@ -1,6 +1,6 @@
 import { CommonModule } from "@angular/common";
 import { Component } from "@angular/core";
-import { FormsModule, ReactiveFormsModule } from "@angular/forms"; 
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ConfirmationService, MessageService } from "primeng/api";
 import { ButtonModule } from "primeng/button";
 import { ConfirmDialogModule } from "primeng/confirmdialog";
@@ -13,12 +13,12 @@ import { ToastModule } from "primeng/toast";
         ToastModule,
         FormsModule,
         ReactiveFormsModule,
-        ButtonModule, 
+        ButtonModule,
         ConfirmDialogModule,
     ],
     template: `
         <p-toast />
-        <p-confirmDialog />
+        <p-confirmDialog [styleClass]="'ui-confirmdialog-footer'" />
         <p-button (onClick)="confirm1($event)" label="Save" [outlined]="true" />
         <p-button
             (onClick)="confirm2($event)"
@@ -27,6 +27,15 @@ import { ToastModule } from "primeng/toast";
             [outlined]="true"
         />
     `,
+    styles: [
+        `
+            :host::ng-deep.p-dialog-footer{
+                display: flex!important;
+                justify-content: start!important;
+                flex-direction: row-reverse!important;
+            }
+        `,
+    ],
     standalone: true,
 })
 export class ConfirmDialogComponent {
@@ -40,7 +49,7 @@ export class ConfirmDialogComponent {
             target: event.target as EventTarget,
             message: "Are you sure that you want to proceed?",
             header: "Confirmation",
-            icon: "pi pi-exclamation-triangle",
+            icon: "",
             acceptIcon: "none",
             rejectIcon: "none",
             rejectButtonStyleClass: "p-button-text",
@@ -66,7 +75,7 @@ export class ConfirmDialogComponent {
             target: event.target as EventTarget,
             message: "Do you want to delete this record?",
             header: "Delete Confirmation",
-            icon: "pi pi-info-circle",
+            icon: "",
             acceptButtonStyleClass: "p-button-danger p-button-text",
             rejectButtonStyleClass: "p-button-text p-button-text",
             acceptIcon: "none",

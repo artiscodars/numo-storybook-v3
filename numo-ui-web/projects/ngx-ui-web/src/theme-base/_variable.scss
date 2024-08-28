@@ -70,7 +70,7 @@ $panelContentTextColor: $shade700 !default;
 
 
 // //accordion
-$accordionSpacing: 0 !default;
+$accordionSpacing: 4px !default;
 $accordionHeaderBorder: $panelHeaderBorder !default;
 $accordionHeaderBg: $panelHeaderBg !default;
 $accordionHeaderTextColor: $panelHeaderTextColor !default;
@@ -112,3 +112,4 @@ $menuitemActiveFocusBg: $shade000 !default;
 $verticalMenuPadding: 0.25rem 0 !default;
 $menuSeparatorMargin: 0.25rem 0 !default;
 
+$scrollPanelTrackBg: $shade800 !default;

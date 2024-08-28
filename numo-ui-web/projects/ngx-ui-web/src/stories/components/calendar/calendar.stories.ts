@@ -11,10 +11,16 @@ const meta: Meta = {
     title: "Components/Calendar",
     decorators: [
         moduleMetadata({
-            imports: [ CalendarModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule, FloatLabelModule ],
+            imports: [
+                CalendarModule,
+                BrowserAnimationsModule,
+                FormsModule,
+                ReactiveFormsModule,
+                FloatLabelModule,
+            ],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     argTypes: {},
     parameters: {
         docs: {
@@ -50,6 +56,7 @@ export const Basic: Story = {
         showWeek: false,
         variant: "filled",
         class: "",
+        disabled: false,
     },
     render: (args) => ({
         props: {
@@ -73,30 +80,8 @@ export const Basic: Story = {
               [showWeek]="showWeek"
               [variant]="variant"
               [class]="class"
+              [disabled]="disabled"
         /> `,
-    }),
-};
-export const ReactiveForms: Story = {
-    args: {
-        date: new Date()
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar formControlName="date"  /> `,
-    }),
-};
-export const Format: Story = {
-    args: {
-        date: new Date(),
-        format: "dd.mm.yy"
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar [(ngModel)]="date" [dateFormat]="format" /> `,
     }),
 };
 export const Icon: Story = {
@@ -106,7 +91,7 @@ export const Icon: Story = {
         showIcon: true,
         showOnFocus: false,
         iconDisplay: "input",
-        timeOnly: false
+        timeOnly: false,
     },
     render: (args) => ({
         props: {
@@ -116,35 +101,11 @@ export const Icon: Story = {
 `,
     }),
 };
-export const MinMax: Story = {
-    args: {
-        date: new Date(),
-        format: "dd.mm.yy",
-        showIcon: true,
-        showOnFocus: false,
-        iconDisplay: "input",
-        timeOnly: false,
-        minDate: new Date("07/02/2024"),
-        maxDate: new Date(),
-        readonlyInput: true
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    [(ngModel)]="date"
-    [minDate]="minDate"
-    [maxDate]="maxDate"
-    [readonlyInput]="readonlyInput" />
-`,
-    }),
-};
 export const Multiple: Story = {
     args: {
         dates: [],
         selectionMode: "multiple",
-        readonlyInput: true
+        readonlyInput: true,
     },
     render: (args) => ({
         props: {
@@ -161,7 +122,7 @@ export const Range: Story = {
     args: {
         rangeDates: [],
         selectionMode: "range",
-        readonlyInput: true
+        readonlyInput: true,
     },
     render: (args) => ({
         props: {
@@ -174,44 +135,6 @@ export const Range: Story = {
 `,
     }),
 };
-export const Bottonbar: Story = {
-    args: {
-        rangeDates: [],
-        selectionMode: "range",
-        showButtonBar: true
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    [(ngModel)]="date"
-    [showButtonBar]="showButtonBar"/>
-`,
-    }),
-};
-export const MonthPicker: Story = {
-    args: {
-        date: new Date(),
-        selectionMode: "range",
-        showButtonBar: true,
-        view: "month",
-        dateFormat: "mm/yy",
-        readonlyInput: true
-
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    [(ngModel)]="date"
-    [view]="view"
-    [dateFormat]="dateFormat"
-    [readonlyInput]="readonlyInput" />
-`,
-    }),
-};
 export const YearPicker: Story = {
     args: {
         date: new Date(),
@@ -219,8 +142,7 @@ export const YearPicker: Story = {
         showButtonBar: true,
         view: "year",
         dateFormat: "yy",
-        readonlyInput: true
-
+        readonlyInput: true,
     },
     render: (args) => ({
         props: {
@@ -234,119 +156,13 @@ export const YearPicker: Story = {
 `,
     }),
 };
-export const DateTemplate: Story = {
-    args: {
-        date: new Date(),
-        selectionMode: "range",
-        showButtonBar: true,
-        view: "year",
-        dateFormat: "yy",
 
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar [(ngModel)]="date">
-    <ng-template pTemplate="date" let-date>
-        <span [ngStyle]="{textDecoration: (date.day < 21 && date.day > 10) ? 'line-through' : 'inherit'}">
-            {{date.day}}
-        </span>
-    </ng-template>
-    </p-calendar>
-`,
-    }),
-};
-export const TouchUI: Story = {
-    args: {
-        date: new Date(),
-        selectionMode: "range",
-        touchUI: true,
-        view: "year",
-        dateFormat: "yy",
-        readonlyInput: true
-
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    [(ngModel)]="date"
-    [touchUI]="touchUI"
-    [readonlyInput]="readonlyInput" />
-`,
-    }),
-};
-export const Inline: Story = {
-    args: {
-        date: new Date(),
-        selectionMode: "range",
-        touchUI: true,
-        view: "year",
-        dateFormat: "yy",
-        inline: true,
-        showWeek: true
-
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    class="max-w-full"
-    [(ngModel)]="date"
-    [inline]="inline"
-    [showWeek]="showWeek" />
-`,
-    }),
-};
-export const FloatLabel: Story = {
-    args: {
-        date: "",
-        selectionMode: "range",
-        touchUI: true,
-        view: "year",
-        dateFormat: "yy",
-        inline: true,
-        showWeek: true
-
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-floatLabel>
-    <p-calendar
-        [(ngModel)]="date"
-        inputId="birth_date" />
-    <label for="birth_date">Birth Date</label>
-</p-floatLabel>
-`,
-    }),
-};
-export const Filled: Story = {
-    args: {
-        date: "",
-        variant: "filled"
-
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<p-calendar
-    [(ngModel)]="date"
-    [variant]="variant" />
-`,
-    }),
-};
 export const Invaild: Story = {
     args: {
         date: "",
         variant: "filled",
         class: "ng-invalid ng-dirty",
-        disabled: false
+        disabled: false,
     },
     render: (args) => ({
         props: {
@@ -359,4 +175,3 @@ export const Invaild: Story = {
 `,
     }),
 };
-

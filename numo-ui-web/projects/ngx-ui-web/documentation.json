@@ -2,6 +2,111 @@
     "pipes": [],
     "interfaces": [
         {
+            "name": "Product",
+            "id": "interface-Product-476b1b809c6c1f5a263b0a2398333255cba76d38769a342ab6dbd51951088973c61493c028b41f52a77cbb5a30ec01d6a12fef8f4baab952cb0f114cd2d403e7",
+            "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
+            "deprecated": false,
+            "deprecationMessage": "",
+            "type": "interface",
+            "sourceCode": "export const dataView = [\r\n    {\r\n        id: \"1000\",\r\n        code: \"f230fh0g3\",\r\n        name: \"Bamboo Watch\",\r\n        description: \"Product Description\",\r\n        image: \"bamboo-watch.jpg\",\r\n        price: 65,\r\n        category: \"Accessories\",\r\n        quantity: 24,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1001\",\r\n        code: \"nvklal433\",\r\n        name: \"Black Watch\",\r\n        description: \"Product Description\",\r\n        image: \"black-watch.jpg\",\r\n        price: 72,\r\n        category: \"Accessories\",\r\n        quantity: 61,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1002\",\r\n        code: \"zz21cz3c1\",\r\n        name: \"Blue Band\",\r\n        description: \"Product Description\",\r\n        image: \"blue-band.jpg\",\r\n        price: 79,\r\n        category: \"Fitness\",\r\n        quantity: 2,\r\n        inventoryStatus: \"LOWSTOCK\",\r\n        rating: 3,\r\n    },\r\n    {\r\n        id: \"1003\",\r\n        code: \"244wgerg2\",\r\n        name: \"Blue T-Shirt\",\r\n        description: \"Product Description\",\r\n        image: \"blue-t-shirt.jpg\",\r\n        price: 29,\r\n        category: \"Clothing\",\r\n        quantity: 25,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1004\",\r\n        code: \"h456wer53\",\r\n        name: \"Bracelet\",\r\n        description: \"Product Description\",\r\n        image: \"bracelet.jpg\",\r\n        price: 15,\r\n        category: \"Accessories\",\r\n        quantity: 73,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1005\",\r\n        code: \"av2231fwg\",\r\n        name: \"Brown Purse\",\r\n        description: \"Product Description\",\r\n        image: \"brown-purse.jpg\",\r\n        price: 120,\r\n        category: \"Accessories\",\r\n        quantity: 0,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n];\r\n\r\nexport interface Product {\r\n    id?: string;\r\n    code?: string;\r\n    name?: string;\r\n    description?: string;\r\n    price?: number;\r\n    quantity?: number;\r\n    inventoryStatus?: string;\r\n    category?: string;\r\n    image?: string;\r\n    rating?: number;\r\n}\r\n",
+            "properties": [
+                {
+                    "name": "category",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 84
+                },
+                {
+                    "name": "code",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 78
+                },
+                {
+                    "name": "description",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 80
+                },
+                {
+                    "name": "id",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 77
+                },
+                {
+                    "name": "image",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 85
+                },
+                {
+                    "name": "inventoryStatus",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 83
+                },
+                {
+                    "name": "name",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "string",
+                    "optional": true,
+                    "description": "",
+                    "line": 79
+                },
+                {
+                    "name": "price",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 81
+                },
+                {
+                    "name": "quantity",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 82
+                },
+                {
+                    "name": "rating",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "number",
+                    "optional": true,
+                    "description": "",
+                    "line": 86
+                }
+            ],
+            "indexSignatures": [],
+            "kind": 171,
+            "methods": [],
+            "extends": []
+        },
+        {
             "name": "User",
             "id": "interface-User-5427a033b24845d07012a0d838d85e252a3a7e2b169c291a45d028727297701717b9278aba6c5dc23a055ccaa221a6459f361865c69c6cb6b5d7c4ebfa62c303",
             "file": "projects/ngx-ui-web/src/stories/user.ts",
@@ -183,7 +288,7 @@
         },
         {
             "name": "ConfirmDialogComponent",
-            "id": "component-ConfirmDialogComponent-1e606f6c6f1e7f3d37d179cc144b30e241eab55729dd5e793e783e358e0833cccd1b529be0528f5f3f71714d1314f53ad008d8d45c0c97f0cd039666218cd30b",
+            "id": "component-ConfirmDialogComponent-8961e4c79a7a2b62dc60237abbd16829ef588d2f72836b3d0142821f9e70538125cb32ab9fa4b0663c1a0fcd0a13b7d25320abd2c7dac5fd299b8faa6061cf49",
             "file": "projects/ngx-ui-web/src/stories/components/confirm-dialog/confirm-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -192,8 +297,10 @@
             "providers": [],
             "selector": "p-confirm-dialog-wrapper",
             "styleUrls": [],
-            "styles": [],
-            "template": "<p-toast />\n<p-confirmDialog />\n<p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\n<p-button\n    (onClick)=\"confirm2($event)\"\n    label=\"Delete\"\n    severity=\"danger\"\n    [outlined]=\"true\"\n/>\n",
+            "styles": [
+                "\n            :host::ng-deep.p-dialog-footer{\n                display: flex!important;\n                justify-content: start!important;\n                flex-direction: row-reverse!important;\n            }\n        "
+            ],
+            "template": "<p-toast />\n<p-confirmDialog [styleClass]=\"'ui-confirmdialog-footer'\" />\n<p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\n<p-button\n    (onClick)=\"confirm2($event)\"\n    label=\"Delete\"\n    severity=\"danger\"\n    [outlined]=\"true\"\n/>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -214,7 +321,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 38,
+                    "line": 47,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -242,7 +349,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 64,
+                    "line": 73,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -292,10 +399,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component } from \"@angular/core\";\r\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\"; \r\nimport { ConfirmationService, MessageService } from \"primeng/api\";\r\nimport { ButtonModule } from \"primeng/button\";\r\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\r\nimport { ToastModule } from \"primeng/toast\";\r\n\r\n@Component({\r\n    selector: \"p-confirm-dialog-wrapper\",\r\n    imports: [\r\n        CommonModule,\r\n        ToastModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        ButtonModule, \r\n        ConfirmDialogModule,\r\n    ],\r\n    template: `\r\n        <p-toast />\r\n        <p-confirmDialog />\r\n        <p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\r\n        <p-button\r\n            (onClick)=\"confirm2($event)\"\r\n            label=\"Delete\"\r\n            severity=\"danger\"\r\n            [outlined]=\"true\"\r\n        />\r\n    `,\r\n    standalone: true,\r\n})\r\nexport class ConfirmDialogComponent {\r\n    constructor(\r\n        private messageService: MessageService,\r\n        private confirmService: ConfirmationService,\r\n    ) {}\r\n\r\n    confirm1(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Are you sure that you want to proceed?\",\r\n            header: \"Confirmation\",\r\n            icon: \"pi pi-exclamation-triangle\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n            rejectButtonStyleClass: \"p-button-text\",\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"You have accepted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                    life: 3000,\r\n                });\r\n            },\r\n        });\r\n    }\r\n    confirm2(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Do you want to delete this record?\",\r\n            header: \"Delete Confirmation\",\r\n            icon: \"pi pi-info-circle\",\r\n            acceptButtonStyleClass: \"p-button-danger p-button-text\",\r\n            rejectButtonStyleClass: \"p-button-text p-button-text\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"Record deleted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                });\r\n            },\r\n        });\r\n    }\r\n}\r\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\r\nimport { Component } from \"@angular/core\";\r\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\r\nimport { ConfirmationService, MessageService } from \"primeng/api\";\r\nimport { ButtonModule } from \"primeng/button\";\r\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\r\nimport { ToastModule } from \"primeng/toast\";\r\n\r\n@Component({\r\n    selector: \"p-confirm-dialog-wrapper\",\r\n    imports: [\r\n        CommonModule,\r\n        ToastModule,\r\n        FormsModule,\r\n        ReactiveFormsModule,\r\n        ButtonModule,\r\n        ConfirmDialogModule,\r\n    ],\r\n    template: `\r\n        <p-toast />\r\n        <p-confirmDialog [styleClass]=\"'ui-confirmdialog-footer'\" />\r\n        <p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\r\n        <p-button\r\n            (onClick)=\"confirm2($event)\"\r\n            label=\"Delete\"\r\n            severity=\"danger\"\r\n            [outlined]=\"true\"\r\n        />\r\n    `,\r\n    styles: [\r\n        `\r\n            :host::ng-deep.p-dialog-footer{\r\n                display: flex!important;\r\n                justify-content: start!important;\r\n                flex-direction: row-reverse!important;\r\n            }\r\n        `,\r\n    ],\r\n    standalone: true,\r\n})\r\nexport class ConfirmDialogComponent {\r\n    constructor(\r\n        private messageService: MessageService,\r\n        private confirmService: ConfirmationService,\r\n    ) {}\r\n\r\n    confirm1(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Are you sure that you want to proceed?\",\r\n            header: \"Confirmation\",\r\n            icon: \"\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n            rejectButtonStyleClass: \"p-button-text\",\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"You have accepted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                    life: 3000,\r\n                });\r\n            },\r\n        });\r\n    }\r\n    confirm2(event: any) {\r\n        this.confirmService.confirm({\r\n            target: event.target as EventTarget,\r\n            message: \"Do you want to delete this record?\",\r\n            header: \"Delete Confirmation\",\r\n            icon: \"\",\r\n            acceptButtonStyleClass: \"p-button-danger p-button-text\",\r\n            rejectButtonStyleClass: \"p-button-text p-button-text\",\r\n            acceptIcon: \"none\",\r\n            rejectIcon: \"none\",\r\n\r\n            accept: () => {\r\n                this.messageService.add({\r\n                    severity: \"info\",\r\n                    summary: \"Confirmed\",\r\n                    detail: \"Record deleted\",\r\n                });\r\n            },\r\n            reject: () => {\r\n                this.messageService.add({\r\n                    severity: \"error\",\r\n                    summary: \"Rejected\",\r\n                    detail: \"You have rejected\",\r\n                });\r\n            },\r\n        });\r\n    }\r\n}\r\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "",
+            "stylesData": "\n            :host::ng-deep.p-dialog-footer{\n                display: flex!important;\n                justify-content: start!important;\n                flex-direction: row-reverse!important;\n            }\n        \n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -315,7 +422,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 32,
+                "line": 41,
                 "jsdoctags": [
                     {
                         "name": "messageService",
@@ -1674,6 +1781,16 @@
                 "defaultValue": "[\r\n    {\r\n        key: \"0\",\r\n        label: \"Documents\",\r\n        data: \"Documents Folder\",\r\n        icon: \"pi pi-fw pi-inbox\",\r\n        children: [\r\n            {\r\n                key: \"0-0\",\r\n                label: \"Work\",\r\n                data: \"Work Folder\",\r\n                icon: \"pi pi-fw pi-cog\",\r\n                children: [\r\n                    {\r\n                        key: \"0-0-0\",\r\n                        label: \"Expenses.doc\",\r\n                        icon: \"pi pi-fw pi-file\",\r\n                        data: \"Expenses Document\",\r\n                    },\r\n                    {\r\n                        key: \"0-0-1\",\r\n                        label: \"Resume.doc\",\r\n                        icon: \"pi pi-fw pi-file\",\r\n                        data: \"Resume Document\",\r\n                    },\r\n                ],\r\n            },\r\n            {\r\n                key: \"0-1\",\r\n                label: \"Home\",\r\n                data: \"Home Folder\",\r\n                icon: \"pi pi-fw pi-home\",\r\n                children: [\r\n                    {\r\n                        key: \"0-1-0\",\r\n                        label: \"Invoices.txt\",\r\n                        icon: \"pi pi-fw pi-file\",\r\n                        data: \"Invoices for this month\",\r\n                    },\r\n                ],\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        key: \"1\",\r\n        label: \"Events\",\r\n        data: \"Events Folder\",\r\n        icon: \"pi pi-fw pi-calendar\",\r\n        children: [\r\n            {\r\n                key: \"1-0\",\r\n                label: \"Meeting\",\r\n                icon: \"pi pi-fw pi-calendar-plus\",\r\n                data: \"Meeting\",\r\n            },\r\n            {\r\n                key: \"1-1\",\r\n                label: \"Product Launch\",\r\n                icon: \"pi pi-fw pi-calendar-plus\",\r\n                data: \"Product Launch\",\r\n            },\r\n            {\r\n                key: \"1-2\",\r\n                label: \"Report Review\",\r\n                icon: \"pi pi-fw pi-calendar-plus\",\r\n                data: \"Report Review\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        key: \"2\",\r\n        label: \"Movies\",\r\n        data: \"Movies Folder\",\r\n        icon: \"pi pi-fw pi-star-fill\",\r\n        children: [\r\n            {\r\n                key: \"2-0\",\r\n                icon: \"pi pi-fw pi-star-fill\",\r\n                label: \"Al Pacino\",\r\n                data: \"Pacino Movies\",\r\n                children: [\r\n                    {\r\n                        key: \"2-0-0\",\r\n                        label: \"Scarface\",\r\n                        icon: \"pi pi-fw pi-video\",\r\n                        data: \"Scarface Movie\",\r\n                    },\r\n                    {\r\n                        key: \"2-0-1\",\r\n                        label: \"Serpico\",\r\n                        icon: \"pi pi-fw pi-video\",\r\n                        data: \"Serpico Movie\",\r\n                    },\r\n                ],\r\n            },\r\n            {\r\n                key: \"2-1\",\r\n                label: \"Robert De Niro\",\r\n                icon: \"pi pi-fw pi-star-fill\",\r\n                data: \"De Niro Movies\",\r\n                children: [\r\n                    {\r\n                        key: \"2-1-0\",\r\n                        label: \"Goodfellas\",\r\n                        icon: \"pi pi-fw pi-video\",\r\n                        data: \"Goodfellas Movie\",\r\n                    },\r\n                    {\r\n                        key: \"2-1-1\",\r\n                        label: \"Untouchables\",\r\n                        icon: \"pi pi-fw pi-video\",\r\n                        data: \"Untouchables Movie\",\r\n                    },\r\n                ],\r\n            },\r\n        ],\r\n    },\r\n]"
             },
             {
+                "name": "dataView",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\r\n    {\r\n        id: \"1000\",\r\n        code: \"f230fh0g3\",\r\n        name: \"Bamboo Watch\",\r\n        description: \"Product Description\",\r\n        image: \"bamboo-watch.jpg\",\r\n        price: 65,\r\n        category: \"Accessories\",\r\n        quantity: 24,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1001\",\r\n        code: \"nvklal433\",\r\n        name: \"Black Watch\",\r\n        description: \"Product Description\",\r\n        image: \"black-watch.jpg\",\r\n        price: 72,\r\n        category: \"Accessories\",\r\n        quantity: 61,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1002\",\r\n        code: \"zz21cz3c1\",\r\n        name: \"Blue Band\",\r\n        description: \"Product Description\",\r\n        image: \"blue-band.jpg\",\r\n        price: 79,\r\n        category: \"Fitness\",\r\n        quantity: 2,\r\n        inventoryStatus: \"LOWSTOCK\",\r\n        rating: 3,\r\n    },\r\n    {\r\n        id: \"1003\",\r\n        code: \"244wgerg2\",\r\n        name: \"Blue T-Shirt\",\r\n        description: \"Product Description\",\r\n        image: \"blue-t-shirt.jpg\",\r\n        price: 29,\r\n        category: \"Clothing\",\r\n        quantity: 25,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1004\",\r\n        code: \"h456wer53\",\r\n        name: \"Bracelet\",\r\n        description: \"Product Description\",\r\n        image: \"bracelet.jpg\",\r\n        price: 15,\r\n        category: \"Accessories\",\r\n        quantity: 73,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1005\",\r\n        code: \"av2231fwg\",\r\n        name: \"Brown Purse\",\r\n        description: \"Product Description\",\r\n        image: \"brown-purse.jpg\",\r\n        price: 120,\r\n        category: \"Accessories\",\r\n        quantity: 0,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n]"
+            },
+            {
                 "name": "Menu",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1728,6 +1845,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\r\n    {\r\n        key: \"0\",\r\n        label: \"Introduction\",\r\n        children: [\r\n            {\r\n                key: \"0-0\",\r\n                label: \"What is Angular\",\r\n                data: \"https://angular.io\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"0-1\",\r\n                label: \"Getting Started\",\r\n                data: \"https://angular.io/guide/setup-local\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"0-2\",\r\n                label: \"Learn and Explore\",\r\n                data: \"https://angular.io/guide/architecture\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"0-3\",\r\n                label: \"Take a Look\",\r\n                data: \"https://angular.io/start\",\r\n                type: \"url\",\r\n            },\r\n        ],\r\n    },\r\n    {\r\n        key: \"1\",\r\n        label: \"Components In-Depth\",\r\n        children: [\r\n            {\r\n                key: \"1-0\",\r\n                label: \"Component Registration\",\r\n                data: \"https://angular.io/guide/component-interaction\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"1-1\",\r\n                label: \"User Input\",\r\n                data: \"https://angular.io/guide/user-input\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"1-2\",\r\n                label: \"Hooks\",\r\n                data: \"https://angular.io/guide/lifecycle-hooks\",\r\n                type: \"url\",\r\n            },\r\n            {\r\n                key: \"1-3\",\r\n                label: \"Attribute Directives\",\r\n                data: \"https://angular.io/guide/attribute-directives\",\r\n                type: \"url\",\r\n            },\r\n        ],\r\n    },\r\n]"
+                }
+            ],
+            "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts": [
+                {
+                    "name": "dataView",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\r\n    {\r\n        id: \"1000\",\r\n        code: \"f230fh0g3\",\r\n        name: \"Bamboo Watch\",\r\n        description: \"Product Description\",\r\n        image: \"bamboo-watch.jpg\",\r\n        price: 65,\r\n        category: \"Accessories\",\r\n        quantity: 24,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1001\",\r\n        code: \"nvklal433\",\r\n        name: \"Black Watch\",\r\n        description: \"Product Description\",\r\n        image: \"black-watch.jpg\",\r\n        price: 72,\r\n        category: \"Accessories\",\r\n        quantity: 61,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1002\",\r\n        code: \"zz21cz3c1\",\r\n        name: \"Blue Band\",\r\n        description: \"Product Description\",\r\n        image: \"blue-band.jpg\",\r\n        price: 79,\r\n        category: \"Fitness\",\r\n        quantity: 2,\r\n        inventoryStatus: \"LOWSTOCK\",\r\n        rating: 3,\r\n    },\r\n    {\r\n        id: \"1003\",\r\n        code: \"244wgerg2\",\r\n        name: \"Blue T-Shirt\",\r\n        description: \"Product Description\",\r\n        image: \"blue-t-shirt.jpg\",\r\n        price: 29,\r\n        category: \"Clothing\",\r\n        quantity: 25,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 5,\r\n    },\r\n    {\r\n        id: \"1004\",\r\n        code: \"h456wer53\",\r\n        name: \"Bracelet\",\r\n        description: \"Product Description\",\r\n        image: \"bracelet.jpg\",\r\n        price: 15,\r\n        category: \"Accessories\",\r\n        quantity: 73,\r\n        inventoryStatus: \"INSTOCK\",\r\n        rating: 4,\r\n    },\r\n    {\r\n        id: \"1005\",\r\n        code: \"av2231fwg\",\r\n        name: \"Brown Purse\",\r\n        description: \"Product Description\",\r\n        image: \"brown-purse.jpg\",\r\n        price: 120,\r\n        category: \"Accessories\",\r\n        quantity: 0,\r\n        inventoryStatus: \"OUTOFSTOCK\",\r\n        rating: 4,\r\n    },\r\n]"
                 }
             ],
             "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts": [
@@ -1787,6 +1916,25 @@
                 "name": "ConfirmDialogComponent",
                 "coveragePercent": 0,
                 "coverageCount": "0/4",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
+                "type": "interface",
+                "linktype": "interface",
+                "name": "Product",
+                "coveragePercent": 0,
+                "coverageCount": "0/11",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "dataView",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
