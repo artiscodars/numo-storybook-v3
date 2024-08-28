@@ -2,7 +2,19 @@
     .p-panelmenu-header {
         outline: 0 none;
 
-    
+        .p-panelmenu-header-content { 
+            background: $accordionHeaderBg; 
+
+         
+        }
+
+        &:not(.p-disabled) {
+            &:focus-visible {
+                .p-panelmenu-header-content {
+                    @include focused-inset();
+                }
+            }
+        }
 
         &:not(.p-highlight):not(.p-disabled):hover {
             .p-panelmenu-header-content {
@@ -12,6 +24,7 @@
             }
         }
         :not(.p-disabled).p-highlight:hover .p-panelmenu-header-content {
+            border-color: #dee2e6;
             background: $accordionHeaderActiveBg;
             color: $accordionHeaderTextActiveHoverColor;
         }
