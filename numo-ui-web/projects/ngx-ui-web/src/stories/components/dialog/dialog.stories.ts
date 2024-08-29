@@ -68,8 +68,8 @@ export const basic: Story = {
         <input pInputText id="email" class="flex-auto" autocomplete="off" />
     </div>
     <div class="flex justify-content-start gap-2">
-        <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
-        <p-button label="Save" (onClick)="visible = false" />
+    <p-button label="Save" (onClick)="visible = false" />
+    <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
     </div>
 </p-dialog>`,
     }),
