@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "@storybook/channels": "^8.2.9",
+    "@storybook/core-events": "^8.2.9"
+  }
+}

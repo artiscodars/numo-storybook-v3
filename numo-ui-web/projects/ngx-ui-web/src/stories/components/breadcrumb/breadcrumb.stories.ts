@@ -5,6 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BreadcrumbModule } from "primeng/breadcrumb";
 import { RouterTestingModule } from "@angular/router/testing";
+import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
     title: "Components/Breadcrumb",
@@ -15,7 +16,8 @@ const meta: Meta = {
                 BrowserAnimationsModule,
                 FormsModule,
                 ReactiveFormsModule,
-                RouterTestingModule
+                RouterTestingModule,
+                IconComponent,
             ],
         }),
     ],
@@ -48,5 +50,40 @@ export const basic: Story = {
             ...args,
         },
         template: `<p-breadcrumb class="max-w-full" [model]="items" [home]="home" />`,
+    }),
+};
+export const template: Story = {
+    args: {
+        items: [
+            {
+                label: "Electronics",
+                icon: "cil:bell",
+                type: "iconify",
+            },
+            {
+                label: "Computer",
+                icon: "cil:search",
+                type: "iconify",
+            },
+            { label: "Accessories" },
+            { label: "Keyboard" },
+            { label: "Wireless" },
+        ],
+        home: { icon: "pi pi-home", routerLink: "/" },
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `
+        <p-breadcrumb class="max-w-full" [model]="items" [home]="home">
+            <ng-template pTemplate="item" let-item>
+                <a class="cursor-pointer p-menuitem-link" [routerLink]="item.url">
+                    <numo-icon  [icon]="item.icon" [type]="item.type" *ngIf="item.icon"></numo-icon>
+                    <span class=" font-semibold">{{ item.label }}</span>
+                </a>
+            </ng-template>
+        </p-breadcrumb>
+`,
     }),
 };

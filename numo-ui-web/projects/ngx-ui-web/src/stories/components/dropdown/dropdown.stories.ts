@@ -4,13 +4,18 @@ import { DropdownModule } from "primeng/dropdown";
 import description from "./dropdown.description.md"; // Import the markdown file
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { DropdownFilterOptions } from 'primeng/dropdown';
+import { filter } from "rxjs";
+import { ButtonModule } from "primeng/button";
+import type { Channel } from "@storybook/channels";
+import { UPDATE_STORY_ARGS } from '@storybook/core-events'
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
     title: "Components/Dropdown",
     decorators: [
         moduleMetadata({
-            imports: [ DropdownModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule ],
+            imports: [ DropdownModule, BrowserAnimationsModule, FormsModule, ReactiveFormsModule,ButtonModule ],
         }),
     ],
     tags: [ "autodocs" ],
@@ -43,7 +48,6 @@ export const Basic: Story = {
         showClear: false,
         editable: false,
         group: false,
-
     },
     render: (args) => ({
         props: {
@@ -70,7 +74,6 @@ export const ReactiveForms: Story = {
             { name: "Istanbul", code: "IST" },
             { name: "Paris", code: "PRS" }
         ],
-        formControlName: "selectedCity"
     },
     render: (args) => ({
         props: {
@@ -78,7 +81,6 @@ export const ReactiveForms: Story = {
         },
         template: `<p-dropdown
     [options]="cities"
-    [formControlName]="formControlName"
     optionLabel="name"
     placeholder="{{label}}" />`,
     }),
@@ -198,6 +200,89 @@ export const Group: Story = {
             </div>
         </ng-template>
     </p-dropdown>`,
+    }),
+};
+
+export const CustomFilter: Story = {
+    args: {
+        label: "Select a Country",
+        countries : [
+            { name: 'Australia', code: 'AU' },
+            { name: 'Brazil', code: 'BR' },
+            { name: 'China', code: 'CN' },
+            { name: 'Egypt', code: 'EG' },
+            { name: 'France', code: 'FR' },
+            { name: 'Germany', code: 'DE' },
+            { name: 'India', code: 'IN' },
+            { name: 'Japan', code: 'JP' },
+            { name: 'Spain', code: 'ES' },
+            { name: 'United States', code: 'US' }
+        ],
+        checkmark: false,
+        showClear: false,
+        filterValue: ''
+    },
+    render: (args,{id}) => ({
+        
+        props: {
+            ...args,
+            resetFunction(options:any) {
+                if (options) {
+                    console.log(options);
+                    options.reset();
+                }
+                const channel = (window as any).__STORYBOOK_ADDONS_CHANNEL__ as Channel;
+                channel.emit(UPDATE_STORY_ARGS, {
+                    storyId: id,
+                    updatedArgs: { filterValue: '' },
+                  })
+            },
+            customFilterFunction(event: KeyboardEvent, options: any) {
+                options.filter(event);
+            },
+        },
+        template: `<p-dropdown 
+    [options]="countries" 
+    [(ngModel)]="selectedCountry"
+    optionLabel="name"
+    [filter]="true" 
+    filterBy="name"
+    [showClear]="true"
+    placeholder="Select a Country" 
+    styleClass="w-20rem">
+        <ng-template pTemplate="filter" let-options="options">
+            <div class="flex gap-1">
+                <div class="p-inputgroup" (click)="$event.stopPropagation()">
+                    <span class="p-inputgroup-addon"><i class="pi pi-search"></i></span>
+                    <input 
+                        type="text"
+                        pInputText
+                        placeholder="Filter" 
+                        [(ngModel)]="filterValue"
+                        (keyup)="customFilterFunction($event, options)" />
+                </div>
+                <button pButton icon="pi pi-times" (click)="resetFunction(options)" severity="secondary"></button>
+            </div>
+        </ng-template>
+        <ng-template pTemplate="selectedItem" let-selectedOption>
+            <div class="flex align-items-center gap-2">
+                <img 
+                    src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                    [class]="'flag flag-' + selectedCountry.code.toLowerCase()"
+                    style="width: 18px" />
+                <div>{{ selectedOption.name }}</div>
+            </div>
+        </ng-template>
+        <ng-template let-country pTemplate="item">
+            <div class="flex align-items-center gap-2">
+                <img 
+                    src="https://primefaces.org/cdn/primeng/images/demo/flag/flag_placeholder.png"
+                    [class]="'flag flag-' + country.code.toLowerCase()" 
+                    style="width: 18px" />
+                <div>{{ country.name }}</div>
+            </div>
+        </ng-template>
+</p-dropdown>`,
     }),
 };
 
