@@ -1,14 +1,78 @@
-$primaryColor: #3B82F6 !default;
-$primaryLightColor: #BFDBFE !default;
-$primaryDarkColor: #2563eb !default;
-$primaryDarkerColor: #1D4ED8 !default;
+:root {
+    --breakpoint: 1024px; // or any global you wish to share with components
+}
+
+$primaryColor: #0191cb !default;
+$primaryLightColor: rgb(193, 218, 249) !default;
+$primaryDarkColor: #006f9c !default;
+$primaryDarkerColor: #004c6a !default;
 $primaryTextColor: #ffffff !default;
 
-$highlightBg: #EFF6FF !default;
-$highlightTextColor: $primaryDarkerColor !default;
-$highlightFocusBg: rgba($primaryColor, .24) !default;
+$successColor: #4caf50 !default;
+$successLightColor: #c8e6c9 !default;
+$successDarkColor: #388e3c !default;
+$successDarkerColor: #1b5e20 !default;
+$successTextColor: #ffffff !default;
 
-@import './variable';
-@import './_fonts';
-@import './components';
-@import './_extensions';
+$warningColor: #ff9800 !default;
+$warningLightColor: #ffe0b2 !default;
+$warningDarkColor: #f57c00 !default;
+$warningDarkerColor: #e65100 !default;
+$warningTextColor: #ffffff !default;
+
+$dangerColor: #f44336 !default;
+$dangerLightColor: #ffcdd2 !default;
+$dangerDarkColor: #d32f2f !default;
+$dangerDarkerColor: #b71c1c !default;
+$dangerTextColor: #ffffff !default;
+
+$infoColor: #01d4ce !default;
+$infoLightColor: #b2ebf2 !default;
+$infoDarkColor: #0097a7 !default;
+$infoDarkerColor: #006978 !default;
+$infoTextColor: #ffffff !default;
+
+$grayColor: #9e9e9e !default;
+$grayLightColor: #e0e0e0 !default;
+$grayDarkColor: #616161 !default;
+$grayDarkerColor: #424242 !default;
+$grayTextColor: #ffffff !default;
+
+$borderColor: #e0e0e0 !default;
+$borderLightColor: #f5f5f5 !default;
+$borderDarkColor: #bdbdbd !default;
+$borderDarkerColor: #9e9e9e !default;
+
+$backgroundColor: #f5f5f5 !default;
+$backgroundLightColor: #ffffff !default;
+$backgroundDarkColor: #e0e0e0 !default;
+$backgroundDarkerColor: #bdbdbd !default;
+
+$fontFamily: "Roboto", sans-serif !default;
+$fontSize: 14px !default;
+$lineHeight: 1.5 !default;
+$fontWeight: 400 !default;
+
+$borderRadius: 4px !default;
+$borderWidth: 1px !default;
+
+$padding: 10px !default;
+$paddingSmall: 5px !default;
+$paddingLarge: 20px !default;
+
+$highlightBg: #eff6ff !default;
+$highlightTextColor: $primaryDarkerColor !default;
+$highlightFocusBg: rgba($primaryColor, 0.24) !default;
+
+//numo special
+
+$numoGradient: linear-gradient(180deg, $primaryColor, $infoColor) !default;
+$numoHighlightColor: $primaryColor !default;
+
+//rewrites
+$accordionHeaderActiveBg: $numoGradient;
+
+@import "./variable";
+@import "./_fonts";
+@import "./components";
+@import "./_extensions";
