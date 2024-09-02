@@ -47,6 +47,8 @@
         "@storybook/angular": "^8.2.6",
         "@storybook/blocks": "^8.2.6",
         "@storybook/test": "^8.2.6",
+        "@storybook/channels": "^8.2.9",
+        "@storybook/core-events": "^8.2.9",
         "@types/jest": "^29.5.12",
         "autoprefixer": "^10.4.19",
         "css-loader": "^7.1.2",

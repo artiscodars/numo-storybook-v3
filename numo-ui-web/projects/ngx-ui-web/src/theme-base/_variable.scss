@@ -41,9 +41,17 @@ $shade700: #000000 !default; //text color
 $shade800: #0191CB !default; //unused
 $shade900: #ffffff !default; //unused
 
+//$base primary
+$basePrimaryColor: linear-gradient(180deg, #01d4ce 0%, #007fca 100%)  !default;
 //global
 $accordionHeaderActiveBg: linear-gradient(180deg, #01d4ce 0%, #007fca 100%) ;
 $borderRadius: 8px !default;
+
+//button
+$buttonTextColor: $shade000;
+$buttonBg: $basePrimaryColor;
+
+
 
 
 $transitionDuration: 0.2s !default;
