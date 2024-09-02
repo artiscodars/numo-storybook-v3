@@ -1,4 +1,5 @@
 DataView displays data in grid or list layout with pagination and sorting features.
 
 ## Usage
-Usage texts goes here
+
+Tiek izmantots sarakstos, kur var iztik bez tabulas.

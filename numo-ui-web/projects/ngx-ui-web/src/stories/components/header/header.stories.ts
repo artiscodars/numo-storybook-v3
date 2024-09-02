@@ -4,13 +4,13 @@ import description from "./header.description.md";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const meta: Meta<HeaderComponent> = {
-    title: "Components/Header",
+    title: "Design blocks/Header",
     component: HeaderComponent,
     excludeStories: /.*Data$/,
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     decorators: [
         moduleMetadata({
-            imports: [ , /* RouterTestingModule */ BrowserAnimationsModule ],
+            imports: [, /* RouterTestingModule */ BrowserAnimationsModule],
         }),
     ],
     render: () => ({

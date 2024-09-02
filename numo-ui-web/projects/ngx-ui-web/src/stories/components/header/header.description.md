@@ -1,4 +1,8 @@
-The `HeaderComponent` is a versatile and interactive header section designed for web applications. It includes a logo, a search bar, and a user menu with a dropdown. The header is responsive and uses Tailwind CSS for styling.
+Visa portāla kopējā galvene (header)
 
-## Usage
-Usage texts goes here
+## Satur
+
+1. Izvēlnes pogu
+2. Logotipu
+3. Meklēšanu
+4. Lietotāja pārslēgu/izvēlni
