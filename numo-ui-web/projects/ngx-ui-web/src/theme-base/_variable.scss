@@ -11,6 +11,7 @@ $colors: (
     "purple": #a855f7,
     "red": #ff3d32,
     "primary": $primaryColor,
+    "secondary": $secondaryColor,
 );
 
 //reused color variables
@@ -135,12 +136,12 @@ $buttonIconOnlyPadding: 0.75rem 0 !default;
 $buttonBg: $primaryColor !default;
 $buttonTextColor: $primaryTextColor !default;
 $buttonBorder: 1px solid $primaryColor !default;
-$buttonHoverBg: $primaryDarkColor !default;
+$buttonHoverBg: darken($primaryColor, 10%) !default;
 $buttonTextHoverColor: $primaryTextColor !default;
-$buttonHoverBorderColor: $primaryDarkColor !default;
-$buttonActiveBg: $primaryDarkerColor !default;
+$buttonHoverBorderColor: darken($primaryColor, 10%) !default;
+$buttonActiveBg: darken($primaryColor, 15%) !default;
 $buttonTextActiveColor: $primaryTextColor !default;
-$buttonActiveBorderColor: $primaryDarkerColor !default;
+$buttonActiveBorderColor: darken($primaryColor, 15%) !default;
 $raisedButtonShadow:
     0 3px 1px -2px rgba(0, 0, 0, 0.2),
     0 2px 2px 0 rgba(0, 0, 0, 0.14),
@@ -154,74 +155,74 @@ $plainButtonTextColor: $textSecondaryColor !default;
 $plainButtonHoverBgColor: $shade200 !default;
 $plainButtonActiveBgColor: $shade300 !default;
 
-$secondaryButtonBg: #64748b !default;
+$secondaryButtonBg: $secondaryColor !default;
 $secondaryButtonTextColor: #ffffff !default;
-$secondaryButtonBorder: 1px solid #64748b !default;
-$secondaryButtonHoverBg: #475569 !default;
+$secondaryButtonBorder: 1px solid $secondaryColor !default;
+$secondaryButtonHoverBg: darken($secondaryColor, 10%) !default;
 $secondaryButtonTextHoverColor: $secondaryButtonTextColor !default;
-$secondaryButtonHoverBorderColor: #475569 !default;
-$secondaryButtonActiveBg: #334155 !default;
+$secondaryButtonHoverBorderColor: darken($secondaryColor, 10%) !default;
+$secondaryButtonActiveBg: darken($secondaryColor, 15%) !default;
 $secondaryButtonTextActiveColor: $secondaryButtonTextColor !default;
-$secondaryButtonActiveBorderColor: #334155 !default;
-$secondaryButtonFocusShadow: 0 0 0 0.2rem #e2e8f0 !default;
+$secondaryButtonActiveBorderColor: darken($secondaryColor, 15%) !default;
+$secondaryButtonFocusShadow: 0 0 0 0.2rem lighten($secondaryColor, 50%) !default;
 
-$infoButtonBg: #0ea5e9 !default;
-$infoButtonTextColor: #ffffff !default;
-$infoButtonBorder: 1px solid #0ea5e9 !default;
-$infoButtonHoverBg: #0284c7 !default;
+$infoButtonBg: $infoColor !default;
+$infoButtonTextColor: $infoTextColor !default;
+$infoButtonBorder: 1px solid $infoColor !default;
+$infoButtonHoverBg: darken($infoColor, 10%) !default;
 $infoButtonTextHoverColor: $infoButtonTextColor !default;
-$infoButtonHoverBorderColor: #0284c7 !default;
-$infoButtonActiveBg: #0369a1 !default;
+$infoButtonHoverBorderColor: darken($infoColor, 10%) !default;
+$infoButtonActiveBg: darken($infoColor, 15%) !default;
 $infoButtonTextActiveColor: $infoButtonTextColor !default;
-$infoButtonActiveBorderColor: #0369a1 !default;
-$infoButtonFocusShadow: 0 0 0 0.2rem #bfdbfe !default;
+$infoButtonActiveBorderColor: darken($infoColor, 15%) !default;
+$infoButtonFocusShadow: 0 0 0 0.2rem lighten($infoColor, 50%) !default;
 
 $successButtonBg: $successColor !default;
-$successButtonTextColor: #ffffff !default;
+$successButtonTextColor: $successTextColor !default;
 $successButtonBorder: 1px solid $successColor !default;
-$successButtonHoverBg: #16a34a !default;
+$successButtonHoverBg: darken($successColor, 10%) !default;
 $successButtonTextHoverColor: $successButtonTextColor !default;
-$successButtonHoverBorderColor: #16a34a !default;
-$successButtonActiveBg: #15803d !default;
+$successButtonHoverBorderColor: darken($successColor, 10%) !default;
+$successButtonActiveBg: darken($successColor, 15%) !default;
 $successButtonTextActiveColor: $successButtonTextColor !default;
-$successButtonActiveBorderColor: #15803d !default;
-$successButtonFocusShadow: 0 0 0 0.2rem #bbf7d0 !default;
+$successButtonActiveBorderColor: darken($successColor, 15%) !default;
+$successButtonFocusShadow: 0 0 0 0.2rem lighten($successColor, 50%) !default;
 
-$warningButtonBg: #f97316 !default;
-$warningButtonTextColor: #ffffff !default;
-$warningButtonBorder: 1px solid #f97316 !default;
-$warningButtonHoverBg: #ea580c !default;
+$warningButtonBg: $warningColor !default;
+$warningButtonTextColor: $warningTextColor !default;
+$warningButtonBorder: 1px solid $warningColor !default;
+$warningButtonHoverBg: darken($warningColor, 10%) !default;
 $warningButtonTextHoverColor: $warningButtonTextColor !default;
-$warningButtonHoverBorderColor: #ea580c !default;
-$warningButtonActiveBg: #c2410c !default;
+$warningButtonHoverBorderColor: darken($warningColor, 10%) !default;
+$warningButtonActiveBg: darken($warningColor, 15%) !default;
 $warningButtonTextActiveColor: $warningButtonTextColor !default;
-$warningButtonActiveBorderColor: #c2410c !default;
-$warningButtonFocusShadow: 0 0 0 0.2rem #fde68a !default;
+$warningButtonActiveBorderColor: darken($warningColor, 15%) !default;
+$warningButtonFocusShadow: 0 0 0 0.2rem lighten($warningColor, 50%) !default;
 
-$helpButtonBg: #a855f7 !default;
-$helpButtonTextColor: #ffffff !default;
-$helpButtonBorder: 1px solid #a855f7 !default;
-$helpButtonHoverBg: #9333ea !default;
+$helpButtonBg: $helpColor !default;
+$helpButtonTextColor: $helpTextColor !default;
+$helpButtonBorder: 1px solid $helpColor !default;
+$helpButtonHoverBg: darken($helpColor, 15%) !default;
 $helpButtonTextHoverColor: $helpButtonTextColor !default;
-$helpButtonHoverBorderColor: #9333ea !default;
-$helpButtonActiveBg: #7e22ce !default;
+$helpButtonHoverBorderColor: darken($helpColor, 15%) !default;
+$helpButtonActiveBg: darken($helpColor, 20%) !default;
 $helpButtonTextActiveColor: $helpButtonTextColor !default;
-$helpButtonActiveBorderColor: #7e22ce !default;
-$helpButtonFocusShadow: 0 0 0 0.2rem #e9d5ff !default;
+$helpButtonActiveBorderColor: darken($helpColor, 20%) !default;
+$helpButtonFocusShadow: 0 0 0 0.2rem lighten($helpColor, 50%) !default;
 
-$dangerButtonBg: #ef4444 !default;
-$dangerButtonTextColor: #ffffff !default;
-$dangerButtonBorder: 1px solid $dangerButtonBg !default;
-$dangerButtonHoverBg: #dc2626 !default;
+$dangerButtonBg: $dangerColor !default;
+$dangerButtonTextColor: $dangerTextColor !default;
+$dangerButtonBorder: 1px solid $dangerColor !default;
+$dangerButtonHoverBg: darken($dangerColor, 10%) !default;
 $dangerButtonTextHoverColor: $dangerButtonTextColor !default;
-$dangerButtonHoverBorderColor: #dc2626 !default;
-$dangerButtonActiveBg: #b91c1c !default;
+$dangerButtonHoverBorderColor: darken($dangerColor, 10%) !default;
+$dangerButtonActiveBg: darken($dangerColor, 15%) !default;
 $dangerButtonTextActiveColor: $dangerButtonTextColor !default;
-$dangerButtonActiveBorderColor: #b91c1c !default;
-$dangerButtonFocusShadow: 0 0 0 0.2rem #fecaca !default;
+$dangerButtonActiveBorderColor: darken($dangerColor, 15%) !default;
+$dangerButtonFocusShadow: 0 0 0 0.2rem lighten($dangerColor, 50%) !default;
 
 $contrastButtonBg: $shade900 !default;
-$contrastButtonTextColor: #ffffff !default;
+$contrastButtonTextColor: $shade100 !default;
 $contrastButtonBorder: 1px solid $contrastButtonBg !default;
 $contrastButtonHoverBg: $shade800 !default;
 $contrastButtonTextHoverColor: $contrastButtonTextColor !default;
@@ -229,7 +230,7 @@ $contrastButtonHoverBorderColor: $shade800 !default;
 $contrastButtonActiveBg: $shade700 !default;
 $contrastButtonTextActiveColor: $contrastButtonTextColor !default;
 $contrastButtonActiveBorderColor: $shade700 !default;
-$contrastButtonFocusShadow: none !default;
+$contrastButtonFocusShadow: 0 0 0 0.2rem lighten($shade700, 50%) !default;
 
 $linkButtonColor: $primaryDarkerColor !default;
 $linkButtonHoverColor: $primaryDarkerColor !default;
@@ -400,7 +401,7 @@ $accordionHeaderHoverBg: $shade200 !default;
 $accordionHeaderHoverBorderColor: $shade300 !default;
 $accordionHeaderTextHoverColor: $shade800 !default;
 
-$accordionHeaderActiveBg: $panelHeaderBg !default;
+$accordionHeaderActiveBg: $primaryColor !default;
 $accordionHeaderActiveBorderColor: $shade300 !default;
 $accordionHeaderTextActiveColor: $shade000 !default;
 

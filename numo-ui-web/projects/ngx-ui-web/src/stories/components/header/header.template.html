@@ -1,51 +1,39 @@
-<div class="header flex justify-content-between items-center p-2 text-white">
-    <div class="logo flex items-center font-bold text-2xl h-10">
-        <div>
-            <span
-                #menuButton
-                (click)="toggleMenu($event)"
-                class="pi pi-bars icon text-gray-800 cursor-pointer"
-            ></span>
+<div
+    class="header flex align-items-center p-2 text-white justify-content-between row-gap-3"
+>
+    <div class="flex align-items-center font-bold text-2xl h-10">
+        <span
+            #menuButton
+            (click)="toggleMenu($event)"
+            class="pi pi-bars icon text-gray-800 cursor-pointer"
+        ></span>
 
-            <p-overlayPanel #menu>
-                <div class="flex flex-column gap-3">
-                    <numo-left-menu [items]="items"></numo-left-menu>
-                </div>
-            </p-overlayPanel>
-            <p-overlayPanel #storyMenu>
-                <div class="flex flex-column gap-3">
-                    <numo-left-menu [items]="items"></numo-left-menu>
-                </div>
-            </p-overlayPanel>
-        </div>
+        <p-overlayPanel #menu>
+            <div class="flex flex-column gap-3">
+                <numo-left-menu [items]="items"></numo-left-menu>
+            </div>
+        </p-overlayPanel>
+        <p-overlayPanel #storyMenu>
+            <div class="flex flex-column gap-3">
+                <numo-left-menu [items]="items"></numo-left-menu>
+            </div>
+        </p-overlayPanel>
+
         <img class="ml-3" height="30" src="logo.png" alt="logo" />
     </div>
-    <div class="flex justify-center mx-5 relative">
-        <div class="flex justify-center w-full max-w-[500px] relative">
-            <span
-                style="top: 8px; left: 12px"
-                class="pi pi-search icon text-gray-800 absolute top-[15px] left-[12px]"
-            ></span>
-
-            <input
-                type="text"
-                style="text-indent: 35px"
-                class="text-gray-800 p-0 pl-10"
-                pInputText
-            />
-        </div>
+    <div class="flex justify-center relative w-30rem">
+        <p-iconField iconPosition="right" class="w-full">
+            <p-inputIcon>
+                <numo-icon icon="tabler:search" type="iconify"></numo-icon>
+            </p-inputIcon>
+            <input type="text" pInputText placeholder="Meklēt" class="w-full" />
+        </p-iconField>
     </div>
-    <div>
-        <div class=" inline-block">
-            <span
-                class="flex cursor-pointer text-gray-800 relative gap-2 align-items-center justify-content-between"
-                (click)="userMenu.toggle($event)"
-            >
-                <i class="text-gray-800 pi pi-bell"></i>
 
-                Username</span
-            >
-        </div>
-        <p-menu #userMenu [model]="userMenuItems" [popup]="true" />
+    <div>
+        <p-menubar
+            [model]="userMenuItems"
+            styleClass="p-0 custom-menubar bg-transparent hover:bg-transparent w-20rem border-transparent hover:bg-transparent "
+        />
     </div>
 </div>

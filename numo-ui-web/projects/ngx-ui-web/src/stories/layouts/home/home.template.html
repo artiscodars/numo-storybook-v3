@@ -1,22 +1,17 @@
 <numo-header (menuClicked)="toggleMenu($event)"></numo-header>
 
 <div class="container">
-  @if (isMenuVisible) {
-      <div class="menu">
-    @for (item of items; track $index) {
+    @if (isMenuVisible) {
+    <div class="menu">
+        @for (item of items; track $index) {
         <div class="flex flex-column gap-3 w-full">
-      <p-card class="border-round-lg w-full">
-        <p class="m-0">
-          <span class="pi pi-check-circle"></span> {{ item.label }}
-        </p>
-      </p-card>
-      <numo-left-menu [items]="item.menu"></numo-left-menu>
+            <numo-left-menu [items]="item.menu"></numo-left-menu>
+        </div>
+        }
     </div>
     }
-  </div>
-  }
     <div class="dashboard">
-    <!-- <rotuer-outlet></router-outlet -->
-    <numo-dashboard></numo-dashboard>
-  </div>
+        <!-- <rotuer-outlet></router-outlet -->
+        <numo-dashboard></numo-dashboard>
+    </div>
 </div>

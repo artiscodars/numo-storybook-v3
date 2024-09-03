@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
-    title: "Components/LeftMenu",
+    title: "Design blocks/LeftMenu",
     decorators: [
         moduleMetadata({
             imports: [

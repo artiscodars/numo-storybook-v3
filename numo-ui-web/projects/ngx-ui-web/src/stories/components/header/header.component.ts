@@ -13,6 +13,10 @@ import { MenuModule } from "primeng/menu";
 import { Menu, UserMenuItems } from "../left-menu/menu.model";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { LeftMenuComponent } from "../left-menu/left-menu.component";
+import { IconComponent } from "../icon/icon.component";
+import { IconFieldModule } from "primeng/iconfield";
+import { InputIconModule } from "primeng/inputicon";
+import { MenubarModule } from "primeng/menubar";
 
 @Component({
     selector: "numo-header",
@@ -24,6 +28,10 @@ import { LeftMenuComponent } from "../left-menu/left-menu.component";
         MenuModule,
         OverlayPanelModule,
         LeftMenuComponent,
+        IconComponent,
+        IconFieldModule,
+        InputIconModule,
+        MenubarModule,
     ],
     templateUrl: "./header.template.html",
     styles: [],
@@ -36,7 +44,7 @@ export class HeaderComponent {
     @ViewChild("storyMenu") storyMenu: any;
     @Output() menuClicked = new EventEmitter(false);
     items = [...Menu];
-    userMenuItems = UserMenuItems;
+    userMenuItems = [...UserMenuItems];
     BreakPoint = 1024;
 
     toggleMenu(event: Event) {

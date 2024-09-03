@@ -38,6 +38,12 @@ $infoDarkColor: #0097a7 !default;
 $infoDarkerColor: #006978 !default;
 $infoTextColor: #ffffff !default;
 
+$helpColor: #ffeb3b !default;
+$helpLightColor: #fff9c4 !default;
+$helpDarkColor: #fbc02d !default;
+$helpDarkerColor: #f57f17 !default;
+$helpTextColor: #000000 !default;
+
 $grayColor: #9e9e9e !default;
 $grayLightColor: #e0e0e0 !default;
 $grayDarkColor: #616161 !default;
@@ -76,9 +82,17 @@ $numoGradient: linear-gradient(180deg, $primaryColor, $infoColor) !default;
 $numoHighlightColor: $primaryColor !default;
 
 //rewrites
-$accordionHeaderActiveBg: $numoGradient;
+//$accordionHeaderActiveBg: $numoGradient;
 
 @import "./variable";
 @import "./_fonts";
 @import "./components";
 @import "./_extensions";
+
+.custom-menubar .p-menuitem-link {
+    background-color: transparent !important;
+}
+
+.custom-menubar .p-menuitem-link:hover {
+    background-color: transparent !important;
+}
