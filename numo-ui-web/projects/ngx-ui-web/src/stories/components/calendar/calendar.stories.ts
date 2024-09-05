@@ -4,7 +4,6 @@ import { CalendarModule } from "primeng/calendar";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { FloatLabelModule } from "primeng/floatlabel";
-import { min } from "rxjs";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
@@ -29,14 +28,11 @@ const meta: Meta = {
             },
         },
     },
-    // Use `fn` to spy on the onClick arg, which will appear in the actions panel once invoked: https://storybook.js.org/docs/essentials/actions#action-args
-    // args: { onClick: fn() },
 };
 
 export default meta;
 type Story = StoryObj;
 
-// More on writing stories with args: https://storybook.js.org/docs/writing-stories/args
 export const Basic: Story = {
     args: {
         date: new Date(),
@@ -88,6 +84,9 @@ export const Basic: Story = {
         /> `,
     }),
 };
+
+// Additional Stories
+
 export const Icon: Story = {
     args: {
         date: new Date(),
@@ -106,6 +105,7 @@ export const Icon: Story = {
 `,
     }),
 };
+
 export const Multiple: Story = {
     args: {
         dates: [],
@@ -126,6 +126,7 @@ export const Multiple: Story = {
 `,
     }),
 };
+
 export const Range: Story = {
     args: {
         rangeDates: [],
@@ -146,6 +147,7 @@ export const Range: Story = {
 `,
     }),
 };
+
 export const YearPicker: Story = {
     args: {
         date: new Date(),
@@ -168,7 +170,7 @@ export const YearPicker: Story = {
     }),
 };
 
-export const Invaild: Story = {
+export const Invalid: Story = {
     args: {
         date: "",
         variant: "filled",
@@ -185,6 +187,44 @@ export const Invaild: Story = {
     [class]="class"
     [disabled]="disabled"
     [firstDayOfWeek]="firstDayOfWeek"
+    />
+`,
+    }),
+};
+
+// New Time Picker Story
+export const TimePicker: Story = {
+    args: {
+        date: new Date(),
+        selectionMode: "single",
+        timeOnly: true,
+        showIcon: false,
+        hourFormat: "24",
+        stepHour: 1,
+        stepMinute: 1,
+        stepSecond: 1,
+        showSeconds: false,
+        readonlyInput: false,
+        showButtonBar: false,
+        touchUI: false,
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<p-calendar
+    [(ngModel)]="date"
+    [selectionMode]="selectionMode"
+    [timeOnly]="timeOnly"
+    [showIcon]="showIcon"
+    [hourFormat]="hourFormat"
+    [stepHour]="stepHour"
+    [stepMinute]="stepMinute"
+    [stepSecond]="stepSecond"
+    [showSeconds]="showSeconds"
+    [readonlyInput]="readonlyInput"
+    [showButtonBar]="showButtonBar"
+    [touchUI]="touchUI"
     />
 `,
     }),

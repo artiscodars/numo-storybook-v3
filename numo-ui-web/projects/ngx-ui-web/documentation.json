@@ -288,7 +288,7 @@
         },
         {
             "name": "ConfirmDialogComponent",
-            "id": "component-ConfirmDialogComponent-7255c4c0b8c19672bc0772b256ed58a3f0098c1150330e10d8535efa2b6edcecb3dd3ce5b2e703c92c95fd91162ea6a63b884fb9b7d3db715ca957c7a20b7b4c",
+            "id": "component-ConfirmDialogComponent-eb396e4fb4bca14721b851f860f956a45fc053bfd25366b746e716b026359e79b2e9e6cbf841ba65fc087a5fb62d7ed9a900b5b644f0717fbefbb7f72b355337",
             "file": "projects/ngx-ui-web/src/stories/components/confirm-dialog/confirm-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -298,9 +298,9 @@
             "selector": "p-confirm-dialog-wrapper",
             "styleUrls": [],
             "styles": [
-                "\n            :host::ng-deep.p-dialog-footer{\n                display: flex!important;\n                justify-content: start!important;\n                flex-direction: row-reverse!important;\n            }\n        "
+                "\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        "
             ],
-            "template": "<p-toast />\n<p-confirmDialog [styleClass]=\"'ui-confirmdialog-footer'\" />\n<p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\n<p-button\n    (onClick)=\"confirm2($event)\"\n    label=\"Delete\"\n    severity=\"danger\"\n    [outlined]=\"true\"\n/>\n",
+            "template": "<p-toast />\n<p-confirmDialog #cd>\n    <ng-template pTemplate=\"message\" let-message>\n        {{ message.header }}\n    </ng-template>\n</p-confirmDialog>\n\n<div class=\"card flex flex-wrap gap-3 justify-content-center\">\n    <p-button\n        (onClick)=\"confirm1($event)\"\n        label=\"Save\"\n        [outlined]=\"false\"\n        severity=\"success\"\n    />\n    <p-button\n        (onClick)=\"confirm2($event)\"\n        label=\"Delete\"\n        severity=\"danger\"\n        [outlined]=\"false\"\n    />\n</div>\n",
             "templateUrl": [],
             "viewProviders": [],
             "hostDirectives": [],
@@ -321,7 +321,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 47,
+                    "line": 59,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -349,7 +349,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 73,
+                    "line": 88,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -399,10 +399,10 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { ConfirmationService, MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-confirm-dialog-wrapper\",\n    imports: [\n        CommonModule,\n        ToastModule,\n        FormsModule,\n        ReactiveFormsModule,\n        ButtonModule,\n        ConfirmDialogModule,\n    ],\n    template: `\n        <p-toast />\n        <p-confirmDialog [styleClass]=\"'ui-confirmdialog-footer'\" />\n        <p-button (onClick)=\"confirm1($event)\" label=\"Save\" [outlined]=\"true\" />\n        <p-button\n            (onClick)=\"confirm2($event)\"\n            label=\"Delete\"\n            severity=\"danger\"\n            [outlined]=\"true\"\n        />\n    `,\n    styles: [\n        `\n            :host::ng-deep.p-dialog-footer{\n                display: flex!important;\n                justify-content: start!important;\n                flex-direction: row-reverse!important;\n            }\n        `,\n    ],\n    standalone: true,\n})\nexport class ConfirmDialogComponent {\n    constructor(\n        private messageService: MessageService,\n        private confirmService: ConfirmationService,\n    ) {}\n\n    confirm1(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Are you sure that you want to proceed?\",\n            header: \"Confirmation\",\n            icon: \"\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n            rejectButtonStyleClass: \"p-button-text\",\n            accept: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Confirmed\",\n                    detail: \"You have accepted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"error\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                    life: 3000,\n                });\n            },\n        });\n    }\n    confirm2(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Do you want to delete this record?\",\n            header: \"Delete Confirmation\",\n            icon: \"\",\n            acceptButtonStyleClass: \"p-button-danger p-button-text\",\n            rejectButtonStyleClass: \"p-button-text p-button-text\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n\n            accept: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Confirmed\",\n                    detail: \"Record deleted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"error\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                });\n            },\n        });\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { ConfirmationService, MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-confirm-dialog-wrapper\",\n    imports: [\n        CommonModule,\n        ToastModule,\n        FormsModule,\n        ReactiveFormsModule,\n        ButtonModule,\n        ConfirmDialogModule,\n    ],\n    template: `\n        <p-toast />\n        <p-confirmDialog #cd>\n            <ng-template pTemplate=\"message\" let-message>\n                {{ message.header }}\n            </ng-template>\n        </p-confirmDialog>\n\n        <div class=\"card flex flex-wrap gap-3 justify-content-center\">\n            <p-button\n                (onClick)=\"confirm1($event)\"\n                label=\"Save\"\n                [outlined]=\"false\"\n                severity=\"success\"\n            />\n            <p-button\n                (onClick)=\"confirm2($event)\"\n                label=\"Delete\"\n                severity=\"danger\"\n                [outlined]=\"false\"\n            />\n        </div>\n    `,\n    styles: [\n        `\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        `,\n    ],\n    standalone: true,\n})\nexport class ConfirmDialogComponent {\n    constructor(\n        private messageService: MessageService,\n        private confirmService: ConfirmationService,\n    ) {}\n\n    confirm1(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Are you sure that you want to proceed?\",\n            header: \"Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Saglabāt\",\n            rejectLabel: \"Atcelt\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n            rejectButtonStyleClass: \"p-button-outlined\",\n            acceptButtonStyleClass: \"p-button-success p-button-primary\",\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"You have accepted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                    life: 3000,\n                });\n            },\n        });\n    }\n    confirm2(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Do you want to delete this record?\",\n            header: \"Delete Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Dzēst\",\n            rejectLabel: \"Atcelt\",\n            acceptButtonStyleClass: \"p-button-danger \",\n            rejectButtonStyleClass: \"p-button-outlined\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"Record deleted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                });\n            },\n        });\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n            :host::ng-deep.p-dialog-footer{\n                display: flex!important;\n                justify-content: start!important;\n                flex-direction: row-reverse!important;\n            }\n        \n",
+            "stylesData": "\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        \n",
             "constructorObj": {
                 "name": "constructor",
                 "description": "",
@@ -422,7 +422,7 @@
                         "deprecationMessage": ""
                     }
                 ],
-                "line": 41,
+                "line": 53,
                 "jsdoctags": [
                     {
                         "name": "messageService",
@@ -879,7 +879,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-52b3297012b66774776c28b2a18218709692f63aaf28c54a9591bca35fd038169b68e9380c4f9b0d4823028d788101db6539fddce16c19caf52eb42910387950",
+            "id": "component-HeaderComponent-3b0ceae0542b1c6811c628e015137c56d9479034d7b81a1e9c9981d3b99c662913ac9a04a8a4549e7d520c2e696554a4eaea0393b9428e0a44f37a654c960a84",
             "file": "projects/ngx-ui-web/src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -900,7 +900,7 @@
                     "defaultValue": "false",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 42,
+                    "line": 43,
                     "type": "boolean",
                     "decorators": []
                 }
@@ -908,10 +908,18 @@
             "outputsClass": [
                 {
                     "name": "menuClicked",
-                    "defaultValue": "new EventEmitter(false)",
+                    "defaultValue": "new EventEmitter<boolean>()",
                     "deprecated": false,
                     "deprecationMessage": "",
-                    "line": 45,
+                    "line": 47,
+                    "type": "EventEmitter"
+                },
+                {
+                    "name": "userMenuItemSelected",
+                    "defaultValue": "new EventEmitter<string>()",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 48,
                     "type": "EventEmitter"
                 }
             ],
@@ -924,7 +932,7 @@
                     "type": "number",
                     "optional": false,
                     "description": "",
-                    "line": 48
+                    "line": 51
                 },
                 {
                     "name": "isMenuVisible",
@@ -934,7 +942,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 41
+                    "line": 42
                 },
                 {
                     "name": "items",
@@ -944,7 +952,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 46
+                    "line": 49
                 },
                 {
                     "name": "menu",
@@ -953,7 +961,7 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 43,
+                    "line": 44,
                     "decorators": [
                         {
                             "name": "ViewChild",
@@ -971,11 +979,29 @@
                     "type": "any",
                     "optional": false,
                     "description": "",
-                    "line": 44,
+                    "line": 45,
                     "decorators": [
                         {
                             "name": "ViewChild",
                             "stringifiedArguments": "'storyMenu'"
+                        }
+                    ],
+                    "modifierKind": [
+                        170
+                    ]
+                },
+                {
+                    "name": "userMenu",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "any",
+                    "optional": false,
+                    "description": "",
+                    "line": 46,
+                    "decorators": [
+                        {
+                            "name": "ViewChild",
+                            "stringifiedArguments": "'userMenu'"
                         }
                     ],
                     "modifierKind": [
@@ -990,7 +1016,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 47
+                    "line": 50
                 }
             ],
             "methodsClass": [
@@ -1000,9 +1026,65 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 63,
+                    "line": 66,
                     "deprecated": false,
                     "deprecationMessage": ""
+                },
+                {
+                    "name": "onUserMenuItemClick",
+                    "args": [
+                        {
+                            "name": "menuItem",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 70,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "menuItem",
+                            "type": "string",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "showUserMenu",
+                    "args": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": ""
+                        }
+                    ],
+                    "optional": false,
+                    "returnType": "void",
+                    "typeParameters": [],
+                    "line": 74,
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "jsdoctags": [
+                        {
+                            "name": "event",
+                            "type": "Event",
+                            "deprecated": false,
+                            "deprecationMessage": "",
+                            "tagName": {
+                                "text": "param"
+                            }
+                        }
+                    ]
                 },
                 {
                     "name": "toggleMenu",
@@ -1017,7 +1099,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 50,
+                    "line": 53,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1076,19 +1158,19 @@
                     "type": "module"
                 },
                 {
-                    "name": "MenubarModule",
+                    "name": "ButtonModule",
                     "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu, UserMenuItems } from \"../left-menu/menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconFieldModule } from \"primeng/iconfield\";\nimport { InputIconModule } from \"primeng/inputicon\";\nimport { MenubarModule } from \"primeng/menubar\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n        IconComponent,\n        IconFieldModule,\n        InputIconModule,\n        MenubarModule,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @Output() menuClicked = new EventEmitter(false);\n    items = [...Menu];\n    userMenuItems = [...UserMenuItems];\n    BreakPoint = 1024;\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu } from \"../left-menu/menu.model\";\nimport { UserMenuItems } from \"./user-menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconFieldModule } from \"primeng/iconfield\";\nimport { InputIconModule } from \"primeng/inputicon\";\nimport { ButtonModule } from \"primeng/button\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n        IconComponent,\n        IconFieldModule,\n        InputIconModule,\n        ButtonModule,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @ViewChild(\"userMenu\") userMenu: any; // Reference to user menu\n    @Output() menuClicked = new EventEmitter<boolean>(); // Emit boolean state\n    @Output() userMenuItemSelected = new EventEmitter<string>(); // New event\n    items = [...Menu];\n    userMenuItems = [...UserMenuItems]; // Use the imported user menu items\n    BreakPoint = 1024;\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }\n\n    onUserMenuItemClick(menuItem: string) {\n        this.userMenuItemSelected.emit(menuItem); // Emit the selected menu item\n    }\n\n    showUserMenu(event: Event) {\n        this.userMenu.toggle(event); // Show the user menu\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\n    class=\"header flex align-items-center p-2 text-white justify-content-between row-gap-3\"\n>\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span\n            #menuButton\n            (click)=\"toggleMenu($event)\"\n            class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\n        ></span>\n\n        <p-overlayPanel #menu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n        <p-overlayPanel #storyMenu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"tabler:search\" type=\"iconify\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div>\n        <p-menubar\n            [model]=\"userMenuItems\"\n            styleClass=\"p-0 custom-menubar bg-transparent hover:bg-transparent w-20rem border-transparent hover:bg-transparent \"\n        />\n    </div>\n</div>\n"
+            "templateData": "<div\n    class=\"header flex align-items-center p-2 text-white justify-content-between row-gap-3\"\n>\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span\n            #menuButton\n            (click)=\"toggleMenu($event)\"\n            class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\n        ></span>\n\n        <p-overlayPanel #menu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n        <p-overlayPanel #storyMenu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"tabler:search\" type=\"iconify\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div class=\"flex justify-content-end\">\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\">\n            <ng-template pTemplate=\"submenuheader\" let-item>\n                <span class=\"text-primary font-bold px-3\"\n                    >{{ item.label }}</span\n                >\n            </ng-template>\n            <ng-template pTemplate=\"item\" let-item>\n                <a pRipple class=\"flex align-items-center p-menuitem-link\">\n                    <numo-icon\n                        icon=\"{{ item.icon }}\"\n                        type=\"iconify\"\n                    ></numo-icon>\n                    <span class=\"ml-2\">{{ item.label }}</span>\n\n                    <span\n                        *ngIf=\"item.shortcut\"\n                        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n                    >\n                        {{ item.shortcut }}\n                    </span>\n                </a>\n            </ng-template>\n        </p-menu>\n\n        <div\n            (click)=\"showUserMenu($event)\"\n            class=\"usermenu cursor-pointer py-1\"\n        >\n            Jānis Bērziņš\n            <div class=\"text-ellipsis text-xs\">\n                Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas\n                Sabiedriskais transports\"\n            </div>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "IconComponent",
@@ -1872,11 +1954,11 @@
                 "name": "UserMenuItems",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
-                "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
+                "file": "projects/ngx-ui-web/src/stories/components/header/user-menu.model.ts",
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    {\n        label: '<b>Jānis Bērziņš</b><br><small>Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas Sabiedri...\"</small>',\n        route: \"\",\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ic:round-dashboard\",\n                route: \"\",\n            },\n        ],\n    },\n]"
+                "defaultValue": "[\n    {\n        label: \"Profils\",\n        expanded: true,\n        items: [\n            {\n                label: \"Iestatījumi\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ion:cog\",\n                route: \"\",\n            },\n            {\n                label: \"Paroles maiņa\",\n                items: [],\n                type: \"iconify\",\n                icon: \"solar:password-minimalistic-input-broken\",\n                route: \"\",\n            },\n            {\n                label: \"Iziet\",\n                items: [],\n                type: \"iconify\",\n                icon: \"majesticons:door-exit\",\n                route: \"\",\n            },\n        ],\n    },\n]"
             }
         ],
         "functions": [],
@@ -1927,16 +2009,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n    {\n        label: \"Mans Numo\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ic:round-dashboard\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \"Vadība\",\n        expanded: false,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ic:round-dashboard\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n        ],\n    },\n    {\n        label: \" Pro Numo\",\n        expanded: true,\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ic:round-dashboard\",\n                route: \"\",\n            },\n            {\n                label: \"Virsgrāmata\",\n                items: [],\n                icon: \"pi pi-book\",\n                route: \"\",\n            },\n            {\n                label: \"Kase\",\n                items: [],\n                icon: \"pi pi-money-bill\",\n                route: \"\",\n            },\n            {\n                label: \"Banka\",\n                items: [],\n                icon: \"pi pi-building-columns\",\n                route: \"\",\n            },\n            {\n                label: \"Noliktava\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"LoĢistika\",\n                icon: \"pi pi-directions\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Kases sistēmas\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Realizācija\",\n                icon: \"pi pi-cloud-upload\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Debitoru novērtēšana\",\n                icon: \"pi pi-wallet\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Pamatlīdzekļi\",\n                icon: \"pi pi-ticket\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"PL un inventāra inventarizācija\",\n                icon: \"pi pi-warehouse\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Algas\",\n                icon: \"pi pi-credit-card\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Darba laika plānošana\",\n                icon: \"pi pi-calendar\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Avansa norēkini\",\n                icon: \"pi pi-receipt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Komandējumi\",\n                icon: \"pi pi-directions-alt\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Nākamo periodu ieņēmumi/izdevumi\",\n                icon: \"pi pi-money-bill\",\n                items: [],\n            },\n            {\n                label: \"Vadības grāmatvedība\",\n                icon: \"pi pi-briefcase\",\n                items: [],\n                route: \"\",\n            },\n            {\n                label: \"Līgumi\",\n                icon: \"pi pi-chart-bar\",\n                items: [],\n                route: \"\",\n            },\n        ],\n    },\n]"
-                },
-                {
-                    "name": "UserMenuItems",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n    {\n        label: '<b>Jānis Bērziņš</b><br><small>Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas Sabiedri...\"</small>',\n        route: \"\",\n        items: [\n            {\n                label: \"Darbvirsma\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ic:round-dashboard\",\n                route: \"\",\n            },\n        ],\n    },\n]"
                 }
             ],
             "projects/ngx-ui-web/src/stories/components/tree-select/tree-select.data.ts": [
@@ -1949,6 +2021,18 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n    {\n        key: '0',\n        label: 'Documents',\n        data: 'Documents Folder',\n        icon: 'pi pi-fw pi-inbox',\n        children: [\n            {\n                key: '0-0',\n                label: 'Work',\n                data: 'Work Folder',\n                icon: 'pi pi-fw pi-cog',\n                children: [\n                    { key: '0-0-0', label: 'Expenses.doc', icon: 'pi pi-fw pi-file', data: 'Expenses Document' },\n                    { key: '0-0-1', label: 'Resume.doc', icon: 'pi pi-fw pi-file', data: 'Resume Document' }\n                ]\n            },\n            {\n                key: '0-1',\n                label: 'Home',\n                data: 'Home Folder',\n                icon: 'pi pi-fw pi-home',\n                children: [{ key: '0-1-0', label: 'Invoices.txt', icon: 'pi pi-fw pi-file', data: 'Invoices for this month' }]\n            }\n        ]\n    },\n    {\n        key: '1',\n        label: 'Events',\n        data: 'Events Folder',\n        icon: 'pi pi-fw pi-calendar',\n        children: [\n            { key: '1-0', label: 'Meeting', icon: 'pi pi-fw pi-calendar-plus', data: 'Meeting' },\n            { key: '1-1', label: 'Product Launch', icon: 'pi pi-fw pi-calendar-plus', data: 'Product Launch' },\n            { key: '1-2', label: 'Report Review', icon: 'pi pi-fw pi-calendar-plus', data: 'Report Review' }\n        ]\n    },\n    {\n        key: '2',\n        label: 'Movies',\n        data: 'Movies Folder',\n        icon: 'pi pi-fw pi-star-fill',\n        children: [\n            {\n                key: '2-0',\n                icon: 'pi pi-fw pi-star-fill',\n                label: 'Al Pacino',\n                data: 'Pacino Movies',\n                children: [\n                    { key: '2-0-0', label: 'Scarface', icon: 'pi pi-fw pi-video', data: 'Scarface Movie' },\n                    { key: '2-0-1', label: 'Serpico', icon: 'pi pi-fw pi-video', data: 'Serpico Movie' }\n                ]\n            },\n            {\n                key: '2-1',\n                label: 'Robert De Niro',\n                icon: 'pi pi-fw pi-star-fill',\n                data: 'De Niro Movies',\n                children: [\n                    { key: '2-1-0', label: 'Goodfellas', icon: 'pi pi-fw pi-video', data: 'Goodfellas Movie' },\n                    { key: '2-1-1', label: 'Untouchables', icon: 'pi pi-fw pi-video', data: 'Untouchables Movie' }\n                ]\n            }\n        ]\n    }\n]"
+                }
+            ],
+            "projects/ngx-ui-web/src/stories/components/header/user-menu.model.ts": [
+                {
+                    "name": "UserMenuItems",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ui-web/src/stories/components/header/user-menu.model.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n    {\n        label: \"Profils\",\n        expanded: true,\n        items: [\n            {\n                label: \"Iestatījumi\",\n                items: [],\n                type: \"iconify\",\n                icon: \"ion:cog\",\n                route: \"\",\n            },\n            {\n                label: \"Paroles maiņa\",\n                items: [],\n                type: \"iconify\",\n                icon: \"solar:password-minimalistic-input-broken\",\n                route: \"\",\n            },\n            {\n                label: \"Iziet\",\n                items: [],\n                type: \"iconify\",\n                icon: \"majesticons:door-exit\",\n                route: \"\",\n            },\n        ],\n    },\n]"
                 }
             ]
         },
@@ -2022,7 +2106,17 @@
                 "linktype": "component",
                 "name": "HeaderComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/11",
+                "coverageCount": "0/15",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/header/user-menu.model.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "UserMenuItems",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
                 "status": "low"
             },
             {
@@ -2049,16 +2143,6 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "Menu",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "UserMenuItems",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
