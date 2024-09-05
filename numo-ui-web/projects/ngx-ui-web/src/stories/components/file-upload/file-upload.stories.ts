@@ -12,7 +12,7 @@ import { FileUploadComponent } from "./file-upload.component";
 import { BadgeModule } from "primeng/badge";
 
 const meta: Meta = {
-    title: "Components/FileUpload",
+    title: "Components/FileUpload (done)",
     component: FileUploadComponent,
     decorators: [
         moduleMetadata({
@@ -50,14 +50,14 @@ export const basic: Story = {
         props: {
             ...args,
         },
-        template: `<p-fileUpload 
-        mode="basic" 
-        chooseLabel="Choose" 
+        template: `<p-fileUpload
+        mode="basic"
+        chooseLabel="Choose"
         chooseIcon="pi pi-upload"
-        name="demo[]" 
-        url="https://www.primefaces.org/cdn/api/upload.php" 
-        accept="image/*" 
-        maxFileSize="1000000" 
+        name="demo[]"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*"
+        maxFileSize="1000000"
         (onUpload)="onUpload($event)" /> `,
     }),
 };
@@ -69,14 +69,14 @@ export const auto: Story = {
         props: {
             ...args,
         },
-        template: `  <p-fileUpload 
-        mode="basic" 
-        name="demo[]" 
-        chooseIcon="pi pi-upload" 
-        url="https://www.primefaces.org/cdn/api/upload.php" 
-        accept="image/*" maxFileSize="1000000" 
-        (onUpload)="onBasicUploadAuto($event)" 
-        [auto]="true" 
+        template: `  <p-fileUpload
+        mode="basic"
+        name="demo[]"
+        chooseIcon="pi pi-upload"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        accept="image/*" maxFileSize="1000000"
+        (onUpload)="onBasicUploadAuto($event)"
+        [auto]="true"
         chooseLabel="Browse" />`,
     }),
 };
@@ -96,18 +96,18 @@ export const Advance: Story = {
     render: (args) => ({
         props: {
             ...args,
-            onUpload(event:any) {
-                for(let file of event.files) {
-                    args['uploadedFiles'].push(file);
+            onUpload(event: any) {
+                for (let file of event.files) {
+                    args["uploadedFiles"].push(file);
                 }
-            }
+            },
         },
-        template: `<p-fileUpload 
-        name="demo[]" 
-        url="https://www.primefaces.org/cdn/api/upload.php" 
-        (onUpload)="onUpload($event)" 
-        [multiple]="true" 
-        accept="image/*" 
+        template: `<p-fileUpload
+        name="demo[]"
+        url="https://www.primefaces.org/cdn/api/upload.php"
+        (onUpload)="onUpload($event)"
+        [multiple]="true"
+        accept="image/*"
         maxFileSize="1000000">
             <ng-template pTemplate="content">
                 <ul *ngIf="uploadedFiles.length">

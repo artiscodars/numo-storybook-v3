@@ -15,7 +15,7 @@ import { MessageService } from "primeng/api";
 import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
-    title: "Components/Menu",
+    title: "Components/Menu (styling)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -132,6 +132,7 @@ export const Router: Story = {
         },
         template: `<p-menu [model]="items">
     <ng-template pTemplate="item" let-item>
+
         <ng-container *ngIf="item.route; else elseBlock">
             <a [routerLink]="item.route" class="p-menuitem-link">
                 <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>

@@ -6,13 +6,18 @@ import { FloatLabelModule } from "primeng/floatlabel";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Input",
+    title: "Components/Form/Input (done)",
     decorators: [
         moduleMetadata({
-            imports: [ InputTextModule, FormsModule, ReactiveFormsModule, FloatLabelModule ],
+            imports: [
+                InputTextModule,
+                FormsModule,
+                ReactiveFormsModule,
+                FloatLabelModule,
+            ],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     argTypes: {},
     parameters: {
         docs: {
@@ -52,7 +57,7 @@ export const Basic: Story = {
 export const ReactiveForms: Story = {
     args: {
         type: "text",
-        value: "test"
+        value: "test",
     },
     render: (args) => ({
         props: {
@@ -64,7 +69,7 @@ export const ReactiveForms: Story = {
 export const HelpText: Story = {
     args: {
         type: "text",
-        value: "test"
+        value: "test",
     },
     render: (args) => ({
         props: {
@@ -87,7 +92,7 @@ export const Floatlabel: Story = {
     args: {
         type: "text",
         value: "",
-        label: "Username"
+        label: "Username",
     },
     render: (args) => ({
         props: {
@@ -104,7 +109,7 @@ export const Filled: Story = {
     args: {
         type: "text",
         value: "",
-        variant: "filled"
+        variant: "filled",
     },
     render: (args) => ({
         props: {
@@ -123,7 +128,7 @@ export const Invalid: Story = {
         type: "text",
         value: "",
         variant: "filled",
-        class: "ng-invalid ng-dirty"
+        class: "ng-invalid ng-dirty",
     },
     render: (args) => ({
         props: {
@@ -140,7 +145,7 @@ export const Disabled: Story = {
     args: {
         type: "text",
         value: "",
-        disabled: "true"
+        disabled: "true",
     },
     render: (args) => ({
         props: {
@@ -155,4 +160,3 @@ export const Disabled: Story = {
 `,
     }),
 };
-

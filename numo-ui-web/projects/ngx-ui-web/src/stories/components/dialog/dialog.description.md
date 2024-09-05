@@ -1,49 +1,53 @@
+The **PrimeNG Dialog** component is used to display a modal window for various user interactions, such as confirming actions, entering information, or providing alerts. This component ensures that important user interactions are handled in a consistent and accessible manner.
+
 ## Usage
 
-- Lietotājam nepieciešams ievadīt/apstiprināt informāciju pirms turpināšanas.
-- Piemēram, dzēšana ar obligātu komentāru.
+- **Purpose**: The dialog is used when the user needs to enter or confirm information before proceeding.
+  - Example: Deleting an item with a mandatory comment.
 
-### Iespējāmās sastāvdaļas:
+## Possible Components of a Dialog
 
-- Ar virsrakstu.
-- Bez ikonas (uz telefona nebūs jādomā, ko ar ikonu darīt). Atvērts jautājums par to, vai vajag, tāpat kā confirmation logiem.
-- Iespēja ievietot ievades laukus un paskaidrojošus tekstus.
-- Ar pelēku overlay, formu ļauj aizvērt spiežot uz overlay, ja forma nav mainīta.
-- Ja forma ir mainīta un vēlas aizvērt logu, aizstāj saturu ar jautājumu, vai tiešām vēlas aizvērt.
+- **With a Title**: Provides context and clarity to the user.
+- **Without Icons**: Icons may not be necessary, especially on mobile devices where their use might be unclear. This also applies to confirmation dialogs.
+- **Input Fields and Descriptive Text**: Allows the inclusion of input fields for data entry and explanatory text to guide the user.
+- **Grey Overlay**: The dialog can have a grey overlay; the form can be closed by clicking on the overlay if no changes have been made.
+  - If the form has been changed, display a prompt asking if the user is sure they want to close the dialog.
 
-### Papildu sastāvdaļas:
+## Additional Components
 
-- **Dialogloga nosaukums**: Don’t settle for a generic headline like "Warning" or "Are you sure."
-- **Ikonas**: Brīdinājums, krustiņš aizvēršanai u.tml.
-- **Teksts**: Apraksts.
-- **Pogas**: Apstiprināt/aizvērt.
-- **Ķeksis**: Lai turpmāk šo nerada (ja bieži var novērot, tad lietotājam iespēja uz nākotni atslēgt).
-- **Undo iespēja**?
+- **Dialog Title**: Avoid generic titles like "Warning" or "Are you sure?" Aim for specific and informative titles.
+- **Icons**: Include icons such as warnings or a close icon (X) where appropriate.
+- **Text**: Provide a descriptive message or instruction to the user.
+- **Buttons**: Include action buttons such as "Confirm" or "Close".
+- **Checkbox**: Option to disable the dialog in the future (useful for frequently appearing dialogs).
+- **Undo Option**: Consider adding an option to undo the action.
 
-Ja dialoglogā ir paredzēta datu ievade, tad nevajadzētu būt iespējai logu aizvērt ar `ESC` taustiņu.
+> **Note**: If data entry is required in the dialog, do not allow it to be closed using the `ESC` key.
 
-### Reminder:
+## Design Considerations
 
-- Don’t blame the user. Example: “The password is incorrect” is better than “You entered incorrect information.”
+- **User-Friendly Language**: Avoid blaming the user. For example, use "The password is incorrect" instead of "You entered incorrect information."
 
-### Novietojums:
+## Placement and Layout
 
-- Dialoglogs varētu rādīties lapas centrā. Izmērs nav pa visu ekrānu, bet pielāgots saturam un datu apjomam.
-- Maksimālais augstums un scroll - ja neielien ekrāna 90% augstumā.
-- Ja iespējams, tad drag and drop šo dialoglogu.
+- **Center Alignment**: The dialog should appear in the center of the page.
+  - The size should not cover the entire screen but be adjusted according to the content and data volume.
+  - Maximum height with scrolling enabled if the content exceeds 90% of the screen height.
+  - Consider enabling drag and drop functionality for the dialog.
 
-## Papildu informācija:
+## Additional Information
 
-- Dialogi būs: [PrimeNG Confirm Dialog](https://primeng.org/confirmdialog).
-- Modalie būs: [PrimeNG Modal Dialog](https://primeng.org/dialog).
+- **Dialog Types**:
+  - [PrimeNG Confirm Dialog](https://primeng.org/confirmdialog)
+  - [PrimeNG Modal Dialog](https://primeng.org/dialog)
 
-Nepieciešams vienots stils, neatkarīgi no veida. Kad logs ir vaļā, tad pelēks fonā, bet ne vienmēr to vajag.
+- **Consistency in Style**: A consistent style is necessary regardless of the dialog type. When a dialog is open, there should be a grey overlay in the background, though this is not always required.
 
-Vai gribam aizvērt ar nospiešanu ārpus loga, lai to aizvērtu? Aizver, ja spiež uz pogas, krustiņa vai ārpus loga. Ja dati ir ievadīti, tad nevar nospiest uz pelēkās zonas.
+- **Closing the Dialog**: Should the dialog close by clicking outside of it? It should close when clicking the button, the close icon (X), or outside the dialog. However, if data has been entered, it should not close by clicking on the grey overlay.
 
-- Agita Meinerte DLP pie ieraksta dzēšanas uzstādījumos confirmation paziņojumam ir trīs varianti (konkrēts ieraksta nosaukums, šo, rinda). Vajadzētu vienādot formulējumu.
+## Example Scenarios
 
----
+- **Confirmation Messages**: In cases like DLP entry deletion settings, there are three variants of confirmation messages (specific entry name, this entry, row). The formulation should be standardized.
 
 [PrimeNG Confirm Dialog](https://primeng.org/confirmdialog)  
 [PrimeNG Modal Dialog](https://primeng.org/dialog)

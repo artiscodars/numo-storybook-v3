@@ -8,7 +8,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
-    title: "Components/Breadcrumb",
+    title: "Components/Breadcrumb (done)",
     decorators: [
         moduleMetadata({
             imports: [

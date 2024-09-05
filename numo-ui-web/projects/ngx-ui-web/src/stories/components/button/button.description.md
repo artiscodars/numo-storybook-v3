@@ -1,67 +1,80 @@
-## Pogu tipi pēc darbības prioritātes:
+## Button Types
 
-**Primārās (Zaļās)** - svarīgākai darbībai, CTA ("primary call to action" - darbība, kuru vēlamies, lai lietotājs veic).  
-**Normālās (Pelēkās/Baltās)** - sekundārajai darbībai, lietojamas darbībām, kas visbiežāk ir optional.  
-**Redirekta pogas linku vietā** (Links (pie Button) - done).  
+### Basic Types
 
-## Stāvokļi:
+- **Primary**: Used for the most important action, typically a "call to action" (CTA) that we want the user to perform, such as creating a new item.
+- **Secondary**: Used for less critical actions, often for optional actions, such as opening an important section.
+- **Success**: Typically used for actions like saving data or confirming a successful operation.
+- **Info**: Used for informational purposes or neutral actions.
+- **Warning**: Used to draw attention to cautionary actions.
+- **Help**: Used for actions that provide help or support.
+- **Danger**: Used for actions that might have negative consequences, such as deleting data.
+- **Contrast**: Used to make a button stand out against the background for emphasis.
 
-- Default
-- Hover
-- Pressed
-- Focused
-- Disabled (No šī vajadzētu izvairīties, labāk pogu nerādīt kamēr darbība nav atļauta)
+### Usage Recommendations
 
-## Novietojums:
+- **Primary**: For the main action, like "Create new" (CTA - "primary call to action").
+- **Secondary**: For secondary actions that are less critical, often used for optional tasks.
+- **Success**: Typically used for "Save" buttons.
 
-**Pogu novietojums lapā** - No kreisās uz labo.  
-**Pogu novietojums savā starpā** (Secība, kura ir labajā pusē, kura kreisajā) - piemēram, labajā pusē Apstiprināt, kreisajā Atcelt. → poga, kura apstiprina darbību, tā ir secīgi pirmā. Izņemot, ja ir workflow un vajadzīga secība.  
-- Agita Meinerte DLP mainām auto plānošanas pogu secību, neliekam stūru maliņas, pēdējā solī pārsaucam "Palikt plāna sadaļā pogu" par "Aizvērt". [NUMO-1745 - [IDEN] Plānošanas loga izmaiņas Open](https://jira.visma.com/browse/NUMO-1745)
-**Ikonas uz pogām** (pirms teksta). Kreisajā pusē pirms teksta.  
+## Button States
 
-## Izmēri:
+- **Default**: The normal state of the button.
+- **Hover**: When the button is hovered over with a mouse.
+- **Pressed**: When the button is being clicked or tapped.
+- **Focused**: When the button is focused for accessibility or keyboard navigation.
+- **Disabled**: Should be avoided; it is better to hide the button until the action is allowed.
 
-**Pogas** (minimālas, maksimālas, pielāgots tekstam?) - saistīts ar desktop dizainu. Telefonam citas prasības (35-40 p).  
-**Teksta, kas ir uz pogas** - lai nav atšķirības izmēros (standarta augstums, platums, lai teksts izskatās normāli). - atkarīgs no dizaina sistēmas.  
-**Ikonas** - atkarīgs no dizaina elementiem.  
-**Atstarpju** (kas ir uz pogām jeb padding) - atkarīgs no dizaina.  
+## Link Styles
 
-## Teksts uz pogām:
+- **Button**: Styled as a button but behaves like a link.
+- **Text**: Plain text style without the button appearance.
 
-- Skaidrs, saprotams  
-- Tekstu koncepts - piemēram, Turpināt/Nākamais/Tālāk. Labi/Saglabāt. Izveidot/Pievienot. Skatāmies piemērus, funkcionalitāti. Unknown User (anda.arina) paskatīsies uz nākamo reizi.  
-  - Izpēte Numo - [link](https://docs.google.com/spreadsheets/d/1iZdEi1e_cuO8biNmfyGE8RbwllE96wKQaEMmKjTvBHk/edit?usp=sharing)  
-  - Izpēte HoP - [link](https://docs.google.com/document/d/14NwRoQT188yO2Yb9VqvZeLrFxy5ODtnWPtw2plodOI4/edit?usp=sharing)  
-- Norāda precīzu darbību, kas notiks.    
+## Buttons with Icons
 
+Buttons can include icons to enhance their meaning and provide additional context.
 
-## Tooltip
+## Button Sizes
 
-Nav nepieciešami, ja pogai ir nosaukums un to var viegli interpretēt.
+- **Button Sizes**: Can be minimal, maximal, or adjusted to the text size. This is usually related to desktop design, while different requirements (35-40 pixels) may apply for mobile devices.
+- **Text Size on Buttons**: Should be consistent to ensure the text looks uniform (standard height and width, so the text appears properly). The size depends on the design system.
+- **Icon Sizes**: Depends on the design elements.
+- **Padding**: The spacing within buttons (padding) should be determined based on the design.
 
-## Teksti pogām:
+## Button Text Guidelines
 
-Lai nodrošinātu pieejamību - ARIA text.
+- Should be clear and understandable.
+- Follow a consistent text concept, for example:
+  - Continue/Next/Forward
+  - OK/Save
+  - Create/Add
+- Refer to examples and functionality, such as:
+  - [Numo Research](https://docs.google.com/spreadsheets/d/1iZdEi1e_cuO8biNmfyGE8RbwllE96wKQaEMmKjTvBHk/edit?usp=sharing)
+  - [HoP Research](https://docs.google.com/document/d/14NwRoQT188yO2Yb9VqvZeLrFxy5ODtnWPtw2plodOI4/edit?usp=sharing)
+- The button text should specify the exact action that will occur.
 
-- Pievienot - ierakstu, rindu, lietotāju.
-- Izveidot - dokumentu, lietotāju.
+## Recommended Button Texts
 
-Liekam labus jautājumus un pogu nosaukumos specifisku darbību:
+To ensure accessibility, use ARIA text for clarity.
 
-**Labi** - parasti komplektā ar Atcelt  
-**Atcelt** - parasti komplektā ar Labi vai Saglabāt  
-**Saglabāt** - parasti komplektā ar Atcelt  
-**Dzēst** - ja konkrēti par dzēšanu  
-**Sūtīt** - ja konkrēti par sūtīšanu  
-**Aizvērt** - ja varam, tad neizmantojam  
-**Palikt** - ja varam, tad neizmantojam  
-**Jā** - ja varam, tad neizmantojam  
-**Nē** - ja varam, tad neizmantojam  
-**Ok** - neizmantojam
+- **Add**: To add an entry, row, or user.
+- **Create**: To create a document or user.
 
-[Izpēte Numo](https://docs.google.com/spreadsheets/d/1iZdEi1e_cuO8biNmfyGE8RbwllE96wKQaEMmKjTvBHk/edit?usp=sharing)  
-[Izpēte HoP](https://docs.google.com/document/d/14NwRoQT188yO2Yb9VqvZeLrFxy5ODtnWPtw2plodOI4/edit?usp=sharing)
+When naming buttons, use specific actions:
 
-**Atgriezties** - ja varam, tad neizmantojam  
-**Turpināt** - turpināt procesu  
-**Nākamais/Iepriekšējais**  
+- **OK**: Usually paired with "Cancel".
+- **Cancel**: Typically paired with "OK" or "Save".
+- **Save**: Generally paired with "Cancel".
+- **Delete**: Use specifically for deletion actions.
+- **Send**: Use specifically for sending actions.
+- **Close**: Avoid if possible.
+- **Stay**: Avoid if possible.
+- **Yes/No**: Avoid if possible.
+- **Return**: Avoid if possible.
+- **Continue**: To proceed with a process.
+- **Next/Previous**: To navigate between steps.
+
+Refer to these resources for additional examples and context:
+
+- [Numo Research](https://docs.google.com/spreadsheets/d/1iZdEi1e_cuO8biNmfyGE8RbwllE96wKQaEMmKjTvBHk/edit?usp=sharing)
+- [HoP Research](https://docs.google.com/document/d/14NwRoQT188yO2Yb9VqvZeLrFxy5ODtnWPtw2plodOI4/edit?usp=sharing)

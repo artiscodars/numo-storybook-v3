@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ProgressBarModule } from "primeng/progressbar";
 const meta: Meta = {
-    title: "Components/Progressbar",
+    title: "Components/Progressbar (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -33,16 +33,12 @@ export const basic: Story = {
     args: {
         value: 50,
         mode: "determinate",
-        content: false
+        content: false,
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-progressBar [value]="value"  [mode]="mode">
-        <ng-template *nfIf="content==true" pTemplate="content" let-value>
-            <span>{{value}}/100</span>
-        </ng-template>
-        </p-progressBar>`,
+        template: `<p-progressBar mode="indeterminate" [style]="{ height: '6px' }" />`,
     }),
 };

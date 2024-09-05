@@ -3,7 +3,7 @@ import { IconComponent } from "./icon.component";
 import description from "./icon.description.md";
 
 export default {
-    title: "Components/Icons",
+    title: "Components/Icons (done)",
     component: IconComponent,
     tags: ["autodocs"],
     parameters: {

@@ -146,18 +146,3 @@ export const Menu = [
         ],
     },
 ];
-export const UserMenuItems = [
-    {
-        label: '<b>Jānis Bērziņš</b><br><small>Liepājas valstspilsētas pašvaldības aģentūra "Liepājas Sabiedri..."</small>',
-        route: "",
-        items: [
-            {
-                label: "Darbvirsma",
-                items: [],
-                type: "iconify",
-                icon: "ic:round-dashboard",
-                route: "",
-            },
-        ],
-    },
-];

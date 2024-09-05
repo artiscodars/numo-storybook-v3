@@ -1,64 +1,63 @@
 The `ConfirmDialog` component provides a modal dialog for confirmation purposes. It integrates with the Confirmation API to offer a customizable dialog UI for user interactions.
-
 ## Usage
-
 
 - [Microcopy for confirmation dialogues](https://uxdesign.cc/are-you-sure-you-want-to-do-this-microcopy-for-confirmation-dialogues-1d94a0f73ac6)
 
-- Izmantosim Confirmation-dialog nevis confirmation-popup no PrimeNG.  
-  **Pogu novietojums**: Kreisā pusē, "Jā" un tad "Nē" (iespēja definēt "custom" nosaukumus).
+- We will use Confirmation-dialog instead of confirmation-popup from PrimeNG.
+    **Button placement**: Left side, "Yes" and then "No" (possibility to define "custom" names).
 
-- Dzēšot izmantot vienu universālu dzēšanas apstiprinājuma jautājumu, kuram pogas ir "Dzēst" vai "Atcelt."
+- When deleting, use a universal deletion confirmation question with buttons "Delete" or "Cancel."
 
-- Darbības pogai jāsaucas tā, kādu darbību tā veic (piemēram, Dzēst, Saglabāt, Arhivēt, Sūtīt).
+- Action buttons should be named after the action they perform (e.g., Delete, Save, Archive, Send).
 
-- Noraidījuma poga: `Esc`, apstiprināt: `Enter`. `SPACE` nedara neko (PrimeNG noklusēti space apstiprina). `Enter` darbojas tikai tad, ja viena no pogām ir primāra, ja abas vienādas, tad nē. (Happy path poga ir fokusā).
+- Dismiss button: `Esc`, confirm: `Enter`. `SPACE` does nothing (PrimeNG defaults to confirming with space). `Enter` only works if one of the buttons is primary, if both are the same, then no (the happy path button is focused).
 
-- Pogām jābūt vienādi izceltām vai arī primārā poga ir citā krāsā.
+- Buttons should be equally highlighted or the primary button is in a different color.
 
-- Aizvēršanas krustiņš.
+- Closing cross.
 
-- Ir title, piemēram "Dzēst ierakstu".
+- There is a title, for example, "Delete record."
 
-- Ir paskaidrojums (dzēšanas ziņā).
+- There is an explanation (in terms of deletion).
 
-- Ar/bez ikonām - pagaidām ir ar, bet varam veikt lietotāju testus, varbūt, ka nevajag. Šis paliek atvērts.
+- With/without icons - currently with, but we can conduct user tests, maybe it's not necessary. This remains open.
 
-- Pelēks fons, kamēr dialog logs ir atvērts.
+- Gray background while the dialog window is open.
 
-- Spiežot uz pelēkā overlay, dialog confirmation logu aizveram.
+- Clicking on the gray overlay closes the confirmation dialog window.
 
-## Lietojam gadījumos, kad:
+## Use cases:
 
-- Lietotāju vajag informēt par kaut ko svarīgu.
-- Lietotājam nepieciešams ievadīt/apstiprināt informāciju pirms turpināšanas.
+- To inform the user about something important.
+- When the user needs to enter/confirm information before proceeding.
 
-## Iespējamās sastāvdaļas:
+## Possible components:
 
-- **Dialogloga nosaukums**: Don’t settle for a generic headline like "Warning" or "Are you sure."
-- **Ikonas** (brīdinājums, krustiņš aizvēršanai u.tml.)
-- **Teksts**, apraksts
-- **Pogas** (apstiprināt/aizvērt)
-- **Ķeksis**, lai turpmāk šo nerada (ja bieži var novērot, tad lietotājam iespēja uz nākotni atslēgt)
-- **Undo iespēja**?
+- **Dialog window title**: Don't settle for a generic headline like "Warning" or "Are you sure."
+- **Icons** (warning, closing cross, etc.)
+- **Text**, description
+- **Buttons** (confirm/close)
+- **Checkbox**, to not show this in the future (if frequently observed, give the user the option to disable it in the future)
+- **Undo option**?
 
-- Ja dialoglogā ir paredzēta datu ievade, tad nevajadzētu būt iespējai logu aizvērt ar `ESC` taustiņu.
+- If the dialog window involves data input, there should be no option to close the window with the `ESC` key.
 
 ## Reminder:
 
-- Don’t blame the user. Example: ”The password is incorrect” is better than ”You entered incorrect information”.
+- Don't blame the user. Example: "The password is incorrect" is better than "You entered incorrect information".
 
-## Novietojums:
+## Placement:
 
-- Dialoglogs varētu rādīties lapas centrā.
+- The dialog window could be displayed in the center of the page.
 
-## Papildu informācija:
+## Additional information:
 
-- Dialogi būs: [PrimeNG Confirm Dialog](https://primeng.org/confirmdialog).
-- Modalie būs: [PrimeNG Modal Dialog](https://primeng.org/dialog).
+- Dialogs will be: [PrimeNG Confirm Dialog](https://primeng.org/confirmdialog).
+- Modals will be: [PrimeNG Modal Dialog](https://primeng.org/dialog).
 
-Nepieciešams vienots stils, neatkarīgi no veida. Kad logs ir vaļā, tad pelēks fonā, bet ne vienmēr to vajag.
+Consistent style is needed regardless of the type. When the window is open, it has a gray background, but it's not always necessary.
 
-## Interakcija ar puscaurspīdīgo fonu
+## Interaction with the translucent background
 
-Uz tā uzspiežot aizveras apstiprinājuma logs. Vienāds ar atcelt pogas funkciju.
+Clicking on it closes the confirmation window. Equivalent to the cancel button function.
+

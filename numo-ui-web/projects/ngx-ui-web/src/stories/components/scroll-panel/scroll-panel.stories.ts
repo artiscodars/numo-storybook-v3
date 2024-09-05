@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ScrollPanelModule } from "primeng/scrollpanel";
 const meta: Meta = {
-    title: "Components/ScrollPanel",
+    title: "Components/ScrollPanel (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -31,13 +31,13 @@ type Story = StoryObj;
 
 export const basic: Story = {
     args: {
-        styleClass: "",
+        styleClass: "custom-scrollbar",
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<div class="card">
+        template: `
     <p-scrollPanel [style]="{ width: '100%', height: '150px' }" [styleClass]="styleClass">
         <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
@@ -52,6 +52,6 @@ export const basic: Story = {
             officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus.
         </p>
     </p-scrollPanel>
-</div>`,
+`,
     }),
 };

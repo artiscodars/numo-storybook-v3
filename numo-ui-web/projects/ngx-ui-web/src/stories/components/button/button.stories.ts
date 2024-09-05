@@ -5,7 +5,7 @@ import description from "./button.description.md"; // Import the markdown file
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const meta: Meta = {
-    title: "Components/Button",
+    title: "Components/Button (desc)",
     decorators: [
         moduleMetadata({
             imports: [ButtonModule, FormsModule, ReactiveFormsModule],
@@ -73,11 +73,9 @@ export const basic: Story = {
     <p-button label="Primary" />
     <p-button label="Secondary" severity="secondary" />
     <p-button label="Success" severity="success" />
-    <p-button label="Info" severity="info" />
-    <p-button label="Warning" severity="warning" />
-    <p-button label="Help" severity="help" />
     <p-button label="Danger" severity="danger" />
-    <p-button label="Contrast" severity="contrast" />
+<p-button label="Link" link="true" />
+
 </div>`,
     }),
 };
@@ -93,16 +91,14 @@ export const Link: Story = {
         props: {
             ...args,
         },
-        template: `<p-button [label]="label" [link]="true" />
-              <a [href]="link" target="_blank" rel="noopener noreferrer" class="font-bold" class="p-button-transparent">
-                  External
-              </a>
-               <a routerLink="/" class="p-button font-bold" [ngStyle]="{'margin-left':marginLeft}"> Router</a>
+        template: `
+              <a [href]="link" target="_blank" rel="noopener noreferrer" class="font-bold" class="p-button-transparent">External</a>
+
                 `,
     }),
 };
 
-export const Icons: Story = {
+export const ButtonsWithIcons: Story = {
     args: {
         label: "Submit",
         class: "p-button",
@@ -136,10 +132,7 @@ export const Outlined: Story = {
     <p-button label="Secondary" [outlined]="outlined" severity="secondary" />
     <p-button label="Success" [outlined]="outlined" severity="success" />
     <p-button label="Info" [outlined]="outlined" severity="info" />
-    <p-button label="Warning" [outlined]="outlined" severity="warning" />
-    <p-button label="Help" [outlined]="outlined" severity="help" />
-    <p-button label="Danger" [outlined]="outlined" severity="danger" />
-    <p-button label="Contrast" [outlined]="outlined" severity="contrast" />
+
 </div>
         `,
     }),

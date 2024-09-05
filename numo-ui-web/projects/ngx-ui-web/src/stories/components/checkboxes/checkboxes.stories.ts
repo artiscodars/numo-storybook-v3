@@ -5,7 +5,7 @@ import description from "./checkboxes.description.md"; // Import the markdown fi
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const meta: Meta = {
-    title: "Components/Checkboxes",
+    title: "Components/Checkboxes (done)",
     decorators: [
         moduleMetadata({
             imports: [CheckboxModule, FormsModule, ReactiveFormsModule],
@@ -86,8 +86,7 @@ export const Disabled: Story = {
     }),
 };
 export const Grouped: Story = {
-    args: {
-    },
+    args: {},
     render: (args) => ({
         props: {
             ...args,

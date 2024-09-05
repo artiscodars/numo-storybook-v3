@@ -8,7 +8,7 @@ import { min } from "rxjs";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Calendar",
+    title: "Components/Calendar (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -53,10 +53,11 @@ export const Basic: Story = {
         dateFormat: "dd/mm/yy",
         touchUI: false,
         inline: false,
-        showWeek: false,
         variant: "filled",
         class: "",
         disabled: false,
+        firstDayOfWeek: 1,
+        showWeek: true,
     },
     render: (args) => ({
         props: {
@@ -81,6 +82,9 @@ export const Basic: Story = {
               [variant]="variant"
               [class]="class"
               [disabled]="disabled"
+              [firstDayOfWeek]="firstDayOfWeek"
+              [showWeek]="showWeek"
+
         /> `,
     }),
 };
@@ -92,12 +96,13 @@ export const Icon: Story = {
         showOnFocus: false,
         iconDisplay: "input",
         timeOnly: false,
+        firstDayOfWeek: 1,
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-calendar [(ngModel)]="date1" [showIcon]="showIcon" [showOnFocus]="showOnFocus" [timeOnly]="timeOnly"  inputId="buttondisplay" />
+        template: `<p-calendar [(ngModel)]="date1" [showIcon]="showIcon" [showOnFocus]="showOnFocus" [timeOnly]="timeOnly"  inputId="buttondisplay" [firstDayOfWeek]="firstDayOfWeek"/>
 `,
     }),
 };
@@ -106,6 +111,7 @@ export const Multiple: Story = {
         dates: [],
         selectionMode: "multiple",
         readonlyInput: true,
+        firstDayOfWeek: 1,
     },
     render: (args) => ({
         props: {
@@ -114,7 +120,9 @@ export const Multiple: Story = {
         template: `<p-calendar
     [(ngModel)]="dates"
     [selectionMode]="selectionMode"
-    [readonlyInput]="readonlyInput" />
+    [readonlyInput]="readonlyInput"
+    [firstDayOfWeek]="firstDayOfWeek"
+    />
 `,
     }),
 };
@@ -123,6 +131,7 @@ export const Range: Story = {
         rangeDates: [],
         selectionMode: "range",
         readonlyInput: true,
+        firstDayOfWeek: 1,
     },
     render: (args) => ({
         props: {
@@ -131,7 +140,9 @@ export const Range: Story = {
         template: `<p-calendar
     [(ngModel)]="rangeDates"
     [selectionMode]="selectionMode"
-    [readonlyInput]="readonlyInput" />
+    [readonlyInput]="readonlyInput"
+    [firstDayOfWeek]="firstDayOfWeek"
+    />
 `,
     }),
 };
@@ -163,6 +174,7 @@ export const Invaild: Story = {
         variant: "filled",
         class: "ng-invalid ng-dirty",
         disabled: false,
+        firstDayOfWeek: 1,
     },
     render: (args) => ({
         props: {
@@ -171,7 +183,9 @@ export const Invaild: Story = {
         template: `<p-calendar
     [(ngModel)]="date"
     [class]="class"
-    [disabled]="disabled" />
+    [disabled]="disabled"
+    [firstDayOfWeek]="firstDayOfWeek"
+    />
 `,
     }),
 };

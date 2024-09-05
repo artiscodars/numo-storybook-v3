@@ -1,23 +1,33 @@
-The `p-calendar` component from PrimeNG is a highly versatile calendar input that allows users to select dates or date ranges. It supports various configurations such as date formatting, selection modes, and more.
+### Calendar Component Features and Description
 
-## Usage 
+Here is an organized list of features and descriptions for the PrimeNG Calendar Component.
 
-- **Viens Rindu kalendārs**: Kalendārs, kur var būt daudz cilvēku (piemēram, Numo DLP plāns, Hop Prombūtnes kalendārs).  
-  **Otrs Kvadrāta kalendārs**: Kalendārs, kur ir viens cilvēks (piemēram, Hop Mana darba vieta un Numo DLP pašapkalpošanās).
-- **Header freeze**: Rindu kalendāram obligāti, ja ir daudz rindu, lai vienmēr var redzēt header.
-- **Kvadrāta kalendārā par mēnesi**: Rāda arī iepriekšējā un nākamā mēneša datumus (t.sk. datus), ja ir nepilnas nedēļas. Cita mēneša datus rāda citā krāsā/tonī.
-- **Laika formāts**: 00-24 pie datu ievades un attēlošanas. Vēl var būt sānu skalā, ja ir nedēļas vai dienas skats kā Google kalendārā (pagaidām optional sānu pusē).
-- **Kalendāra nedēļas sākas ar pirmdienu**: Ņemam no sistēmas uzstādījumiem.
-- **Kā ievades lauki**.
-- **Legend**: Krāsu un simbolu atšifrējums.
-- **Iezīmēta šodiena (today)**: Var izmantot/var neizmantot.
-- **Nedēļas numurs**: Kvadrāta kalendārā, spiežot uz nedēļas numura, arī var būt iespēja pārslēgt nedēļas.
-- **Drag and drop**: Nav obligāti, šo vairāk vajadzētu kvadrāta kalendārā.
-- **Filtri**: Iespēja filtrēt datus (slāņi, datu aizpildījums).
-- **Virs kalendāra jābūt periodam**: Ja ir mēnesis, tad mēnesis + gads; ja ir cits periods, tad konkrētais periods.
-- **Datu attēlošanai**: Labs piemērs Google kalendārā, kur ir drop-down ar iespējām izvēlēties:
-  - Mēneša
-  - Nedēļas, divu nedēļu
-  - Custom periods
-- **Eksports**: Eksports uz xls, pdf u.tml. Lai var kalendāra datus izeksportēt.
+#### Calendar Types
+
+- **Single Row Calendar**: A calendar that supports multiple users (e.g., Numo DLP plan, Hop Absence Calendar).
+- **Square Calendar**: A calendar designed for a single user (e.g., Hop My Workplace, Numo DLP self-service).
+
+#### Features
+
+1. **Header Freeze**: Essential for row calendars with many rows to ensure the header remains visible at all times.
+2. **Month View in Square Calendar**: Displays dates from the previous and next months when weeks are incomplete. Dates from other months are shown in a different color or shade.
+3. **Time Format**: Uses a 24-hour format (00-24) for data entry and display. An optional side scale is available for week or day views, similar to Google Calendar.
+4. **Week Start**: The calendar week starts on Monday, based on system settings.
+5. **Input Fields**: Supports standard input fields for entering events or appointments.
+6. **Legend**: Provides a key for color codes and symbols used in the calendar.
+7. **Highlighted Today**: An optional feature to highlight the current day.
+8. **Week Number**: In the square calendar, clicking on the week number can provide an option to switch weeks.
+9. **Drag and Drop**: An optional feature, particularly useful in the square calendar, to move events or appointments.
+10. **Filters**: Allows filtering of calendar data, such as layers or data fill.
+11. **Period Display Above Calendar**: Displays the current period (e.g., month + year for a monthly view or a specific period for other views).
+12. **Data Display Options**: Offers various views for displaying data, such as:
+    - Monthly view
+    - Weekly or bi-weekly view
+    - Custom periods
+13. **Export**: Supports exporting calendar data to formats like XLS, PDF, etc.
+
+### Usage
+
+The PrimeNG Calendar Component can be customized and configured to match different scheduling and calendar needs by utilizing the features mentioned above.
+
 

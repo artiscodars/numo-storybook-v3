@@ -1,5 +1,6 @@
-## Ikonu bibliotēkas:
+## Usage
 
-Tiek izmantotas PrimeNG ikonas un Iconify bibliotekas ikonas
+PrimeNG icons and Iconify library icons are used.
 
 https://icon-sets.iconify.design/
+

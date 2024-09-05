@@ -9,7 +9,7 @@ import { BadgeModule } from "primeng/badge";
 import { AvatarModule } from "primeng/avatar";
 
 const meta: Meta = {
-    title: "Components/Accordion",
+    title: "Components/Accordion (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -67,7 +67,7 @@ export const basic: Story = {
 
 export const Multiple: Story = {
     args: {
-        multiple:true
+        multiple: true,
     },
     render: (args) => ({
         props: {

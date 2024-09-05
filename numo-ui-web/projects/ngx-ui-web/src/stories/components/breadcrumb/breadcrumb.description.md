@@ -1,4 +1,2 @@
-Breadcrumb provides contextual information about page hierarchy.
-
 ## Usage
-Usage texts goes here
+Breadcrumb is used in all sections and subsections to reflect the location in the structure.

@@ -7,11 +7,11 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
-import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
-import { ChipsModule } from 'primeng/chips';
-import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from "primeng/inputgroupaddon";
+import { ChipsModule } from "primeng/chips";
+import { InputGroupModule } from "primeng/inputgroup";
 const meta: Meta = {
-    title: "Components/OverlayPanel",
+    title: "Components/OverlayPanel (done)",
     decorators: [
         moduleMetadata({
             imports: [

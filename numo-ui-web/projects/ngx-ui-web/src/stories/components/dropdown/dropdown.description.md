@@ -1,59 +1,63 @@
+# Dropdown Component Documentation
 
-1. **Select**: Ja viens izvēlams ieraksts, tad nav ne radio, ne checkbox.
-2. **Multi select**: Checkbox, ar iespēju spiest uz checkbox un/vai nosaukuma (label).
-3. **Hierarhija**: Piemēram, str.v. koks vai darba laika grupas ar darba laikiem. DLP ir divi varianti - secības šabloni (dropdown) ar zaļu, bold. Vajadzībās - darba vietas ar knābīti, lai izvērstu. Izmantošanas skaits - Darba laika grupas ar darba laikiem ar checkbox.
+The **Dropdown** component is a versatile input element that provides a compact list of choices for the user to select from. It is derived from the input field and is useful in various scenarios, such as form filling, attribute selection, and navigation.
 
-### Drop-down - a Compact List of Choices
+## Types of Dropdowns
 
-Drop-down pamatā ir ievadlauka atvasinājums.
+1. **Select**: Used when only one item can be selected. Does not include radio buttons or checkboxes.
+2. **Multi-select**: Uses checkboxes, allowing the user to select multiple options by clicking on the checkbox or the label.
+3. **Hierarchy**: Used for hierarchical data structures, such as organizational trees or work time groups. Example: DLP has two variants - sequential templates (dropdown) with green, bold text, and hierarchical workgroups with an expand option.
+
+### Dropdown - A Compact List of Choices
+
+The dropdown is fundamentally an extension of an input field.
 
 [NNGroup: Drop-down Menus](https://www.nngroup.com/articles/drop-down-menus/)
 
-### Izmantošana:
+## Use Cases
 
-1. **Command menu**: Initiate an action based on the selected option.
-2. **Navigation menu**: Take the user to a new location.
-3. **Form filling**: Lets users select an option to enter into a form field.
-4. **Attribute selection**: Lets users choose a value from a menu of possible values.
+1. **Command Menu**: Initiates an action based on the selected option.
+2. **Navigation Menu**: Directs the user to a new location.
+3. **Form Filling**: Allows users to select an option to enter into a form field.
+4. **Attribute Selection**: Enables users to choose a value from a predefined list of possible values.
 
-### Vajadzības/Prasības:
+## Requirements
 
-1. Tāpat kā ievadlaukam, arī drop-down ir label, iespējams, arī placeholder teksts, ikona, kas norāda uz izvēli (caret, lupa, kas cits).
-2. Tāpat kā ievadlaukam, arī drop-down ir stāvokļi:
+1. **Label and Placeholder**: Like input fields, dropdowns should have a label and possibly a placeholder text. Icons (such as carets or magnifying glasses) indicate a selection.
+2. **States**: Dropdowns have various states similar to input fields:
    - Enabled
    - Hover
    - Focused
-   - Read only (white)
+   - Read-only (white background)
    - Error
    - Disabled
-3. Ar drop-down var izvēlēties vienu vai vairākas vērtības (ar/bez checkbox, t.sk., spiežot uz nosaukuma), kamēr lietotājs izvēlas/noņem vairākas vērtības, drop-down saraksts paliek atvērts.
+3. **Single or Multiple Selection**: Users can select one or more values (with/without checkboxes). When selecting multiple values, the dropdown remains open until all selections are made.
 
 [NNGroup: Drop-down Menus](https://www.nngroup.com/articles/drop-down-menus/)
 
-4. Drop-down izmanto pie noteikta vērtību skaita (pieņēmums, ka 2 vērtības neliek drop-down, bet izmanto radio pogas vai toggle - iespēju robežās, biežāk, ja atbild uz jautājumu - jā/nē).
-5. Pie noteikta vērtību skaita nepieciešama vērtību meklēšana.
-6. Tooltip (bet ar citu komponenti nekā šobrīd DLP).
+4. **Value Limits**: Dropdowns are suitable for a set number of values. For two values, consider using radio buttons or toggles instead (e.g., yes/no questions).
+5. **Search Functionality**: Necessary for a larger set of values.
+6. **Tooltips**: Should be implemented with a different component than currently used in DLP.
 
-### Par ko vēl jāpadomā:
+## Considerations
 
-1. Svarīgi izvērtēt, kā attēlot vairākas izvēlētās vērtības, piemēram, šobrīd DLP lietotājs redz vērtību, ja no drop-down ir izvēlēta viena vērtība, ja ir izvēlētas vairākas vērtības, lietotājs redz, cik vērtības ir izvēlētas, bet lai apskatītu tieši kādas vērtības, jāveic papildu klikšķis, jāatver filtrs.
+1. **Displaying Multiple Selected Values**: Evaluate how to display multiple selections. Currently, in DLP, if a single value is selected, it is shown; if multiple values are chosen, the user sees the count and needs to click to view details.
+   
+2. **Data Selection in Filtering**:
+   - **Live**: Values update immediately upon selection. Used for filters.
+   - **By Filter**: Values are selected, and then a "Select" button is clicked, suitable for larger datasets, reports, or tables.
+   - **Batch**: Multiple dropdowns are filled, and then a "Select All" button is clicked, ideal for large datasets, reports, or tables.
 
-2. Ja drop-down tiek izmantots filtrēšanai, jālemj par datu atlasi:
-   - **Live**: Kur vērtības atjaunojas uzreiz pēc vērtības izvēles, → ja ir filtri, tad liekam live.
-   - **Pa filtram**: Kur vērtības tiek atlasītas pēc to izvēles un pogas "Atlasīt" nospiešanas - šis pie lielākiem datiem, atskaitēm, tabulām.
-   - **Batch**: Lietotājs izvēlas vērtības no vairākiem drop-down, pēc tam spiež pogu "Atlasīt visus" - šis pie lielākiem datiem, atskaitēm, tabulām.
+3. **Clear All Functionality**: Provide a "clear all" option, such as an icon next to the dropdown (e.g., a cross in DLP) or other ideas.
+4. **Sorting Values**: Values in dropdowns can be listed in regular or hierarchical order, especially if used in filters.
+5. **Hierarchical Dropdowns**: Users should be able to distinguish different levels and understand which values can be selected.
+6. **Empty Dropdowns**: If no records are available, display "No records."
+7. **Naming and Placeholder**: Primarily use a dropdown name; if unavailable, a placeholder can be used. Consider a sticky header for tables.
+8. **Dropdown Text Color**: Use black text for dropdown filters, avoiding blue (currently used in DLP).
+9. **Selected Values Order**: Selected values should move to the top of the list (descending by checked status), with other entries sorted alphabetically. This should happen after the selection process is complete, not during. Does not apply to hierarchical dropdowns.
 
-3. Ja ir izvēlētas vairākas vērtības, jāparedz clear all darbība - ikona pie drop-down ar krustiņu (DLP) vai kādas citas idejas.
-4. Drop-down vērtības var tikt kārtotas parastā vai hierarhiskā sarakstā, it īpaši, ja drop-down tiek pielietots filtrā, piemēram, str.v filtrs.
-5. Ja drop-down ir hierarhisks, lietotājam jāspēj izšķirt dažādie līmeņi un nepārprotami jāsaprot, kuras vērtības var izvēlēties.
-6. Ja nav ierakstu, ir tukšs drop-down - teksts: "Nav ierakstu."
-7. Primāri drop down nosaukums, bet ja nav nosaukuma, tad var būt placeholder. Var būt tabulai sticky header.
-8. Filtru drop-down teksts melnā krāsā, neliekam zilu (DLP tagad ir zils).
-9. Drop-down izvēlētās vērtības pārlec uz saraksta augšu (descending pēc checked), pārējie ieraksti, piemēram, pēc alfabēta). Tas notiek nevis selektēšanas brīdī, bet pēc tam, kad darbs pabeigts. Nestrādā uz hierarhiskajiem drop down.
-
-### Piemērs:
+### Example
 
 ![Example Dropdown](https://cdn.dribbble.com/users/4686695/screenshots/19798304/media/f8d3635f0ebe1a22fd75653e5c7851ab.png?resize=1600x1200&vertical=center)
 
 [Example Dropdown Image](https://cdn.dribbble.com/users/4686695/screenshots/19798304/media/f8d3635f0ebe1a22fd75653e5c7851ab.png?resize=1600x1200&vertical=center)
-

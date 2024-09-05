@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DividerModule } from "primeng/divider";
 const meta: Meta = {
-    title: "Components/Divider",
+    title: "Components/Divider (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -40,10 +40,12 @@ export const basic: Story = {
         props: {
             ...args,
         },
-        template: `<p>
+        template: `
+        <div class="bg-white p-4">
+        <p>
     Lorem ipsum dolor sit amet...
 </p>
-<p-divider [type]="type" [layout]="layout" />
+<p-divider [type]="type" [layout]="layout"  />
 <p>
     Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium...
 </p>
@@ -56,6 +58,6 @@ export const basic: Story = {
 <p-divider type="dashed"  />
 <p>
     Temporibus autem quibusdam et aut officiis...
-</p>`,
+</p></div>`,
     }),
 };

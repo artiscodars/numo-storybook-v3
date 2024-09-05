@@ -5,13 +5,13 @@ import description from "./radio-button.description.md"; // Import the markdown 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const meta: Meta = {
-    title: "Components/RadioButton",
+    title: "Components/Form/RadioButton (done)",
     decorators: [
         moduleMetadata({
-            imports: [ RadioButtonModule, FormsModule, ReactiveFormsModule ],
+            imports: [RadioButtonModule, FormsModule, ReactiveFormsModule],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -132,7 +132,7 @@ export const Invalid: Story = {
         label: "New York",
         formControlName: "city",
         binary: true,
-        classes: "ng-invalid ng-dirty"
+        classes: "ng-invalid ng-dirty",
     },
     render: (args) => ({
         props: {
@@ -148,7 +148,7 @@ export const Dynamic: Story = {
             { name: "Accounting", key: "A" },
             { name: "Marketing", key: "M" },
             { name: "Production", key: "P" },
-            { name: "Research", key: "R" }
+            { name: "Research", key: "R" },
         ],
     },
     render: (args) => ({
@@ -173,7 +173,7 @@ export const Dynamic: Story = {
 export const Filled: Story = {
     args: {
         checked: false,
-        variant: "filled"
+        variant: "filled",
     },
     render: (args) => ({
         props: {
@@ -184,7 +184,7 @@ export const Filled: Story = {
 };
 export const Disabled: Story = {
     args: {
-        disabled: true
+        disabled: true,
     },
     render: (args) => ({
         props: {

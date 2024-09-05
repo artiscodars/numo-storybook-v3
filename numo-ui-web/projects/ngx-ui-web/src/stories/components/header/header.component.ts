@@ -10,13 +10,14 @@ import {
 import { FormsModule } from "@angular/forms";
 import { InputTextModule } from "primeng/inputtext";
 import { MenuModule } from "primeng/menu";
-import { Menu, UserMenuItems } from "../left-menu/menu.model";
+import { Menu } from "../left-menu/menu.model";
+import { UserMenuItems } from "./user-menu.model";
 import { OverlayPanelModule } from "primeng/overlaypanel";
 import { LeftMenuComponent } from "../left-menu/left-menu.component";
 import { IconComponent } from "../icon/icon.component";
 import { IconFieldModule } from "primeng/iconfield";
 import { InputIconModule } from "primeng/inputicon";
-import { MenubarModule } from "primeng/menubar";
+import { ButtonModule } from "primeng/button";
 
 @Component({
     selector: "numo-header",
@@ -31,7 +32,7 @@ import { MenubarModule } from "primeng/menubar";
         IconComponent,
         IconFieldModule,
         InputIconModule,
-        MenubarModule,
+        ButtonModule,
     ],
     templateUrl: "./header.template.html",
     styles: [],
@@ -42,9 +43,11 @@ export class HeaderComponent {
     @Input() isStoryBook = false;
     @ViewChild("menu") menu: any;
     @ViewChild("storyMenu") storyMenu: any;
-    @Output() menuClicked = new EventEmitter(false);
+    @ViewChild("userMenu") userMenu: any; // Reference to user menu
+    @Output() menuClicked = new EventEmitter<boolean>(); // Emit boolean state
+    @Output() userMenuItemSelected = new EventEmitter<string>(); // New event
     items = [...Menu];
-    userMenuItems = [...UserMenuItems];
+    userMenuItems = [...UserMenuItems]; // Use the imported user menu items
     BreakPoint = 1024;
 
     toggleMenu(event: Event) {
@@ -62,5 +65,13 @@ export class HeaderComponent {
 
     closeMenu() {
         this.isMenuVisible = false;
+    }
+
+    onUserMenuItemClick(menuItem: string) {
+        this.userMenuItemSelected.emit(menuItem); // Emit the selected menu item
+    }
+
+    showUserMenu(event: Event) {
+        this.userMenu.toggle(event); // Show the user menu
     }
 }

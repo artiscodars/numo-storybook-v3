@@ -30,10 +30,40 @@
         </p-iconField>
     </div>
 
-    <div>
-        <p-menubar
-            [model]="userMenuItems"
-            styleClass="p-0 custom-menubar bg-transparent hover:bg-transparent w-20rem border-transparent hover:bg-transparent "
-        />
+    <div class="flex justify-content-end">
+        <p-menu #userMenu [model]="userMenuItems" [popup]="true">
+            <ng-template pTemplate="submenuheader" let-item>
+                <span class="text-primary font-bold px-3"
+                    >{{ item.label }}</span
+                >
+            </ng-template>
+            <ng-template pTemplate="item" let-item>
+                <a pRipple class="flex align-items-center p-menuitem-link">
+                    <numo-icon
+                        icon="{{ item.icon }}"
+                        type="iconify"
+                    ></numo-icon>
+                    <span class="ml-2">{{ item.label }}</span>
+
+                    <span
+                        *ngIf="item.shortcut"
+                        class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1"
+                    >
+                        {{ item.shortcut }}
+                    </span>
+                </a>
+            </ng-template>
+        </p-menu>
+
+        <div
+            (click)="showUserMenu($event)"
+            class="usermenu cursor-pointer py-1"
+        >
+            Jānis Bērziņš
+            <div class="text-ellipsis text-xs">
+                Liepājas valstspilsētas pašvaldības aģentūra "Liepājas
+                Sabiedriskais transports"
+            </div>
+        </div>
     </div>
 </div>

@@ -4,7 +4,7 @@ import description from "./header.description.md";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 const meta: Meta<HeaderComponent> = {
-    title: "Design blocks/Header",
+    title: "Design blocks/Header (done)",
     component: HeaderComponent,
     excludeStories: /.*Data$/,
     tags: ["autodocs"],
