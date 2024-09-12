@@ -10,15 +10,22 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastComponent } from "./toast.component";
 
 const meta: Meta = {
-    title: "Components/Toast",
+    title: "Components/Toast (progress)",
     component: ToastComponent,
     decorators: [
         moduleMetadata({
-            imports: [ ToastModule, FormsModule, ReactiveFormsModule, ButtonModule, InputTextModule, BrowserAnimationsModule ],
-            providers: [ MessageService ],
+            imports: [
+                ToastModule,
+                FormsModule,
+                ReactiveFormsModule,
+                ButtonModule,
+                InputTextModule,
+                BrowserAnimationsModule,
+            ],
+            providers: [MessageService],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -36,4 +43,3 @@ export const Basic: Story = {
         template: `<p-toast-wrapper></p-toast-wrapper>`,
     }),
 };
-

@@ -5,7 +5,7 @@ import description from "./button.description.md"; // Import the markdown file
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const meta: Meta = {
-    title: "Components/Button (desc)",
+    title: "Components/Form/Button (desc)",
     decorators: [
         moduleMetadata({
             imports: [ButtonModule, FormsModule, ReactiveFormsModule],

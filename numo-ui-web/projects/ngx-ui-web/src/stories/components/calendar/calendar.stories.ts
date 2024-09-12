@@ -7,7 +7,7 @@ import { FloatLabelModule } from "primeng/floatlabel";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Calendar (done)",
+    title: "Components/Form/Calendar (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -212,7 +212,7 @@ export const TimePicker: Story = {
         props: {
             ...args,
         },
-        template: `<p-calendar
+        template: `ielikt wraperi<p-calendar
     [(ngModel)]="date"
     [selectionMode]="selectionMode"
     [timeOnly]="timeOnly"

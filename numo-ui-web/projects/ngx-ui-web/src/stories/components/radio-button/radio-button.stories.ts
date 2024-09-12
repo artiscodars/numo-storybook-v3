@@ -132,13 +132,13 @@ export const Invalid: Story = {
         label: "New York",
         formControlName: "city",
         binary: true,
-        classes: "ng-invalid ng-dirty",
+        classes: "ng-invalid ng-dirty text-red-600",
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-radioButton [class]="classes"  />  `,
+        template: `<p-radioButton [class]="classes" [label]="label"  />  `,
     }),
 };
 export const Dynamic: Story = {

@@ -9,7 +9,7 @@ import { ButtonModule } from "primeng/button";
 import { BadgeModule } from "primeng/badge";
 
 const meta: Meta = {
-    title: "Components/Data View (progress)",
+    title: "Components/Data View (>tables)",
     decorators: [
         moduleMetadata({
             imports: [

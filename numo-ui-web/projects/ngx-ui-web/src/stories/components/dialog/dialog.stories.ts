@@ -8,7 +8,7 @@ import { DialogModule } from "primeng/dialog";
 import { InputTextModule } from "primeng/inputtext";
 
 const meta: Meta = {
-    title: "Components/Dialog",
+    title: "Components/Dialog (done)",
     decorators: [
         moduleMetadata({
             imports: [

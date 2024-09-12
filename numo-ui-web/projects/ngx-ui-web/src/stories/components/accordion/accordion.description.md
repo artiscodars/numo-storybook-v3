@@ -10,6 +10,11 @@ The Accordion component in PrimeNG is a container element that allows you to gro
    - Allows multiple tabs to be expanded simultaneously.
    - Useful when you want users to view and compare the contents of different sections without closing the currently expanded one.
 
+2. **Expandable**
+   - izverst saklaut visus
+
 ### Usage
 
 To use the Accordion component in your Angular application, follow the steps below:
+
+

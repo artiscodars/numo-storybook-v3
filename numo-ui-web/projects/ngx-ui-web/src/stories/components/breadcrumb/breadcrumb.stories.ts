@@ -37,7 +37,11 @@ type Story = StoryObj;
 export const basic: Story = {
     args: {
         items: [
-            { label: "Electronics" },
+            {
+                label: "Electronics",
+                url: "#",
+                styleClass: "text-blue-500 underline",
+            },
             { label: "Computer" },
             { label: "Accessories" },
             { label: "Keyboard" },
