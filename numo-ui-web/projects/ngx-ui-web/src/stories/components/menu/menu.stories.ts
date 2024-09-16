@@ -131,22 +131,22 @@ export const Router: Story = {
             ...args,
         },
         template: `<p-menu [model]="items">
-    <ng-template pTemplate="item" let-item>
+                    <ng-template pTemplate="item" let-item>
 
-        <ng-container *ngIf="item.route; else elseBlock">
-            <a [routerLink]="item.route" class="p-menuitem-link">
-                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
-                <span class="ml-2">{{ item.label }}</span>
-            </a>
-        </ng-container>
-        <ng-template #elseBlock>
-            <a [href]="item.url" class="p-menuitem-link">
-                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
-                <span class="ml-2">{{ item.label }}</span>
-            </a>
-        </ng-template>
-    </ng-template>
-</p-menu>`,
+                        <ng-container *ngIf="item.route; else elseBlock">
+                            <a [routerLink]="item.route" class="p-menuitem-link">
+                                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
+                                <span class="ml-2">{{ item.label }}</span>
+                            </a>
+                        </ng-container>
+                        <ng-template #elseBlock>
+                            <a [href]="item.url" class="p-menuitem-link">
+                                <numo-icon [icon]="item.icon" [type]="item.type"></numo-icon>
+                                <span class="ml-2">{{ item.label }}</span>
+                            </a>
+                        </ng-template>
+                    </ng-template>
+                </p-menu>`,
     }),
 };
 

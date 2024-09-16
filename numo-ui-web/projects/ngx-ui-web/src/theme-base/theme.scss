@@ -140,3 +140,9 @@ $numoHighlightColor: $primaryColor !default;
     opacity: 1;
     transition: background-color 0.2s;
 }
+.daycalendar {
+    white-space: nowrap;
+    button {
+        padding: 7px 10px;
+    }
+}
