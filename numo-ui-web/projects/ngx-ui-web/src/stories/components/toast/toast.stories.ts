@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastComponent } from "./toast.component";
 
 const meta: Meta = {
-    title: "Components/Toast (progress)",
+    title: "Components/Toast (done)",
     component: ToastComponent,
     decorators: [
         moduleMetadata({
@@ -38,8 +38,46 @@ const meta: Meta = {
 export default meta;
 type Story = StoryObj;
 
-export const Basic: Story = {
+export const Info: Story = {
     render: (args) => ({
-        template: `<p-toast-wrapper></p-toast-wrapper>`,
+        component: ToastComponent,
+        props: {
+            severity: "info",
+            summary: "Information",
+            detail: "This is an informative message.",
+        },
+    }),
+};
+
+export const Success: Story = {
+    render: (args) => ({
+        component: ToastComponent,
+        props: {
+            severity: "success",
+            summary: "Success",
+            detail: "This is a success message.",
+        },
+    }),
+};
+
+export const Warning: Story = {
+    render: (args) => ({
+        component: ToastComponent,
+        props: {
+            severity: "warn",
+            summary: "Warning",
+            detail: "This is a warning message.",
+        },
+    }),
+};
+
+export const Error: Story = {
+    render: (args) => ({
+        component: ToastComponent,
+        props: {
+            severity: "error",
+            summary: "Error",
+            detail: "This is an error message.",
+        },
     }),
 };

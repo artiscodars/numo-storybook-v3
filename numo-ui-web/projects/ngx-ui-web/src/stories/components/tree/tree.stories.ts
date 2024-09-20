@@ -21,7 +21,7 @@ const expandRecursive = (node: TreeNode, isExpand: boolean) => {
 };
 
 const meta: Meta = {
-    title: "Components/Tree",
+    title: "Components/Tree (done)",
     component: TreeComponent,
     decorators: [
         moduleMetadata({
@@ -72,5 +72,23 @@ export const checkbox: Story = {
     render: (args) => ({
         props: { ...args },
         template: `<p-tree [value]="files" selectionMode="checkbox" class="w-full md:w-30rem" [(selection)]="selectedFiles" />`,
+    }),
+};
+
+export const DragAndDrop: Story = {
+    args: {
+        files: JSON.parse(JSON.stringify(commonFiles)), // Deep clone to avoid circular references
+    },
+    render: (args) => ({
+        props: { ...args },
+        template: `
+            <p-tree
+    class="w-full md:w-30rem"
+    [value]="files"
+    [draggableNodes]="true"
+    [droppableNodes]="true"
+    draggableScope="self"
+    droppableScope="self" />
+        `,
     }),
 };

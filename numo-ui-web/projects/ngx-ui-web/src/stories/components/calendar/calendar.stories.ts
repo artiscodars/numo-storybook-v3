@@ -96,12 +96,13 @@ export const Icon: Story = {
         iconDisplay: "input",
         timeOnly: false,
         firstDayOfWeek: 1,
+        inputId: "icondisplay",
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<p-calendar [(ngModel)]="date1" [showIcon]="showIcon" [showOnFocus]="showOnFocus" [timeOnly]="timeOnly"  inputId="buttondisplay" [firstDayOfWeek]="firstDayOfWeek"/>
+        template: `<p-calendar [(ngModel)]="date2" [showIcon]="showIcon" [showOnFocus]="showOnFocus" [timeOnly]="timeOnly"   inputId="icondisplay" [firstDayOfWeek]="firstDayOfWeek"/>
 `,
     }),
 };
@@ -187,44 +188,6 @@ export const Invalid: Story = {
     [class]="class"
     [disabled]="disabled"
     [firstDayOfWeek]="firstDayOfWeek"
-    />
-`,
-    }),
-};
-
-// New Time Picker Story
-export const TimePicker: Story = {
-    args: {
-        date: new Date(),
-        selectionMode: "single",
-        timeOnly: true,
-        showIcon: false,
-        hourFormat: "24",
-        stepHour: 1,
-        stepMinute: 1,
-        stepSecond: 1,
-        showSeconds: false,
-        readonlyInput: false,
-        showButtonBar: false,
-        touchUI: false,
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `ielikt wraperi<p-calendar
-    [(ngModel)]="date"
-    [selectionMode]="selectionMode"
-    [timeOnly]="timeOnly"
-    [showIcon]="showIcon"
-    [hourFormat]="hourFormat"
-    [stepHour]="stepHour"
-    [stepMinute]="stepMinute"
-    [stepSecond]="stepSecond"
-    [showSeconds]="showSeconds"
-    [readonlyInput]="readonlyInput"
-    [showButtonBar]="showButtonBar"
-    [touchUI]="touchUI"
     />
 `,
     }),

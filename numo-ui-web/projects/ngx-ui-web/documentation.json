@@ -2,111 +2,6 @@
     "pipes": [],
     "interfaces": [
         {
-            "name": "Product",
-            "id": "interface-Product-419c9917be455670c3cd6d490654da8444fc58206d4ac3d302f3149c71a312d87fec79e6f6077c1ccad4e8180acaf6cd589d00b7c1dfb32a81069796251b6b26",
-            "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
-            "deprecated": false,
-            "deprecationMessage": "",
-            "type": "interface",
-            "sourceCode": "export const dataView = [\n    {\n        id: \"1000\",\n        code: \"f230fh0g3\",\n        name: \"Bamboo Watch\",\n        description: \"Product Description\",\n        image: \"bamboo-watch.jpg\",\n        price: 65,\n        category: \"Accessories\",\n        quantity: 24,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1001\",\n        code: \"nvklal433\",\n        name: \"Black Watch\",\n        description: \"Product Description\",\n        image: \"black-watch.jpg\",\n        price: 72,\n        category: \"Accessories\",\n        quantity: 61,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1002\",\n        code: \"zz21cz3c1\",\n        name: \"Blue Band\",\n        description: \"Product Description\",\n        image: \"blue-band.jpg\",\n        price: 79,\n        category: \"Fitness\",\n        quantity: 2,\n        inventoryStatus: \"LOWSTOCK\",\n        rating: 3,\n    },\n    {\n        id: \"1003\",\n        code: \"244wgerg2\",\n        name: \"Blue T-Shirt\",\n        description: \"Product Description\",\n        image: \"blue-t-shirt.jpg\",\n        price: 29,\n        category: \"Clothing\",\n        quantity: 25,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1004\",\n        code: \"h456wer53\",\n        name: \"Bracelet\",\n        description: \"Product Description\",\n        image: \"bracelet.jpg\",\n        price: 15,\n        category: \"Accessories\",\n        quantity: 73,\n        inventoryStatus: \"INSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1005\",\n        code: \"av2231fwg\",\n        name: \"Brown Purse\",\n        description: \"Product Description\",\n        image: \"brown-purse.jpg\",\n        price: 120,\n        category: \"Accessories\",\n        quantity: 0,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n];\n\nexport interface Product {\n    id?: string;\n    code?: string;\n    name?: string;\n    description?: string;\n    price?: number;\n    quantity?: number;\n    inventoryStatus?: string;\n    category?: string;\n    image?: string;\n    rating?: number;\n}\n",
-            "properties": [
-                {
-                    "name": "category",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 84
-                },
-                {
-                    "name": "code",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 78
-                },
-                {
-                    "name": "description",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 80
-                },
-                {
-                    "name": "id",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 77
-                },
-                {
-                    "name": "image",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 85
-                },
-                {
-                    "name": "inventoryStatus",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 83
-                },
-                {
-                    "name": "name",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "string",
-                    "optional": true,
-                    "description": "",
-                    "line": 79
-                },
-                {
-                    "name": "price",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 81
-                },
-                {
-                    "name": "quantity",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 82
-                },
-                {
-                    "name": "rating",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "number",
-                    "optional": true,
-                    "description": "",
-                    "line": 86
-                }
-            ],
-            "indexSignatures": [],
-            "kind": 171,
-            "methods": [],
-            "extends": []
-        },
-        {
             "name": "User",
             "id": "interface-User-5d353b8c1d225e09f14cb588106aea8057b34b050c75354fa9039782cec86bb235c040a5681e1ccc2d9cd6b27bf3ff534657d9fb26f88fec737b061184ac3489",
             "file": "projects/ngx-ui-web/src/stories/user.ts",
@@ -1170,7 +1065,7 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div\n    class=\"header flex align-items-center p-2 text-white justify-content-between row-gap-3\"\n>\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span\n            #menuButton\n            (click)=\"toggleMenu($event)\"\n            class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\n        ></span>\n\n        <p-overlayPanel #menu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n        <p-overlayPanel #storyMenu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"tabler:search\" type=\"iconify\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div class=\"flex justify-content-end\">\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\">\n            <ng-template pTemplate=\"submenuheader\" let-item>\n                <span class=\"text-primary font-bold px-3\"\n                    >{{ item.label }}</span\n                >\n            </ng-template>\n            <ng-template pTemplate=\"item\" let-item>\n                <a pRipple class=\"flex align-items-center p-menuitem-link\">\n                    <numo-icon\n                        icon=\"{{ item.icon }}\"\n                        type=\"iconify\"\n                    ></numo-icon>\n                    <span class=\"ml-2\">{{ item.label }}</span>\n\n                    <span\n                        *ngIf=\"item.shortcut\"\n                        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n                    >\n                        {{ item.shortcut }}\n                    </span>\n                </a>\n            </ng-template>\n        </p-menu>\n\n        <div\n            (click)=\"showUserMenu($event)\"\n            class=\"usermenu cursor-pointer py-1\"\n        >\n            Jānis Bērziņš\n            <div class=\"text-ellipsis text-xs\">\n                Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas\n                Sabiedriskais transports\"\n            </div>\n        </div>\n    </div>\n</div>\n"
+            "templateData": "<div\n    class=\"header flex align-items-center p-2 text-white justify-content-between row-gap-3\"\n>\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span\n            #menuButton\n            (click)=\"toggleMenu($event)\"\n            class=\"pi pi-bars icon text-gray-800 cursor-pointer\"\n        ></span>\n\n        <p-overlayPanel #menu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n        <p-overlayPanel #storyMenu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"tabler:search\" type=\"iconify\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div class=\"flex justify-content-end\">\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\">\n            <ng-template pTemplate=\"submenuheader\" let-item>\n                <span class=\"font-bold\">{{ item.label }}</span>\n            </ng-template>\n            <ng-template pTemplate=\"item\" let-item>\n                <a pRipple class=\"flex align-items-center p-menuitem-link\">\n                    <numo-icon\n                        icon=\"{{ item.icon }}\"\n                        type=\"iconify\"\n                    ></numo-icon>\n                    <span class=\"ml-2\">{{ item.label }}</span>\n\n                    <span\n                        *ngIf=\"item.shortcut\"\n                        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\"\n                    >\n                        {{ item.shortcut }}\n                    </span>\n                </a>\n            </ng-template>\n        </p-menu>\n\n        <div\n            (click)=\"showUserMenu($event)\"\n            class=\"usermenu cursor-pointer py-1\"\n        >\n            Jānis Bērziņš\n            <div class=\"text-ellipsis text-xs\">\n                Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas\n                Sabiedriskais transports\"\n            </div>\n        </div>\n    </div>\n</div>\n"
         },
         {
             "name": "IconComponent",
@@ -1390,6 +1285,112 @@
             "styleUrlsData": "",
             "stylesData": "",
             "extends": []
+        },
+        {
+            "name": "TimePickerComponent",
+            "id": "component-TimePickerComponent-fb10720dd0e77a11a95278e52e462633542010070291fceb4e5803408625580d12bb017a3e5a632a2209784ae5c2926e3ed9ba29c127ea0b491874c53a92194c",
+            "file": "projects/ngx-ui-web/src/stories/components/time-picker/time-picker.component.ts",
+            "encapsulation": [],
+            "entryComponents": [],
+            "inputs": [],
+            "outputs": [],
+            "providers": [],
+            "selector": "numo-time-picker",
+            "styleUrls": [],
+            "styles": [],
+            "templateUrl": [
+                "./time-picker.template.html"
+            ],
+            "viewProviders": [],
+            "hostDirectives": [],
+            "inputsClass": [
+                {
+                    "name": "class",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 17,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "disabled",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 11,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "max",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 14,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "min",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 13,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "required",
+                    "defaultValue": "false",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 12,
+                    "type": "boolean",
+                    "decorators": []
+                },
+                {
+                    "name": "step",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 15,
+                    "type": "string",
+                    "decorators": []
+                },
+                {
+                    "name": "value",
+                    "defaultValue": "\"\"",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "line": 19,
+                    "type": "string",
+                    "decorators": []
+                }
+            ],
+            "outputsClass": [],
+            "propertiesClass": [],
+            "methodsClass": [],
+            "deprecated": false,
+            "deprecationMessage": "",
+            "hostBindings": [],
+            "hostListeners": [],
+            "standalone": true,
+            "imports": [
+                {
+                    "name": "CommonModule",
+                    "type": "module"
+                }
+            ],
+            "description": "",
+            "rawdescription": "\n",
+            "type": "component",
+            "sourceCode": "import { Component, Input, forwardRef } from \"@angular/core\";\nimport { CommonModule } from \"@angular/common\";\n\n@Component({\n    selector: \"numo-time-picker\",\n    templateUrl: \"./time-picker.template.html\",\n    standalone: true,\n    imports: [CommonModule],\n})\nexport class TimePickerComponent {\n    @Input() disabled: boolean = false;\n    @Input() required: boolean = false;\n    @Input() min: string = \"\";\n    @Input() max: string = \"\";\n    @Input() step: string = \"\";\n\n    @Input() class: string = \"\";\n\n    @Input() value: string = \"\";\n}\n",
+            "assetsDirs": [],
+            "styleUrlsData": "",
+            "stylesData": "",
+            "extends": [],
+            "templateData": "<input\n    type=\"time\"\n    [disabled]=\"disabled\"\n    [required]=\"required\"\n    [min]=\"min\"\n    [max]=\"max\"\n    [step]=\"step\"\n    [value]=\"value\"\n    class=\"p-element p-inputtext p-component timepicker\"\n/>\n"
         },
         {
             "name": "ToastComponent",
@@ -1911,16 +1912,6 @@
                 "defaultValue": "[\n    {\n        key: \"0\",\n        label: \"Documents\",\n        data: \"Documents Folder\",\n        icon: \"pi pi-fw pi-inbox\",\n        children: [\n            {\n                key: \"0-0\",\n                label: \"Work\",\n                data: \"Work Folder\",\n                icon: \"pi pi-fw pi-cog\",\n                children: [\n                    {\n                        key: \"0-0-0\",\n                        label: \"Expenses.doc\",\n                        icon: \"pi pi-fw pi-file\",\n                        data: \"Expenses Document\",\n                    },\n                    {\n                        key: \"0-0-1\",\n                        label: \"Resume.doc\",\n                        icon: \"pi pi-fw pi-file\",\n                        data: \"Resume Document\",\n                    },\n                ],\n            },\n            {\n                key: \"0-1\",\n                label: \"Home\",\n                data: \"Home Folder\",\n                icon: \"pi pi-fw pi-home\",\n                children: [\n                    {\n                        key: \"0-1-0\",\n                        label: \"Invoices.txt\",\n                        icon: \"pi pi-fw pi-file\",\n                        data: \"Invoices for this month\",\n                    },\n                ],\n            },\n        ],\n    },\n    {\n        key: \"1\",\n        label: \"Events\",\n        data: \"Events Folder\",\n        icon: \"pi pi-fw pi-calendar\",\n        children: [\n            {\n                key: \"1-0\",\n                label: \"Meeting\",\n                icon: \"pi pi-fw pi-calendar-plus\",\n                data: \"Meeting\",\n            },\n            {\n                key: \"1-1\",\n                label: \"Product Launch\",\n                icon: \"pi pi-fw pi-calendar-plus\",\n                data: \"Product Launch\",\n            },\n            {\n                key: \"1-2\",\n                label: \"Report Review\",\n                icon: \"pi pi-fw pi-calendar-plus\",\n                data: \"Report Review\",\n            },\n        ],\n    },\n    {\n        key: \"2\",\n        label: \"Movies\",\n        data: \"Movies Folder\",\n        icon: \"pi pi-fw pi-star-fill\",\n        children: [\n            {\n                key: \"2-0\",\n                icon: \"pi pi-fw pi-star-fill\",\n                label: \"Al Pacino\",\n                data: \"Pacino Movies\",\n                children: [\n                    {\n                        key: \"2-0-0\",\n                        label: \"Scarface\",\n                        icon: \"pi pi-fw pi-video\",\n                        data: \"Scarface Movie\",\n                    },\n                    {\n                        key: \"2-0-1\",\n                        label: \"Serpico\",\n                        icon: \"pi pi-fw pi-video\",\n                        data: \"Serpico Movie\",\n                    },\n                ],\n            },\n            {\n                key: \"2-1\",\n                label: \"Robert De Niro\",\n                icon: \"pi pi-fw pi-star-fill\",\n                data: \"De Niro Movies\",\n                children: [\n                    {\n                        key: \"2-1-0\",\n                        label: \"Goodfellas\",\n                        icon: \"pi pi-fw pi-video\",\n                        data: \"Goodfellas Movie\",\n                    },\n                    {\n                        key: \"2-1-1\",\n                        label: \"Untouchables\",\n                        icon: \"pi pi-fw pi-video\",\n                        data: \"Untouchables Movie\",\n                    },\n                ],\n            },\n        ],\n    },\n]"
             },
             {
-                "name": "dataView",
-                "ctype": "miscellaneous",
-                "subtype": "variable",
-                "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
-                "deprecated": false,
-                "deprecationMessage": "",
-                "type": "[]",
-                "defaultValue": "[\n    {\n        id: \"1000\",\n        code: \"f230fh0g3\",\n        name: \"Bamboo Watch\",\n        description: \"Product Description\",\n        image: \"bamboo-watch.jpg\",\n        price: 65,\n        category: \"Accessories\",\n        quantity: 24,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1001\",\n        code: \"nvklal433\",\n        name: \"Black Watch\",\n        description: \"Product Description\",\n        image: \"black-watch.jpg\",\n        price: 72,\n        category: \"Accessories\",\n        quantity: 61,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1002\",\n        code: \"zz21cz3c1\",\n        name: \"Blue Band\",\n        description: \"Product Description\",\n        image: \"blue-band.jpg\",\n        price: 79,\n        category: \"Fitness\",\n        quantity: 2,\n        inventoryStatus: \"LOWSTOCK\",\n        rating: 3,\n    },\n    {\n        id: \"1003\",\n        code: \"244wgerg2\",\n        name: \"Blue T-Shirt\",\n        description: \"Product Description\",\n        image: \"blue-t-shirt.jpg\",\n        price: 29,\n        category: \"Clothing\",\n        quantity: 25,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1004\",\n        code: \"h456wer53\",\n        name: \"Bracelet\",\n        description: \"Product Description\",\n        image: \"bracelet.jpg\",\n        price: 15,\n        category: \"Accessories\",\n        quantity: 73,\n        inventoryStatus: \"INSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1005\",\n        code: \"av2231fwg\",\n        name: \"Brown Purse\",\n        description: \"Product Description\",\n        image: \"brown-purse.jpg\",\n        price: 120,\n        category: \"Accessories\",\n        quantity: 0,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n]"
-            },
-            {
                 "name": "Menu",
                 "ctype": "miscellaneous",
                 "subtype": "variable",
@@ -1985,18 +1976,6 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n    {\n        key: \"0\",\n        label: \"Introduction\",\n        children: [\n            {\n                key: \"0-0\",\n                label: \"What is Angular\",\n                data: \"https://angular.io\",\n                type: \"url\",\n            },\n            {\n                key: \"0-1\",\n                label: \"Getting Started\",\n                data: \"https://angular.io/guide/setup-local\",\n                type: \"url\",\n            },\n            {\n                key: \"0-2\",\n                label: \"Learn and Explore\",\n                data: \"https://angular.io/guide/architecture\",\n                type: \"url\",\n            },\n            {\n                key: \"0-3\",\n                label: \"Take a Look\",\n                data: \"https://angular.io/start\",\n                type: \"url\",\n            },\n        ],\n    },\n    {\n        key: \"1\",\n        label: \"Components In-Depth\",\n        children: [\n            {\n                key: \"1-0\",\n                label: \"Component Registration\",\n                data: \"https://angular.io/guide/component-interaction\",\n                type: \"url\",\n            },\n            {\n                key: \"1-1\",\n                label: \"User Input\",\n                data: \"https://angular.io/guide/user-input\",\n                type: \"url\",\n            },\n            {\n                key: \"1-2\",\n                label: \"Hooks\",\n                data: \"https://angular.io/guide/lifecycle-hooks\",\n                type: \"url\",\n            },\n            {\n                key: \"1-3\",\n                label: \"Attribute Directives\",\n                data: \"https://angular.io/guide/attribute-directives\",\n                type: \"url\",\n            },\n        ],\n    },\n]"
-                }
-            ],
-            "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts": [
-                {
-                    "name": "dataView",
-                    "ctype": "miscellaneous",
-                    "subtype": "variable",
-                    "file": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "type": "[]",
-                    "defaultValue": "[\n    {\n        id: \"1000\",\n        code: \"f230fh0g3\",\n        name: \"Bamboo Watch\",\n        description: \"Product Description\",\n        image: \"bamboo-watch.jpg\",\n        price: 65,\n        category: \"Accessories\",\n        quantity: 24,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1001\",\n        code: \"nvklal433\",\n        name: \"Black Watch\",\n        description: \"Product Description\",\n        image: \"black-watch.jpg\",\n        price: 72,\n        category: \"Accessories\",\n        quantity: 61,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1002\",\n        code: \"zz21cz3c1\",\n        name: \"Blue Band\",\n        description: \"Product Description\",\n        image: \"blue-band.jpg\",\n        price: 79,\n        category: \"Fitness\",\n        quantity: 2,\n        inventoryStatus: \"LOWSTOCK\",\n        rating: 3,\n    },\n    {\n        id: \"1003\",\n        code: \"244wgerg2\",\n        name: \"Blue T-Shirt\",\n        description: \"Product Description\",\n        image: \"blue-t-shirt.jpg\",\n        price: 29,\n        category: \"Clothing\",\n        quantity: 25,\n        inventoryStatus: \"INSTOCK\",\n        rating: 5,\n    },\n    {\n        id: \"1004\",\n        code: \"h456wer53\",\n        name: \"Bracelet\",\n        description: \"Product Description\",\n        image: \"bracelet.jpg\",\n        price: 15,\n        category: \"Accessories\",\n        quantity: 73,\n        inventoryStatus: \"INSTOCK\",\n        rating: 4,\n    },\n    {\n        id: \"1005\",\n        code: \"av2231fwg\",\n        name: \"Brown Purse\",\n        description: \"Product Description\",\n        image: \"brown-purse.jpg\",\n        price: 120,\n        category: \"Accessories\",\n        quantity: 0,\n        inventoryStatus: \"OUTOFSTOCK\",\n        rating: 4,\n    },\n]"
                 }
             ],
             "projects/ngx-ui-web/src/stories/components/left-menu/menu.model.ts": [
@@ -2073,25 +2052,6 @@
                 "status": "low"
             },
             {
-                "filePath": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
-                "type": "interface",
-                "linktype": "interface",
-                "name": "Product",
-                "coveragePercent": 0,
-                "coverageCount": "0/11",
-                "status": "low"
-            },
-            {
-                "filePath": "projects/ngx-ui-web/src/stories/components/data-view/data-view.ts",
-                "type": "variable",
-                "linktype": "miscellaneous",
-                "linksubtype": "variable",
-                "name": "dataView",
-                "coveragePercent": 0,
-                "coverageCount": "0/1",
-                "status": "low"
-            },
-            {
                 "filePath": "projects/ngx-ui-web/src/stories/components/file-upload/file-upload.component.ts",
                 "type": "component",
                 "linktype": "component",
@@ -2145,6 +2105,15 @@
                 "name": "Menu",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/components/time-picker/time-picker.component.ts",
+                "type": "component",
+                "linktype": "component",
+                "name": "TimePickerComponent",
+                "coveragePercent": 0,
+                "coverageCount": "0/8",
                 "status": "low"
             },
             {

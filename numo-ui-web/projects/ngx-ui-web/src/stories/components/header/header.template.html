@@ -33,9 +33,7 @@
     <div class="flex justify-content-end">
         <p-menu #userMenu [model]="userMenuItems" [popup]="true">
             <ng-template pTemplate="submenuheader" let-item>
-                <span class="text-primary font-bold px-3"
-                    >{{ item.label }}</span
-                >
+                <span class="font-bold">{{ item.label }}</span>
             </ng-template>
             <ng-template pTemplate="item" let-item>
                 <a pRipple class="flex align-items-center p-menuitem-link">

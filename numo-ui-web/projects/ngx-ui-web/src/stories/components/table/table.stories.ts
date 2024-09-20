@@ -166,27 +166,27 @@ export const ForDataView: Story = {
             ...args,
             getSeverity: (status: any) => new TableDemo().getSeverity(status),
         },
-        template: `<p-table [value]="products" [tableStyle]="{'min-width': '60rem'}">
+        template: `<p-table [value]="products" [tableStyle]="{'min-width': '60rem'}" class="data-table">
 
     <ng-template pTemplate="body" let-product>
         <tr>
             <td><a href="#" class="text-primary font-semibold mr-3">{{product.name}}</a> <p-badge [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" /></td>
 
             <td>
-<div class="flex">
-            <div class="p-buttonset pr-2 daycalendar">
-            <button type="button" pButton label="M" size="small"></button>
-            <button type="button" pButton label="T" size="small"></button>
-            <button type="button" pButton label="W" size="small"></button>
-            <button type="button" outlined="true"  pButton label="T" size="small"></button>
-            <button type="button" pButton label="F" size="small"></button>
-            <button type="button" pButton label="S" size="small"></button>
-            <button type="button" pButton label="S" size="small"></button>
-        </div>
-         <div class="p-buttonset daycalendar">
-            <button type="button" disabled pButton label="12.12.2023"  size="small"></button>
-            <button type="button" pButton label="x"  size="small"></button>
-            </div>
+                <div class="flex">
+                    <div class="p-buttonset pr-2 daycalendar">
+                    <button type="button" pButton label="M" size="small"></button>
+                    <button type="button" pButton label="T" size="small"></button>
+                    <button type="button" pButton label="W" size="small"></button>
+                    <button type="button" outlined="true"  pButton label="T" size="small"></button>
+                    <button type="button" pButton label="F" size="small"></button>
+                    <button type="button" pButton label="S" size="small"></button>
+                    <button type="button" pButton label="S" size="small"></button>
+                </div>
+                <div class="p-buttonset daycalendar">
+                    <button type="button" disabled pButton label="12.12.2023"  size="small"></button>
+                    <button type="button" pButton label="x"  size="small"></button>
+                </div>
             </div>
 
             </td>

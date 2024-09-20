@@ -7,7 +7,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { TreeSelectModule } from "primeng/treeselect";
 import { nodes } from "./tree-select.data";
 const meta: Meta = {
-    title: "Components/Form/TreeSelect (style)",
+    title: "Components/Form/TreeSelect (done)",
     decorators: [
         moduleMetadata({
             imports: [
@@ -42,7 +42,7 @@ export const checkbox: Story = {
         props: {
             ...args,
         },
-        template: `<div class="card flex justify-content-start">
+        template: `
     <p-treeSelect
         class="w-full md:w-20rem"
         containerStyleClass="w-full"
@@ -52,6 +52,6 @@ export const checkbox: Story = {
         [metaKeySelection]="metaKeySelection"
         [selectionMode]="selectionMode"
         placeholder="Select Item" />
-</div>`,
+`,
     }),
 };

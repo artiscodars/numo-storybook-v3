@@ -7,13 +7,19 @@ import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
 
 const meta: Meta = {
-    title: "Components/Tooltip",
+    title: "Components/Tooltip (done)",
     decorators: [
         moduleMetadata({
-            imports: [ TooltipModule, FormsModule, ReactiveFormsModule, ButtonModule, InputTextModule ],
+            imports: [
+                TooltipModule,
+                FormsModule,
+                ReactiveFormsModule,
+                ButtonModule,
+                InputTextModule,
+            ],
         }),
     ],
-    tags: [ "autodocs" ],
+    tags: ["autodocs"],
     parameters: {
         docs: {
             description: {
@@ -38,8 +44,8 @@ export const Position: Story = {
             showDelay: 150,
             autoHide: false,
             tooltipEvent: "hover",
-            tooltipPosition: "left"
-        }
+            tooltipPosition: "left",
+        },
     },
     render: (args) => ({
         props: {
@@ -63,7 +69,7 @@ export const Event: Story = {
         tooltipPosition: "Right",
         tooltipPaceholder: "focus to display tooltip",
         tooltipLabel: "Enter your username",
-        event: "focus"
+        event: "focus",
     },
     render: (args) => ({
         props: {
@@ -82,7 +88,7 @@ export const AutoHide: Story = {
     args: {
         tooltipPaceholder: "focus to display tooltip",
         tooltipLabel: "Enter your username",
-        autoHide: false
+        autoHide: false,
     },
     render: (args) => ({
         props: {
@@ -101,7 +107,7 @@ export const Delay: Story = {
         label: "Save",
         tooltipLabel: "Confirm to proceed",
         showDelay: 1000,
-        hideDelay: 300
+        hideDelay: 300,
     },
     render: (args) => ({
         props: {
@@ -118,7 +124,7 @@ export const Custom: Story = {
     args: {
         tooltipPosition: "bottom",
         severity: "secondary",
-        label: "Button"
+        label: "Button",
     },
     render: (args) => ({
         props: {
@@ -143,8 +149,8 @@ export const TooltipOption: Story = {
             showDelay: 150,
             autoHide: false,
             tooltipEvent: "hover",
-            tooltipPosition: "left"
-        }
+            tooltipPosition: "left",
+        },
     },
     render: (args) => ({
         props: {
