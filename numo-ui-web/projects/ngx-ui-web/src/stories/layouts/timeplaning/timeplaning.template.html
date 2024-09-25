@@ -1,0 +1,20 @@
+<numo-header (menuClicked)="toggleMenu($event)"></numo-header>
+
+<div class="container">
+    @if (isMenuVisible) {
+    <div class="menu">
+        @for (item of items; track $index) {
+        <div class="flex flex-column gap-3 w-full">
+            <numo-left-menu [items]="item.menu"></numo-left-menu>
+        </div>
+        }
+    </div>
+    }
+
+    <div class="dashboard">
+        <div class="w-full mb-2">
+            breadcrumb here
+        </div>
+        <numo-dashboard></numo-dashboard>
+    </div>
+</div>
