@@ -8,7 +8,8 @@
         "test": "jest --coverage",
         "test:watch": "jest --watch --coverage",
         "storybook": "ng run ngx-ui-web:storybook",
-        "build-storybook": "ng build & ng run ngx-ui-web:build-storybook"
+        "build-storybook": "ng build & ng run ngx-ui-web:build-storybook",
+        "release": "standard-version"
     },
     "private": true,
     "dependencies": {
@@ -46,9 +47,9 @@
         "@storybook/addon-postcss": "^2.0.0",
         "@storybook/angular": "^8.2.6",
         "@storybook/blocks": "^8.2.6",
-        "@storybook/test": "^8.2.6",
         "@storybook/channels": "^8.2.9",
         "@storybook/core-events": "^8.2.9",
+        "@storybook/test": "^8.2.6",
         "@types/jest": "^29.5.12",
         "autoprefixer": "^10.4.19",
         "css-loader": "^7.1.2",
@@ -60,6 +61,7 @@
         "postcss-loader": "^8.1.1",
         "sass": "^1.77.8",
         "sass-loader": "^14.2.1",
+        "standard-version": "^9.5.0",
         "storybook": "^8.2.6",
         "style-loader": "^4.0.0",
         "typescript": "~5.4.5"
