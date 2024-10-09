@@ -31,10 +31,7 @@
         }
 
         &:not(.p-disabled).p-highlight {
-            .p-accordion-header-link {
-                background: $accordionHeaderActiveBg;
-                border-color: $accordionHeaderActiveBorderColor;
-                color: $accordionHeaderTextActiveColor;
+            .p-accordion-header-link { 
                 border-bottom-right-radius: 0;
                 border-bottom-left-radius: 0;
             }
