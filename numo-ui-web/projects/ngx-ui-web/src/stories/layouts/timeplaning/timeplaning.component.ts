@@ -229,6 +229,41 @@ import { TableModule } from "primeng/table";
                 .p-menu {
                     width: 14.5rem;
                 }
+                .plus-button .p-button  {
+                    color: #0f1c2b;
+                    background: #72ceff;
+                    border: 1px solid #72ceff;
+                }
+                .p-button.p-button-secondary,
+                .p-button-group.p-button-secondary > .p-button,
+                .p-splitbutton.p-button-secondary > .p-button {
+                    color: #6B7280;
+                    background: #FFFFFF;
+                    border: 1px solid #DFE2EB;
+                }
+                .p-panelmenu .p-panelmenu-header:not(.p-disabled).p-highlight .p-panelmenu-header-content {
+                    background:#C9E6FF;
+                    color:#0F1C2B;
+                }
+            }
+            .alert-box {    
+                background-color: #b7f1ae;
+                color: #9f3a38;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                padding: 18px;
+                margin: 14px 0px;
+                span {
+                    color: #0f1c2b;
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin: 0 6px;
+                }
+                p {
+                    color: #0f1c2b;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
             }
         `,
     ],

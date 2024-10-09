@@ -40,6 +40,14 @@
       </p-breadcrumb>
     </div>
     <h2 class="uppercase">Darba laika plānošana</h2>
+    <div class="alert-box flex align-items-center justify-content-between">
+      <div class="flex">
+        <numo-icon color="#0F1C2B" size="21" icon="pi-check"></numo-icon> 
+        <span>Success</span>
+        <p class="m-0">Message Content</p>
+      </div>
+      <numo-icon color="#0F1C2B" size="21" icon="pi-times"></numo-icon> 
+    </div>
     <div class="card flex bg-white p-4 mb-4 border-round-lg flex justify-content-start">
       <div class="flex flex-column mr-3">
         <label for="dropdown" class="mb-1 label">Struktūrvienība</label>
@@ -60,7 +68,7 @@
         <div class="flex">
           <p-menu [model]="menuItems" />
           <div class="ml-3">
-            <p-button label="Pievienot" icon="pi pi-plus" />
+            <p-button label="Pievienot" icon="pi pi-plus" class="plus-button" />
             <div class="card flex justify-content-center mt-3">
               <p-accordion class="w-full" expandIcon="pi pi-chevron-right" collapseIcon="pi pi-chevron-down"
                 [activeIndex]="1">
