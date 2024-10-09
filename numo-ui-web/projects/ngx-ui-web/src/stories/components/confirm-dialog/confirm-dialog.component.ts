@@ -29,7 +29,7 @@ import { ToastModule } from "primeng/toast";
                 (onClick)="confirm1($event)"
                 label="Save"
                 [outlined]="false"
-                severity="success"
+                severity="primary"
             />
             <p-button
                 (onClick)="confirm2($event)"

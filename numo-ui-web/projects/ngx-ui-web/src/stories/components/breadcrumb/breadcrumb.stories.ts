@@ -67,16 +67,16 @@ export const basic: Story = {
             <!-- For all items except the last one -->
             <ng-container *ngIf="item.route; else urlItem">
               <!-- If the item has a route -->
-              <a [routerLink]="item.route" class="p-menuitem-link underline">
+              <a [routerLink]="item.route" class="p-menuitem-link">
                 <span [ngClass]="[item.icon ? item.icon : '', 'text-color']"></span>
-                <span class="text-primary">{{ item.label }}</span>
+                <span class="text-primary-600">{{ item.label }}</span>
               </a>
             </ng-container>
             <ng-template #urlItem>
               <!-- If the item has a URL -->
               <a [href]="item.url" class="p-menuitem-link">
                 <span [ngClass]="[item.icon ? item.icon : '', 'text-color']"></span>
-                <span class="text-primary">{{ item.label }}</span>
+                <span class="text-primary-600">{{ item.label }}</span>
               </a>
             </ng-template>
           </ng-container>

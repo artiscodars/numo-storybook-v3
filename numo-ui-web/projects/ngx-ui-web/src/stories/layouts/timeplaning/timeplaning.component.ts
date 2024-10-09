@@ -139,19 +139,11 @@ import { TableModule } from "primeng/table";
                 font-weight: 700;
             }
             :host::ng-deep {
-                .p-tabview .p-tabview-nav li.p-highlight .p-tabview-nav-link {
-                    border-color: #0f1c2b;
-                    color: #0f1c2b;
-                }
+
                 .p-accordion .p-accordion-header .p-accordion-header-link {
                     color: #0f1c2b;
                 }
-                .p-datatable .p-datatable-thead > tr > th {
-                    font-weight: 700;
-                    font-size: 14px;
-                    color: #4b5563;
-                    background: #eff6ff;
-                }
+
                 .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
                     font-weight: 700;
                 }
@@ -234,8 +226,6 @@ import { TableModule } from "primeng/table";
                 }
                 .plus-button .p-button {
                     color: #0f1c2b;
-                    background: #72ceff;
-                    border: 1px solid #72ceff;
                 }
                 .p-button.p-button-secondary,
                 .p-button-group.p-button-secondary > .p-button,
@@ -262,7 +252,7 @@ import { TableModule } from "primeng/table";
                     numo-icon span{
                         color: #727D8D!important;
                     }
-                    
+
                 }
                 .p-panelmenu
                     .p-panelmenu-content
