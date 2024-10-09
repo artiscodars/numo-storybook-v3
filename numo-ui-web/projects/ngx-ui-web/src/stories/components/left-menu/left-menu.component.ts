@@ -4,6 +4,7 @@ import { FormsModule } from "@angular/forms";
 import { PanelMenuModule } from "primeng/panelmenu";
 import { IconComponent } from "../icon/icon.component";
 import { Button } from "primeng/button";
+import { BadgeModule } from "primeng/badge";
 
 @Component({
     selector: "numo-left-menu",
@@ -14,6 +15,7 @@ import { Button } from "primeng/button";
         PanelMenuModule,
         IconComponent,
         Button,
+        BadgeModule
     ],
     templateUrl: "./left-menu.component.html",
     styles: [],
@@ -22,7 +24,7 @@ import { Button } from "primeng/button";
 export class LeftMenuComponent {
     @Input() items: any = [];
     @Input() className = "";
-
+    @Input() notificationCount = '0';
     isFirstLevel(item: any): boolean {
         // Check if the item is in the root items array
         return this.items.includes(item);

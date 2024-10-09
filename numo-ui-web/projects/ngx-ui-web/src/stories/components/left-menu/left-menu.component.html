@@ -1,17 +1,41 @@
-<p-button
+@if(notificationCount !== '0'){
+    <p-button
     label="Uzdevumi"
     iconPos="left"
     severity="secondary"
     class="mb-2 max-w-25rem block"
     styleClass="text-left w-full px-3"
+    [badge]="notificationCount" 
+    badgeClass="p-badge-success"
 >
     <ng-template pTemplate="icon">
         <span
             class="iconify text-lg mr-2"
             data-icon="clarity:tasks-solid"
         ></span>
+      
     </ng-template>
+    
 </p-button>
+}
+@if(notificationCount === '0'){
+<p-button
+    label="Uzdevumi"
+    iconPos="left"
+    severity="secondary"
+    class="mb-2 max-w-25rem block"
+    styleClass="text-left w-full px-3" 
+>
+    <ng-template pTemplate="icon">
+        <span
+            class="iconify text-lg mr-2"
+            data-icon="clarity:tasks-solid"
+        ></span>
+      
+    </ng-template>
+    
+</p-button>
+}
 <p-panelMenu [model]="items" [styleClass]="className">
     <ng-template pTemplate="item" let-item>
         <a
@@ -30,7 +54,8 @@
             <numo-icon
                 [icon]="item.icon"
                 [type]="item.type"
-                class="text-2xl flex align-items-center"
+                [class]="item.iconClass ? item.iconClass : 'text-2xl'" 
+                class="flex align-items-center"
             ></numo-icon>
             <span class="ml-2">
                 {{ item.label }}
@@ -41,6 +66,7 @@
             >
                 {{ item.shortcut }}
             </span>
+            
         </a>
     </ng-template>
 </p-panelMenu>

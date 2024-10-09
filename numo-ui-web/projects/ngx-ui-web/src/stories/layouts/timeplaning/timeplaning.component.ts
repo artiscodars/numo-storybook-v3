@@ -2,7 +2,7 @@ import { Component, CUSTOM_ELEMENTS_SCHEMA } from "@angular/core";
 import { RouterOutlet } from "@angular/router";
 import { HeaderComponent } from "../../components/header/header.component";
 import { DashboardComponent } from "../dashboard/dashboard.component";
-import { Menu } from "../../components/left-menu/menu.model";
+import { MenuTimePlanning } from "../../components/left-menu/menu.model";
 import { CardModule } from "primeng/card";
 import { CommonModule } from "@angular/common";
 import { LeftMenuComponent } from "../../components/left-menu/left-menu.component";
@@ -152,6 +152,9 @@ import { TableModule } from "primeng/table";
                     color: #4b5563;
                     background: #eff6ff;
                 }
+                .p-panelmenu .p-panelmenu-header .p-panelmenu-header-content {
+                    font-weight: 700;
+                }
                 .p-menu
                     .p-menuitem:not(.p-highlight):not(.p-disabled)
                     > .p-menuitem-content:hover {
@@ -229,6 +232,81 @@ import { TableModule } from "primeng/table";
                 .p-menu {
                     width: 14.5rem;
                 }
+                .plus-button .p-button {
+                    color: #0f1c2b;
+                    background: #72ceff;
+                    border: 1px solid #72ceff;
+                }
+                .p-button.p-button-secondary,
+                .p-button-group.p-button-secondary > .p-button,
+                .p-splitbutton.p-button-secondary > .p-button {
+                    color: #6b7280;
+                    background: #ffffff;
+                    border: 1px solid #dfe2eb;
+                }
+                .p-panelmenu
+                    .p-panelmenu-header:not(.p-disabled).p-highlight
+                    .p-panelmenu-header-content {
+                    background: #c9e6ff;
+                    color: #0f1c2b;
+                    font-weight: 700;
+                }
+                .p-panelmenu
+                    .p-panelmenu-content
+                    .p-menuitem:not(.p-highlight):not(.p-disabled)
+                    > .p-menuitem-content {
+                    color: #727D8D;
+                    background: transparent;
+                    font-weight: 400;
+                    font-sze: 14px;
+                    numo-icon span{
+                        color: #727D8D!important;
+                    }
+                    
+                }
+                .p-panelmenu
+                    .p-panelmenu-content
+                    .p-menuitem:not(.p-highlight):not(.p-disabled)
+                    > .p-menuitem-content:hover {
+                    color: #0f1c2b;
+                    background: transparent;
+                    font-weight: 700;
+                    font-sze: 14px;
+                    numo-icon span{
+                        color: #0f1c2b!important;
+                    }
+                }
+                .p-panelmenu
+                    .p-panelmenu-content
+                    .p-menuitem:not(.p-highlight):not(.p-disabled).p-focus
+                    > .p-menuitem-content {
+                    color: #0f1c2b;
+                    background: transparent;
+                    font-weight: 700;
+                    font-sze: 14px;
+                    numo-icon span{
+                        color: #0f1c2b!important;
+                    }
+                }
+            }
+            .alert-box {
+                background-color: #b7f1ae;
+                color: #9f3a38;
+                border: 1px solid #e5e7eb;
+                border-radius: 6px;
+                padding: 18px;
+                margin: 14px 0px;
+                span {
+                    color: #0f1c2b;
+                    font-weight: 700;
+                    font-size: 14px;
+                    margin: 0 6px;
+                }
+                p {
+                    color: #0f1c2b;
+                    font-size: 14px;
+                    font-weight: 400;
+                }
             }
         `,
     ],
@@ -237,7 +315,7 @@ import { TableModule } from "primeng/table";
 export class AppComponent {
     isMenuVisible = true;
     title = "angular-latest";
-    items = [{ label: "UZDEVUMI", menu: [...Menu] }];
+    items = [{ label: "UZDEVUMI", menu: [...MenuTimePlanning] }];
     home = { icon: "pi pi-home", route: "/" };
     date: Date[] | undefined;
     tableData = TableData;
