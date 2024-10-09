@@ -10,5 +10,7 @@ import { CommonModule } from "@angular/common";
 export class IconComponent {
     @Input() icon!: string;
     @Input() type: "iconify" | "primeng" = "primeng";
-    @Input() class: string = "text-gray-800";
+    @Input() class: string = " ";
+    @Input() size: string = "12px";
+    @Input() color:string = "black";
 }

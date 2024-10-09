@@ -3,10 +3,12 @@
     class="pi"
     [ngClass]="icon"
     [class]="class"
+    [ngStyle]="{'font-size': size,color: color}" 
 ></span>
 <span
     *ngIf="type === 'iconify'"
     class="iconify"
     [attr.data-icon]="icon"
     [class]="class"
+    [ngStyle]="{'font-size': size, color: color}"
 ></span>
