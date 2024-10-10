@@ -165,11 +165,11 @@ export const MenuTimePlanning = [
         expanded: true,
         items: [
             {
-                label: "Darbvirsma",
+                label: "Vadības darbvirsma",
                 items: [],
                 type: "primeng",
                 icon: "pi pi-plus",
-                iconClass:"text-md",
+                iconClass: "text-md",
                 route: "",
             },
             {
@@ -177,7 +177,7 @@ export const MenuTimePlanning = [
                 items: [],
                 type: "primeng",
                 icon: "pi pi-plus",
-                iconClass:"text-md",
+                iconClass: "text-md",
                 route: "",
             },
             {
@@ -186,7 +186,7 @@ export const MenuTimePlanning = [
                 type: "primeng",
                 icon: "pi pi-plus",
                 route: "",
-                iconClass:"text-md",
+                iconClass: "text-md",
             },
             {
                 label: "DARBA LAIKA PLĀNOŠANA",
@@ -194,7 +194,7 @@ export const MenuTimePlanning = [
                 type: "primeng",
                 icon: "pi pi-plus",
                 route: "",
-                iconClass:"text-md",
+                iconClass: "text-md",
             },
             {
                 label: "RĪKOJUMI & VIENOŠANĀS",
@@ -202,7 +202,7 @@ export const MenuTimePlanning = [
                 type: "primeng",
                 icon: "pi pi-plus",
                 route: "",
-                iconClass:"text-md",
+                iconClass: "text-md",
             },
             {
                 label: "MĀCĪBU PIETEIKUMI",
@@ -210,7 +210,7 @@ export const MenuTimePlanning = [
                 type: "primeng",
                 icon: "pi pi-plus",
                 route: "",
-                iconClass:"text-md",
+                iconClass: "text-md",
             },
             {
                 label: "ATSKAITES",
@@ -218,7 +218,7 @@ export const MenuTimePlanning = [
                 type: "primeng",
                 icon: "pi pi-plus",
                 route: "",
-                iconClass:"text-md",
+                iconClass: "text-md",
             },
         ],
     },
@@ -227,7 +227,7 @@ export const MenuTimePlanning = [
         expanded: false,
         items: [
             {
-                label: "Darbvirsma",
+                label: "Pro darbvirsma",
                 items: [],
                 type: "iconify",
                 icon: "ic:round-dashboard",
