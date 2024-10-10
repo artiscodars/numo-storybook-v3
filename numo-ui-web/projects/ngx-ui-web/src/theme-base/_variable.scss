@@ -434,8 +434,8 @@ $tabviewHeaderHoverBorderColor: $shade500 !default;
 $tabviewHeaderTextHoverColor: $shade600 !default;
 
 $tabviewHeaderActiveBg: $shade000 !default;
-$tabviewHeaderActiveBorderColor: $primaryColor !default;
-$tabviewHeaderTextActiveColor: $primaryColor !default;
+$tabviewHeaderActiveBorderColor: #0f1c2b !default;
+$tabviewHeaderTextActiveColor: #0f1c2b !default;
 
 $tabviewContentBorder: 0 none !default;
 $tabviewContentBg: $panelContentBg !default;
@@ -501,8 +501,8 @@ $tableHeaderFontWeight: 700 !default;
 $tableHeaderPadding: 1rem 1rem !default;
 
 $tableHeaderCellPadding: 1rem 1rem !default;
-$tableHeaderCellBg: $shade100 !default;
-$tableHeaderCellTextColor: $shade800 !default;
+$tableHeaderCellBg: #eff6ff !default;
+$tableHeaderCellTextColor: #4b5563 !default;
 $tableHeaderCellFontWeight: 700 !default;
 $tableHeaderCellBorder: 1px solid $shade300 !default;
 $tableHeaderCellBorderWidth: 0 0 1px 0 !default;
