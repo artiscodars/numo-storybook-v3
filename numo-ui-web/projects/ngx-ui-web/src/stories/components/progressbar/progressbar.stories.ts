@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ProgressBarModule } from "primeng/progressbar";
 const meta: Meta = {
-    title: "Components/Progressbar (done)",
+    title: "Components/Progressbar",
     decorators: [
         moduleMetadata({
             imports: [

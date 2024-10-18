@@ -5,7 +5,7 @@ import description from "./radio-button.description.md"; // Import the markdown 
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 const meta: Meta = {
-    title: "Components/Form/RadioButton (done)",
+    title: "Components/Form/RadioButton",
     decorators: [
         moduleMetadata({
             imports: [RadioButtonModule, FormsModule, ReactiveFormsModule],

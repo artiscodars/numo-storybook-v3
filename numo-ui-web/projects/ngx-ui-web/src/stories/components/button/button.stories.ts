@@ -116,24 +116,3 @@ export const ButtonsWithIcons: Story = {
 </div>`,
     }),
 };
-
-export const Outlined: Story = {
-    args: {
-        outlined: true,
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-
-        template: `
-        <div class="card flex flex-wrap gap-3 justify-content-center">
-    <p-button label="Primary" [outlined]="outlined" />
-    <p-button label="Secondary" [outlined]="outlined" severity="secondary" />
-    <p-button label="Success" [outlined]="outlined" severity="success" />
-    <p-button label="Info" [outlined]="outlined" severity="info" />
-
-</div>
-        `,
-    }),
-};

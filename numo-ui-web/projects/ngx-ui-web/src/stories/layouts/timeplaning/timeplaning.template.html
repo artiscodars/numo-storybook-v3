@@ -1,17 +1,18 @@
 <numo-header (menuClicked)="toggleMenu($event)"></numo-header>
 
-<div class="container">
+<div class="container flex gap-3 w-full">
     @if (isMenuVisible) {
-    <div class="menu">
-        @for (item of items; track $index) {
-        <div class="flex flex-column gap-3 w-full">
-            <numo-left-menu [items]="item.menu" [notificationCount]="'11'"></numo-left-menu>
-        </div>
-        }
-    </div>
+
+    @for (item of items; track $index) {
+
+    <numo-left-menu [items]="item.menu" [notificationCount]="'11'" [className]="'w-100'"></numo-left-menu>
+
+
     }
 
-    <div class="dashboard">
+    }
+
+    <div class="flex-grow-1">
         <div class="w-full mb-2">
             <p-breadcrumb class="max-w-full" [model]="itemsWithIsLast" [home]="home">
                 <ng-template pTemplate="item" let-item>
@@ -39,162 +40,195 @@
                 </ng-template>
             </p-breadcrumb>
         </div>
-        <h2 class="uppercase">Darba laika plānošana</h2>
-        <div class="alert-box flex align-items-center justify-content-between">
-            <div class="flex">
-                <numo-icon color="#0F1C2B" size="21" icon="pi-check"></numo-icon>
-                <span>Success</span>
-                <p class="m-0">Message Content</p>
-            </div>
-            <numo-icon color="#0F1C2B" size="21" icon="pi-times"></numo-icon>
-        </div>
-        <div class="card flex bg-white p-4 mb-4 border-round-lg flex justify-content-start">
+
+
+        <div
+            class="card flex flex-column md:flex-row bg-white p-3 mb-4 border-round-sm border border-1 border-gray-200 flex justify-content-start">
             <div class="flex flex-column mr-3">
-                <label for="dropdown" class="mb-1 label">Struktūrvienība</label>
+                <label for="dropdown" class="mb-1 label text-sm">Struktūrvienība</label>
                 <p-dropdown id="dropdown" [options]="options" optionLabel="name" placeholder="Barona ielas veikals" />
             </div>
             <div class="flex flex-column">
-                <label for="calendar" class="mb-1 label">Mēnesis</label>
+                <label for="calendar" class="mb-1 label text-sm">Mēnesis</label>
                 <div class="flex align-items-center">
-                    <numo-icon size="20px" class="icon-left" color="#98A6BA" icon="pi-angle-left"></numo-icon>
+
                     <p-calendar id="calendar" [(ngModel)]="date" view="month" [iconDisplay]="'input'" [showIcon]="true"
                         dateFormat="MM, yy" [readonlyInput]="true" />
-                    <numo-icon size="20px" class="icon-right" color="#98A6BA" icon="pi-angle-right"></numo-icon>
+
                 </div>
             </div>
         </div>
-        <p-tabView class="mt-5">
+        <p-tabView class="mt-5 numo-transparent-bg">
             <p-tabPanel header="Uzstādījumi">
-                <div class="flex">
-                    <p-menu [model]="menuItems" />
-                    <div class="ml-3">
-                        <p-button label="Pievienot" icon="pi pi-plus" class="plus-button" />
-                        <div class="card flex justify-content-center mt-3">
-                            <p-accordion class="w-full" expandIcon="pi pi-chevron-right"
-                                collapseIcon="pi pi-chevron-down" [activeIndex]="1">
-                                <p-accordionTab>
-                                    <ng-template pTemplate="header">
-                                        <span class="flex align-items-center gap-2 w-full">
-                                            <span class="font-bold white-space-nowrap">
-                                                Darba ļaudīm
-                                            </span>
-                                            <div class="ml-auto mr-2  flex align-items-center">
-                                                <div class="flex align-items-center" style="width: 285px;height: 35px;">
-                                                    <div class="box-p"
-                                                        style="background-color: #C9E6FF;border-right: unset;color: #0F1C2B;">
-                                                        P</div>
-                                                    <div class="box-o"
-                                                        style="border:1px solid #DFE2EB;border-left: unset;">O</div>
-                                                    <div class="box-t">T</div>
-                                                    <div class="box-cps">C</div>
-                                                    <div class="box-cps">P</div>
-                                                    <div class="box-cps">S</div>
-                                                    <div class="box-sv">Sv</div>
-                                                </div>
-                                                <span class="mr-2 standard">Standarta</span>
-                                                <span class="header-time">8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h
-                                                    45min)</span>
-                                            </div>
-                                            <div class="ml-auto mr-2">
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px" icon="mdi:pencil"
-                                                    class="mr-2"></numo-icon>
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px"
-                                                    icon="ic:outline-content-copy" class="mr-2"></numo-icon>
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px"
-                                                    icon="mdi:trash-can" class="mr-2"></numo-icon>
-                                            </div>
-                                        </span>
-                                    </ng-template>
-                                    <p class="m-0">
-                                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-                                        incididunt ut labore
-                                        et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation
-                                        ullamco laboris nisi ut
-                                        aliquip ex ea commodo
-                                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
-                                        dolore eu fugiat
-                                        nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa
-                                        qui officia deserunt
-                                        mollit anim id est laborum.
-                                    </p>
-                                </p-accordionTab>
-                                <p-accordionTab>
-                                    <ng-template pTemplate="header">
-                                        <span class="flex align-items-center gap-2 w-full">
-                                            <span class="font-bold white-space-nowrap">
-                                                Onyama Limba
-                                            </span>
-                                            <div class="ml-auto mr-2 flex align-items-center">
-                                                <div class="flex align-items-center" style="width: 285px;height: 35px;">
-                                                    <div class="box-p">P</div>
-                                                    <div class="box-o">O</div>
-                                                    <div class="box-t">T</div>
-                                                    <div class="box-cps">C</div>
-                                                    <div class="box-cps">P</div>
-                                                    <div class="box-cps">S</div>
-                                                    <div class="box-sv">Sv</div>
-                                                </div>
-                                                <span class="mr-2 standard">Standarta</span>
-                                                <span class="header-time">8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h
-                                                    45min)</span>
-                                            </div>
-                                            <div class="ml-auto mr-2">
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px" icon="mdi:pencil"
-                                                    class="mr-2"></numo-icon>
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px"
-                                                    icon="ic:outline-content-copy" class="mr-2"></numo-icon>
-                                                <numo-icon type="iconify" color="#98A6BA" size="22px"
-                                                    icon="mdi:trash-can" class="mr-2"></numo-icon>
-                                            </div>
-                                        </span>
-                                    </ng-template>
-                                    <h3>Darba laiki</h3>
-                                    <p-table [value]="tableData" [tableStyle]="{ 'min-width': '50rem' }">
-                                        <ng-template pTemplate="header">
-                                            <tr>
-                                                <th>Darba laiks</th>
-                                                <th>Pārtraukums</th>
-                                                <th>Darba vieta</th>
-                                            </tr>
-                                        </ng-template>
-                                        <ng-template pTemplate="body" let-product>
-                                            <tr>
-                                                <td>{{ product.darbaLaiks }}</td>
-                                                <td>{{ product.partraukums }}</td>
-                                                <td>{{ product.darbaVieta }}</td>
-                                            </tr>
-                                        </ng-template>
-                                    </p-table>
-                                    <h3>Vajadzības</h3>
-                                    <p-table [value]="tableData2" [tableStyle]="{ 'min-width': '50rem' }">
-                                        <ng-template pTemplate="header">
-                                            <tr>
-                                                <th id="amats">Amats</th>
-                                                <th id="kompetence">Kompetence</th>
-                                                <th id="kskaits">Kompetenču skaits</th>
-                                                <th id="dskaits">Darbnieku skaits</th>
-                                            </tr>
-                                        </ng-template>
-                                        <ng-template pTemplate="body" let-product>
-                                            <tr>
-                                                <td>{{ product.amats }}</td>
-                                                <td>{{ product.kompetence }}</td>
-                                                <td>{{ product.kompetencuSkaits }}</td>
-                                                <td>{{ product.darbniekuSkaits }}</td>
-                                            </tr>
-                                        </ng-template>
-                                    </p-table>
-                                </p-accordionTab>
-                            </p-accordion>
-                        </div>
-                    </div>
-                </div>
-            </p-tabPanel>
-            <p-tabPanel header="Plāns & Fakts">
-            </p-tabPanel>
-            <p-tabPanel header="Dokumenti">
-            </p-tabPanel>
-        </p-tabView>
 
+                <div class=" flex gap-3 flex-column md:flex-row">
+                    <p-menu [model]="menuItems" />
+
+
+
+
+
+
+
+                    <div class="flex-1">
+                        <p-button label="Pievienot" icon="pi pi-plus" class="plus-button" size="small" />
+
+                        <div class="pt-3">
+
+
+                            <p-table [value]="Products" dataKey="id" class="data-table">
+
+                                <!-- Body Template for Product Rows -->
+                                <ng-template pTemplate="body" let-product>
+                                    <tr>
+                                        <!-- Caret Icon for Expand/Collapse -->
+
+                                        <td>
+                                            <div class="flex gap-3">
+
+
+
+                                                <button
+                                                    class="p-button p-button-lg p-1 p-button-text p-button-secondary text-gray-800"
+                                                    (click)="toggleRow(product)">
+                                                    <span class="material-symbols-rounded text-3xl">
+                                                        {{ isRowExpanded(product) ? 'expand_more' : 'chevron_right' }}
+                                                    </span>
+                                                </button>
+
+
+                                                <span
+                                                    class="flex align-items-center justify-content-center px-2 font-semibold">{{product.name}}</span>
+                                                <p-badge [value]="product.badgeName" [severity]="product.badgeSeverity"
+                                                    class="flex align-items-center justify-content-center "
+                                                    styleClass="text-xs font-normal"></p-badge>
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <div class="flex">
+
+
+                                                <div class="p-buttonset daycalendar pr-2">
+                                                    <button
+                                                        *ngFor="let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index"
+                                                        type="button" pButton [label]="day" size="small" [ngClass]="{
+                                                        'bg-blue-200 border-blue-200': product.days.includes(i + 1),
+                                                        'bg-white border-blue-200 hover:bg-blue-200': !product.days.includes(i + 1)
+                                                    }">
+                                                    </button>
+                                                </div>
+
+                                                <div class="p-buttonset daycalendar">
+                                                    <span *ngFor="let date of product.dates" class="mr-2">
+                                                        <button type="button" disabled pButton [label]="date"
+                                                            size="small" class="bg-white border-blue-400 text-gray-800">
+                                                        </button>
+                                                        <button type="button" pButton size="small"
+                                                            class="bg-blue-200 border-blue-200 hover:bg-primary">
+                                                            <span class="material-symbols-rounded text-xl">close</span>
+                                                        </button>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>{{product.description}}</td>
+                                        <td>
+                                            <div class="flex gap-3 justify-content-end">
+                                                <button aria-label="Edit"
+                                                    class="p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800">
+                                                    <span class="material-symbols-rounded text-2xl">
+                                                        edit
+                                                    </span>
+                                                </button>
+
+                                                <button aria-label="Delete"
+                                                    class="p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800">
+                                                    <span class="material-symbols-rounded text-2xl">
+                                                        delete
+                                                    </span>
+                                                </button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <!-- Expanded Row Content -->
+                                    <tr *ngIf="isRowExpanded(product)">
+                                        <td colspan="4">
+
+
+
+                                            <div class="p-2">
+                                                <h3>Darba laiki</h3>
+                                                <p-table [value]="tableData" [tableStyle]="{ 'min-width': '50rem' }">
+                                                    <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Darba laiks</th>
+                                        <th>Pārtraukums</th>
+                                        <th>Darba vieta</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-innerProduct>
+                                    <tr>
+                                        <td>{{ innerProduct.darbaLaiks }}</td>
+                                        <td>{{ innerProduct.partraukums }}</td>
+                                        <td>{{ innerProduct.darbaVieta }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+
+
+                            <h3 class="mt-4">Vajadzības</h3>
+                            <p-table [value]="tableData2" [tableStyle]="{ 'min-width': '50rem' }">
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th>Amats</th>
+                                        <th>Kompetence</th>
+                                        <th>Kompetenču skaits</th>
+                                        <th>Darbnieku skaits</th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-innerProduct>
+                                    <tr>
+                                        <td>{{ innerProduct.amats }}</td>
+                                        <td>{{ innerProduct.kompetence }}</td>
+                                        <td>{{ innerProduct.kompetencuSkaits }}</td>
+                                        <td>{{ innerProduct.darbniekuSkaits }}</td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+
+
+
+
+                        </div>
+
+
+
+
+                        </td>
+                        </tr>
+                        </ng-template>
+                        </p-table>
+
+
+
+                    </div>
+
+
+
+
+
+
+
+
+                </div>
     </div>
+
+    </p-tabPanel>
+    <p-tabPanel header="Plāns & Fakts">
+    </p-tabPanel>
+    <p-tabPanel header="Dokumenti">
+    </p-tabPanel>
+    </p-tabView>
+</div>
+
 </div>

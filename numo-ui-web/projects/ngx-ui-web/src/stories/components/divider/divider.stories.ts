@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { DividerModule } from "primeng/divider";
 const meta: Meta = {
-    title: "Components/Divider (done)",
+    title: "Components/Divider",
     decorators: [
         moduleMetadata({
             imports: [

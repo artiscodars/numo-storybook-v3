@@ -1,12 +1,6 @@
-<div
-    class="header flex align-items-center p-2 text-white justify-content-between row-gap-3"
->
+<div class="header flex align-items-center p-2 text-white justify-content-between row-gap-3 mb-2">
     <div class="flex align-items-center font-bold text-2xl h-10">
-        <span
-            #menuButton
-            (click)="toggleMenu($event)"
-            class="pi pi-bars icon text-gray-800 cursor-pointer"
-        ></span>
+        <span #menuButton (click)="toggleMenu($event)" class="pi pi-bars icon text-gray-800 cursor-pointer"></span>
 
         <p-overlayPanel #menu>
             <div class="flex flex-column gap-3">
@@ -24,7 +18,7 @@
     <div class="flex justify-center relative w-30rem">
         <p-iconField iconPosition="right" class="w-full">
             <p-inputIcon>
-                <numo-icon icon="tabler:search" type="iconify"></numo-icon>
+                <numo-icon icon="search" type="material-symbols" class="text-2xl"></numo-icon>
             </p-inputIcon>
             <input type="text" pInputText placeholder="Meklēt" class="w-full" />
         </p-iconField>
@@ -37,26 +31,19 @@
             </ng-template>
             <ng-template pTemplate="item" let-item>
                 <a pRipple class="flex align-items-center p-menuitem-link">
-                    <numo-icon
-                        icon="{{ item.icon }}"
-                        type="iconify"
-                    ></numo-icon>
+                    <numo-icon [icon]="item.icon" [type]="item.type"
+                        class="text-2xl flex align-items-center"></numo-icon>
                     <span class="ml-2">{{ item.label }}</span>
 
-                    <span
-                        *ngIf="item.shortcut"
-                        class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1"
-                    >
+                    <span *ngIf="item.shortcut"
+                        class="ml-auto border-1 surface-border border-round surface-100 text-xs p-1">
                         {{ item.shortcut }}
                     </span>
                 </a>
             </ng-template>
         </p-menu>
 
-        <div
-            (click)="showUserMenu($event)"
-            class="usermenu cursor-pointer py-1"
-        >
+        <div (click)="showUserMenu($event)" class="usermenu cursor-pointer py-1">
             Jānis Bērziņš
             <div class="text-ellipsis text-xs">
                 Liepājas valstspilsētas pašvaldības aģentūra "Liepājas

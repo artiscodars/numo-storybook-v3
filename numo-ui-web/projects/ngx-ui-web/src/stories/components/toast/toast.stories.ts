@@ -10,7 +10,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ToastComponent } from "./toast.component";
 
 const meta: Meta = {
-    title: "Components/Toast (done)",
+    title: "Components/Toast",
     component: ToastComponent,
     decorators: [
         moduleMetadata({

@@ -7,7 +7,7 @@ import { ButtonModule } from "primeng/button";
 import { InputTextModule } from "primeng/inputtext";
 
 const meta: Meta = {
-    title: "Components/Tooltip (done)",
+    title: "Components/Tooltip",
     decorators: [
         moduleMetadata({
             imports: [

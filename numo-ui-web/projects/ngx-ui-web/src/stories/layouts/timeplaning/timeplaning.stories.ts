@@ -32,3 +32,15 @@ type Story = StoryObj<AppComponent>;
 export const Default: Story = {
     args: {},
 };
+class TableDemo {
+    getSeverity(status: string) {
+        switch (status) {
+            case "Standarta":
+                return "secondary";
+            case "Nestandarta":
+                return "danger";
+            default:
+                return "info";
+        }
+    }
+}

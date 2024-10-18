@@ -6,7 +6,7 @@ import { FloatLabelModule } from "primeng/floatlabel";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Form/Input (done)",
+    title: "Components/Form/Input",
     decorators: [
         moduleMetadata({
             imports: [

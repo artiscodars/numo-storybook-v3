@@ -15,7 +15,7 @@ import { MessageService } from "primeng/api";
 import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
-    title: "Components/Menu (done)",
+    title: "Components/Menu",
     decorators: [
         moduleMetadata({
             imports: [

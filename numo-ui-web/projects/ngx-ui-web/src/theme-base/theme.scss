@@ -6,43 +6,43 @@ $primaryColor: #72ceff !default;
 $primaryLightColor: #d1e4ff !default;
 $primaryDarkColor: #62b0ff !default;
 $primaryDarkerColor: #3a95e7 !default;
-$primaryTextColor: #000000 !default;
+$primaryTextColor: #0f1c2b !default;
 
-$secondaryColor: #b8c8de !default;
+$secondaryColor: #c9e6ff !default;
 $secondaryLightColor: #d4e4fb !default;
 $secondaryDarkColor: #9dacc2 !default;
 $secondaryDarkerColor: #8292a7 !default;
-$secondaryTextColor: #000000 !default;
+$secondaryTextColor: #0f1c2b !default;
 
 $successColor: #b7f1ae !default;
 $successLightColor: #c9ffbf !default;
 $successDarkColor: #86da80 !default;
 $successDarkerColor: #6cbd67 !default;
-$successTextColor: #000000 !default;
+$successTextColor: #0f1c2b !default;
 
 $warningColor: #ffe17b !default;
 $warningLightColor: #fff0c7 !default;
 $warningDarkColor: #e4c451 !default;
 $warningDarkerColor: #c7a938 !default;
-$warningTextColor: #000000 !default;
+$warningTextColor: #0f1c2b !default;
 
 $dangerColor: #ff897d !default;
-$dangerLightColor: #ffdad6 !default;
+$dangerLightColor: #ffe9e7 !default;
 $dangerDarkColor: #ff897d !default;
 $dangerDarkerColor: #ff5449 !default;
-$dangerTextColor: #000000 !default;
+$dangerTextColor: #0f1c2b !default;
 
 $infoColor: #99d0d6 !default;
 $infoLightColor: #b5ecf2 !default;
 $infoDarkColor: #7eb4ba !default;
 $infoDarkerColor: #64999f !default;
-$infoTextColor: #000000 !default;
+$infoTextColor: #0f1c2b !default;
 
 $helpColor: #ffeb3b !default;
 $helpLightColor: #fff9c4 !default;
 $helpDarkColor: #fbc02d !default;
 $helpDarkerColor: #f57f17 !default;
-$helpTextColor: #000000 !default;
+$helpTextColor: #0f1c2b !default;
 
 $grayColor: #c3c7cf !default;
 $grayLightColor: #dfe2eb !default;
@@ -59,6 +59,10 @@ $backgroundColor: #f8f9ff !default;
 $backgroundLightColor: #ffffff !default;
 $backgroundDarkColor: #eceef4 !default;
 $backgroundDarkerColor: #e1e2e8 !default;
+
+//input field (e.g. inputtext, spinner, inputmask)
+$inputPadding: 0.5rem 0.75rem !default;
+$inputTextFontSize: 0.9rem !default;
 
 $fontFamily: "Roboto", sans-serif !default;
 $fontSize: 14px !default;
@@ -82,12 +86,54 @@ $numoGradient: linear-gradient(180deg, $primaryColor, $infoColor) !default;
 $numoHighlightColor: $primaryColor !default;
 
 //rewrites
-//$accordionHeaderActiveBg: $numoGradient;
+$accordionHeaderActiveBg: $secondaryColor;
+$accordionHeaderTextActiveColor: $primaryTextColor;
+$accordionHeaderTextColor: $primaryTextColor;
+$accordionHeaderTextHoverColor: $primaryTextColor;
+
+$menuitemTextColor: $primaryTextColor;
+$menuitemTextHoverColor: $primaryTextColor;
+$menuitemTextActiveColor: $primaryTextColor;
+$menuitemTextFocusColor: $primaryTextColor;
+$menuitemActiveFocusBg: $highlightBg;
+$menuitemFocusBg: $highlightBg;
+$menuitemActiveBg: $highlightBg;
+
+$secondaryButtonTextColor: $primaryTextColor;
+
+//severities
+$infoMessageBg: $highlightBg !default;
+$infoMessageBorder: solid $primaryDarkColor !default;
+$infoMessageTextColor: $primaryTextColor !default;
+$infoMessageIconColor: $primaryDarkColor !default;
+
+$successMessageBg: $successLightColor !default;
+$successMessageBorder: solid $successDarkerColor !default;
+$successMessageTextColor: $primaryTextColor !default;
+$successMessageIconColor: $successDarkerColor !default;
+
+$warningMessageBg: $warningLightColor !default;
+$warningMessageBorder: solid $warningDarkColor !default;
+$warningMessageTextColor: $primaryTextColor !default;
+$warningMessageIconColor: $warningDarkColor !default;
+
+$errorMessageBg: $dangerLightColor !default;
+$errorMessageBorder: solid $dangerDarkerColor !default;
+$errorMessageTextColor: $primaryTextColor !default;
+$errorMessageIconColor: $dangerDarkerColor !default;
 
 @import "./variable";
 @import "./_fonts";
 @import "./components";
 @import "./_extensions";
+
+.material-symbols-rounded {
+    font-variation-settings:
+        "FILL" 0,
+        "wght" 200,
+        "GRAD" 0,
+        "opsz" 24;
+}
 
 .p-confirm-dialog-icon {
     display: none; /* Hide the icon */
@@ -98,6 +144,37 @@ $numoHighlightColor: $primaryColor !default;
 }
 .p-dataview-content {
     background: transparent;
+}
+
+.p-icon-field {
+    .p-input-icon {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        aspect-ratio: 1;
+        display: flex;
+    }
+}
+
+.white-outlined-button {
+    button {
+        background-color: #fff;
+        color: $primaryTextColor; // White text color
+        border: 1px solid $grayLightColor; // White border
+
+        &:hover {
+            background-color: $accordionHeaderActiveHoverBg; // Slight white background on hover
+            border-color: $grayLightColor; // White border
+        }
+
+        &:focus {
+            box-shadow: none;
+        }
+        .p-button-label {
+            font-weight: 500;
+            font-size: 14px;
+        }
+    }
 }
 
 .usermenu {
@@ -144,6 +221,13 @@ $numoHighlightColor: $primaryColor !default;
     white-space: nowrap;
     button {
         padding: 7px 10px;
+
+        span.material-symbols-rounded {
+            height: 15px;
+            width: 15px;
+            margin-left: -3px;
+            line-height: 0.8;
+        }
     }
 }
 .timepicker {
@@ -167,6 +251,14 @@ $numoHighlightColor: $primaryColor !default;
 }
 
 .data-table {
+    table {
+        tbody.p-datatable-tbody {
+            td {
+                padding: 0.5rem !important;
+            }
+        }
+    }
+
     @media (max-width: 1024px) {
         table {
             display: block;
@@ -177,7 +269,7 @@ $numoHighlightColor: $primaryColor !default;
                 display: none;
             }
 
-            tbody {
+            tbody.p-datatable-tbody {
                 display: block;
                 tr {
                     display: block;
@@ -188,8 +280,8 @@ $numoHighlightColor: $primaryColor !default;
                 td {
                     display: block;
                     text-align: left;
-                    padding: 0.5rem;
-                    border-bottom: 1px solid $borderColor;
+                    padding: 0.5rem !important;
+                    border-bottom: 1px solid $borderColor !important;
                     display: flex;
                     flex-wrap: wrap;
                     align-items: center;
@@ -203,5 +295,21 @@ $numoHighlightColor: $primaryColor !default;
                 }
             }
         }
+    }
+}
+
+.numo-transparent-bg {
+    .p-tabview-panels {
+        background: transparent;
+        padding-left: 0;
+        padding-right: 0;
+    }
+}
+
+.numo-table-toogle {
+    button {
+        padding: 0.3rem;
+        width: auto;
+        color: $primaryTextColor;
     }
 }

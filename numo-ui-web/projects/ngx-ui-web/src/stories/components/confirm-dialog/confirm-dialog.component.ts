@@ -66,8 +66,8 @@ export class ConfirmDialogComponent {
             rejectLabel: "Atcelt",
             acceptIcon: "none",
             rejectIcon: "none",
-            rejectButtonStyleClass: "p-button-outlined",
-            acceptButtonStyleClass: "p-button-success p-button-primary",
+            acceptButtonStyleClass: "p-button-success",
+            rejectButtonStyleClass: "bg-gray-100 border-gray-100",
             accept: () => {
                 this.messageService.add({
                     severity: "success",
@@ -93,8 +93,8 @@ export class ConfirmDialogComponent {
             icon: "",
             acceptLabel: "Dzēst",
             rejectLabel: "Atcelt",
-            acceptButtonStyleClass: "p-button-danger ",
-            rejectButtonStyleClass: "p-button-outlined",
+            acceptButtonStyleClass: "p-button-danger",
+            rejectButtonStyleClass: "bg-gray-100 border-gray-100",
             acceptIcon: "none",
             rejectIcon: "none",
 

@@ -7,7 +7,7 @@ import { TabViewModule } from "primeng/tabview";
 import { ButtonModule } from "primeng/button";
 
 const meta: Meta = {
-    title: "Components/TabView (done)",
+    title: "Components/TabView",
     decorators: [
         moduleMetadata({
             imports: [

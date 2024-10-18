@@ -12,7 +12,7 @@ import { FileUploadComponent } from "./file-upload.component";
 import { BadgeModule } from "primeng/badge";
 
 const meta: Meta = {
-    title: "Components/Form/FileUpload (done)",
+    title: "Components/Form/FileUpload",
     component: FileUploadComponent,
     decorators: [
         moduleMetadata({

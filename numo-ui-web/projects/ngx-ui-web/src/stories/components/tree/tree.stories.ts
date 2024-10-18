@@ -21,7 +21,7 @@ const expandRecursive = (node: TreeNode, isExpand: boolean) => {
 };
 
 const meta: Meta = {
-    title: "Components/Tree (done)",
+    title: "Components/Tree",
     component: TreeComponent,
     decorators: [
         moduleMetadata({

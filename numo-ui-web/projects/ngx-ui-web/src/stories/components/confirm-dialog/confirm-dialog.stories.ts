@@ -11,7 +11,7 @@ import { ConfirmationService, MessageService } from "primeng/api";
 import { ConfirmDialogComponent } from "./confirm-dialog.component";
 
 const meta: Meta = {
-    title: "Components/Confirmation Dialog (done)",
+    title: "Components/Confirmation Dialog",
     component: ConfirmDialogComponent,
     decorators: [
         moduleMetadata({

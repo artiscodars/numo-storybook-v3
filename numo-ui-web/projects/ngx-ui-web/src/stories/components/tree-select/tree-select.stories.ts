@@ -7,7 +7,7 @@ import { RouterTestingModule } from "@angular/router/testing";
 import { TreeSelectModule } from "primeng/treeselect";
 import { nodes } from "./tree-select.data";
 const meta: Meta = {
-    title: "Components/Form/TreeSelect (done)",
+    title: "Components/Form/TreeSelect",
     decorators: [
         moduleMetadata({
             imports: [

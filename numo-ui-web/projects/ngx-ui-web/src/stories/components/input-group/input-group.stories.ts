@@ -9,7 +9,7 @@ import { ButtonModule } from "primeng/button"; // Import the ButtonModule from P
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Form/Input Group (done)",
+    title: "Components/Form/Input Group",
     decorators: [
         moduleMetadata({
             imports: [
@@ -42,13 +42,13 @@ export const ButtonGroup: Story = {
     render: () => ({
         template: `
         <div class="p-buttonset">
-            <button type="button" pButton label="M" size="small"></button>
-            <button type="button" pButton label="T" size="small"></button>
-            <button type="button" pButton label="W" size="small"></button>
-            <button type="button" pButton label="T" size="small"></button>
-            <button type="button" pButton label="F" size="small"></button>
-            <button type="button" pButton label="S" size="small"></button>
-            <button type="button" pButton label="S" size="small"></button>
+            <button type="button" pButton label="M" size="small"  class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="T" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="W" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="T" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="F" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="S" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
+            <button type="button" pButton label="S" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
         </div>
         `,
     }),
@@ -61,8 +61,10 @@ export const DisabledButtonWithCloseButton: Story = {
 
 
         <div class="p-buttonset">
-            <button type="button" disabled pButton label="12.12.2023"></button>
-            <button type="button" pButton label="x"></button>
+            <button type="button" disabled pButton label="12.12.2023" size="small" class="bg-white border-blue-3200"></button>
+            <button type="button" pButton size="small" class="p-2 bg-blue-200 border-blue-200 hover:bg-primary">
+            <span class="material-symbols-rounded text-xl">close</span>
+            </button>
             </div>
         `,
     }),

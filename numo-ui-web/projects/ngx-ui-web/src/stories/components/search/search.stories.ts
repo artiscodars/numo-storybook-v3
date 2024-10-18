@@ -9,7 +9,7 @@ import { InputIconModule } from "primeng/inputicon";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
-    title: "Components/Form/Search (done)",
+    title: "Components/Form/Search",
     decorators: [
         moduleMetadata({
             imports: [
@@ -43,11 +43,13 @@ export const Basic: Story = {
         props: {
             ...args,
         },
-        template: ` <p-iconField iconPosition="right" class="w-full">
+        template: `
+        <p-iconField iconPosition="right" class="w-full">
             <p-inputIcon>
-                <numo-icon icon="tabler:search" type="iconify"></numo-icon>
+                <numo-icon icon="search" type="material-symbols" class="text-2xl"></numo-icon>
             </p-inputIcon>
             <input type="text" pInputText placeholder="Meklēt" class="w-full" />
-        </p-iconField>`,
+        </p-iconField>
+        `,
     }),
 };

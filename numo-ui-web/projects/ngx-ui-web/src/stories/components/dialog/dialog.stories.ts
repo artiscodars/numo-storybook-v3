@@ -8,7 +8,7 @@ import { DialogModule } from "primeng/dialog";
 import { InputTextModule } from "primeng/inputtext";
 
 const meta: Meta = {
-    title: "Components/Dialog (done)",
+    title: "Components/Dialog",
     decorators: [
         moduleMetadata({
             imports: [
@@ -69,62 +69,8 @@ export const basic: Story = {
     </div>
     <div class="flex justify-content-start gap-2">
     <p-button label="Save" (onClick)="visible = false" />
-    <p-button label="Cancel" severity="secondary" (onClick)="visible = false" />
+    <p-button label="Cancel" styleClass="bg-gray-100 border-gray-100" (onClick)="visible = false" />
     </div>
 </p-dialog>`,
-    }),
-};
-export const Template: Story = {
-    args: {
-        visible: false,
-    },
-    render: (args) => ({
-        props: {
-            ...args,
-        },
-        template: `<div class="card flex justify-content-center">
-    <p-button (onClick)="visible=true" label="Show" />
-    <p-dialog
-        header="Header"
-        [(visible)]="visible"
-        [modal]="true"
-        [style]="{ width: '25rem' }">
-            <ng-template pTemplate="header">
-                <div class="inline-flex align-items-center justify-content-center gap-2">
-                    <p-avatar
-                        image="https://primefaces.org/cdn/primeng/images/demo/avatar/amyelsner.png"
-                        shape="circle" />
-                    <span class="font-bold white-space-nowrap">
-                        Amy Elsner
-                    </span>
-                </div>
-            </ng-template>
-            <span class="p-text-secondary block mb-5">Update your information.</span>
-            <div class="flex align-items-center gap-3 mb-3">
-                <label for="username" class="font-semibold w-6rem">
-                    Username
-                </label>
-                <input pInputText id="username" class="flex-auto" autocomplete="off" />
-            </div>
-            <div class="flex align-items-center gap-3 mb-5">
-                <label for="email" class="font-semibold w-6rem">Email</label>
-                <input pInputText id="email" class="flex-auto" autocomplete="off" />
-            </div>
-            <ng-template pTemplate="footer">
-                <p-button
-                    label="Cancel"
-                    [text]="true"
-                    severity="secondary"
-                    (onClick)="visible = false" />
-                <p-button
-                    label="Save"
-                    [outlined]="true"
-                    severity="secondary"
-                    (onClick)="visible = false"
-                  />
-            </ng-template>
-    </p-dialog>
-</div>
-`,
     }),
 };

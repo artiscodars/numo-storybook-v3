@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { BadgeModule } from "primeng/badge";
 
 const meta: Meta = {
-    title: "Components/Badge (done)",
+    title: "Components/Badge",
     decorators: [
         moduleMetadata({
             imports: [

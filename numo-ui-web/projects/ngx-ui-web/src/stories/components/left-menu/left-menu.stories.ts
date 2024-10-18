@@ -6,7 +6,7 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { IconComponent } from "../icon/icon.component";
 
 const meta: Meta = {
-    title: "Design blocks/LeftMenu (done)",
+    title: "Design blocks/LeftMenu",
     decorators: [
         moduleMetadata({
             imports: [
@@ -33,7 +33,7 @@ type Story = StoryObj;
 export const Basic: Story = {
     args: {
         items: [...Menu],
-        className: "w-25rem",
+        className: "",
     },
     render: (args) => ({
         props: {

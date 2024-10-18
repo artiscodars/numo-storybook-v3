@@ -5,7 +5,7 @@ import { ButtonModule } from "primeng/button";
 import description from "./time-picker.description.md";
 
 export default {
-    title: "Components/Form/Time Picker (done)",
+    title: "Components/Form/Time Picker",
     component: TimePickerComponent,
     decorators: [
         moduleMetadata({

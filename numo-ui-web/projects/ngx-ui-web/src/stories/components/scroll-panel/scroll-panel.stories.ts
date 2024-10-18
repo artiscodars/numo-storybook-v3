@@ -5,7 +5,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ScrollPanelModule } from "primeng/scrollpanel";
 const meta: Meta = {
-    title: "Components/ScrollPanel (done)",
+    title: "Components/ScrollPanel",
     decorators: [
         moduleMetadata({
             imports: [
