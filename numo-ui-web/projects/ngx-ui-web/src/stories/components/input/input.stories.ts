@@ -63,7 +63,7 @@ export const ReactiveForms: Story = {
         props: {
             ...args,
         },
-        template: `<input [type]="type" pInputText [formControlName]="value" />`,
+        template: `<input [type]="type" pInputText />`,
     }),
 };
 export const HelpText: Story = {

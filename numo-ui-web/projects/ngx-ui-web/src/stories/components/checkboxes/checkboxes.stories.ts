@@ -28,7 +28,6 @@ export const basic: Story = {
     args: {
         label: "New York",
         binary: true,
-        formControlName: "city",
         value: "New York",
         classes: "",
         disabled: false,
@@ -39,15 +38,14 @@ export const basic: Story = {
             ...args,
         },
         template: ` <p-checkbox
-  [(ngModel)]="checked"
-  [binary]="binary"
-  [formControlName]="formControlName"
-  [value]="value"
-  [class]="classes"
-  [variant]="variant"
-  [disabled]="disabled"
-  inputId="binary"
-  [label]="label"
+            [(ngModel)]="checked"
+            [binary]="binary"
+            [value]="value"
+            [class]="classes"
+            [variant]="variant"
+            [disabled]="disabled"
+            inputId="binary"
+            [label]="label"
 />`,
     }),
 };
@@ -55,7 +53,6 @@ export const basic: Story = {
 export const Invalid: Story = {
     args: {
         label: "New York",
-        formControlName: "city",
         binary: true,
         classes: "ng-invalid ng-dirty",
     },
@@ -64,17 +61,17 @@ export const Invalid: Story = {
             ...args,
         },
         template: `<p-checkbox
-       [(ngModel)]="checked"
-     value="New York"  [binary]="binary"  [class]="classes"  />  `,
+            [(ngModel)]="checked"
+            [label]="label"
+            value="label"
+            [binary]="binary"
+            [class]="classes"  />  `,
     }),
 };
 
 export const Disabled: Story = {
     args: {
         label: "New York",
-        formControlName: "city",
-        binary: true,
-        classes: "ng-invalid ng-dirty",
         variant: "filled",
         disabled: true,
     },
@@ -82,7 +79,12 @@ export const Disabled: Story = {
         props: {
             ...args,
         },
-        template: `<p-checkbox [(ngModel)]="checked" [binary]="true" [variant]="variant"  [disabled]="disabled"/> `,
+        template: `<p-checkbox
+            [(ngModel)]="checked"
+            [binary]="true"
+            [label]="label"
+            [variant]="variant"
+            [disabled]="disabled"/> `,
     }),
 };
 export const Grouped: Story = {

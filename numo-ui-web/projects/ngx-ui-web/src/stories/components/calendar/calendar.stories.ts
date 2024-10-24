@@ -60,7 +60,6 @@ export const Basic: Story = {
             ...args,
         },
         template: `<p-calendar
-              formControlName="date"
               [selectionMode]="selectionMode"
               [showIcon]="showIcon"
               [showOnFocus]="showOnFocus"

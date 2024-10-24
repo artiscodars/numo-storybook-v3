@@ -47,7 +47,6 @@ export const Group: Story = {
             inputId="ingredient1"
             [disabled]="disabled"
             [class]="classes"
-            [binary]="binary"
             [variant]="variant" />
         <label for="ingredient1" class="ml-2">
             {{label}}
@@ -62,7 +61,6 @@ export const Group: Story = {
             inputId="ingredient2"
             [disabled]="disabled"
             [class]="classes"
-            [binary]="binary"
             [variant]="variant" />
         <label for="ingredient2" class="ml-2">
             Mushroom
@@ -77,7 +75,6 @@ export const Group: Story = {
             inputId="ingredient3"
             [disabled]="disabled"
             [class]="classes"
-            [binary]="binary"
             [variant]="variant" />
         <label for="ingredient3" class="ml-2">
             Pepper
@@ -92,7 +89,6 @@ export const Group: Story = {
             inputId="ingredient4"
             [disabled]="disabled"
             [class]="classes"
-            [binary]="binary"
             [variant]="variant" />
         <label for="ingredient4" class="ml-2">
             Onion
@@ -108,18 +104,19 @@ export const ReactiveForms: Story = {
             { name: "Accounting", key: "A" },
             { name: "Marketing", key: "M" },
             { name: "Production", key: "P" },
-        ],
+        ]
     },
     render: (args) => ({
         props: {
             ...args,
         },
-        template: `<form class="flex flex-column gap-3" style="display:flex;flex-direction:column;gap:30px" [formGroup]="formGroup">
+        template: `<form class="flex flex-column gap-3" style="display:flex;flex-direction:column;gap:30px">
     <div *ngFor="let category of categories" class="field-checkbox">
         <p-radioButton
+            [(ngModel)]="checked"
+            [name]="category.name"
             [inputId]="category.key"
-            [value]="category"
-            formControlName="selectedCategory" />
+            [value]="category" />
         <label [for]="category.key" class="ml-2">
             {{ category.name }}
         </label>
@@ -138,7 +135,7 @@ export const Invalid: Story = {
         props: {
             ...args,
         },
-        template: `<p-radioButton [class]="classes" [label]="label"  />  `,
+        template: `<p-radioButton [(ngModel)]="checked" [class]="classes" [label]="label"  />  `,
     }),
 };
 export const Dynamic: Story = {
@@ -190,6 +187,6 @@ export const Disabled: Story = {
         props: {
             ...args,
         },
-        template: `<p-radioButton [disabled]="disabled"/> `,
+        template: `<p-radioButton [(ngModel)]="checked" [disabled]="disabled"/> `,
     }),
 };
