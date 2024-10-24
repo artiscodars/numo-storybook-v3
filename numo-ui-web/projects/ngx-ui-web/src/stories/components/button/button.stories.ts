@@ -116,3 +116,26 @@ export const ButtonsWithIcons: Story = {
 </div>`,
     }),
 };
+
+export const OutlinedButtons: Story = {
+    args: {
+        outlined: true,
+        label: "Outlined Button",
+        class: "p-button-outlined",
+    },
+    render: (args) => ({
+        props: {
+            ...args,
+        },
+        template: `<div class="card flex flex-wrap gap-3 justify-content-center">
+    <p-button label="Primary" [outlined]="true" />
+<p-button label="Secondary" [outlined]="true" severity="secondary" />
+<p-button label="Success" [outlined]="true" severity="success" />
+<p-button label="Info" [outlined]="true" severity="info" />
+<p-button label="Warning" [outlined]="true" severity="warning" />
+<p-button label="Help" [outlined]="true" severity="help" />
+<p-button label="Danger" [outlined]="true" severity="danger" />
+<p-button label="Contrast" [outlined]="true" severity="contrast" />
+</div>`,
+    }),
+};

@@ -8,7 +8,7 @@ import { CommonModule } from "@angular/common";
 import { LeftMenuComponent } from "../../components/left-menu/left-menu.component";
 
 @Component({
-    selector: "numo-home",
+    // selector: "numo-home",
     standalone: true,
     imports: [
         RouterOutlet,

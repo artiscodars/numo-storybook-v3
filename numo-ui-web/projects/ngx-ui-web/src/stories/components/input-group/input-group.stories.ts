@@ -5,7 +5,7 @@ import { InputTextModule } from "primeng/inputtext";
 import { FloatLabelModule } from "primeng/floatlabel";
 import { InputGroupModule } from "primeng/inputgroup";
 import { InputGroupAddonModule } from "primeng/inputgroupaddon";
-import { ButtonModule } from "primeng/button"; // Import the ButtonModule from PrimeNG
+import { ButtonModule } from "primeng/button";
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
@@ -19,7 +19,7 @@ const meta: Meta = {
                 FloatLabelModule,
                 InputGroupModule,
                 InputGroupAddonModule,
-                ButtonModule, // Include the ButtonModule
+                ButtonModule,
             ],
         }),
     ],
@@ -41,7 +41,7 @@ type Story = StoryObj;
 export const ButtonGroup: Story = {
     render: () => ({
         template: `
-        <div class="p-buttonset">
+        <p-inputGroup>
             <button type="button" pButton label="M" size="small"  class="bg-white border-blue-200 hover:bg-blue-200"></button>
             <button type="button" pButton label="T" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
             <button type="button" pButton label="W" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
@@ -49,7 +49,8 @@ export const ButtonGroup: Story = {
             <button type="button" pButton label="F" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
             <button type="button" pButton label="S" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
             <button type="button" pButton label="S" size="small" class="bg-white border-blue-200 hover:bg-blue-200"></button>
-        </div>
+
+        </p-inputGroup>
         `,
     }),
 };
@@ -58,14 +59,10 @@ export const ButtonGroup: Story = {
 export const DisabledButtonWithCloseButton: Story = {
     render: () => ({
         template: `
-
-
-        <div class="p-buttonset">
+        <p-inputGroup>
             <button type="button" disabled pButton label="12.12.2023" size="small" class="bg-white border-blue-3200"></button>
-            <button type="button" pButton size="small" class="p-2 bg-blue-200 border-blue-200 hover:bg-primary">
-            <span class="material-symbols-rounded text-xl">close</span>
-            </button>
-            </div>
+            <button type="button" pButton icon="pi pi-times" size="small" severity="primary" ></button>
+        </p-inputGroup>
         `,
     }),
 };

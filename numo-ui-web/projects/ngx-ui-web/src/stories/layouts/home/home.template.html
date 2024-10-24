@@ -1,17 +1,3 @@
-<numo-header (menuClicked)="toggleMenu($event)"></numo-header>
+<numo-header></numo-header>
 
-<div class="container">
-    @if (isMenuVisible) {
-    <div class="menu">
-        @for (item of items; track $index) {
-        <div class="flex flex-column gap-3 w-full">
-            <numo-left-menu [items]="item.menu"></numo-left-menu>
-        </div>
-        }
-    </div>
-    }
-    <div class="dashboard">
-        <!-- <rotuer-outlet></router-outlet -->
-        <numo-dashboard></numo-dashboard>
-    </div>
-</div>
+<numo-dashboard></numo-dashboard>

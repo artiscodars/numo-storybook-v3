@@ -1,17 +1,12 @@
-<div class="header flex align-items-center p-2 text-white justify-content-between row-gap-3 mb-2">
+<div class="header flex align-items-center text-white justify-content-between gap-3 ">
     <div class="flex align-items-center font-bold text-2xl h-10">
-        <span #menuButton (click)="toggleMenu($event)" class="pi pi-bars icon text-gray-800 cursor-pointer"></span>
+        <span #menuButton (click)="toggleMenu($event)" [ngClass]="isMenuVisible ? 'pi pi-times' : 'pi pi-bars'"
+            class="icon text-gray-800 cursor-pointer">
+        </span>
 
-        <p-overlayPanel #menu>
-            <div class="flex flex-column gap-3">
-                <numo-left-menu [items]="items"></numo-left-menu>
-            </div>
-        </p-overlayPanel>
-        <p-overlayPanel #storyMenu>
-            <div class="flex flex-column gap-3">
-                <numo-left-menu [items]="items"></numo-left-menu>
-            </div>
-        </p-overlayPanel>
+
+
+        <numo-left-menu [items]="items" class="left-menu"></numo-left-menu>
 
         <img class="ml-3" height="30" src="logo.png" alt="logo" />
     </div>
@@ -44,8 +39,10 @@
         </p-menu>
 
         <div (click)="showUserMenu($event)" class="usermenu cursor-pointer py-1">
-            Jānis Bērziņš
-            <div class="text-ellipsis text-xs">
+            <span class="hidden sm:block">Jānis Bērziņš</span>
+            <span class=" sm:hidden block p-2 bg-blue-200 border-circle ">JB</span>
+            <div class="caret"></div>
+            <div class="text-ellipsis text-xs hidden sm:block">
                 Liepājas valstspilsētas pašvaldības aģentūra "Liepājas
                 Sabiedriskais transports"
             </div>

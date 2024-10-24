@@ -122,10 +122,71 @@ $errorMessageBorder: solid $dangerDarkerColor !default;
 $errorMessageTextColor: $primaryTextColor !default;
 $errorMessageIconColor: $dangerDarkerColor !default;
 
+// $buttonPadding: 0.55rem 1.05rem !default;
+
+//buttons
+
 @import "./variable";
 @import "./_fonts";
 @import "./components";
 @import "./_extensions";
+
+body {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    overflow: auto;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 80px !important;
+    &.menu-visible {
+        overflow: hidden;
+    }
+}
+
+.header {
+    position: fixed;
+    background: $backgroundColor;
+    z-index: 999;
+    left: 0px;
+    top: 0;
+    right: 0px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.p-button-outlined {
+    span {
+        color: $primaryTextColor;
+    }
+    // border-color: darken($primaryColor, 30%);
+
+    &.p-button-secondary {
+        border-color: darken($secondaryColor, 10%);
+    }
+    &.p-button-success {
+        border-color: darken($successColor, 40%);
+    }
+    &.p-button-warning {
+        border-color: darken($warningColor, 20%);
+    }
+    &.p-button-danger {
+        border-color: darken($dangerColor, 20%);
+    }
+    &.p-button-info {
+        border-color: darken($infoColor, 20%);
+    }
+    &.p-button-help {
+        border-color: darken($helpColor, 20%);
+    }
+    &.p-button-contrast {
+        border-color: darken($grayColor, 100%);
+    }
+}
 
 .material-symbols-rounded {
     font-variation-settings:
@@ -177,12 +238,41 @@ $errorMessageIconColor: $dangerDarkerColor !default;
     }
 }
 
+.left-menu {
+    position: fixed;
+    left: -350px;
+    top: 80px;
+}
+
+.menu-visible {
+    padding-left: 315px !important;
+    .left-menu {
+        left: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .menu-visible {
+        padding-left: 0px !important;
+        .left-menu {
+            background: $backgroundColor;
+            padding: 15px;
+            left: 0px;
+            top: 65px;
+            right: 0;
+            bottom: 0;
+            overflow-x: auto;
+            z-index: 999;
+        }
+    }
+}
+
 .usermenu {
     color: $shade800;
     font-weight: bold;
     padding-right: 25px;
     position: relative;
-    ::before {
+    div.caret {
         content: "";
         position: absolute;
         right: 0;
@@ -282,20 +372,15 @@ $errorMessageIconColor: $dangerDarkerColor !default;
                     text-align: left;
                     padding: 0.5rem !important;
                     border-bottom: 1px solid $borderColor !important;
-                    display: flex;
-                    flex-wrap: wrap;
-                    align-items: center;
-                    gap: 0.5rem;
-                    > div {
-                        display: flex;
-                        flex-wrap: wrap;
-                        align-items: center;
-                        gap: 0.5rem;
-                    }
                 }
             }
         }
     }
+}
+
+.p-tabview-nav-container {
+    overflow-x: auto;
+    max-width: 100%;
 }
 
 .numo-transparent-bg {

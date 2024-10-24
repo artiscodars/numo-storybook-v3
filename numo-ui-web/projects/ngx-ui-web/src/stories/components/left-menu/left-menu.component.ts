@@ -15,7 +15,7 @@ import { BadgeModule } from "primeng/badge";
         PanelMenuModule,
         IconComponent,
         Button,
-        BadgeModule
+        BadgeModule,
     ],
     templateUrl: "./left-menu.component.html",
     styles: [],
@@ -24,7 +24,7 @@ import { BadgeModule } from "primeng/badge";
 export class LeftMenuComponent {
     @Input() items: any = [];
     @Input() className = "";
-    @Input() notificationCount = '0';
+    @Input() notificationCount = "0";
     isFirstLevel(item: any): boolean {
         // Check if the item is in the root items array
         return this.items.includes(item);

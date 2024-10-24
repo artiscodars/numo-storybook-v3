@@ -18,9 +18,10 @@ import { MenuItem, TableData, TableData2, Products } from "./timeplanning.data";
 import { TableModule } from "primeng/table";
 import { InputGroupModule } from "primeng/inputgroup";
 import { InputGroupAddonModule } from "primeng/inputgroupaddon";
+import { ChipModule } from "primeng/chip";
 
 @Component({
-    selector: "numo-timeplaning",
+    // selector: "numo-timeplaning",
     standalone: true,
     imports: [
         RouterOutlet,
@@ -41,6 +42,7 @@ import { InputGroupAddonModule } from "primeng/inputgroupaddon";
         BadgeModule,
         InputGroupModule,
         InputGroupAddonModule,
+        ChipModule,
     ],
     templateUrl: "./timeplaning.template.html",
 
@@ -57,10 +59,6 @@ export class AppComponent {
     tableData2 = TableData2;
     Products = Products;
     menuItems = MenuItem;
-
-    toggleMenu(isMenuVisible: boolean) {
-        this.isMenuVisible = isMenuVisible;
-    }
 
     // Method to toggle row expansion
     toggleRow(product: any) {

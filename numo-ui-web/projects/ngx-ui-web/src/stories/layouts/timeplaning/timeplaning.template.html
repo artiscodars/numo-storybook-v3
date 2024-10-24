@@ -1,16 +1,6 @@
-<numo-header (menuClicked)="toggleMenu($event)"></numo-header>
+<numo-header></numo-header>
 
-<div class="container flex gap-3 w-full">
-    @if (isMenuVisible) {
-
-    @for (item of items; track $index) {
-
-    <numo-left-menu [items]="item.menu" [notificationCount]="'11'" [className]="'w-100'"></numo-left-menu>
-
-
-    }
-
-    }
+<div class="container gap-3 w-full">
 
     <div class="flex-grow-1">
         <div class="w-full mb-2">
@@ -43,7 +33,7 @@
 
 
         <div
-            class="card flex flex-column md:flex-row bg-white p-3 mb-4 border-round-sm border border-1 border-gray-200 flex justify-content-start">
+            class="card flex flex-column md:flex-row bg-white p-3 mb-4 gap-3 border-round-sm border border-1 border-gray-200 flex justify-content-start">
             <div class="flex flex-column mr-3">
                 <label for="dropdown" class="mb-1 label text-sm">Struktūrvienība</label>
                 <p-dropdown id="dropdown" [options]="options" optionLabel="name" placeholder="Barona ielas veikals" />
@@ -64,12 +54,6 @@
                 <div class=" flex gap-3 flex-column md:flex-row">
                     <p-menu [model]="menuItems" />
 
-
-
-
-
-
-
                     <div class="flex-1">
                         <p-button label="Pievienot" icon="pi pi-plus" class="plus-button" size="small" />
 
@@ -84,7 +68,7 @@
                                         <!-- Caret Icon for Expand/Collapse -->
 
                                         <td>
-                                            <div class="flex gap-3">
+                                            <div class="flex flex-wrap  gap-2">
 
 
 
@@ -98,42 +82,51 @@
 
 
                                                 <span
-                                                    class="flex align-items-center justify-content-center px-2 font-semibold">{{product.name}}</span>
+                                                    class="flex align-items-center justify-content-center font-semibold white-space-nowrap">{{product.name}}</span>
                                                 <p-badge [value]="product.badgeName" [severity]="product.badgeSeverity"
                                                     class="flex align-items-center justify-content-center "
                                                     styleClass="text-xs font-normal"></p-badge>
                                             </div>
                                         </td>
                                         <td>
-                                            <div class="flex">
+                                            <div class="flex flex-wrap gap-2">
 
 
-                                                <div class="p-buttonset daycalendar pr-2">
-                                                    <button
-                                                        *ngFor="let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index"
-                                                        type="button" pButton [label]="day" size="small" [ngClass]="{
-                                                        'bg-blue-200 border-blue-200': product.days.includes(i + 1),
-                                                        'bg-white border-blue-200 hover:bg-blue-200': !product.days.includes(i + 1)
-                                                    }">
-                                                    </button>
-                                                </div>
+
 
                                                 <div class="p-buttonset daycalendar">
-                                                    <span *ngFor="let date of product.dates" class="mr-2">
-                                                        <button type="button" disabled pButton [label]="date"
-                                                            size="small" class="bg-white border-blue-400 text-gray-800">
-                                                        </button>
-                                                        <button type="button" pButton size="small"
-                                                            class="bg-blue-200 border-blue-200 hover:bg-primary">
-                                                            <span class="material-symbols-rounded text-xl">close</span>
-                                                        </button>
-                                                    </span>
+                                                    <p-button
+                                                        *ngFor="let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index"
+                                                        type="button" [label]="day" size="small" severity="secondary"
+                                                        [outlined]="!product.days.includes(i + 1)">
+                                                    </p-button>
                                                 </div>
+
+                                                <div *ngFor="let date of product.dates" class="p-buttonset daycalendar">
+                                                    <p-button type="button" [outlined]="true" [label]="date"
+                                                        size="small"></p-button>
+                                                    <p-button icon="pi pi-times" size="small" severity="secondary"
+                                                        styleClass="w-3"></p-button>
+                                                </div>
+
+
+
+
                                             </div>
                                         </td>
-                                        <td>{{product.description}}</td>
                                         <td>
-                                            <div class="flex gap-3 justify-content-end">
+
+                                            <div class="flex flex-wrap gap-2">
+                                                <p-chip *ngFor="let slot of product.slots" [label]="slot"
+                                                    styleClass="white-space-nowrap text-xs" />
+                                            </div>
+
+
+
+                                        </td>
+                                        <td>
+                                            <div
+                                                class="flex w-full justify-content-between  gap-3 md:justify-content-end">
                                                 <button aria-label="Edit"
                                                     class="p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800">
                                                     <span class="material-symbols-rounded text-2xl">
@@ -158,7 +151,7 @@
 
                                             <div class="p-2">
                                                 <h3>Darba laiki</h3>
-                                                <p-table [value]="tableData" [tableStyle]="{ 'min-width': '50rem' }">
+                                                <p-table [value]="tableData" [tableStyle]="{ ' min-width': '50rem' }">
                                                     <ng-template pTemplate="header">
                                     <tr>
                                         <th>Darba laiks</th>

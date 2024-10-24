@@ -69,7 +69,8 @@ export const basic: Story = {
     </div>
     <div class="flex justify-content-start gap-2">
     <p-button label="Save" (onClick)="visible = false" />
-    <p-button label="Cancel" styleClass="bg-gray-100 border-gray-100" (onClick)="visible = false" />
+    <p-button label="Cancel" [outlined]="true" severity="secondary" (onClick)="visible = false" />
+
     </div>
 </p-dialog>`,
     }),

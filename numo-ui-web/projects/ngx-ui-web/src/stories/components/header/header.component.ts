@@ -50,6 +50,7 @@ export class HeaderComponent {
     userMenuItems = [...UserMenuItems]; // Use the imported user menu items
     BreakPoint = 1024;
 
+    /*
     toggleMenu(event: Event) {
         this.isMenuVisible = !this.isMenuVisible;
         if (this.isStoryBook) {
@@ -65,6 +66,26 @@ export class HeaderComponent {
 
     closeMenu() {
         this.isMenuVisible = false;
+    }*/
+
+    toggleMenu(event: Event) {
+        this.isMenuVisible = !this.isMenuVisible;
+
+        // Add or remove the class on the body tag based on isMenuVisible
+        if (this.isMenuVisible) {
+            document.body.classList.add("menu-visible");
+        } else {
+            document.body.classList.remove("menu-visible");
+        }
+
+        this.menuClicked.emit(this.isMenuVisible);
+    }
+
+    closeMenu() {
+        this.isMenuVisible = false;
+
+        // Ensure the class is removed from the body when the menu is closed
+        document.body.classList.remove("menu-visible");
     }
 
     onUserMenuItemClick(menuItem: string) {
