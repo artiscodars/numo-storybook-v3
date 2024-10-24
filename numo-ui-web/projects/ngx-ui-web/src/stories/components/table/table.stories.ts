@@ -11,7 +11,7 @@ import { BadgeModule } from "primeng/badge";
 import { ButtonModule } from "primeng/button";
 import { SelectButtonModule } from "primeng/selectbutton";
 import { IconComponent } from "../icon/icon.component";
-
+import { ChipModule } from "primeng/chip";
 import { InputTextModule } from "primeng/inputtext";
 import { InputGroupModule } from "primeng/inputgroup";
 import { InputGroupAddonModule } from "primeng/inputgroupaddon";
@@ -38,6 +38,7 @@ const meta: Meta = {
                 InputGroupModule,
                 InputGroupAddonModule,
                 BadgeModule,
+                ChipModule,
             ],
         }),
     ],
@@ -129,38 +130,40 @@ export const ForDataView: Story = {
     args: {
         products: [
             {
-                id: "1000",
+                id: 1,
                 code: "f230fh0g3",
                 name: "Darba dienas",
-                description:
-                    "8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)",
-
+                slots: ["8:00 - 17:00 (8h 15min)", "18:00 - 23:00 (4h 45min)"],
+                badgeName: "Parasts",
+                badgeSeverity: "info",
                 inventoryStatus: "Standarta",
                 days: [1, 2, 3, 4, 5],
             },
             {
-                id: "1000",
+                id: 2,
                 code: "f230fh0g3",
                 name: "Citas foršas darba dienas",
-                description:
-                    "8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)",
-
+                slots: ["8:00 - 17:00 (8h 15min)", "18:00 - 23:00 (4h 45min)"],
+                badgeName: "Ideāls",
+                badgeSeverity: "success",
                 inventoryStatus: "Nestandarta",
                 days: [1, 4, 5],
                 dates: ["12.12.2024", "12.12.2024"],
             },
             {
-                id: "1001",
+                id: 3,
                 code: "f230fh0g3",
                 name: "Brīvdienas",
-                description:
-                    "8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)",
-
+                slots: ["8:00 - 17:00 (8h 15min)", "18:00 - 23:00 (4h 45min)"],
+                badgeName: "Nestandarta",
+                badgeSeverity: "warning",
                 inventoryStatus: "Standarta",
-                dates: ["12.12.2024", "12.12.2024"],
+                days: [1, 5],
+                dates: ["12.12.2024"],
             },
         ],
     },
+
     render: (args) => ({
         props: {
             ...args,
@@ -170,35 +173,72 @@ export const ForDataView: Story = {
 
     <ng-template pTemplate="body" let-product>
         <tr>
-            <td><a href="#" class="text-primary font-semibold mr-3">{{product.name}}</a> <p-badge [value]="product.inventoryStatus" [severity]="getSeverity(product.inventoryStatus)" /></td>
+            <td>
+            <div class="flex flex-wrap  gap-2">
+
+            <span
+                                                    class="flex align-items-center justify-content-center font-semibold white-space-nowrap">{{product.name}}</span>
+              <p-badge [value]="product.badgeName" [severity]="product.badgeSeverity"
+                                                    class="flex align-items-center justify-content-center "
+                                                    styleClass="text-xs font-normal"></p-badge>
+                                                    </div>
+            </td>
 
             <td>
-                <div class="flex">
-                    <div class="p-buttonset pr-2 daycalendar">
-                    <button type="button" pButton label="M" size="small"></button>
-                    <button type="button" pButton label="T" size="small"></button>
-                    <button type="button" pButton label="W" size="small"></button>
-                    <button type="button" outlined="true"  pButton label="T" size="small"></button>
-                    <button type="button" pButton label="F" size="small"></button>
-                    <button type="button" pButton label="S" size="small"></button>
-                    <button type="button" pButton label="S" size="small"></button>
-                </div>
-                <div class="p-buttonset daycalendar">
-                    <button type="button" disabled pButton label="12.12.2023"  size="small"></button>
-                    <button type="button" pButton label="x"  size="small"></button>
-                </div>
-            </div>
+                <div class="flex flex-wrap gap-2">
+
+
+
+
+                                                <div class="p-buttonset daycalendar">
+                                                    <p-button
+                                                        *ngFor="let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index"
+                                                        type="button" [label]="day" size="small" severity="secondary"
+                                                        [outlined]="!product.days.includes(i + 1)">
+                                                    </p-button>
+                                                </div>
+
+                                                <div *ngFor="let date of product.dates" class="p-buttonset daycalendar">
+                                                    <p-button type="button" [outlined]="true" [label]="date"
+                                                        size="small"></p-button>
+                                                    <p-button icon="pi pi-times" size="small" severity="secondary"
+                                                        styleClass="w-3"></p-button>
+                                                </div>
+
+
+
+
+                                            </div>
 
             </td>
-            <td>{{product.description}}</td>
+            <td>
+
+              <div class="flex flex-wrap gap-2">
+                                                <p-chip *ngFor="let slot of product.slots" [label]="slot"
+                                                    styleClass="white-space-nowrap text-xs" />
+                                            </div>
+
+            </td>
             <td class="text-right">
 
-            <p-button aria-label="Edit" text="true" styleClass="p-2 text-xl">
-                <numo-icon icon="material-symbols:edit" type="iconify" class="text-primary"></numo-icon>
-            </p-button>
-            <p-button aria-label="Delete"  text="true" styleClass="p-2 text-xl">
-                <numo-icon icon="material-symbols:delete" type="iconify" class="text-primary"></numo-icon>
-            </p-button>
+            <td>
+                                            <div
+                                                class="flex w-full justify-content-between  gap-3 md:justify-content-end">
+                                                <button aria-label="Edit"
+                                                    class="p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800">
+                                                    <span class="material-symbols-rounded text-2xl">
+                                                        edit
+                                                    </span>
+                                                </button>
+
+                                                <button aria-label="Delete"
+                                                    class="p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800">
+                                                    <span class="material-symbols-rounded text-2xl">
+                                                        delete
+                                                    </span>
+                                                </button>
+                                            </div>
+
 
             </td>
 

@@ -67,7 +67,7 @@ export class ConfirmDialogComponent {
             acceptIcon: "none",
             rejectIcon: "none",
             acceptButtonStyleClass: "p-button-success",
-            rejectButtonStyleClass: "bg-gray-100 border-gray-100",
+            rejectButtonStyleClass: "p-button-secondary p-button-outlined",
             accept: () => {
                 this.messageService.add({
                     severity: "success",
@@ -77,7 +77,7 @@ export class ConfirmDialogComponent {
             },
             reject: () => {
                 this.messageService.add({
-                    severity: "info",
+                    severity: "secondary",
                     summary: "Rejected",
                     detail: "You have rejected",
                     life: 3000,
@@ -94,7 +94,7 @@ export class ConfirmDialogComponent {
             acceptLabel: "Dzēst",
             rejectLabel: "Atcelt",
             acceptButtonStyleClass: "p-button-danger",
-            rejectButtonStyleClass: "bg-gray-100 border-gray-100",
+            rejectButtonStyleClass: "p-button-secondary p-button-outlined",
             acceptIcon: "none",
             rejectIcon: "none",
 
