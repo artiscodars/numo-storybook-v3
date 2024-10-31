@@ -14,7 +14,14 @@ import { TabViewModule } from "primeng/tabview";
 import { MenuModule } from "primeng/menu";
 import { ButtonModule } from "primeng/button";
 import { BadgeModule } from "primeng/badge";
-import { MenuItem, TableData, TableData2, Products } from "./timeplanning.data";
+import { CheckboxModule } from "primeng/checkbox";
+import {
+    MenuItem,
+    TableData,
+    TableData2,
+    Products,
+    TimePlanning,
+} from "./timeplanning.data";
 import { TableModule } from "primeng/table";
 import { InputGroupModule } from "primeng/inputgroup";
 import { InputGroupAddonModule } from "primeng/inputgroupaddon";
@@ -43,6 +50,7 @@ import { ChipModule } from "primeng/chip";
         InputGroupModule,
         InputGroupAddonModule,
         ChipModule,
+        CheckboxModule,
     ],
     templateUrl: "./timeplaning.template.html",
 
@@ -59,6 +67,33 @@ export class AppComponent {
     tableData2 = TableData2;
     Products = Products;
     menuItems = MenuItem;
+    timePlanning = TimePlanning;
+
+    // Sum of planning hours for all employees
+    get totalPlanningHours(): number {
+        return this.timePlanning.reduce(
+            (sum, emp) => sum + emp.planningHours,
+            0,
+        );
+    }
+
+    // Sum of total hours for all employees
+    get totalHours(): number {
+        return this.timePlanning.reduce((sum, emp) => sum + emp.totalHours, 0);
+    }
+
+    // Total hours per day across all employees
+    get dailyTotals(): number[] {
+        if (this.timePlanning.length === 0) return [];
+        const daysInMonth = this.timePlanning[0].daysOfMonth.length;
+
+        return Array.from({ length: daysInMonth }, (_, dayIndex) =>
+            this.timePlanning.reduce(
+                (sum, emp) => sum + (emp.daysOfMonth[dayIndex]?.hours || 0),
+                0,
+            ),
+        );
+    }
 
     // Method to toggle row expansion
     toggleRow(product: any) {

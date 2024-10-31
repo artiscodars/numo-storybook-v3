@@ -60,14 +60,13 @@
     "components": [
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-c266cfdb46682a5523660305939004a4a71645e829947c09f9b840cc5c07731eb44998b3ae450b64395592098369ccb2285c06b783b58c42f19e3642961405b9",
+            "id": "component-AppComponent-856d87edcd452fb0f7aa484d642bb6e8ebaa0fe07858a4065a58813d9f6799d8d7f2ca25fb16ca39eeff66a753d9aefb220d2c06e867c418e25885ca7b4d8e31",
             "file": "projects/ngx-ui-web/src/stories/layouts/home/home.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "numo-home",
             "styleUrls": [],
             "styles": [
                 "\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        "
@@ -174,23 +173,22 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\n\n@Component({\n    selector: \"numo-home\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./home.template.html\",\n    styles: [\n        `\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        `,\n    ],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n\n    toggleMenu(isMenuVisible: boolean) {\n        this.isMenuVisible = isMenuVisible;\n    }\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\n\n@Component({\n    // selector: \"numo-home\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n    ],\n    templateUrl: \"./home.template.html\",\n    styles: [\n        `\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        `,\n    ],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n\n    toggleMenu(isMenuVisible: boolean) {\n        this.isMenuVisible = isMenuVisible;\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n            .container {\n                display: flex;\n                grid-gap: 20px;\n                margin-top: 20px;\n            }\n\n            .menu {\n                display: flex;\n                flex-direction: column;\n                justify-content: center;\n                align-items: center;\n                flex: 1;\n                max-width: 230px;\n                @media (max-width: var(--breakpoint)) {\n                    display: none;\n                }\n            }\n\n            .dashboard {\n                flex: 1;\n            }\n\n            :host ::ng-deep .p-card .p-card-content {\n                padding: 5px;\n            }\n        \n",
             "extends": [],
-            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\n\n<div class=\"container\">\n    @if (isMenuVisible) {\n    <div class=\"menu\">\n        @for (item of items; track $index) {\n        <div class=\"flex flex-column gap-3 w-full\">\n            <numo-left-menu [items]=\"item.menu\"></numo-left-menu>\n        </div>\n        }\n    </div>\n    }\n    <div class=\"dashboard\">\n        <!-- <rotuer-outlet></router-outlet -->\n        <numo-dashboard></numo-dashboard>\n    </div>\n</div>\n"
+            "templateData": "<numo-header></numo-header>\n\n<numo-dashboard></numo-dashboard>"
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-36cb17a01fa4e14bf22c9561797fbfcd9c61a8efd60eadc42d68073c5b5c71246a2419647bcbf8af40f92ee89be63ea74b5029dff6fb61c379f51afab5096a21-1",
+            "id": "component-AppComponent-b2adde70013dc0a7761556b6e8e46c54c2947d11493789b70a384a74833b96a5cdd547d807833837359437d51e2993e2d0f121101106a431ad82a4fd698f266e-1",
             "file": "projects/ngx-ui-web/src/stories/layouts/timeplaning/timeplaning.component.ts",
             "encapsulation": [],
             "entryComponents": [],
             "inputs": [],
             "outputs": [],
             "providers": [],
-            "selector": "numo-timeplaning",
             "styleUrls": [],
             "styles": [],
             "templateUrl": [
@@ -209,7 +207,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 86
+                    "line": 84
                 },
                 {
                     "name": "date",
@@ -218,7 +216,7 @@
                     "type": "Date[] | undefined",
                     "optional": false,
                     "description": "",
-                    "line": 55
+                    "line": 57
                 },
                 {
                     "name": "expandedRows",
@@ -228,7 +226,7 @@
                     "type": "any[]",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 54
                 },
                 {
                     "name": "home",
@@ -238,7 +236,7 @@
                     "type": "object",
                     "optional": false,
                     "description": "",
-                    "line": 54
+                    "line": 56
                 },
                 {
                     "name": "isMenuVisible",
@@ -248,7 +246,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 50
+                    "line": 52
                 },
                 {
                     "name": "items",
@@ -258,7 +256,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 53
+                    "line": 55
                 },
                 {
                     "name": "itemsWithIsLast",
@@ -268,7 +266,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 90
+                    "line": 88
                 },
                 {
                     "name": "menuItems",
@@ -278,7 +276,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 59
+                    "line": 61
                 },
                 {
                     "name": "options",
@@ -288,7 +286,7 @@
                     "type": "[]",
                     "optional": false,
                     "description": "",
-                    "line": 81
+                    "line": 79
                 },
                 {
                     "name": "Products",
@@ -298,7 +296,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 58
+                    "line": 60
                 },
                 {
                     "name": "tableData",
@@ -308,7 +306,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 56
+                    "line": 58
                 },
                 {
                     "name": "tableData2",
@@ -318,7 +316,7 @@
                     "type": "",
                     "optional": false,
                     "description": "",
-                    "line": 57
+                    "line": 59
                 },
                 {
                     "name": "title",
@@ -328,7 +326,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 51
+                    "line": 53
                 }
             ],
             "methodsClass": [
@@ -345,41 +343,13 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 78,
+                    "line": 76,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
                         {
                             "name": "product",
                             "type": "any",
-                            "deprecated": false,
-                            "deprecationMessage": "",
-                            "tagName": {
-                                "text": "param"
-                            }
-                        }
-                    ]
-                },
-                {
-                    "name": "toggleMenu",
-                    "args": [
-                        {
-                            "name": "isMenuVisible",
-                            "type": "boolean",
-                            "deprecated": false,
-                            "deprecationMessage": ""
-                        }
-                    ],
-                    "optional": false,
-                    "returnType": "void",
-                    "typeParameters": [],
-                    "line": 61,
-                    "deprecated": false,
-                    "deprecationMessage": "",
-                    "jsdoctags": [
-                        {
-                            "name": "isMenuVisible",
-                            "type": "boolean",
                             "deprecated": false,
                             "deprecationMessage": "",
                             "tagName": {
@@ -401,7 +371,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 64,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -493,12 +463,16 @@
                 {
                     "name": "InputGroupAddonModule",
                     "type": "module"
+                },
+                {
+                    "name": "ChipModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\nimport { BreadcrumbModule } from \"primeng/breadcrumb\";\nimport { IconComponent } from \"../../components/icon/icon.component\";\nimport { DropdownModule } from \"primeng/dropdown\";\nimport { CalendarModule } from \"primeng/calendar\";\nimport { TabViewModule } from \"primeng/tabview\";\nimport { MenuModule } from \"primeng/menu\";\nimport { ButtonModule } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\nimport { MenuItem, TableData, TableData2, Products } from \"./timeplanning.data\";\nimport { TableModule } from \"primeng/table\";\nimport { InputGroupModule } from \"primeng/inputgroup\";\nimport { InputGroupAddonModule } from \"primeng/inputgroupaddon\";\n\n@Component({\n    selector: \"numo-timeplaning\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n        BreadcrumbModule,\n        IconComponent,\n        DropdownModule,\n        CalendarModule,\n        IconComponent,\n        TabViewModule,\n        MenuModule,\n        ButtonModule,\n        TableModule,\n        BadgeModule,\n        InputGroupModule,\n        InputGroupAddonModule,\n    ],\n    templateUrl: \"./timeplaning.template.html\",\n\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    expandedRows: any[] = [];\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n    home = { icon: \"pi pi-home\", route: \"/\" };\n    date: Date[] | undefined;\n    tableData = TableData;\n    tableData2 = TableData2;\n    Products = Products;\n    menuItems = MenuItem;\n\n    toggleMenu(isMenuVisible: boolean) {\n        this.isMenuVisible = isMenuVisible;\n    }\n\n    // Method to toggle row expansion\n    toggleRow(product: any) {\n        const index = this.expandedRows.indexOf(product.id);\n        if (index !== -1) {\n            // Row is already expanded, so collapse it\n            this.expandedRows.splice(index, 1);\n        } else {\n            // Row is not expanded, so expand it\n            this.expandedRows.push(product.id);\n        }\n    }\n\n    // Method to check if a row is expanded\n    isRowExpanded(product: any): boolean {\n        return this.expandedRows.includes(product.id);\n    }\n    options = [\n        {\n            name: \"Barona ielas veikals\",\n        },\n    ];\n    breadCrumbItems = [\n        { label: \"Darba laika plānošana\", route: \"/timeplaning\" },\n    ];\n\n    itemsWithIsLast = this.breadCrumbItems.map((item, index, array) => ({\n        ...item,\n        isLast: index === array.length - 1,\n    }));\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\nimport { BreadcrumbModule } from \"primeng/breadcrumb\";\nimport { IconComponent } from \"../../components/icon/icon.component\";\nimport { DropdownModule } from \"primeng/dropdown\";\nimport { CalendarModule } from \"primeng/calendar\";\nimport { TabViewModule } from \"primeng/tabview\";\nimport { MenuModule } from \"primeng/menu\";\nimport { ButtonModule } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\nimport { MenuItem, TableData, TableData2, Products } from \"./timeplanning.data\";\nimport { TableModule } from \"primeng/table\";\nimport { InputGroupModule } from \"primeng/inputgroup\";\nimport { InputGroupAddonModule } from \"primeng/inputgroupaddon\";\nimport { ChipModule } from \"primeng/chip\";\n\n@Component({\n    // selector: \"numo-timeplaning\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n        BreadcrumbModule,\n        IconComponent,\n        DropdownModule,\n        CalendarModule,\n        IconComponent,\n        TabViewModule,\n        MenuModule,\n        ButtonModule,\n        TableModule,\n        BadgeModule,\n        InputGroupModule,\n        InputGroupAddonModule,\n        ChipModule,\n    ],\n    templateUrl: \"./timeplaning.template.html\",\n\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    expandedRows: any[] = [];\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n    home = { icon: \"pi pi-home\", route: \"/\" };\n    date: Date[] | undefined;\n    tableData = TableData;\n    tableData2 = TableData2;\n    Products = Products;\n    menuItems = MenuItem;\n\n    // Method to toggle row expansion\n    toggleRow(product: any) {\n        const index = this.expandedRows.indexOf(product.id);\n        if (index !== -1) {\n            // Row is already expanded, so collapse it\n            this.expandedRows.splice(index, 1);\n        } else {\n            // Row is not expanded, so expand it\n            this.expandedRows.push(product.id);\n        }\n    }\n\n    // Method to check if a row is expanded\n    isRowExpanded(product: any): boolean {\n        return this.expandedRows.includes(product.id);\n    }\n    options = [\n        {\n            name: \"Barona ielas veikals\",\n        },\n    ];\n    breadCrumbItems = [\n        { label: \"Darba laika plānošana\", route: \"/timeplaning\" },\n    ];\n\n    itemsWithIsLast = this.breadCrumbItems.map((item, index, array) => ({\n        ...item,\n        isLast: index === array.length - 1,\n    }));\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -506,11 +480,11 @@
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "AppComponent-1",
-            "templateData": "<numo-header (menuClicked)=\"toggleMenu($event)\"></numo-header>\n\n<div class=\"container flex gap-3 w-full\">\n    @if (isMenuVisible) {\n\n    @for (item of items; track $index) {\n\n    <numo-left-menu [items]=\"item.menu\" [notificationCount]=\"'11'\" [className]=\"'w-100'\"></numo-left-menu>\n\n\n    }\n\n    }\n\n    <div class=\"flex-grow-1\">\n        <div class=\"w-full mb-2\">\n            <p-breadcrumb class=\"max-w-full\" [model]=\"itemsWithIsLast\" [home]=\"home\">\n                <ng-template pTemplate=\"item\" let-item>\n                    <ng-container *ngIf=\"!item.isLast; else lastBreadcrumb\">\n                        <!-- For all items except the last one -->\n                        <ng-container *ngIf=\"item.route; else urlItem\">\n                            <!-- If the item has a route -->\n                            <a [routerLink]=\"item.route\" class=\"p-menuitem-link underline\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-container>\n                        <ng-template #urlItem>\n                            <!-- If the item has a URL -->\n                            <a [href]=\"item.url\" class=\"p-menuitem-link\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-template>\n                    </ng-container>\n                    <ng-template #lastBreadcrumb>\n                        <!-- For the last item, render as plain text -->\n                        <span class=\"text-color\">{{ item.label }}</span>\n                    </ng-template>\n                </ng-template>\n            </p-breadcrumb>\n        </div>\n\n\n        <div\n            class=\"card flex flex-column md:flex-row bg-white p-3 mb-4 border-round-sm border border-1 border-gray-200 flex justify-content-start\">\n            <div class=\"flex flex-column mr-3\">\n                <label for=\"dropdown\" class=\"mb-1 label text-sm\">Struktūrvienība</label>\n                <p-dropdown id=\"dropdown\" [options]=\"options\" optionLabel=\"name\" placeholder=\"Barona ielas veikals\" />\n            </div>\n            <div class=\"flex flex-column\">\n                <label for=\"calendar\" class=\"mb-1 label text-sm\">Mēnesis</label>\n                <div class=\"flex align-items-center\">\n\n                    <p-calendar id=\"calendar\" [(ngModel)]=\"date\" view=\"month\" [iconDisplay]=\"'input'\" [showIcon]=\"true\"\n                        dateFormat=\"MM, yy\" [readonlyInput]=\"true\" />\n\n                </div>\n            </div>\n        </div>\n        <p-tabView class=\"mt-5 numo-transparent-bg\">\n            <p-tabPanel header=\"Uzstādījumi\">\n\n                <div class=\" flex gap-3 flex-column md:flex-row\">\n                    <p-menu [model]=\"menuItems\" />\n\n\n\n\n\n\n\n                    <div class=\"flex-1\">\n                        <p-button label=\"Pievienot\" icon=\"pi pi-plus\" class=\"plus-button\" size=\"small\" />\n\n                        <div class=\"pt-3\">\n\n\n                            <p-table [value]=\"Products\" dataKey=\"id\" class=\"data-table\">\n\n                                <!-- Body Template for Product Rows -->\n                                <ng-template pTemplate=\"body\" let-product>\n                                    <tr>\n                                        <!-- Caret Icon for Expand/Collapse -->\n\n                                        <td>\n                                            <div class=\"flex gap-3\">\n\n\n\n                                                <button\n                                                    class=\"p-button p-button-lg p-1 p-button-text p-button-secondary text-gray-800\"\n                                                    (click)=\"toggleRow(product)\">\n                                                    <span class=\"material-symbols-rounded text-3xl\">\n                                                        {{ isRowExpanded(product) ? 'expand_more' : 'chevron_right' }}\n                                                    </span>\n                                                </button>\n\n\n                                                <span\n                                                    class=\"flex align-items-center justify-content-center px-2 font-semibold\">{{product.name}}</span>\n                                                <p-badge [value]=\"product.badgeName\" [severity]=\"product.badgeSeverity\"\n                                                    class=\"flex align-items-center justify-content-center \"\n                                                    styleClass=\"text-xs font-normal\"></p-badge>\n                                            </div>\n                                        </td>\n                                        <td>\n                                            <div class=\"flex\">\n\n\n                                                <div class=\"p-buttonset daycalendar pr-2\">\n                                                    <button\n                                                        *ngFor=\"let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index\"\n                                                        type=\"button\" pButton [label]=\"day\" size=\"small\" [ngClass]=\"{\n                                                        'bg-blue-200 border-blue-200': product.days.includes(i + 1),\n                                                        'bg-white border-blue-200 hover:bg-blue-200': !product.days.includes(i + 1)\n                                                    }\">\n                                                    </button>\n                                                </div>\n\n                                                <div class=\"p-buttonset daycalendar\">\n                                                    <span *ngFor=\"let date of product.dates\" class=\"mr-2\">\n                                                        <button type=\"button\" disabled pButton [label]=\"date\"\n                                                            size=\"small\" class=\"bg-white border-blue-400 text-gray-800\">\n                                                        </button>\n                                                        <button type=\"button\" pButton size=\"small\"\n                                                            class=\"bg-blue-200 border-blue-200 hover:bg-primary\">\n                                                            <span class=\"material-symbols-rounded text-xl\">close</span>\n                                                        </button>\n                                                    </span>\n                                                </div>\n                                            </div>\n                                        </td>\n                                        <td>{{product.description}}</td>\n                                        <td>\n                                            <div class=\"flex gap-3 justify-content-end\">\n                                                <button aria-label=\"Edit\"\n                                                    class=\"p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        edit\n                                                    </span>\n                                                </button>\n\n                                                <button aria-label=\"Delete\"\n                                                    class=\"p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        delete\n                                                    </span>\n                                                </button>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                    <!-- Expanded Row Content -->\n                                    <tr *ngIf=\"isRowExpanded(product)\">\n                                        <td colspan=\"4\">\n\n\n\n                                            <div class=\"p-2\">\n                                                <h3>Darba laiki</h3>\n                                                <p-table [value]=\"tableData\" [tableStyle]=\"{ 'min-width': '50rem' }\">\n                                                    <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Darba laiks</th>\n                                        <th>Pārtraukums</th>\n                                        <th>Darba vieta</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.darbaLaiks }}</td>\n                                        <td>{{ innerProduct.partraukums }}</td>\n                                        <td>{{ innerProduct.darbaVieta }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n                            <h3 class=\"mt-4\">Vajadzības</h3>\n                            <p-table [value]=\"tableData2\" [tableStyle]=\"{ 'min-width': '50rem' }\">\n                                <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Amats</th>\n                                        <th>Kompetence</th>\n                                        <th>Kompetenču skaits</th>\n                                        <th>Darbnieku skaits</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.amats }}</td>\n                                        <td>{{ innerProduct.kompetence }}</td>\n                                        <td>{{ innerProduct.kompetencuSkaits }}</td>\n                                        <td>{{ innerProduct.darbniekuSkaits }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n\n\n                        </div>\n\n\n\n\n                        </td>\n                        </tr>\n                        </ng-template>\n                        </p-table>\n\n\n\n                    </div>\n\n\n\n\n\n\n\n\n                </div>\n    </div>\n\n    </p-tabPanel>\n    <p-tabPanel header=\"Plāns & Fakts\">\n    </p-tabPanel>\n    <p-tabPanel header=\"Dokumenti\">\n    </p-tabPanel>\n    </p-tabView>\n</div>\n\n</div>"
+            "templateData": "<numo-header></numo-header>\n\n<div class=\"container gap-3 w-full\">\n\n    <div class=\"flex-grow-1\">\n        <div class=\"w-full mb-2\">\n            <p-breadcrumb class=\"max-w-full\" [model]=\"itemsWithIsLast\" [home]=\"home\">\n                <ng-template pTemplate=\"item\" let-item>\n                    <ng-container *ngIf=\"!item.isLast; else lastBreadcrumb\">\n                        <!-- For all items except the last one -->\n                        <ng-container *ngIf=\"item.route; else urlItem\">\n                            <!-- If the item has a route -->\n                            <a [routerLink]=\"item.route\" class=\"p-menuitem-link underline\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-container>\n                        <ng-template #urlItem>\n                            <!-- If the item has a URL -->\n                            <a [href]=\"item.url\" class=\"p-menuitem-link\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-template>\n                    </ng-container>\n                    <ng-template #lastBreadcrumb>\n                        <!-- For the last item, render as plain text -->\n                        <span class=\"text-color\">{{ item.label }}</span>\n                    </ng-template>\n                </ng-template>\n            </p-breadcrumb>\n        </div>\n\n\n        <div\n            class=\"card flex flex-column md:flex-row bg-white p-3 mb-4 gap-3 border-round-sm border border-1 border-gray-200 flex justify-content-start\">\n            <div class=\"flex flex-column mr-3\">\n                <label for=\"dropdown\" class=\"mb-1 label text-sm\">Struktūrvienība</label>\n                <p-dropdown id=\"dropdown\" [options]=\"options\" optionLabel=\"name\" placeholder=\"Barona ielas veikals\" />\n            </div>\n            <div class=\"flex flex-column\">\n                <label for=\"calendar\" class=\"mb-1 label text-sm\">Mēnesis</label>\n                <div class=\"flex align-items-center\">\n\n                    <p-calendar id=\"calendar\" [(ngModel)]=\"date\" view=\"month\" [iconDisplay]=\"'input'\" [showIcon]=\"true\"\n                        dateFormat=\"MM, yy\" [readonlyInput]=\"true\" />\n\n                </div>\n            </div>\n        </div>\n        <p-tabView class=\"mt-5 numo-transparent-bg\">\n            <p-tabPanel header=\"Uzstādījumi\">\n\n                <div class=\" flex gap-3 flex-column md:flex-row\">\n                    <p-menu [model]=\"menuItems\" />\n\n                    <div class=\"flex-1\">\n                        <p-button label=\"Pievienot\" icon=\"pi pi-plus\" class=\"plus-button\" size=\"small\" />\n\n                        <div class=\"pt-3\">\n\n\n                            <p-table [value]=\"Products\" dataKey=\"id\" class=\"data-table\">\n\n                                <!-- Body Template for Product Rows -->\n                                <ng-template pTemplate=\"body\" let-product>\n                                    <tr>\n                                        <!-- Caret Icon for Expand/Collapse -->\n\n                                        <td>\n                                            <div class=\"flex flex-wrap  gap-2\">\n\n\n\n                                                <button\n                                                    class=\"p-button p-button-lg p-1 p-button-text p-button-secondary text-gray-800\"\n                                                    (click)=\"toggleRow(product)\">\n                                                    <span class=\"material-symbols-rounded text-3xl\">\n                                                        {{ isRowExpanded(product) ? 'expand_more' : 'chevron_right' }}\n                                                    </span>\n                                                </button>\n\n\n                                                <span\n                                                    class=\"flex align-items-center justify-content-center font-semibold white-space-nowrap\">{{product.name}}</span>\n                                                <p-badge [value]=\"product.badgeName\" [severity]=\"product.badgeSeverity\"\n                                                    class=\"flex align-items-center justify-content-center \"\n                                                    styleClass=\"text-xs font-normal\"></p-badge>\n                                            </div>\n                                        </td>\n                                        <td>\n                                            <div class=\"flex flex-wrap gap-2\">\n\n\n\n\n                                                <div class=\"p-buttonset daycalendar\">\n                                                    <p-button\n                                                        *ngFor=\"let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index\"\n                                                        type=\"button\" [label]=\"day\" size=\"small\" severity=\"secondary\"\n                                                        [outlined]=\"!product.days.includes(i + 1)\">\n                                                    </p-button>\n                                                </div>\n\n                                                <div *ngFor=\"let date of product.dates\" class=\"p-buttonset daycalendar\">\n                                                    <p-button type=\"button\" [outlined]=\"true\" [label]=\"date\"\n                                                        size=\"small\"></p-button>\n                                                    <p-button icon=\"pi pi-times\" size=\"small\" severity=\"secondary\"\n                                                        styleClass=\"w-3\"></p-button>\n                                                </div>\n\n\n\n\n                                            </div>\n                                        </td>\n                                        <td>\n\n                                            <div class=\"flex flex-wrap gap-2\">\n                                                <p-chip *ngFor=\"let slot of product.slots\" [label]=\"slot\"\n                                                    styleClass=\"white-space-nowrap text-xs\" />\n                                            </div>\n\n\n\n                                        </td>\n                                        <td>\n                                            <div\n                                                class=\"flex w-full justify-content-between  gap-3 md:justify-content-end\">\n                                                <button aria-label=\"Edit\"\n                                                    class=\"p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        edit\n                                                    </span>\n                                                </button>\n\n                                                <button aria-label=\"Delete\"\n                                                    class=\"p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        delete\n                                                    </span>\n                                                </button>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                    <!-- Expanded Row Content -->\n                                    <tr *ngIf=\"isRowExpanded(product)\">\n                                        <td colspan=\"4\">\n\n\n\n                                            <div class=\"p-2\">\n                                                <h3>Darba laiki</h3>\n                                                <p-table [value]=\"tableData\" [tableStyle]=\"{ ' min-width': '50rem' }\">\n                                                    <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Darba laiks</th>\n                                        <th>Pārtraukums</th>\n                                        <th>Darba vieta</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.darbaLaiks }}</td>\n                                        <td>{{ innerProduct.partraukums }}</td>\n                                        <td>{{ innerProduct.darbaVieta }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n                            <h3 class=\"mt-4\">Vajadzības</h3>\n                            <p-table [value]=\"tableData2\" [tableStyle]=\"{ 'min-width': '50rem' }\">\n                                <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Amats</th>\n                                        <th>Kompetence</th>\n                                        <th>Kompetenču skaits</th>\n                                        <th>Darbnieku skaits</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.amats }}</td>\n                                        <td>{{ innerProduct.kompetence }}</td>\n                                        <td>{{ innerProduct.kompetencuSkaits }}</td>\n                                        <td>{{ innerProduct.darbniekuSkaits }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n\n\n                        </div>\n\n\n\n\n                        </td>\n                        </tr>\n                        </ng-template>\n                        </p-table>\n\n\n\n                    </div>\n\n\n\n\n\n\n\n\n                </div>\n    </div>\n\n    </p-tabPanel>\n    <p-tabPanel header=\"Plāns & Fakts\">\n    </p-tabPanel>\n    <p-tabPanel header=\"Dokumenti\">\n    </p-tabPanel>\n    </p-tabView>\n</div>\n\n</div>"
         },
         {
             "name": "ConfirmDialogComponent",
-            "id": "component-ConfirmDialogComponent-b25dd9382a33f2eea28693707399df3f205746dcca1bc231fbdc7e620da254ba128eb2f9c62cda11272a8cba3d023e06caee25a94ef7bd3a137f3fc0740307b4",
+            "id": "component-ConfirmDialogComponent-72428e33e219443140df9f7494cc2b0a8205597e942b1304e98bf1c193815f93fe022f6ff5b9c92c4687e5d0732b0fc29fcac03385d9a1c5e1b4debfe24112ea",
             "file": "projects/ngx-ui-web/src/stories/components/confirm-dialog/confirm-dialog.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -621,7 +595,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { ConfirmationService, MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-confirm-dialog-wrapper\",\n    imports: [\n        CommonModule,\n        ToastModule,\n        FormsModule,\n        ReactiveFormsModule,\n        ButtonModule,\n        ConfirmDialogModule,\n    ],\n    template: `\n        <p-toast />\n        <p-confirmDialog #cd>\n            <ng-template pTemplate=\"message\" let-message>\n                {{ message.header }}\n            </ng-template>\n        </p-confirmDialog>\n\n        <div class=\"card flex flex-wrap gap-3 justify-content-center\">\n            <p-button\n                (onClick)=\"confirm1($event)\"\n                label=\"Save\"\n                [outlined]=\"false\"\n                severity=\"primary\"\n            />\n            <p-button\n                (onClick)=\"confirm2($event)\"\n                label=\"Delete\"\n                severity=\"danger\"\n                [outlined]=\"false\"\n            />\n        </div>\n    `,\n    styles: [\n        `\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        `,\n    ],\n    standalone: true,\n})\nexport class ConfirmDialogComponent {\n    constructor(\n        private messageService: MessageService,\n        private confirmService: ConfirmationService,\n    ) {}\n\n    confirm1(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Are you sure that you want to proceed?\",\n            header: \"Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Saglabāt\",\n            rejectLabel: \"Atcelt\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n            acceptButtonStyleClass: \"p-button-success\",\n            rejectButtonStyleClass: \"bg-gray-100 border-gray-100\",\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"You have accepted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                    life: 3000,\n                });\n            },\n        });\n    }\n    confirm2(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Do you want to delete this record?\",\n            header: \"Delete Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Dzēst\",\n            rejectLabel: \"Atcelt\",\n            acceptButtonStyleClass: \"p-button-danger\",\n            rejectButtonStyleClass: \"bg-gray-100 border-gray-100\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"Record deleted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                });\n            },\n        });\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component } from \"@angular/core\";\nimport { FormsModule, ReactiveFormsModule } from \"@angular/forms\";\nimport { ConfirmationService, MessageService } from \"primeng/api\";\nimport { ButtonModule } from \"primeng/button\";\nimport { ConfirmDialogModule } from \"primeng/confirmdialog\";\nimport { ToastModule } from \"primeng/toast\";\n\n@Component({\n    selector: \"p-confirm-dialog-wrapper\",\n    imports: [\n        CommonModule,\n        ToastModule,\n        FormsModule,\n        ReactiveFormsModule,\n        ButtonModule,\n        ConfirmDialogModule,\n    ],\n    template: `\n        <p-toast />\n        <p-confirmDialog #cd>\n            <ng-template pTemplate=\"message\" let-message>\n                {{ message.header }}\n            </ng-template>\n        </p-confirmDialog>\n\n        <div class=\"card flex flex-wrap gap-3 justify-content-center\">\n            <p-button\n                (onClick)=\"confirm1($event)\"\n                label=\"Save\"\n                [outlined]=\"false\"\n                severity=\"primary\"\n            />\n            <p-button\n                (onClick)=\"confirm2($event)\"\n                label=\"Delete\"\n                severity=\"danger\"\n                [outlined]=\"false\"\n            />\n        </div>\n    `,\n    styles: [\n        `\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        `,\n    ],\n    standalone: true,\n})\nexport class ConfirmDialogComponent {\n    constructor(\n        private messageService: MessageService,\n        private confirmService: ConfirmationService,\n    ) {}\n\n    confirm1(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Are you sure that you want to proceed?\",\n            header: \"Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Saglabāt\",\n            rejectLabel: \"Atcelt\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n            acceptButtonStyleClass: \"p-button-success\",\n            rejectButtonStyleClass: \"p-button-secondary p-button-outlined\",\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"You have accepted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"secondary\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                    life: 3000,\n                });\n            },\n        });\n    }\n    confirm2(event: any) {\n        this.confirmService.confirm({\n            target: event.target as EventTarget,\n            message: \"Do you want to delete this record?\",\n            header: \"Delete Confirmation\",\n            icon: \"\",\n            acceptLabel: \"Dzēst\",\n            rejectLabel: \"Atcelt\",\n            acceptButtonStyleClass: \"p-button-danger\",\n            rejectButtonStyleClass: \"p-button-secondary p-button-outlined\",\n            acceptIcon: \"none\",\n            rejectIcon: \"none\",\n\n            accept: () => {\n                this.messageService.add({\n                    severity: \"success\",\n                    summary: \"Confirmed\",\n                    detail: \"Record deleted\",\n                });\n            },\n            reject: () => {\n                this.messageService.add({\n                    severity: \"info\",\n                    summary: \"Rejected\",\n                    detail: \"You have rejected\",\n                });\n            },\n        });\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "\n            :host::ng-deep.p-dialog-footer {\n                display: flex !important;\n                justify-content: start !important;\n                flex-direction: row-reverse !important;\n            }\n        \n",
@@ -670,7 +644,7 @@
         },
         {
             "name": "DashboardComponent",
-            "id": "component-DashboardComponent-b3597fc77b4128b4d805a1375d9c857e91f6c54cde72f1d5a838a44b5868d5461bf52ab328c8e71c920e281638e9c0e5f867f07fa19a9672df2714a85426b642",
+            "id": "component-DashboardComponent-f5f3df4c3f6e66f8ae5f845a0445c97600427de2a0e61583be8a8d6d70ea190f8610c2a12b424dd13df63eb6c804eb095bf2116fa4bb6d542ac95840509ead36",
             "file": "projects/ngx-ui-web/src/stories/layouts/dashboard/dashboard.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -679,9 +653,7 @@
             "providers": [],
             "selector": "numo-dashboard",
             "styleUrls": [],
-            "styles": [
-                "\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        "
-            ],
+            "styles": [],
             "templateUrl": [
                 "./dashboard.template.html"
             ],
@@ -698,7 +670,7 @@
                     "type": "string",
                     "optional": false,
                     "description": "",
-                    "line": 21
+                    "line": 12
                 }
             ],
             "methodsClass": [],
@@ -715,12 +687,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\n\n@Component({\n    selector: \"numo-dashboard\",\n    standalone: true,\n    imports: [ RouterOutlet ],\n    templateUrl: \"./dashboard.template.html\",\n    styles: [\n        `\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        `,\n    ],\n    schemas: [ CUSTOM_ELEMENTS_SCHEMA ],\n})\nexport class DashboardComponent {\n    title = \"angular-latest\";\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\n\n@Component({\n    selector: \"numo-dashboard\",\n    standalone: true,\n    imports: [RouterOutlet],\n    templateUrl: \"./dashboard.template.html\",\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class DashboardComponent {\n    title = \"angular-latest\";\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
-            "stylesData": "\n            .card {\n                background: #f4f4f4;\n                border-radius: 5px;\n                box-shadow: 0 2px 2px rgba(0, 0, 0, 0.1);\n            }\n        \n",
+            "stylesData": "",
             "extends": [],
-            "templateData": "<!-- create a html div class card that has dynamic width width -->\n<div class=\"card flex bg-white p-4 justify-content-center border-round-lg\">\n    Dashboard\n</div>\n"
+            "templateData": "<!-- create a html div class card that has dynamic width width -->\n<div class=\"card flex bg-white p-4 justify-content-center border-round-sm border border-1 border-gray-200\">\n    Dashboard\n</div>"
         },
         {
             "name": "FileUploadComponent",
@@ -1101,7 +1073,7 @@
         },
         {
             "name": "HeaderComponent",
-            "id": "component-HeaderComponent-3b0ceae0542b1c6811c628e015137c56d9479034d7b81a1e9c9981d3b99c662913ac9a04a8a4549e7d520c2e696554a4eaea0393b9428e0a44f37a654c960a84",
+            "id": "component-HeaderComponent-70f0f27817ac474e4a336132a7bc533104af4739a575626bfa10900765d13436f66afffb71e28deec3e9f1b3d226988d9a32f4012646219141ab5900e675eff3",
             "file": "projects/ngx-ui-web/src/stories/components/header/header.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1248,7 +1220,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 66,
+                    "line": 84,
                     "deprecated": false,
                     "deprecationMessage": ""
                 },
@@ -1265,7 +1237,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 70,
+                    "line": 91,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1293,7 +1265,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 74,
+                    "line": 95,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1321,7 +1293,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 53,
+                    "line": 71,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -1387,12 +1359,12 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu } from \"../left-menu/menu.model\";\nimport { UserMenuItems } from \"./user-menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconFieldModule } from \"primeng/iconfield\";\nimport { InputIconModule } from \"primeng/inputicon\";\nimport { ButtonModule } from \"primeng/button\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n        IconComponent,\n        IconFieldModule,\n        InputIconModule,\n        ButtonModule,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @ViewChild(\"userMenu\") userMenu: any; // Reference to user menu\n    @Output() menuClicked = new EventEmitter<boolean>(); // Emit boolean state\n    @Output() userMenuItemSelected = new EventEmitter<string>(); // New event\n    items = [...Menu];\n    userMenuItems = [...UserMenuItems]; // Use the imported user menu items\n    BreakPoint = 1024;\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }\n\n    onUserMenuItemClick(menuItem: string) {\n        this.userMenuItemSelected.emit(menuItem); // Emit the selected menu item\n    }\n\n    showUserMenu(event: Event) {\n        this.userMenu.toggle(event); // Show the user menu\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport {\n    Component,\n    CUSTOM_ELEMENTS_SCHEMA,\n    EventEmitter,\n    Input,\n    Output,\n    ViewChild,\n} from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { InputTextModule } from \"primeng/inputtext\";\nimport { MenuModule } from \"primeng/menu\";\nimport { Menu } from \"../left-menu/menu.model\";\nimport { UserMenuItems } from \"./user-menu.model\";\nimport { OverlayPanelModule } from \"primeng/overlaypanel\";\nimport { LeftMenuComponent } from \"../left-menu/left-menu.component\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { IconFieldModule } from \"primeng/iconfield\";\nimport { InputIconModule } from \"primeng/inputicon\";\nimport { ButtonModule } from \"primeng/button\";\n\n@Component({\n    selector: \"numo-header\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        InputTextModule,\n        MenuModule,\n        OverlayPanelModule,\n        LeftMenuComponent,\n        IconComponent,\n        IconFieldModule,\n        InputIconModule,\n        ButtonModule,\n    ],\n    templateUrl: \"./header.template.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class HeaderComponent {\n    isMenuVisible = false;\n    @Input() isStoryBook = false;\n    @ViewChild(\"menu\") menu: any;\n    @ViewChild(\"storyMenu\") storyMenu: any;\n    @ViewChild(\"userMenu\") userMenu: any; // Reference to user menu\n    @Output() menuClicked = new EventEmitter<boolean>(); // Emit boolean state\n    @Output() userMenuItemSelected = new EventEmitter<string>(); // New event\n    items = [...Menu];\n    userMenuItems = [...UserMenuItems]; // Use the imported user menu items\n    BreakPoint = 1024;\n\n    /*\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n        if (this.isStoryBook) {\n            this.storyMenu.toggle(event);\n            return;\n        }\n        if (window.innerWidth < this.BreakPoint) {\n            this.menu.toggle(event);\n            this.isMenuVisible = false;\n        }\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n    }*/\n\n    toggleMenu(event: Event) {\n        this.isMenuVisible = !this.isMenuVisible;\n\n        // Add or remove the class on the body tag based on isMenuVisible\n        if (this.isMenuVisible) {\n            document.body.classList.add(\"menu-visible\");\n        } else {\n            document.body.classList.remove(\"menu-visible\");\n        }\n\n        this.menuClicked.emit(this.isMenuVisible);\n    }\n\n    closeMenu() {\n        this.isMenuVisible = false;\n\n        // Ensure the class is removed from the body when the menu is closed\n        document.body.classList.remove(\"menu-visible\");\n    }\n\n    onUserMenuItemClick(menuItem: string) {\n        this.userMenuItemSelected.emit(menuItem); // Emit the selected menu item\n    }\n\n    showUserMenu(event: Event) {\n        this.userMenu.toggle(event); // Show the user menu\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
-            "templateData": "<div class=\"header flex align-items-center p-2 text-white justify-content-between row-gap-3 mb-2\">\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span #menuButton (click)=\"toggleMenu($event)\" class=\"pi pi-bars icon text-gray-800 cursor-pointer\"></span>\n\n        <p-overlayPanel #menu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n        <p-overlayPanel #storyMenu>\n            <div class=\"flex flex-column gap-3\">\n                <numo-left-menu [items]=\"items\"></numo-left-menu>\n            </div>\n        </p-overlayPanel>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"search\" type=\"material-symbols\" class=\"text-2xl\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div class=\"flex justify-content-end\">\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\">\n            <ng-template pTemplate=\"submenuheader\" let-item>\n                <span class=\"font-bold\">{{ item.label }}</span>\n            </ng-template>\n            <ng-template pTemplate=\"item\" let-item>\n                <a pRipple class=\"flex align-items-center p-menuitem-link\">\n                    <numo-icon [icon]=\"item.icon\" [type]=\"item.type\"\n                        class=\"text-2xl flex align-items-center\"></numo-icon>\n                    <span class=\"ml-2\">{{ item.label }}</span>\n\n                    <span *ngIf=\"item.shortcut\"\n                        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\">\n                        {{ item.shortcut }}\n                    </span>\n                </a>\n            </ng-template>\n        </p-menu>\n\n        <div (click)=\"showUserMenu($event)\" class=\"usermenu cursor-pointer py-1\">\n            Jānis Bērziņš\n            <div class=\"text-ellipsis text-xs\">\n                Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas\n                Sabiedriskais transports\"\n            </div>\n        </div>\n    </div>\n</div>"
+            "templateData": "<div class=\"header flex align-items-center text-white justify-content-between gap-3 \">\n    <div class=\"flex align-items-center font-bold text-2xl h-10\">\n        <span #menuButton (click)=\"toggleMenu($event)\" [ngClass]=\"isMenuVisible ? 'pi pi-times' : 'pi pi-bars'\"\n            class=\"icon text-gray-800 cursor-pointer\">\n        </span>\n\n\n\n        <numo-left-menu [items]=\"items\" class=\"left-menu\"></numo-left-menu>\n\n        <img class=\"ml-3\" height=\"30\" src=\"logo.png\" alt=\"logo\" />\n    </div>\n    <div class=\"flex justify-center relative w-30rem\">\n        <p-iconField iconPosition=\"right\" class=\"w-full\">\n            <p-inputIcon>\n                <numo-icon icon=\"search\" type=\"material-symbols\" class=\"text-2xl\"></numo-icon>\n            </p-inputIcon>\n            <input type=\"text\" pInputText placeholder=\"Meklēt\" class=\"w-full\" />\n        </p-iconField>\n    </div>\n\n    <div class=\"flex justify-content-end\">\n        <p-menu #userMenu [model]=\"userMenuItems\" [popup]=\"true\">\n            <ng-template pTemplate=\"submenuheader\" let-item>\n                <span class=\"font-bold\">{{ item.label }}</span>\n            </ng-template>\n            <ng-template pTemplate=\"item\" let-item>\n                <a pRipple class=\"flex align-items-center p-menuitem-link\">\n                    <numo-icon [icon]=\"item.icon\" [type]=\"item.type\"\n                        class=\"text-2xl flex align-items-center\"></numo-icon>\n                    <span class=\"ml-2\">{{ item.label }}</span>\n\n                    <span *ngIf=\"item.shortcut\"\n                        class=\"ml-auto border-1 surface-border border-round surface-100 text-xs p-1\">\n                        {{ item.shortcut }}\n                    </span>\n                </a>\n            </ng-template>\n        </p-menu>\n\n        <div (click)=\"showUserMenu($event)\" class=\"usermenu cursor-pointer py-1\">\n            <span class=\"hidden sm:block\">Jānis Bērziņš</span>\n            <span class=\" sm:hidden block p-2 bg-blue-200 border-circle \">JB</span>\n            <div class=\"caret\"></div>\n            <div class=\"text-ellipsis text-xs hidden sm:block\">\n                Liepājas valstspilsētas pašvaldības aģentūra \"Liepājas\n                Sabiedriskais transports\"\n            </div>\n        </div>\n    </div>\n</div>"
         },
         {
             "name": "IconComponent",
@@ -1483,7 +1455,7 @@
         },
         {
             "name": "LeftMenuComponent",
-            "id": "component-LeftMenuComponent-f28dc89e1081b36f3ed07d55de00eee8f50d8e4902f59d3889a7660e736b7c875248289e3dec7cc8c77cdb69c0f7bfbfe22b029a00ff0519c967d42d59512d7e",
+            "id": "component-LeftMenuComponent-ec46f43d1064abdf199ceea0bdf556d5529005f42bc8b5db78d1cd98b04e825af07330c553b104481baf59dd0d7e1cc338d4872f9acdcbb4787e1b6e3d27ed4a",
             "file": "projects/ngx-ui-web/src/stories/components/left-menu/left-menu.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -1519,7 +1491,7 @@
                 },
                 {
                     "name": "notificationCount",
-                    "defaultValue": "'0'",
+                    "defaultValue": "\"0\"",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "line": 27,
@@ -1592,7 +1564,7 @@
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { Button } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\n\n@Component({\n    selector: \"numo-left-menu\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        PanelMenuModule,\n        IconComponent,\n        Button,\n        BadgeModule\n    ],\n    templateUrl: \"./left-menu.component.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class LeftMenuComponent {\n    @Input() items: any = [];\n    @Input() className = \"\";\n    @Input() notificationCount = '0';\n    isFirstLevel(item: any): boolean {\n        // Check if the item is in the root items array\n        return this.items.includes(item);\n    }\n}\n",
+            "sourceCode": "import { CommonModule } from \"@angular/common\";\nimport { Component, CUSTOM_ELEMENTS_SCHEMA, Input } from \"@angular/core\";\nimport { FormsModule } from \"@angular/forms\";\nimport { PanelMenuModule } from \"primeng/panelmenu\";\nimport { IconComponent } from \"../icon/icon.component\";\nimport { Button } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\n\n@Component({\n    selector: \"numo-left-menu\",\n    standalone: true,\n    imports: [\n        FormsModule,\n        CommonModule,\n        PanelMenuModule,\n        IconComponent,\n        Button,\n        BadgeModule,\n    ],\n    templateUrl: \"./left-menu.component.html\",\n    styles: [],\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class LeftMenuComponent {\n    @Input() items: any = [];\n    @Input() className = \"\";\n    @Input() notificationCount = \"0\";\n    isFirstLevel(item: any): boolean {\n        // Check if the item is in the root items array\n        return this.items.includes(item);\n    }\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
@@ -2335,7 +2307,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    {\n        id: 1,\n        code: \"f230fh0g3\",\n        name: \"Darba dienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Parasts\",\n        badgeSeverity: \"info\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 2, 3, 4, 5],\n    },\n    {\n        id: 2,\n        code: \"f230fh0g3\",\n        name: \"Citas foršas darba dienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Ideāls\",\n        badgeSeverity: \"success\",\n        inventoryStatus: \"Nestandarta\",\n        days: [1, 4, 5],\n        dates: [\"12.12.2024\", \"12.12.2024\"],\n    },\n    {\n        id: 3,\n        code: \"f230fh0g3\",\n        name: \"Brīvdienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Nestandarta\",\n        badgeSeverity: \"warning\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 5],\n        dates: [\"12.12.2024\"],\n    },\n]"
+                "defaultValue": "[\n    {\n        id: 1,\n        code: \"f230fh0g3\",\n        name: \"Darba dienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Parasts\",\n        badgeSeverity: \"info\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 2, 3, 4, 5],\n    },\n    {\n        id: 2,\n        code: \"f230fh0g3\",\n        name: \"Citas foršas darba dienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Ideāls\",\n        badgeSeverity: \"success\",\n        inventoryStatus: \"Nestandarta\",\n        days: [1, 4, 5],\n        dates: [\"12.12.2024\", \"12.12.2024\"],\n    },\n    {\n        id: 3,\n        code: \"f230fh0g3\",\n        name: \"Brīvdienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Nestandarta\",\n        badgeSeverity: \"warning\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 5],\n        dates: [\"12.12.2024\"],\n    },\n]"
             },
             {
                 "name": "TableData",
@@ -2435,7 +2407,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n    {\n        id: 1,\n        code: \"f230fh0g3\",\n        name: \"Darba dienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Parasts\",\n        badgeSeverity: \"info\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 2, 3, 4, 5],\n    },\n    {\n        id: 2,\n        code: \"f230fh0g3\",\n        name: \"Citas foršas darba dienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Ideāls\",\n        badgeSeverity: \"success\",\n        inventoryStatus: \"Nestandarta\",\n        days: [1, 4, 5],\n        dates: [\"12.12.2024\", \"12.12.2024\"],\n    },\n    {\n        id: 3,\n        code: \"f230fh0g3\",\n        name: \"Brīvdienas\",\n        description: \"8:00 - 17:00 (8h 15min) | 18:00 - 23:00 (4h 45min)\",\n        badgeName: \"Nestandarta\",\n        badgeSeverity: \"warning\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 5],\n        dates: [\"12.12.2024\"],\n    },\n]"
+                    "defaultValue": "[\n    {\n        id: 1,\n        code: \"f230fh0g3\",\n        name: \"Darba dienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Parasts\",\n        badgeSeverity: \"info\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 2, 3, 4, 5],\n    },\n    {\n        id: 2,\n        code: \"f230fh0g3\",\n        name: \"Citas foršas darba dienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Ideāls\",\n        badgeSeverity: \"success\",\n        inventoryStatus: \"Nestandarta\",\n        days: [1, 4, 5],\n        dates: [\"12.12.2024\", \"12.12.2024\"],\n    },\n    {\n        id: 3,\n        code: \"f230fh0g3\",\n        name: \"Brīvdienas\",\n        slots: [\"8:00 - 17:00 (8h 15min)\", \"18:00 - 23:00 (4h 45min)\"],\n        badgeName: \"Nestandarta\",\n        badgeSeverity: \"warning\",\n        inventoryStatus: \"Standarta\",\n        days: [1, 5],\n        dates: [\"12.12.2024\"],\n    },\n]"
                 },
                 {
                     "name": "TableData",
@@ -2656,7 +2628,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/17",
+                "coverageCount": "0/16",
                 "status": "low"
             },
             {

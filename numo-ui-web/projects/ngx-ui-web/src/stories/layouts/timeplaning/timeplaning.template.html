@@ -36,14 +36,15 @@
             class="card flex flex-column md:flex-row bg-white p-3 mb-4 gap-3 border-round-sm border border-1 border-gray-200 flex justify-content-start">
             <div class="flex flex-column mr-3">
                 <label for="dropdown" class="mb-1 label text-sm">Struktūrvienība</label>
-                <p-dropdown id="dropdown" [options]="options" optionLabel="name" placeholder="Barona ielas veikals" />
+                <p-dropdown id="dropdown" [options]="options" optionLabel="name" placeholder="Barona ielas veikals"
+                    styleClass="w-full" />
             </div>
             <div class="flex flex-column">
                 <label for="calendar" class="mb-1 label text-sm">Mēnesis</label>
                 <div class="flex align-items-center">
 
                     <p-calendar id="calendar" [(ngModel)]="date" view="month" [iconDisplay]="'input'" [showIcon]="true"
-                        dateFormat="MM, yy" [readonlyInput]="true" />
+                        class="w-full" dateFormat="MM, yy" [readonlyInput]="true" />
 
                 </div>
             </div>
@@ -52,12 +53,18 @@
             <p-tabPanel header="Uzstādījumi">
 
                 <div class=" flex gap-3 flex-column md:flex-row">
-                    <p-menu [model]="menuItems" />
+                    <p-menu [model]="menuItems" class="hidden md:flex" />
+                    <p-dropdown [options]="menuItems" class="md:hidden" styleClass="w-full" />
 
                     <div class="flex-1">
-                        <p-button label="Pievienot" icon="pi pi-plus" class="plus-button" size="small" />
+                        <p-button label="Pievienot" icon="pi pi-plus" class="plus-button  hidden md:block pb-3"
+                            size="small" />
 
-                        <div class="pt-3">
+                        <p-button icon="pi pi-plus"
+                            class=" fixed bottom-0 right-0 mr-4 mb-4 z-5 shadow-2 border-circle md:hidden" size="small"
+                            rounded="true" />
+
+                        <div>
 
 
                             <p-table [value]="Products" dataKey="id" class="data-table">
@@ -128,14 +135,14 @@
                                             <div
                                                 class="flex w-full justify-content-between  gap-3 md:justify-content-end">
                                                 <button aria-label="Edit"
-                                                    class="p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800">
+                                                    class="p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-500">
                                                     <span class="material-symbols-rounded text-2xl">
                                                         edit
                                                     </span>
                                                 </button>
 
                                                 <button aria-label="Delete"
-                                                    class="p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800">
+                                                    class="p-button p-button-danger p-button-lg p-1 p-button-text text-gray-500">
                                                     <span class="material-symbols-rounded text-2xl">
                                                         delete
                                                     </span>
@@ -218,6 +225,70 @@
 
     </p-tabPanel>
     <p-tabPanel header="Plāns & Fakts">
+
+        <div class="overflow-x-auto">
+            <p-table [value]="timePlanning">
+                <ng-template pTemplate="header">
+                    <tr>
+                        <th class="sticky-column-1">
+                            <div><p-checkbox [binary]="true" inputId="binary" /></div>
+                        </th>
+                        <th class="sticky-column-2" data-column="name">
+                            <div>Vārds, Uzvārds</div>
+                        </th>
+                        <th class="sticky-column-3" data-column="job-title-name">
+                            <div>Amats</div>
+                        </th>
+                        <th class="sticky-column-4" data-column="planning-hours">
+                            <div>Stundas</div>
+                        </th>
+                        <th class="sticky-column-5" data-column="sum">
+                            <div>Summa</div>
+                        </th>
+                        <th *ngFor="let tday of timePlanning[0]?.daysOfMonth">
+                            <div>{{ tday.day }} {{
+                                tday.date }}</div>
+                        </th>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="body" let-employee>
+                    <tr>
+                        <td class="sticky-column-1">
+                            <div><p-checkbox [binary]="true" inputId="binary" /></div>
+                        </td>
+                        <td class="sticky-column-2" data-column="name">
+                            <div>{{ employee.employeeName }}</div>
+                        </td>
+                        <td class="sticky-column-3">
+                            <div>{{ employee.jobTitle }}</div>
+                        </td>
+                        <td class="sticky-column-4">
+                            <div>{{ employee.planningHours }}</div>
+                        </td>
+                        <td class="sticky-column-5">
+                            <div>{{ employee.totalHours }}</div>
+                        </td>
+                        <td *ngFor="let day of employee.daysOfMonth">
+                            <div>{{ day.hours }}</div>
+                        </td>
+                    </tr>
+                </ng-template>
+
+                <ng-template pTemplate="footer">
+                    <tr>
+                        <td class="sticky-column-1-3 text-right" colspan="3">Totals</td>
+                        <td class="sticky-column-4">{{ totalPlanningHours }}</td>
+                        <td class="sticky-column-5">{{ totalHours }}</td>
+                        <td *ngFor="let dailyTotal of dailyTotals">{{ dailyTotal }}</td>
+                    </tr>
+                </ng-template>
+            </p-table>
+
+
+        </div>
+
+
     </p-tabPanel>
     <p-tabPanel header="Dokumenti">
     </p-tabPanel>
