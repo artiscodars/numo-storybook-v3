@@ -2,8 +2,8 @@
 
 This project contains:
 
--   Numo UI Web component library;
--   Numo UI Web storybook.
+- Numo UI Web component library;
+- Numo UI Web storybook.
 
 The project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0.
 
@@ -35,4 +35,4 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 ## Running unit tests
 
-Run `npm run test` to execute unit tests via [Jest](https://jestjs.io).
+Run `npm run test` to execute unit tests via [Jest](https://jestjs.io)
