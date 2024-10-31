@@ -15,6 +15,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 2
@@ -85,6 +86,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 54
@@ -95,6 +97,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 56
@@ -105,6 +108,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 55
@@ -182,7 +186,7 @@
         },
         {
             "name": "AppComponent",
-            "id": "component-AppComponent-b2adde70013dc0a7761556b6e8e46c54c2947d11493789b70a384a74833b96a5cdd547d807833837359437d51e2993e2d0f121101106a431ad82a4fd698f266e-1",
+            "id": "component-AppComponent-f8f6084c21181d399d0b027505009919891e31b59e09486733e1a110985eec126bb960ea2d14cca6a9fa2011d1b602c4c94b671970f56894fec753d4720e53b7-1",
             "file": "projects/ngx-ui-web/src/stories/layouts/timeplaning/timeplaning.component.ts",
             "encapsulation": [],
             "entryComponents": [],
@@ -205,18 +209,20 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 84
+                    "line": 119
                 },
                 {
                     "name": "date",
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "Date[] | undefined",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 57
+                    "line": 65
                 },
                 {
                     "name": "expandedRows",
@@ -224,9 +230,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 54
+                    "line": 62
                 },
                 {
                     "name": "home",
@@ -234,9 +241,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "object",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 56
+                    "line": 64
                 },
                 {
                     "name": "isMenuVisible",
@@ -244,9 +252,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 52
+                    "line": 60
                 },
                 {
                     "name": "items",
@@ -254,9 +263,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 55
+                    "line": 63
                 },
                 {
                     "name": "itemsWithIsLast",
@@ -264,9 +274,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 88
+                    "line": 123
                 },
                 {
                     "name": "menuItems",
@@ -274,9 +285,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 61
+                    "line": 69
                 },
                 {
                     "name": "options",
@@ -284,9 +296,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 79
+                    "line": 114
                 },
                 {
                     "name": "Products",
@@ -294,9 +307,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 60
+                    "line": 68
                 },
                 {
                     "name": "tableData",
@@ -304,9 +318,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 58
+                    "line": 66
                 },
                 {
                     "name": "tableData2",
@@ -314,9 +329,21 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 59
+                    "line": 67
+                },
+                {
+                    "name": "timePlanning",
+                    "defaultValue": "TimePlanning",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "",
+                    "indexKey": "",
+                    "optional": false,
+                    "description": "",
+                    "line": 70
                 },
                 {
                     "name": "title",
@@ -324,9 +351,10 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
-                    "line": 53
+                    "line": 61
                 }
             ],
             "methodsClass": [
@@ -343,7 +371,7 @@
                     "optional": false,
                     "returnType": "boolean",
                     "typeParameters": [],
-                    "line": 76,
+                    "line": 111,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -371,7 +399,7 @@
                     "optional": false,
                     "returnType": "void",
                     "typeParameters": [],
-                    "line": 64,
+                    "line": 99,
                     "deprecated": false,
                     "deprecationMessage": "",
                     "jsdoctags": [
@@ -467,20 +495,53 @@
                 {
                     "name": "ChipModule",
                     "type": "module"
+                },
+                {
+                    "name": "CheckboxModule",
+                    "type": "module"
                 }
             ],
             "description": "",
             "rawdescription": "\n",
             "type": "component",
-            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\nimport { BreadcrumbModule } from \"primeng/breadcrumb\";\nimport { IconComponent } from \"../../components/icon/icon.component\";\nimport { DropdownModule } from \"primeng/dropdown\";\nimport { CalendarModule } from \"primeng/calendar\";\nimport { TabViewModule } from \"primeng/tabview\";\nimport { MenuModule } from \"primeng/menu\";\nimport { ButtonModule } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\nimport { MenuItem, TableData, TableData2, Products } from \"./timeplanning.data\";\nimport { TableModule } from \"primeng/table\";\nimport { InputGroupModule } from \"primeng/inputgroup\";\nimport { InputGroupAddonModule } from \"primeng/inputgroupaddon\";\nimport { ChipModule } from \"primeng/chip\";\n\n@Component({\n    // selector: \"numo-timeplaning\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n        BreadcrumbModule,\n        IconComponent,\n        DropdownModule,\n        CalendarModule,\n        IconComponent,\n        TabViewModule,\n        MenuModule,\n        ButtonModule,\n        TableModule,\n        BadgeModule,\n        InputGroupModule,\n        InputGroupAddonModule,\n        ChipModule,\n    ],\n    templateUrl: \"./timeplaning.template.html\",\n\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    expandedRows: any[] = [];\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n    home = { icon: \"pi pi-home\", route: \"/\" };\n    date: Date[] | undefined;\n    tableData = TableData;\n    tableData2 = TableData2;\n    Products = Products;\n    menuItems = MenuItem;\n\n    // Method to toggle row expansion\n    toggleRow(product: any) {\n        const index = this.expandedRows.indexOf(product.id);\n        if (index !== -1) {\n            // Row is already expanded, so collapse it\n            this.expandedRows.splice(index, 1);\n        } else {\n            // Row is not expanded, so expand it\n            this.expandedRows.push(product.id);\n        }\n    }\n\n    // Method to check if a row is expanded\n    isRowExpanded(product: any): boolean {\n        return this.expandedRows.includes(product.id);\n    }\n    options = [\n        {\n            name: \"Barona ielas veikals\",\n        },\n    ];\n    breadCrumbItems = [\n        { label: \"Darba laika plānošana\", route: \"/timeplaning\" },\n    ];\n\n    itemsWithIsLast = this.breadCrumbItems.map((item, index, array) => ({\n        ...item,\n        isLast: index === array.length - 1,\n    }));\n}\n",
+            "sourceCode": "import { Component, CUSTOM_ELEMENTS_SCHEMA } from \"@angular/core\";\nimport { RouterOutlet } from \"@angular/router\";\nimport { HeaderComponent } from \"../../components/header/header.component\";\nimport { DashboardComponent } from \"../dashboard/dashboard.component\";\nimport { Menu } from \"../../components/left-menu/menu.model\";\nimport { CardModule } from \"primeng/card\";\nimport { CommonModule } from \"@angular/common\";\nimport { LeftMenuComponent } from \"../../components/left-menu/left-menu.component\";\nimport { BreadcrumbModule } from \"primeng/breadcrumb\";\nimport { IconComponent } from \"../../components/icon/icon.component\";\nimport { DropdownModule } from \"primeng/dropdown\";\nimport { CalendarModule } from \"primeng/calendar\";\nimport { TabViewModule } from \"primeng/tabview\";\nimport { MenuModule } from \"primeng/menu\";\nimport { ButtonModule } from \"primeng/button\";\nimport { BadgeModule } from \"primeng/badge\";\nimport { CheckboxModule } from \"primeng/checkbox\";\nimport {\n    MenuItem,\n    TableData,\n    TableData2,\n    Products,\n    TimePlanning,\n} from \"./timeplanning.data\";\nimport { TableModule } from \"primeng/table\";\nimport { InputGroupModule } from \"primeng/inputgroup\";\nimport { InputGroupAddonModule } from \"primeng/inputgroupaddon\";\nimport { ChipModule } from \"primeng/chip\";\n\n@Component({\n    // selector: \"numo-timeplaning\",\n    standalone: true,\n    imports: [\n        RouterOutlet,\n        HeaderComponent,\n        DashboardComponent,\n        CardModule,\n        CommonModule,\n        LeftMenuComponent,\n        BreadcrumbModule,\n        IconComponent,\n        DropdownModule,\n        CalendarModule,\n        IconComponent,\n        TabViewModule,\n        MenuModule,\n        ButtonModule,\n        TableModule,\n        BadgeModule,\n        InputGroupModule,\n        InputGroupAddonModule,\n        ChipModule,\n        CheckboxModule,\n    ],\n    templateUrl: \"./timeplaning.template.html\",\n\n    schemas: [CUSTOM_ELEMENTS_SCHEMA],\n})\nexport class AppComponent {\n    isMenuVisible = false;\n    title = \"angular-latest\";\n    expandedRows: any[] = [];\n    items = [{ label: \"UZDEVUMI\", menu: [...Menu] }];\n    home = { icon: \"pi pi-home\", route: \"/\" };\n    date: Date[] | undefined;\n    tableData = TableData;\n    tableData2 = TableData2;\n    Products = Products;\n    menuItems = MenuItem;\n    timePlanning = TimePlanning;\n\n    // Sum of planning hours for all employees\n    get totalPlanningHours(): number {\n        return this.timePlanning.reduce(\n            (sum, emp) => sum + emp.planningHours,\n            0,\n        );\n    }\n\n    // Sum of total hours for all employees\n    get totalHours(): number {\n        return this.timePlanning.reduce((sum, emp) => sum + emp.totalHours, 0);\n    }\n\n    // Total hours per day across all employees\n    get dailyTotals(): number[] {\n        if (this.timePlanning.length === 0) return [];\n        const daysInMonth = this.timePlanning[0].daysOfMonth.length;\n\n        return Array.from({ length: daysInMonth }, (_, dayIndex) =>\n            this.timePlanning.reduce(\n                (sum, emp) => sum + (emp.daysOfMonth[dayIndex]?.hours || 0),\n                0,\n            ),\n        );\n    }\n\n    // Method to toggle row expansion\n    toggleRow(product: any) {\n        const index = this.expandedRows.indexOf(product.id);\n        if (index !== -1) {\n            // Row is already expanded, so collapse it\n            this.expandedRows.splice(index, 1);\n        } else {\n            // Row is not expanded, so expand it\n            this.expandedRows.push(product.id);\n        }\n    }\n\n    // Method to check if a row is expanded\n    isRowExpanded(product: any): boolean {\n        return this.expandedRows.includes(product.id);\n    }\n    options = [\n        {\n            name: \"Barona ielas veikals\",\n        },\n    ];\n    breadCrumbItems = [\n        { label: \"Darba laika plānošana\", route: \"/timeplaning\" },\n    ];\n\n    itemsWithIsLast = this.breadCrumbItems.map((item, index, array) => ({\n        ...item,\n        isLast: index === array.length - 1,\n    }));\n}\n",
             "assetsDirs": [],
             "styleUrlsData": "",
             "stylesData": "",
             "extends": [],
+            "accessors": {
+                "totalPlanningHours": {
+                    "name": "totalPlanningHours",
+                    "getSignature": {
+                        "name": "totalPlanningHours",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 73
+                    }
+                },
+                "totalHours": {
+                    "name": "totalHours",
+                    "getSignature": {
+                        "name": "totalHours",
+                        "type": "number",
+                        "returnType": "number",
+                        "line": 81
+                    }
+                },
+                "dailyTotals": {
+                    "name": "dailyTotals",
+                    "getSignature": {
+                        "name": "dailyTotals",
+                        "type": "[]",
+                        "returnType": "number[]",
+                        "line": 86
+                    }
+                }
+            },
             "isDuplicate": true,
             "duplicateId": 1,
             "duplicateName": "AppComponent-1",
-            "templateData": "<numo-header></numo-header>\n\n<div class=\"container gap-3 w-full\">\n\n    <div class=\"flex-grow-1\">\n        <div class=\"w-full mb-2\">\n            <p-breadcrumb class=\"max-w-full\" [model]=\"itemsWithIsLast\" [home]=\"home\">\n                <ng-template pTemplate=\"item\" let-item>\n                    <ng-container *ngIf=\"!item.isLast; else lastBreadcrumb\">\n                        <!-- For all items except the last one -->\n                        <ng-container *ngIf=\"item.route; else urlItem\">\n                            <!-- If the item has a route -->\n                            <a [routerLink]=\"item.route\" class=\"p-menuitem-link underline\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-container>\n                        <ng-template #urlItem>\n                            <!-- If the item has a URL -->\n                            <a [href]=\"item.url\" class=\"p-menuitem-link\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-template>\n                    </ng-container>\n                    <ng-template #lastBreadcrumb>\n                        <!-- For the last item, render as plain text -->\n                        <span class=\"text-color\">{{ item.label }}</span>\n                    </ng-template>\n                </ng-template>\n            </p-breadcrumb>\n        </div>\n\n\n        <div\n            class=\"card flex flex-column md:flex-row bg-white p-3 mb-4 gap-3 border-round-sm border border-1 border-gray-200 flex justify-content-start\">\n            <div class=\"flex flex-column mr-3\">\n                <label for=\"dropdown\" class=\"mb-1 label text-sm\">Struktūrvienība</label>\n                <p-dropdown id=\"dropdown\" [options]=\"options\" optionLabel=\"name\" placeholder=\"Barona ielas veikals\" />\n            </div>\n            <div class=\"flex flex-column\">\n                <label for=\"calendar\" class=\"mb-1 label text-sm\">Mēnesis</label>\n                <div class=\"flex align-items-center\">\n\n                    <p-calendar id=\"calendar\" [(ngModel)]=\"date\" view=\"month\" [iconDisplay]=\"'input'\" [showIcon]=\"true\"\n                        dateFormat=\"MM, yy\" [readonlyInput]=\"true\" />\n\n                </div>\n            </div>\n        </div>\n        <p-tabView class=\"mt-5 numo-transparent-bg\">\n            <p-tabPanel header=\"Uzstādījumi\">\n\n                <div class=\" flex gap-3 flex-column md:flex-row\">\n                    <p-menu [model]=\"menuItems\" />\n\n                    <div class=\"flex-1\">\n                        <p-button label=\"Pievienot\" icon=\"pi pi-plus\" class=\"plus-button\" size=\"small\" />\n\n                        <div class=\"pt-3\">\n\n\n                            <p-table [value]=\"Products\" dataKey=\"id\" class=\"data-table\">\n\n                                <!-- Body Template for Product Rows -->\n                                <ng-template pTemplate=\"body\" let-product>\n                                    <tr>\n                                        <!-- Caret Icon for Expand/Collapse -->\n\n                                        <td>\n                                            <div class=\"flex flex-wrap  gap-2\">\n\n\n\n                                                <button\n                                                    class=\"p-button p-button-lg p-1 p-button-text p-button-secondary text-gray-800\"\n                                                    (click)=\"toggleRow(product)\">\n                                                    <span class=\"material-symbols-rounded text-3xl\">\n                                                        {{ isRowExpanded(product) ? 'expand_more' : 'chevron_right' }}\n                                                    </span>\n                                                </button>\n\n\n                                                <span\n                                                    class=\"flex align-items-center justify-content-center font-semibold white-space-nowrap\">{{product.name}}</span>\n                                                <p-badge [value]=\"product.badgeName\" [severity]=\"product.badgeSeverity\"\n                                                    class=\"flex align-items-center justify-content-center \"\n                                                    styleClass=\"text-xs font-normal\"></p-badge>\n                                            </div>\n                                        </td>\n                                        <td>\n                                            <div class=\"flex flex-wrap gap-2\">\n\n\n\n\n                                                <div class=\"p-buttonset daycalendar\">\n                                                    <p-button\n                                                        *ngFor=\"let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index\"\n                                                        type=\"button\" [label]=\"day\" size=\"small\" severity=\"secondary\"\n                                                        [outlined]=\"!product.days.includes(i + 1)\">\n                                                    </p-button>\n                                                </div>\n\n                                                <div *ngFor=\"let date of product.dates\" class=\"p-buttonset daycalendar\">\n                                                    <p-button type=\"button\" [outlined]=\"true\" [label]=\"date\"\n                                                        size=\"small\"></p-button>\n                                                    <p-button icon=\"pi pi-times\" size=\"small\" severity=\"secondary\"\n                                                        styleClass=\"w-3\"></p-button>\n                                                </div>\n\n\n\n\n                                            </div>\n                                        </td>\n                                        <td>\n\n                                            <div class=\"flex flex-wrap gap-2\">\n                                                <p-chip *ngFor=\"let slot of product.slots\" [label]=\"slot\"\n                                                    styleClass=\"white-space-nowrap text-xs\" />\n                                            </div>\n\n\n\n                                        </td>\n                                        <td>\n                                            <div\n                                                class=\"flex w-full justify-content-between  gap-3 md:justify-content-end\">\n                                                <button aria-label=\"Edit\"\n                                                    class=\"p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        edit\n                                                    </span>\n                                                </button>\n\n                                                <button aria-label=\"Delete\"\n                                                    class=\"p-button p-button-danger p-button-lg p-1 p-button-text text-gray-800\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        delete\n                                                    </span>\n                                                </button>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                    <!-- Expanded Row Content -->\n                                    <tr *ngIf=\"isRowExpanded(product)\">\n                                        <td colspan=\"4\">\n\n\n\n                                            <div class=\"p-2\">\n                                                <h3>Darba laiki</h3>\n                                                <p-table [value]=\"tableData\" [tableStyle]=\"{ ' min-width': '50rem' }\">\n                                                    <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Darba laiks</th>\n                                        <th>Pārtraukums</th>\n                                        <th>Darba vieta</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.darbaLaiks }}</td>\n                                        <td>{{ innerProduct.partraukums }}</td>\n                                        <td>{{ innerProduct.darbaVieta }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n                            <h3 class=\"mt-4\">Vajadzības</h3>\n                            <p-table [value]=\"tableData2\" [tableStyle]=\"{ 'min-width': '50rem' }\">\n                                <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Amats</th>\n                                        <th>Kompetence</th>\n                                        <th>Kompetenču skaits</th>\n                                        <th>Darbnieku skaits</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.amats }}</td>\n                                        <td>{{ innerProduct.kompetence }}</td>\n                                        <td>{{ innerProduct.kompetencuSkaits }}</td>\n                                        <td>{{ innerProduct.darbniekuSkaits }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n\n\n                        </div>\n\n\n\n\n                        </td>\n                        </tr>\n                        </ng-template>\n                        </p-table>\n\n\n\n                    </div>\n\n\n\n\n\n\n\n\n                </div>\n    </div>\n\n    </p-tabPanel>\n    <p-tabPanel header=\"Plāns & Fakts\">\n    </p-tabPanel>\n    <p-tabPanel header=\"Dokumenti\">\n    </p-tabPanel>\n    </p-tabView>\n</div>\n\n</div>"
+            "templateData": "<numo-header></numo-header>\n\n<div class=\"container gap-3 w-full\">\n\n    <div class=\"flex-grow-1\">\n        <div class=\"w-full mb-2\">\n            <p-breadcrumb class=\"max-w-full\" [model]=\"itemsWithIsLast\" [home]=\"home\">\n                <ng-template pTemplate=\"item\" let-item>\n                    <ng-container *ngIf=\"!item.isLast; else lastBreadcrumb\">\n                        <!-- For all items except the last one -->\n                        <ng-container *ngIf=\"item.route; else urlItem\">\n                            <!-- If the item has a route -->\n                            <a [routerLink]=\"item.route\" class=\"p-menuitem-link underline\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-container>\n                        <ng-template #urlItem>\n                            <!-- If the item has a URL -->\n                            <a [href]=\"item.url\" class=\"p-menuitem-link\">\n                                <span [ngClass]=\"[item.icon ? item.icon : '', 'text-color']\"></span>\n                                <span class=\"text-primary\">{{ item.label }}</span>\n                            </a>\n                        </ng-template>\n                    </ng-container>\n                    <ng-template #lastBreadcrumb>\n                        <!-- For the last item, render as plain text -->\n                        <span class=\"text-color\">{{ item.label }}</span>\n                    </ng-template>\n                </ng-template>\n            </p-breadcrumb>\n        </div>\n\n\n        <div\n            class=\"card flex flex-column md:flex-row bg-white p-3 mb-4 gap-3 border-round-sm border border-1 border-gray-200 flex justify-content-start\">\n            <div class=\"flex flex-column mr-3\">\n                <label for=\"dropdown\" class=\"mb-1 label text-sm\">Struktūrvienība</label>\n                <p-dropdown id=\"dropdown\" [options]=\"options\" optionLabel=\"name\" placeholder=\"Barona ielas veikals\"\n                    styleClass=\"w-full\" />\n            </div>\n            <div class=\"flex flex-column\">\n                <label for=\"calendar\" class=\"mb-1 label text-sm\">Mēnesis</label>\n                <div class=\"flex align-items-center\">\n\n                    <p-calendar id=\"calendar\" [(ngModel)]=\"date\" view=\"month\" [iconDisplay]=\"'input'\" [showIcon]=\"true\"\n                        class=\"w-full\" dateFormat=\"MM, yy\" [readonlyInput]=\"true\" />\n\n                </div>\n            </div>\n        </div>\n        <p-tabView class=\"mt-5 numo-transparent-bg\">\n            <p-tabPanel header=\"Uzstādījumi\">\n\n                <div class=\" flex gap-3 flex-column md:flex-row\">\n                    <p-menu [model]=\"menuItems\" class=\"hidden md:flex\" />\n                    <p-dropdown [options]=\"menuItems\" class=\"md:hidden\" styleClass=\"w-full\" />\n\n                    <div class=\"flex-1\">\n                        <p-button label=\"Pievienot\" icon=\"pi pi-plus\" class=\"plus-button  hidden md:block pb-3\"\n                            size=\"small\" />\n\n                        <p-button icon=\"pi pi-plus\"\n                            class=\" fixed bottom-0 right-0 mr-4 mb-4 z-5 shadow-2 border-circle md:hidden\" size=\"small\"\n                            rounded=\"true\" />\n\n                        <div>\n\n\n                            <p-table [value]=\"Products\" dataKey=\"id\" class=\"data-table\">\n\n                                <!-- Body Template for Product Rows -->\n                                <ng-template pTemplate=\"body\" let-product>\n                                    <tr>\n                                        <!-- Caret Icon for Expand/Collapse -->\n\n                                        <td>\n                                            <div class=\"flex flex-wrap  gap-2\">\n\n\n\n                                                <button\n                                                    class=\"p-button p-button-lg p-1 p-button-text p-button-secondary text-gray-800\"\n                                                    (click)=\"toggleRow(product)\">\n                                                    <span class=\"material-symbols-rounded text-3xl\">\n                                                        {{ isRowExpanded(product) ? 'expand_more' : 'chevron_right' }}\n                                                    </span>\n                                                </button>\n\n\n                                                <span\n                                                    class=\"flex align-items-center justify-content-center font-semibold white-space-nowrap\">{{product.name}}</span>\n                                                <p-badge [value]=\"product.badgeName\" [severity]=\"product.badgeSeverity\"\n                                                    class=\"flex align-items-center justify-content-center \"\n                                                    styleClass=\"text-xs font-normal\"></p-badge>\n                                            </div>\n                                        </td>\n                                        <td>\n                                            <div class=\"flex flex-wrap gap-2\">\n\n\n\n\n                                                <div class=\"p-buttonset daycalendar\">\n                                                    <p-button\n                                                        *ngFor=\"let day of ['M', 'T', 'W', 'T', 'F', 'S', 'S']; let i = index\"\n                                                        type=\"button\" [label]=\"day\" size=\"small\" severity=\"secondary\"\n                                                        [outlined]=\"!product.days.includes(i + 1)\">\n                                                    </p-button>\n                                                </div>\n\n                                                <div *ngFor=\"let date of product.dates\" class=\"p-buttonset daycalendar\">\n                                                    <p-button type=\"button\" [outlined]=\"true\" [label]=\"date\"\n                                                        size=\"small\"></p-button>\n                                                    <p-button icon=\"pi pi-times\" size=\"small\" severity=\"secondary\"\n                                                        styleClass=\"w-3\"></p-button>\n                                                </div>\n\n\n\n\n                                            </div>\n                                        </td>\n                                        <td>\n\n                                            <div class=\"flex flex-wrap gap-2\">\n                                                <p-chip *ngFor=\"let slot of product.slots\" [label]=\"slot\"\n                                                    styleClass=\"white-space-nowrap text-xs\" />\n                                            </div>\n\n\n\n                                        </td>\n                                        <td>\n                                            <div\n                                                class=\"flex w-full justify-content-between  gap-3 md:justify-content-end\">\n                                                <button aria-label=\"Edit\"\n                                                    class=\"p-button p-button-lg p-button-secondary p-1 p-button-text text-gray-500\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        edit\n                                                    </span>\n                                                </button>\n\n                                                <button aria-label=\"Delete\"\n                                                    class=\"p-button p-button-danger p-button-lg p-1 p-button-text text-gray-500\">\n                                                    <span class=\"material-symbols-rounded text-2xl\">\n                                                        delete\n                                                    </span>\n                                                </button>\n                                            </div>\n                                        </td>\n                                    </tr>\n                                    <!-- Expanded Row Content -->\n                                    <tr *ngIf=\"isRowExpanded(product)\">\n                                        <td colspan=\"4\">\n\n\n\n                                            <div class=\"p-2\">\n                                                <h3>Darba laiki</h3>\n                                                <p-table [value]=\"tableData\" [tableStyle]=\"{ ' min-width': '50rem' }\">\n                                                    <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Darba laiks</th>\n                                        <th>Pārtraukums</th>\n                                        <th>Darba vieta</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.darbaLaiks }}</td>\n                                        <td>{{ innerProduct.partraukums }}</td>\n                                        <td>{{ innerProduct.darbaVieta }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n                            <h3 class=\"mt-4\">Vajadzības</h3>\n                            <p-table [value]=\"tableData2\" [tableStyle]=\"{ 'min-width': '50rem' }\">\n                                <ng-template pTemplate=\"header\">\n                                    <tr>\n                                        <th>Amats</th>\n                                        <th>Kompetence</th>\n                                        <th>Kompetenču skaits</th>\n                                        <th>Darbnieku skaits</th>\n                                    </tr>\n                                </ng-template>\n                                <ng-template pTemplate=\"body\" let-innerProduct>\n                                    <tr>\n                                        <td>{{ innerProduct.amats }}</td>\n                                        <td>{{ innerProduct.kompetence }}</td>\n                                        <td>{{ innerProduct.kompetencuSkaits }}</td>\n                                        <td>{{ innerProduct.darbniekuSkaits }}</td>\n                                    </tr>\n                                </ng-template>\n                            </p-table>\n\n\n\n\n                        </div>\n\n\n\n\n                        </td>\n                        </tr>\n                        </ng-template>\n                        </p-table>\n\n\n\n                    </div>\n\n\n\n\n\n\n\n\n                </div>\n    </div>\n\n    </p-tabPanel>\n    <p-tabPanel header=\"Plāns & Fakts\">\n\n        <div class=\"overflow-x-auto\">\n            <p-table [value]=\"timePlanning\">\n                <ng-template pTemplate=\"header\">\n                    <tr>\n                        <th class=\"sticky-column-1\">\n                            <div><p-checkbox [binary]=\"true\" inputId=\"binary\" /></div>\n                        </th>\n                        <th class=\"sticky-column-2\" data-column=\"name\">\n                            <div>Vārds, Uzvārds</div>\n                        </th>\n                        <th class=\"sticky-column-3\" data-column=\"job-title-name\">\n                            <div>Amats</div>\n                        </th>\n                        <th class=\"sticky-column-4\" data-column=\"planning-hours\">\n                            <div>Stundas</div>\n                        </th>\n                        <th class=\"sticky-column-5\" data-column=\"sum\">\n                            <div>Summa</div>\n                        </th>\n                        <th *ngFor=\"let tday of timePlanning[0]?.daysOfMonth\">\n                            <div>{{ tday.day }} {{\n                                tday.date }}</div>\n                        </th>\n                    </tr>\n                </ng-template>\n\n                <ng-template pTemplate=\"body\" let-employee>\n                    <tr>\n                        <td class=\"sticky-column-1\">\n                            <div><p-checkbox [binary]=\"true\" inputId=\"binary\" /></div>\n                        </td>\n                        <td class=\"sticky-column-2\" data-column=\"name\">\n                            <div>{{ employee.employeeName }}</div>\n                        </td>\n                        <td class=\"sticky-column-3\">\n                            <div>{{ employee.jobTitle }}</div>\n                        </td>\n                        <td class=\"sticky-column-4\">\n                            <div>{{ employee.planningHours }}</div>\n                        </td>\n                        <td class=\"sticky-column-5\">\n                            <div>{{ employee.totalHours }}</div>\n                        </td>\n                        <td *ngFor=\"let day of employee.daysOfMonth\">\n                            <div>{{ day.hours }}</div>\n                        </td>\n                    </tr>\n                </ng-template>\n\n                <ng-template pTemplate=\"footer\">\n                    <tr>\n                        <td class=\"sticky-column-1-3 text-right\" colspan=\"3\">Totals</td>\n                        <td class=\"sticky-column-4\">{{ totalPlanningHours }}</td>\n                        <td class=\"sticky-column-5\">{{ totalHours }}</td>\n                        <td *ngFor=\"let dailyTotal of dailyTotals\">{{ dailyTotal }}</td>\n                    </tr>\n                </ng-template>\n            </p-table>\n\n\n        </div>\n\n\n    </p-tabPanel>\n    <p-tabPanel header=\"Dokumenti\">\n    </p-tabPanel>\n    </p-tabView>\n</div>\n\n</div>"
         },
         {
             "name": "ConfirmDialogComponent",
@@ -668,6 +729,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "string",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 12
@@ -720,6 +782,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 31
@@ -730,6 +793,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "number",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 33
@@ -740,6 +804,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "number",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 35
@@ -1124,6 +1189,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "number",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 51
@@ -1134,6 +1200,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 42
@@ -1144,6 +1211,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 49
@@ -1153,6 +1221,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 44,
@@ -1171,6 +1240,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 45,
@@ -1189,6 +1259,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "any",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 46,
@@ -1208,6 +1279,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 50
@@ -1919,6 +1991,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "boolean",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 23
@@ -1928,6 +2001,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TreeNode[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 25
@@ -1937,6 +2011,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "TreeNode[]",
+                    "indexKey": "",
                     "optional": false,
                     "description": "",
                     "line": 27
@@ -2287,7 +2362,7 @@
                 "deprecated": false,
                 "deprecationMessage": "",
                 "type": "[]",
-                "defaultValue": "[\n    { label: \"Darba laiki\" },\n    { label: \"Atpūtas laiki\" },\n    { label: \"Izmantošanas skaits\" },\n    { label: \"Secības šabloni\" },\n]"
+                "defaultValue": "[\n    { label: \"Darba vietas\" },\n    { label: \"Pārtraukumi\" },\n    { label: \"Darba laika grupas\" },\n    { label: \"Darba laiki\" },\n    { label: \"Atpūtas laiki\" },\n    { label: \"Izmantošanas skaits\" },\n    { label: \"Secības šabloni\" },\n    { label: \"Kompetences\" },\n    { label: \"Darbinieku uzstādījumi\" },\n    { label: \"Papildus uzstādījumi\" },\n]"
             },
             {
                 "name": "nodes",
@@ -2338,6 +2413,16 @@
                 "deprecationMessage": "",
                 "type": "[]",
                 "defaultValue": "[\n    {\n        key: \"0\",\n        label: \"Introduction\",\n        children: [\n            {\n                key: \"0-0\",\n                label: \"What is Angular\",\n                data: \"https://angular.io\",\n                type: \"url\",\n            },\n            {\n                key: \"0-1\",\n                label: \"Getting Started\",\n                data: \"https://angular.io/guide/setup-local\",\n                type: \"url\",\n            },\n            {\n                key: \"0-2\",\n                label: \"Learn and Explore\",\n                data: \"https://angular.io/guide/architecture\",\n                type: \"url\",\n            },\n            {\n                key: \"0-3\",\n                label: \"Take a Look\",\n                data: \"https://angular.io/start\",\n                type: \"url\",\n            },\n        ],\n    },\n    {\n        key: \"1\",\n        label: \"Components In-Depth\",\n        children: [\n            {\n                key: \"1-0\",\n                label: \"Component Registration\",\n                data: \"https://angular.io/guide/component-interaction\",\n                type: \"url\",\n            },\n            {\n                key: \"1-1\",\n                label: \"User Input\",\n                data: \"https://angular.io/guide/user-input\",\n                type: \"url\",\n            },\n            {\n                key: \"1-2\",\n                label: \"Hooks\",\n                data: \"https://angular.io/guide/lifecycle-hooks\",\n                type: \"url\",\n            },\n            {\n                key: \"1-3\",\n                label: \"Attribute Directives\",\n                data: \"https://angular.io/guide/attribute-directives\",\n                type: \"url\",\n            },\n        ],\n    },\n]"
+            },
+            {
+                "name": "TimePlanning",
+                "ctype": "miscellaneous",
+                "subtype": "variable",
+                "file": "projects/ngx-ui-web/src/stories/layouts/timeplaning/timeplanning.data.ts",
+                "deprecated": false,
+                "deprecationMessage": "",
+                "type": "[]",
+                "defaultValue": "[\n    {\n        employeeName: \"Anita Jēgermane\",\n        jobTitle: \"Biroja administrators\",\n        planningHours: 12,\n        totalHours: 121,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 8 },\n            { day: \"O\", date: \"2\", hours: 7 },\n            { day: \"T\", date: \"3\", hours: 8 },\n            { day: \"C\", date: \"4\", hours: 6 },\n            { day: \"P\", date: \"5\", hours: 7 },\n            { day: \"O\", date: \"6\", hours: 8 },\n            { day: \"T\", date: \"7\", hours: 7 },\n            { day: \"C\", date: \"8\", hours: 6 },\n            { day: \"P\", date: \"9\", hours: 7 },\n            { day: \"O\", date: \"10\", hours: 8 },\n            { day: \"T\", date: \"11\", hours: 7 },\n            { day: \"C\", date: \"12\", hours: 6 },\n            { day: \"P\", date: \"13\", hours: 7 },\n            { day: \"O\", date: \"14\", hours: 8 },\n            { day: \"T\", date: \"15\", hours: 7 },\n            { day: \"C\", date: \"16\", hours: 6 },\n            { day: \"P\", date: \"17\", hours: 7 },\n            { day: \"O\", date: \"18\", hours: 8 },\n            { day: \"T\", date: \"19\", hours: 7 },\n            { day: \"C\", date: \"20\", hours: 6 },\n            { day: \"P\", date: \"21\", hours: 7 },\n            { day: \"O\", date: \"22\", hours: 8 },\n            { day: \"T\", date: \"23\", hours: 7 },\n            { day: \"C\", date: \"24\", hours: 6 },\n            { day: \"P\", date: \"25\", hours: 7 },\n            { day: \"O\", date: \"26\", hours: 8 },\n            { day: \"T\", date: \"27\", hours: 7 },\n            { day: \"C\", date: \"28\", hours: 6 },\n            { day: \"P\", date: \"29\", hours: 7 },\n            { day: \"O\", date: \"30\", hours: 8 },\n            { day: \"T\", date: \"31\", hours: 7 },\n        ],\n    },\n    {\n        employeeName: \"Jānis Bērziņš\",\n        jobTitle: \"Projektu vadītājs\",\n        planningHours: 10,\n        totalHours: 110,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 9 },\n            { day: \"O\", date: \"2\", hours: 8 },\n            { day: \"T\", date: \"3\", hours: 9 },\n            { day: \"C\", date: \"4\", hours: 6 },\n            { day: \"P\", date: \"5\", hours: 8 },\n            { day: \"O\", date: \"6\", hours: 9 },\n            { day: \"T\", date: \"7\", hours: 8 },\n            { day: \"C\", date: \"8\", hours: 6 },\n            { day: \"P\", date: \"9\", hours: 8 },\n            { day: \"O\", date: \"10\", hours: 9 },\n            { day: \"T\", date: \"11\", hours: 8 },\n            { day: \"C\", date: \"12\", hours: 6 },\n            { day: \"P\", date: \"13\", hours: 8 },\n            { day: \"O\", date: \"14\", hours: 9 },\n            { day: \"T\", date: \"15\", hours: 8 },\n            { day: \"C\", date: \"16\", hours: 6 },\n            { day: \"P\", date: \"17\", hours: 8 },\n            { day: \"O\", date: \"18\", hours: 9 },\n            { day: \"T\", date: \"19\", hours: 8 },\n            { day: \"C\", date: \"20\", hours: 6 },\n            { day: \"P\", date: \"21\", hours: 8 },\n            { day: \"O\", date: \"22\", hours: 9 },\n            { day: \"T\", date: \"23\", hours: 8 },\n            { day: \"C\", date: \"24\", hours: 6 },\n            { day: \"P\", date: \"25\", hours: 8 },\n            { day: \"O\", date: \"26\", hours: 9 },\n            { day: \"T\", date: \"27\", hours: 8 },\n            { day: \"C\", date: \"28\", hours: 6 },\n            { day: \"P\", date: \"29\", hours: 8 },\n            { day: \"O\", date: \"30\", hours: 9 },\n            { day: \"T\", date: \"31\", hours: 8 },\n        ],\n    },\n    {\n        employeeName: \"Laura Kalniņa\",\n        jobTitle: \"Programmētājs\",\n        planningHours: 9,\n        totalHours: 100,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 6 },\n            { day: \"O\", date: \"2\", hours: 5 },\n            { day: \"T\", date: \"3\", hours: 7 },\n            { day: \"C\", date: \"4\", hours: 8 },\n            { day: \"P\", date: \"5\", hours: 7 },\n            { day: \"O\", date: \"6\", hours: 6 },\n            { day: \"T\", date: \"7\", hours: 7 },\n            { day: \"C\", date: \"8\", hours: 8 },\n            { day: \"P\", date: \"9\", hours: 7 },\n            { day: \"O\", date: \"10\", hours: 6 },\n            { day: \"T\", date: \"11\", hours: 7 },\n            { day: \"C\", date: \"12\", hours: 8 },\n            { day: \"P\", date: \"13\", hours: 7 },\n            { day: \"O\", date: \"14\", hours: 6 },\n            { day: \"T\", date: \"15\", hours: 7 },\n            { day: \"C\", date: \"16\", hours: 8 },\n            { day: \"P\", date: \"17\", hours: 7 },\n            { day: \"O\", date: \"18\", hours: 6 },\n            { day: \"T\", date: \"19\", hours: 7 },\n            { day: \"C\", date: \"20\", hours: 8 },\n            { day: \"P\", date: \"21\", hours: 7 },\n            { day: \"O\", date: \"22\", hours: 6 },\n            { day: \"T\", date: \"23\", hours: 7 },\n            { day: \"C\", date: \"24\", hours: 8 },\n            { day: \"P\", date: \"25\", hours: 7 },\n            { day: \"O\", date: \"26\", hours: 6 },\n            { day: \"T\", date: \"27\", hours: 7 },\n            { day: \"C\", date: \"28\", hours: 8 },\n            { day: \"P\", date: \"29\", hours: 7 },\n            { day: \"O\", date: \"30\", hours: 6 },\n            { day: \"T\", date: \"31\", hours: 7 },\n        ],\n    },\n]"
             },
             {
                 "name": "UserMenuItems",
@@ -2397,7 +2482,7 @@
                     "deprecated": false,
                     "deprecationMessage": "",
                     "type": "[]",
-                    "defaultValue": "[\n    { label: \"Darba laiki\" },\n    { label: \"Atpūtas laiki\" },\n    { label: \"Izmantošanas skaits\" },\n    { label: \"Secības šabloni\" },\n]"
+                    "defaultValue": "[\n    { label: \"Darba vietas\" },\n    { label: \"Pārtraukumi\" },\n    { label: \"Darba laika grupas\" },\n    { label: \"Darba laiki\" },\n    { label: \"Atpūtas laiki\" },\n    { label: \"Izmantošanas skaits\" },\n    { label: \"Secības šabloni\" },\n    { label: \"Kompetences\" },\n    { label: \"Darbinieku uzstādījumi\" },\n    { label: \"Papildus uzstādījumi\" },\n]"
                 },
                 {
                     "name": "Products",
@@ -2428,6 +2513,16 @@
                     "deprecationMessage": "",
                     "type": "[]",
                     "defaultValue": "[\n    {\n        amats: \"Biroja administrators\",\n        kompetence: \"Māk rakstīt | Sertificēts revidents\",\n        kompetencuSkaits: \"2\",\n        darbniekuSkaits: \"min: 1 / max: 1 / opt: 1\",\n    },\n]"
+                },
+                {
+                    "name": "TimePlanning",
+                    "ctype": "miscellaneous",
+                    "subtype": "variable",
+                    "file": "projects/ngx-ui-web/src/stories/layouts/timeplaning/timeplanning.data.ts",
+                    "deprecated": false,
+                    "deprecationMessage": "",
+                    "type": "[]",
+                    "defaultValue": "[\n    {\n        employeeName: \"Anita Jēgermane\",\n        jobTitle: \"Biroja administrators\",\n        planningHours: 12,\n        totalHours: 121,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 8 },\n            { day: \"O\", date: \"2\", hours: 7 },\n            { day: \"T\", date: \"3\", hours: 8 },\n            { day: \"C\", date: \"4\", hours: 6 },\n            { day: \"P\", date: \"5\", hours: 7 },\n            { day: \"O\", date: \"6\", hours: 8 },\n            { day: \"T\", date: \"7\", hours: 7 },\n            { day: \"C\", date: \"8\", hours: 6 },\n            { day: \"P\", date: \"9\", hours: 7 },\n            { day: \"O\", date: \"10\", hours: 8 },\n            { day: \"T\", date: \"11\", hours: 7 },\n            { day: \"C\", date: \"12\", hours: 6 },\n            { day: \"P\", date: \"13\", hours: 7 },\n            { day: \"O\", date: \"14\", hours: 8 },\n            { day: \"T\", date: \"15\", hours: 7 },\n            { day: \"C\", date: \"16\", hours: 6 },\n            { day: \"P\", date: \"17\", hours: 7 },\n            { day: \"O\", date: \"18\", hours: 8 },\n            { day: \"T\", date: \"19\", hours: 7 },\n            { day: \"C\", date: \"20\", hours: 6 },\n            { day: \"P\", date: \"21\", hours: 7 },\n            { day: \"O\", date: \"22\", hours: 8 },\n            { day: \"T\", date: \"23\", hours: 7 },\n            { day: \"C\", date: \"24\", hours: 6 },\n            { day: \"P\", date: \"25\", hours: 7 },\n            { day: \"O\", date: \"26\", hours: 8 },\n            { day: \"T\", date: \"27\", hours: 7 },\n            { day: \"C\", date: \"28\", hours: 6 },\n            { day: \"P\", date: \"29\", hours: 7 },\n            { day: \"O\", date: \"30\", hours: 8 },\n            { day: \"T\", date: \"31\", hours: 7 },\n        ],\n    },\n    {\n        employeeName: \"Jānis Bērziņš\",\n        jobTitle: \"Projektu vadītājs\",\n        planningHours: 10,\n        totalHours: 110,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 9 },\n            { day: \"O\", date: \"2\", hours: 8 },\n            { day: \"T\", date: \"3\", hours: 9 },\n            { day: \"C\", date: \"4\", hours: 6 },\n            { day: \"P\", date: \"5\", hours: 8 },\n            { day: \"O\", date: \"6\", hours: 9 },\n            { day: \"T\", date: \"7\", hours: 8 },\n            { day: \"C\", date: \"8\", hours: 6 },\n            { day: \"P\", date: \"9\", hours: 8 },\n            { day: \"O\", date: \"10\", hours: 9 },\n            { day: \"T\", date: \"11\", hours: 8 },\n            { day: \"C\", date: \"12\", hours: 6 },\n            { day: \"P\", date: \"13\", hours: 8 },\n            { day: \"O\", date: \"14\", hours: 9 },\n            { day: \"T\", date: \"15\", hours: 8 },\n            { day: \"C\", date: \"16\", hours: 6 },\n            { day: \"P\", date: \"17\", hours: 8 },\n            { day: \"O\", date: \"18\", hours: 9 },\n            { day: \"T\", date: \"19\", hours: 8 },\n            { day: \"C\", date: \"20\", hours: 6 },\n            { day: \"P\", date: \"21\", hours: 8 },\n            { day: \"O\", date: \"22\", hours: 9 },\n            { day: \"T\", date: \"23\", hours: 8 },\n            { day: \"C\", date: \"24\", hours: 6 },\n            { day: \"P\", date: \"25\", hours: 8 },\n            { day: \"O\", date: \"26\", hours: 9 },\n            { day: \"T\", date: \"27\", hours: 8 },\n            { day: \"C\", date: \"28\", hours: 6 },\n            { day: \"P\", date: \"29\", hours: 8 },\n            { day: \"O\", date: \"30\", hours: 9 },\n            { day: \"T\", date: \"31\", hours: 8 },\n        ],\n    },\n    {\n        employeeName: \"Laura Kalniņa\",\n        jobTitle: \"Programmētājs\",\n        planningHours: 9,\n        totalHours: 100,\n        daysOfMonth: [\n            { day: \"P\", date: \"1\", hours: 6 },\n            { day: \"O\", date: \"2\", hours: 5 },\n            { day: \"T\", date: \"3\", hours: 7 },\n            { day: \"C\", date: \"4\", hours: 8 },\n            { day: \"P\", date: \"5\", hours: 7 },\n            { day: \"O\", date: \"6\", hours: 6 },\n            { day: \"T\", date: \"7\", hours: 7 },\n            { day: \"C\", date: \"8\", hours: 8 },\n            { day: \"P\", date: \"9\", hours: 7 },\n            { day: \"O\", date: \"10\", hours: 6 },\n            { day: \"T\", date: \"11\", hours: 7 },\n            { day: \"C\", date: \"12\", hours: 8 },\n            { day: \"P\", date: \"13\", hours: 7 },\n            { day: \"O\", date: \"14\", hours: 6 },\n            { day: \"T\", date: \"15\", hours: 7 },\n            { day: \"C\", date: \"16\", hours: 8 },\n            { day: \"P\", date: \"17\", hours: 7 },\n            { day: \"O\", date: \"18\", hours: 6 },\n            { day: \"T\", date: \"19\", hours: 7 },\n            { day: \"C\", date: \"20\", hours: 8 },\n            { day: \"P\", date: \"21\", hours: 7 },\n            { day: \"O\", date: \"22\", hours: 6 },\n            { day: \"T\", date: \"23\", hours: 7 },\n            { day: \"C\", date: \"24\", hours: 8 },\n            { day: \"P\", date: \"25\", hours: 7 },\n            { day: \"O\", date: \"26\", hours: 6 },\n            { day: \"T\", date: \"27\", hours: 7 },\n            { day: \"C\", date: \"28\", hours: 8 },\n            { day: \"P\", date: \"29\", hours: 7 },\n            { day: \"O\", date: \"30\", hours: 6 },\n            { day: \"T\", date: \"31\", hours: 7 },\n        ],\n    },\n]"
                 }
             ],
             "projects/ngx-ui-web/src/stories/components/tree-select/tree-select.data.ts": [
@@ -2628,7 +2723,7 @@
                 "linktype": "component",
                 "name": "AppComponent",
                 "coveragePercent": 0,
-                "coverageCount": "0/16",
+                "coverageCount": "0/17",
                 "status": "low"
             },
             {
@@ -2667,6 +2762,16 @@
                 "linktype": "miscellaneous",
                 "linksubtype": "variable",
                 "name": "TableData2",
+                "coveragePercent": 0,
+                "coverageCount": "0/1",
+                "status": "low"
+            },
+            {
+                "filePath": "projects/ngx-ui-web/src/stories/layouts/timeplaning/timeplanning.data.ts",
+                "type": "variable",
+                "linktype": "miscellaneous",
+                "linksubtype": "variable",
+                "name": "TimePlanning",
                 "coveragePercent": 0,
                 "coverageCount": "0/1",
                 "status": "low"
