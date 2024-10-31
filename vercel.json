@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+        {
+            "src": "projects/ngx-ui-web/src/**/*",
+            "use": "@vercel/static-build",
+            "config": {
+                "distDir": "dist/ngx-ui-web"
+            }
+        }
+    ],
+    "routes": [
+        {
+            "src": "/(.*)",
+            "dest": "/index.html"
+        }
+    ]
+}
