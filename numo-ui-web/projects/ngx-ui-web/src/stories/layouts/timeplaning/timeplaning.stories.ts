@@ -3,9 +3,7 @@ import { provideAnimations } from "@angular/platform-browser/animations";
 import { Meta, moduleMetadata, StoryObj } from "@storybook/angular";
 import { AppComponent } from "./timeplaning.component";
 import { HeaderComponent } from "../../components/header/header.component";
-// import { RouterTestingModule } from "@angular/router/testing";
 import description from "./timeplaning.description.md";
-// import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 
 export default {
     title: "Layouts/Timeplaning",
@@ -16,11 +14,7 @@ export default {
             providers: [provideAnimations()],
         }),
         moduleMetadata({
-            imports: [
-                ,
-                /* RouterTestingModule */ HeaderComponent,
-                // BrowserAnimationsModule,
-            ],
+            imports: [HeaderComponent],
         }),
     ],
     parameters: {

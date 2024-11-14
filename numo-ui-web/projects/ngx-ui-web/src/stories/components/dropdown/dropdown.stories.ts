@@ -7,8 +7,7 @@ import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { DropdownFilterOptions } from "primeng/dropdown";
 import { filter } from "rxjs";
 import { ButtonModule } from "primeng/button";
-import type { Channel } from "@storybook/channels";
-import { UPDATE_STORY_ARGS } from "@storybook/core-events";
+
 
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories
 const meta: Meta = {
@@ -236,12 +235,7 @@ export const CustomFilter: Story = {
                     console.log(options);
                     options.reset();
                 }
-                const channel = (window as any)
-                    .__STORYBOOK_ADDONS_CHANNEL__ as Channel;
-                channel.emit(UPDATE_STORY_ARGS, {
-                    storyId: id,
-                    updatedArgs: { filterValue: "" },
-                });
+               
             },
             customFilterFunction(event: KeyboardEvent, options: any) {
                 options.filter(event);
